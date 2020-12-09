@@ -15,12 +15,12 @@ class User
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private int $id;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private $pseudo;
+    private string $pseudo;
 
     public function getId(): ?int
     {
