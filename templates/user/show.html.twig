@@ -3,18 +3,17 @@
 {% block title %}Hello UserController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{user.pseudo}}</h1>
-
-    This friendly message is coming from:
-    <ul>
-       u/p <li>Your controller at <code><a href="{{ '/home/ang3l/Bureau/projet_3/reims-php-2009-project3-ten-court/src/Controller/UserController.php'|file_link(0) }}">src/Controller/UserController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/ang3l/Burearojet_3/reims-php-2009-project3-ten-court/templates/user/index.html.twig'|file_link(0) }}">templates/user/index.html.twig</a></code></li>
-    </ul>
-</div>
+    <div class="example-wrapper">
+        <h1>Mon profil</h1>
+        <img src="https://via.placeholder.com/150" alt="avatar">
+        <h2>{{user.pseudo}}</h2>
+        <ul>
+            <li>Adresse actuelle</li>
+            <p>42 rue du cochon sans tete</p>
+            <li>Description</li>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam suscipit, ipsa sit corrupti quod animi assumenda? Ea, quidem distinctio. Fuga, in! Adipisci, aliquid quos quibusdam voluptatum doloremque ipsa odit placeat.</p>
+            <li>Mes matches</li>
+            <li>Paramètres</li>
+        </ul>
+    </div>
 {% endblock %}
