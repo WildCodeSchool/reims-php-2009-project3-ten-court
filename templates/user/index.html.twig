@@ -3,7 +3,9 @@
 {% block title %}Menu - Utilisateurs{% endblock %}
 
 {% block body %}
-{% for user in users %}
-    {{user.pseudo}}
-{% endfor %}
+    {% for user in users %}
+        {{user.pseudo}}
+        {{user.sex}}
+        {{user.level}}
+    {% endfor %}
 {% endblock %}
