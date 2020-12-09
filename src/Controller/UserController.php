@@ -22,12 +22,12 @@ class UserController extends AbstractController
         ]);
     }
     /**
-     * @Route("/show", name="show")
+     * @Route("/show/{id<^[0-9]+$>}", name="show")
      */
-    public function show(User $users): Response
+    public function show(User $user): Response
     {
         return $this->render('user/show.html.twig', [
-            'users' => $users,
+            'user' => $user,
         ]);
     }
 }
