@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Menu - Utilisateurs{% endblock %}
+
+{% block body %}
+{% for user in users %}
+    {{user.pseudo}}
+{% endfor %}
+{% endblock %}
