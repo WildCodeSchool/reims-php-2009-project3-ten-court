@@ -3,11 +3,11 @@
 {% block title %}Menu - Utilisateurs{% endblock %}
 
 {% block body %}
-    <li>
+    <ul>
     {% for user in users %}
-        <ul>{{user.pseudo}}</ul>
-        <ul>{{user.sex}}</ul>
-        <ul>{{user.level}}</ul>
+        <li>{{user.pseudo}}</li>
+        <li>{{user.sex}}</li>
+        <li>{{user.level}}</li>
     {% endfor %}
-    </li>
+    </ul>
 {% endblock %}
