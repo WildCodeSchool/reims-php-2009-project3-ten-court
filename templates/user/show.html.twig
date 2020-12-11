@@ -3,17 +3,32 @@
 {% block title %}Hello UserController!{% endblock %}
 
 {% block body %}
-    <div class="example-wrapper">
-        <h1>Mon profil</h1>
-        <img src="https://via.placeholder.com/150" alt="avatar">
-        <h2>{{user.pseudo}}</h2>
-        <ul>
-            <li>Adresse actuelle</li>
-            <p>42 rue du cochon sans tete</p>
-            <li>Description</li>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam suscipit, ipsa sit corrupti quod animi assumenda? Ea, quidem distinctio. Fuga, in! Adipisci, aliquid quos quibusdam voluptatum doloremque ipsa odit placeat.</p>
-            <li>Mes matches</li>
-            <li>Paramètres</li>
-        </ul>
+    <div class="user section">
+        <article class="user profile" >  
+            <img class="user profile-picture"src="https://picsum.photos/100"/>
+            <div class="user description">
+                <p class="user pseudo">{{ user.pseudo }}</p>
+                <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                </p>
+            </div>
+            <p class="user age">Age</p>
+            <p class="user localisation">Localisation</p>
+            <p class="user level">Niveau</p>
+        </article>
+        <card class="user contact">
+            <p>Contact du joueur</p>
+        </card>
+        <a href="#" class="submit">Envoyer</a>
     </div>
+    
+<nav class="sticky">
+    <ul class="navbar">
+        <li>Ajouter une annonce</li>
+        <li>Rechercher</li>
+        <li>User</li>
+    </ul>
+</nav>
+
 {% endblock %}
