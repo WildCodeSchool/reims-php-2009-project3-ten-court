@@ -3,12 +3,11 @@
 {% block title %}Hello UserController!{% endblock %}
 
 {% block body %}
-
-    <div class="user header">
-        <div class="user profile" >  
+    <div class="user section">
+        <article class="user profile" >  
             <img class="user profile-picture"src="https://picsum.photos/100"/>
             <div class="user description">
-                <h1 class="user pseudo">{{ user.pseudo }}</h1>
+                <p class="user pseudo">{{ user.pseudo }}</p>
                 <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -17,15 +16,15 @@
             <p class="user age">Age</p>
             <p class="user localisation">Localisation</p>
             <p class="user level">Niveau</p>
-        </div>
-        <div class="user contact">
-            <p>Contact de la personne</p>
-        </div>
+        </article>
+        <card class="user contact">
+            <p>Contact du joueur</p>
+        </card>
         <a href="#" class="submit">Envoyer</a>
     </div>
-<hr>
-<nav class="navbar>">
-    <ul>
+    
+<nav class="sticky">
+    <ul class="navbar">
         <li>Ajouter une annonce</li>
         <li>Rechercher</li>
         <li>User</li>
