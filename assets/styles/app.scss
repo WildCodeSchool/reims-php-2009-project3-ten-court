@@ -1,6 +1,46 @@
 @import 'variables.scss';
 
 body {
-    background-color: $wild-color;
-    color: $light-color;
+    background-color: #DAF7A6 ;
+    color: black;
+    margin : 0 ;
+    Padding : 0 ; 
+}
+
+.searchcontainer  {
+    display : flex ;
+    flex-direction : column ;    
+}
+
+.searchcontainer p {
+    padding-left: 20px ;
+    font-size: 2em ;
+}
+
+.searchcontainer div {
+    padding-left : 20px ;
+    font-size : 2em ;
+}
+
+.player {
+    display : flex ;
+    padding : 100px  ;
+    margin : 10px 20px ;
+    border : solid black ;
+    border-radius: 30px ;
+    background-color:white  ;
+}
+
+.photo {
+    background-color: grey ;
+}
+
+.sex {
+    color : grey ;
+}
+
+.h2search {
+    font-size : 3.5em ;
+    text-align: center ;
+    color : rgb(5, 87, 18) ;
 }
