@@ -7,12 +7,19 @@
 <h2 class='h2search'>Résultat Recherche</h2>
 <p>Sélectionnez un profil :</p>   
     {% for user in users %}
-        <div class='player'>
-            <div class='photo'>image</div>
-            <div class='pseudo'>{{user.pseudo}}</div>
-            <div class='sex'>{{user.sex}}</div>
-            <div class='user'>{{user.level}}</div>
-        </div>
+        <a class="playerContainer" href="{{ path('user_show', {id: user.id}) }}">
+            <div class='player'>
+                <div class='photo'><img src="https://via.placeholder.com/150" alt="avatar"></div>
+                <div class='pseudo'>{{user.pseudo}}</div>
+                <div class='sex'>{{user.sex}}</div>
+                <div class='user'>{{user.level}}</div>
+            </div>
+        </a>
     {% endfor %}
+    <h2>
+        <a href="{{ path('user_new') }}">
+            Ajouter un joueur
+        </a>
+    </h2>    
 </div>
 {% endblock %}
