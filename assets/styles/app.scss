@@ -1,37 +1,49 @@
 @import 'variables.scss';
 
 body {
-    background-color: $light-color;
-    color: $dark-color;
-}
-
-.user {
-    margin:10px;
-}
-
-.user.header {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: $light-color;
+    color: $dark-color;
+    margin: 0;
+    padding: 1rem;
+}
+.sticky{
+    position: sticky;
+    bottom: 0;
     
+    padding-top: 1rem;
+    border-top: black solid 1px;
+}
+.user {
+    margin-bottom: 1rem;
+}
+.section {
+    display: flex;
+    flex-direction: column;
+    flex: 1;   
 }
 .user.profile {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+    grid-gap: 1rem;
     grid-auto-rows: minmax(10px, auto);
     border: solid 1px black;
     font-size: 0.87em;
     color: black;
-    padding: 5px;
-    margin:0
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 .profile-picture {
     grid-column: 1 ;
     border-radius: 50%;
-    margin: 10px;
-
 }
-
+.pseudo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 .description {
     grid-column: 2 / 4;
     grid-row: 1;
@@ -39,8 +51,7 @@ body {
 .age {
     grid-column: 1 ;
     grid-row: 2;
-    text-align: center;
-    
+    text-align: center; 
 }
 .localisation {
     grid-column: 2;
@@ -56,39 +67,30 @@ body {
     grid-column: 1 / 4;
     border: solid 1px black;
     text-align: center;
-    padding: 60px;
-    margin:10px 0 15px 0;
-
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 .submit {
     text-align: center;
-    margin: 15px 50px 20px 50px;
-    padding: 1em 0 1em 0;
+    padding: 0.5rem 1rem;
     border: solid 1px black;
     text-decoration: none;
     color: black;
-
-}
-hr {
-    margin-top: 25px;
 }
 .navbar {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+    grid-gap: 1rem;
     grid-auto-rows: minmax(50px, auto);
 }
 ul {
-    display: flex;
-    justify-content: space-around;
-    margin: 10px 0 10 0;
-    padding: 10px 0 10px 0;
-
+    margin: 0;
+    padding: 0;
 }
 li{
     list-style: none;
     border: solid 1px black;
-    padding: 1em;
+    padding: 1rem;
 }
 
 
