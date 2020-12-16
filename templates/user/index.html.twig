@@ -4,12 +4,12 @@
 
 {% block body %}
 <div class='containerSearch'>
-    <h2 class='searchTitleUsers'>Résultat Recherche</h2>
+    <h2 class='searchTitleUsers'>Résultat Recherche : </h2>
     <p>Sélectionnez un profil :</p>   
     {% for user in users %}
         <a class="containerPlayers" href="{{ path('user_show', {id: user.id}) }}">
             <div class='players'>
-                <img class='playerPhoto' src="https://via.placeholder.com/80" alt="avatar">
+                <img class='playerPhoto' src="https://via.placeholder.com/80/FF0000/808080" alt="avatar">
                 <p class='playerItem playerPseudo'>{{user.pseudo}}</p>
                 <p class='playerItem playerSex'>{{user.sex}}</p>
                 <p class='playerItem playerLevel'>{{user.level}}</p>
