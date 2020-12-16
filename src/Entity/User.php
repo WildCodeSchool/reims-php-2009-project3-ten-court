@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\UserRepository;
+use DateTime;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\UserRepository;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -89,5 +90,12 @@ class User
         $this->birthdate = $birthdate;
 
         return $this;
+    }
+
+    public function getAge(): int
+    {
+        $dateInterval = $this->birthdate->diff(new DateTime());
+
+        return $dateInterval->y;
     }
 }
