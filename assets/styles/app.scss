@@ -22,27 +22,46 @@ body {
 
 
 //ALL USERS PART
-.containerSearch {
-    display: flex;
-    flex-direction: column;
-}
+
+
+.players {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    color: black;
+    }
+
+.playerImage { grid-area: 1 / 1 / 3 / 2; }
+.playerPseudo { grid-area: 1 / 2 / 2 / 3; }
+.playerSex { grid-area: 1 / 3 / 2 / 4; }
+.playerLevel { grid-area: 2 / 2 / 3 / 3; }
+.playerDate { grid-area: 2 / 3 / 3 / 4; }
+
 .searchTitleUsers {
     align-self: center;
 }
-.containerPlayers {
-    background-color: white;
+
+.containerPlayers{
     text-decoration: none;
+}
+
+.players {
     margin: 2px;
     border-radius: 20px ;
     background: linear-gradient(107.18deg, rgba(255, 255, 255, 0.7) 1.84%, rgba(255, 255, 255, 0.4) 100%);    
 }
 
-.players {
-    display: flex;
-    color: black;
+.players div {
+    display : flex ;
+    justify-content: center ;
+    align-items: center ;
 }
+
 .playerPseudo {
     font-weight: bold;
+    font-size : 1.5em ;
 }
 .playerSex {
     color: grey;
