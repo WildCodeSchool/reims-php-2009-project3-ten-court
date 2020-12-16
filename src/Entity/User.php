@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +32,11 @@ class User
      * @ORM\Column(type="string", length=50)
      */
     private string $level;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private DateTimeInterface $birthdate;
 
     public function getId(): ?int
     {
@@ -69,6 +75,18 @@ class User
     public function setLevel(string $level): self
     {
         $this->level = $level;
+
+        return $this;
+    }
+
+    public function getBirthdate(): ?\DateTimeInterface
+    {
+        return $this->birthdate;
+    }
+
+    public function setBirthdate(\DateTimeInterface $birthdate): self
+    {
+        $this->birthdate = $birthdate;
 
         return $this;
     }
