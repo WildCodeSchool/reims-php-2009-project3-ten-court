@@ -89,11 +89,13 @@ body {
     
 }
 .userInformationShow {
+
     grid-area: info;
     display: flex;
     justify-content: space-around;
     border: solid whitesmoke 1px;
     
+
 }
 .userInformationItem {
     align-self: center;
