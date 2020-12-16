@@ -9,10 +9,10 @@
     {% for user in users %}
         <a class="containerPlayer" href="{{ path('user_show', {id: user.id}) }}">
             <div class='players'>
-                <div class='playerPhoto'><img src="https://via.placeholder.com/150" alt="avatar"></div>
-                <div class='playerPseudo'>{{user.pseudo}}</div>
-                <div class='playerSex'>{{user.sex}}</div>
-                <div class='playerLevel'>{{user.level}}</div>
+                <img class='playerPhoto' src="https://via.placeholder.com/150" alt="avatar">
+                <p class='playerPseudo'>{{user.pseudo}}</p>
+                <p class='playerSex'>{{user.sex}}</p>
+                <p class='playerLevel'>{{user.level}}</p>
             </div>
         </a>
     {% endfor %}

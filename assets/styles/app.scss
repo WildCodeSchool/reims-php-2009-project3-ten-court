@@ -1,140 +1,18 @@
 @import 'variables.scss';
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+:root {
     box-sizing: border-box;
-    margin: 0;
-    padding: 1rem;
-    background-color: #DAF7A6 ;
-    color: black; 
-}
-
-.searchcontainer  {
-    display : flex ;
-    flex-direction : column ;    
-}
-
-.searchcontainer p {
-    padding-left: 20px ;
-    font-size: 2em ;
-}
-
-.searchcontainer div {
-    padding-left : 20px ;
-    font-size : 2em ;
-}
-
-.player {
-    display : flex ;
-    padding : 100px  ;
-    margin : 10px 20px ;
-    border : solid black ;
-    border-radius: 30px ;
-    background-color:white;
-}
-
-.playerContainer {
-    text-decoration: none;
-}
-
-.photo {
-    background-color: grey ;
-}
-
-.sex {
-    color : grey ;
-}
-
-.h2search {
-    font-size : 3.5em ;
-    text-align: center ;
-    color : rgb(5, 87, 18) ;
-
-}
-.sticky{
-    position: sticky;
-    bottom: 0;
-    
-    padding-top: 1rem;
-    border-top: black solid 1px;
-}
-.user {
-    margin-bottom: 1rem;
-}
-.section {
-    display: flex;
-    flex-direction: column;
-    flex: 1;   
-}
-.user.profile {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    grid-auto-rows: minmax(10px, auto);
-    border: solid 1px black;
-    font-size: 0.87em;
-    color: black;
-    padding: 1rem;
-    margin-bottom: 1rem;
-}
-.profile-picture {
-    grid-column: 1 ;
-    border-radius: 50%;
-}
-.pseudo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-.description {
-    grid-column: 2 / 4;
-    grid-row: 1;
-}
-.age {
-    grid-column: 1 ;
-    grid-row: 2;
-    text-align: center; 
-}
-.localisation {
-    grid-column: 2;
-    grid-row: 2;
-    text-align: center;
-}
-.level {
-    grid-column: 3;
-    grid-row: 2;
-    text-align: center;
-}
-.contact {
-    grid-column: 1 / 4;
-    border: solid 1px black;
-    text-align: center;
-    padding: 1rem;
-    margin-bottom: 1rem;
-}
-.submit {
-    text-align: center;
-    padding: 0.5rem 1rem;
-    border: solid 1px black;
-    text-decoration: none;
-    color: black;
-}
-.navbar {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    grid-auto-rows: minmax(50px, auto);
-}
-ul {
     margin: 0;
     padding: 0;
 }
-li{
-    list-style: none;
-    border: solid 1px black;
-    padding: 1rem;
-}
 
+body {
+    background-color: HSL(30, 69%, 50%); //Colors must be in HSL
+
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    color: black; 
+}
 
 
