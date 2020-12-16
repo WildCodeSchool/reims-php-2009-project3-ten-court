@@ -3,11 +3,13 @@
 namespace App\Form;
 
 use App\Entity\User;
+use Amp\Internal\Placeholder;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 
 class UserType extends AbstractType
 {
@@ -32,7 +34,13 @@ class UserType extends AbstractType
                 'choices' => [
                     'Débutant' => 'debutant',
                     'Intermédiaire' => 'intermediaire',
+                    'Expert' => 'expert',
                     'professionnel' => 'professionnel'
+                ]
+            ])
+            ->add('birthdate', BirthdayType::class, [
+                'placeholder' => [
+                    'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
                 ]
             ])
         ;
