@@ -1,140 +1,105 @@
 @import 'variables.scss';
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+:root {
     box-sizing: border-box;
     margin: 0;
-    padding: 1rem;
-    background-color: #DAF7A6 ;
-    color: black; 
+    padding: 0;
+    font-family: sans-serif;
 }
-
-.searchcontainer  {
-    display : flex ;
-    flex-direction : column ;    
-}
-
-.searchcontainer p {
-    padding-left: 20px ;
-    font-size: 2em ;
-}
-
-.searchcontainer div {
-    padding-left : 20px ;
-    font-size : 2em ;
-}
-
-.player {
-    display : flex ;
-    padding : 100px  ;
-    margin : 10px 20px ;
-    border : solid black ;
-    border-radius: 30px ;
-    background-color:white;
-}
-
-.playerContainer {
-    text-decoration: none;
-}
-
-.photo {
-    background-color: grey ;
-}
-
-.sex {
-    color : grey ;
-}
-
-.h2search {
-    font-size : 3.5em ;
-    text-align: center ;
-    color : rgb(5, 87, 18) ;
-
-}
-.sticky{
-    position: sticky;
-    bottom: 0;
-    
-    padding-top: 1rem;
-    border-top: black solid 1px;
-}
-.user {
-    margin-bottom: 1rem;
-}
-.section {
+body {
+    background-color: HSL(30, 69%, 50%); //Colors must be in HSL
     display: flex;
     flex-direction: column;
-    flex: 1;   
-}
-.user.profile {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    grid-auto-rows: minmax(10px, auto);
-    border: solid 1px black;
-    font-size: 0.87em;
     color: black;
-    padding: 1rem;
-    margin-bottom: 1rem;
 }
-.profile-picture {
-    grid-column: 1 ;
-    border-radius: 50%;
+
+//ALL USERS PART
+.containerSearch {
+    display: flex;
+    flex-direction: column;
 }
-.pseudo {
-    font-size: 1.5rem;
+.searchTitleUsers {
+    align-self: center;
+}
+.containerPlayers {
+    background-color: white;
+    text-decoration: none;
+    margin: 2px;
+}
+.players {
+    display: flex;
+    color: black;
+}
+.playerPseudo {
     font-weight: bold;
 }
-.description {
-    grid-column: 2 / 4;
-    grid-row: 1;
+.playerSex {
+    color: grey;
 }
-.age {
-    grid-column: 1 ;
-    grid-row: 2;
-    text-align: center; 
+.playerPhoto {
+    margin-right: 10px;
 }
-.localisation {
-    grid-column: 2;
-    grid-row: 2;
-    text-align: center;
+.playerItem {
+    margin: 5px;
+    align-self: center;
 }
-.level {
-    grid-column: 3;
-    grid-row: 2;
-    text-align: center;
+
+//USER SHOW PART
+.containerUserProfileShow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(10px, auto);
+    /* grid-gap: 1rem; */
+
+    grid-template-areas: 
+        "avatar avatar avatar"
+        "avatar avatar avatar"
+        "pseudo pseudo pseudo"
+        "description description description"
+    ;
 }
-.contact {
-    grid-column: 1 / 4;
-    border: solid 1px black;
-    text-align: center;
-    padding: 1rem;
-    margin-bottom: 1rem;
+.userPictureProfileShow {
+    width: 100%;
+    grid-area: avatar;
 }
-.submit {
-    text-align: center;
-    padding: 0.5rem 1rem;
-    border: solid 1px black;
-    text-decoration: none;
-    color: black;
+.userPseudoShow {
+    grid-area: pseudo;
+    font-weight: bold;
+    font-size: 2rem;
+
+    display: flex;
+    justify-content: center;
+}
+.userDescriptionShow {
+    grid-area: description;
+}
+.userInformationShow {
+    
+    border: solid red 1px;
+}
+.userInformationItem {
+    align-self: center;
+    margin: 5px;
+}
+.userContactShow {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+//NAVBAR
+.containerNavbar {
+    position:absolute;
+	bottom:0;
 }
 .navbar {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 1rem;
-    grid-auto-rows: minmax(50px, auto);
 }
-ul {
-    margin: 0;
-    padding: 0;
-}
-li{
+.navbar li {
     list-style: none;
     border: solid 1px black;
-    padding: 1rem;
 }
-
 
 

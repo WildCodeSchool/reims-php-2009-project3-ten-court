@@ -3,23 +3,21 @@
 {% block title %}Menu - Utilisateurs{% endblock %}
 
 {% block body %}
-<div class='searchcontainer'>
-<h2 class='h2search'>Résultat Recherche</h2>
-<p>Sélectionnez un profil :</p>   
+<div class='containerSearch'>
+    <h2 class='searchTitleUsers'>Résultat Recherche</h2>
+    <p>Sélectionnez un profil :</p>   
     {% for user in users %}
-        <a class="playerContainer" href="{{ path('user_show', {id: user.id}) }}">
-            <div class='player'>
-                <div class='photo'><img src="https://via.placeholder.com/150" alt="avatar"></div>
-                <div class='pseudo'>{{user.pseudo}}</div>
-                <div class='sex'>{{user.sex}}</div>
-                <div class='user'>{{user.level}}</div>
+        <a class="containerPlayers" href="{{ path('user_show', {id: user.id}) }}">
+            <div class='players'>
+                <img class='playerPhoto' src="https://via.placeholder.com/80" alt="avatar">
+                <p class='playerItem playerPseudo'>{{user.pseudo}}</p>
+                <p class='playerItem playerSex'>{{user.sex}}</p>
+                <p class='playerItem playerLevel'>{{user.level}}</p>
             </div>
         </a>
     {% endfor %}
-    <h2>
         <a href="{{ path('user_new') }}">
             Ajouter un joueur
-        </a>
-    </h2>    
+        </a>  
 </div>
 {% endblock %}
