@@ -11,7 +11,18 @@
 </head>
 <body>
 
+
 {% block body %}{% endblock %}
+{% block navbar %}
+<nav class="containerNavbar">
+    <ul class="navbar">
+        <li><img class="logoNavBar" src="/build/images/Logo1.ad730db9.png">
+        <li class="addAnnounce">Ajouter une annonce</li>
+        <li class="search">Rechercher</li>
+        <li class="userDirection">User</li>
+    </ul>
+</nav>
+{% endblock %}
 
 {% block javascripts %}
     {{ encore_entry_script_tags('app') }}
