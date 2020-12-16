@@ -23,7 +23,7 @@ class UserRepository extends ServiceEntityRepository
     * @return User[] Returns an array of User objects
     *
     */
-    public function search(string $level, string $sex)
+    public function search(string $level, string $sex): array
     {
         return $this->createQueryBuilder('u')
             ->Where('u.level = :level')
