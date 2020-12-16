@@ -3,24 +3,24 @@
 {% block title %}Hello UserController!{% endblock %}
 
 {% block body %}
-    <div class="user section">
-        <article class="userProfileShow" >  
-            <img class="userPictureProfileShow"src="https://picsum.photos/100"/>
-            <div class="userDescriptionShow">
-                <p class="userPseudoShow">{{ user.pseudo }}</p>
-                <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                </p>
-            </div>
-            <p class="userAgeShow">Age</p>
-            <p class="userLocalisationShow">Localisation</p>
-            <p class="userLevelShow">Niveau</p>
-        </article>
-        <card class="userContactShow">
+    <div class="containerUserProfileShow">
+        <img class="userPictureProfileShow"src="https://picsum.photos/300"/>
+        <p class="userPseudoShow">{{ user.pseudo }}</p>
+        <div class="userDescriptionShow">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            </p>
+        </div>
+        <div class="userInformationShow">
+            <p class="userInformationItem userAgeShow">Age</p>
+            <p class="userInformationItem userLocalisationShow">Localisation</p>
+            <p class="userInformationItem userLevelShow">Niveau</p>
+        </div>
+        <div class="userContactShow">
             <p>Contact du joueur</p>
-        </card>
-        <a href="#" class="submitButtonShow">Envoyer</a>
+        </div>
+        {# <a href="#" class="submitButtonShow">Envoyer</a> #}
     </div>
     
 <nav class="containerNavbar">

@@ -4,22 +4,20 @@
 
 {% block body %}
 <div class='containerSearch'>
-<h2 class='searchTitleUsers'>Résultat Recherche</h2>
-<p>Sélectionnez un profil :</p>   
+    <h2 class='searchTitleUsers'>Résultat Recherche</h2>
+    <p>Sélectionnez un profil :</p>   
     {% for user in users %}
-        <a class="containerPlayer" href="{{ path('user_show', {id: user.id}) }}">
+        <a class="containerPlayers" href="{{ path('user_show', {id: user.id}) }}">
             <div class='players'>
-                <img class='playerPhoto' src="https://via.placeholder.com/150" alt="avatar">
-                <p class='playerPseudo'>{{user.pseudo}}</p>
-                <p class='playerSex'>{{user.sex}}</p>
-                <p class='playerLevel'>{{user.level}}</p>
+                <img class='playerPhoto' src="https://via.placeholder.com/80" alt="avatar">
+                <p class='playerItem playerPseudo'>{{user.pseudo}}</p>
+                <p class='playerItem playerSex'>{{user.sex}}</p>
+                <p class='playerItem playerLevel'>{{user.level}}</p>
             </div>
         </a>
     {% endfor %}
-    <h2>
         <a href="{{ path('user_new') }}">
             Ajouter un joueur
-        </a>
-    </h2>    
+        </a>  
 </div>
 {% endblock %}
