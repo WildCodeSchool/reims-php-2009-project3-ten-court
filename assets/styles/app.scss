@@ -47,7 +47,6 @@ body {
 .players {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-/*     grid-template-rows: repeat(2, 1fr); */
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     color: black;
@@ -70,12 +69,6 @@ body {
     flex-direction: column;
     justify-content: center;
 }
-/* 
-.playerPhoto { grid-area: 1 / 1 / 3 / 2; }
-.playerPseudo { grid-area: 1 / 2 / 2 / 3; }
-.playerSex { grid-area: 1 / 3 / 2 / 4; }
-.playerLevel { grid-area: 2 / 2 / 3 / 3; }
-.playerAge { grid-area: 2 / 3 / 3 / 4; } */
 
 .playerPseudo {
     font-weight: bold;
@@ -89,6 +82,7 @@ body {
 
 .playerPhoto {
     border-radius: 50%;
+    max-width: 100px;
 }
 
 .playerItem {
@@ -163,15 +157,17 @@ body {
     grid-auto-columns: minmax(10px, auto);
     grid-gap: 0.5rem;
     grid-template-areas: 
-        "logo add search user";
+        "search add localisation user";
     padding: 0;
 }
 
 .logoNavBar {
-    max-width: 50px;
-    grid-area: logo;
+    width: 30px;
 }
 
+.localisation {
+    grid-area: localisation;
+}
 .addAnnounce {
     grid-area: add;
 }

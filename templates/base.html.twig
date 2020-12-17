@@ -19,10 +19,10 @@
 {% block navbar %}
     <nav class="containerNavbar">
         <ul class="navbar">
-            <li><img class="logoNavBar" src="/build/images/Logo1.ad730db9.png"></li>
-            <li class="addAnnounce"><img class="logoNavBar" src="/build/images/tennis-racket.png"></li>
-            <li class="search"><img class="logoNavBar" src="/build/images/Logo-search.png"></li>
-            <li class="userDirection"><img class="logoNavBar" src="/build/images/Logo-user.png"></li>
+            <li class="addAnnounce"><img class="logoNavBar" src="{{ asset('build/images/navbar/add.png') }}"></li>
+            <li class="search"><img class="logoNavBar" src="{{ asset('build/images/navbar/search.png') }}"></li>
+            <li class="location"><img class="logoNavBar" src="{{ asset('build/images/navbar/location.png') }}"></li>
+            <li class="userDirection"><img class="logoNavBar" src="{{ asset('build/images/navbar/profile.png') }}"></li>
         </ul>
     </nav>
 {% endblock %}
