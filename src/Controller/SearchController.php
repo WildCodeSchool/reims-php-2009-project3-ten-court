@@ -16,7 +16,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class SearchController extends AbstractController
 {
     /**
-     * @Route("/", name="level")
+     * @Route("/", name="users")
      */
     public function search(Request $request, UserRepository $userRepository): Response
     {
