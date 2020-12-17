@@ -47,7 +47,7 @@ body {
 .players {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+/*     grid-template-rows: repeat(2, 1fr); */
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     color: black;
@@ -63,16 +63,23 @@ body {
     -moz-box-shadow: 0px 18px 35px -29px rgba(0,0,0,0.75);
     box-shadow: 0px 18px 35px -29px rgba(0,0,0,0.75);
 }
-
+.container_1_players {
+    padding-left: 10px;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* 
 .playerPhoto { grid-area: 1 / 1 / 3 / 2; }
 .playerPseudo { grid-area: 1 / 2 / 2 / 3; }
 .playerSex { grid-area: 1 / 3 / 2 / 4; }
 .playerLevel { grid-area: 2 / 2 / 3 / 3; }
-.playerAge { grid-area: 2 / 3 / 3 / 4; }
+.playerAge { grid-area: 2 / 3 / 3 / 4; } */
 
 .playerPseudo {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: HSL(128, 56%, 52%);
 }
 
@@ -86,7 +93,6 @@ body {
 
 .playerItem {
     margin: 5px;
-    align-self: center;
 }
 
 //USER SHOW PART
