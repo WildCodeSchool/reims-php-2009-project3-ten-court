@@ -19,6 +19,34 @@ body {
     font-family: "Excellence" ,impact , helvetica , arial, sans-serif; 
 }
 
+//LOGIN
+.homepageLogin {
+    background-image: url("../../assets/images/backgroundImages/Login.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.homepageLogin button:hover {
+    background-color: rgb(227, 227, 227);
+    cursor: pointer;
+}
+.submitConnexion {
+    font-family: "Excellence" ,impact , helvetica , arial, sans-serif;
+    font-size: 1rem;
+    padding: 20px 60px;
+    border: none;
+    border-radius: 10px;
+    bottom: 100px;
+
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
 //ALL USERS PART
 .backgroundAllUsers {
     background-image: url("../../assets/images/backgroundImages/Default.jpg");
