@@ -5,7 +5,7 @@
 {% block body %}
 <div class='containerSearch'>
     <div class="backgroundAllUsers">
-        <h2 class='searchTitleUsers'>Résultat Recherche : </h2>
+        <h2 class='searchTitleUsers'>Trouver un adversaire: </h2>
         {% for user in users %}
             <a class="containerPlayers" href="{{ path('user_show', {id: user.id}) }}">
                 <div class='players'>
