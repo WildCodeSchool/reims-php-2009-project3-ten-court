@@ -4,21 +4,25 @@
 
 {% block body %}
 <div class='containerSearch'>
-    <h2 class='searchTitleUsers'>Résultat Recherche : </h2>
-    <p>Sélectionnez un profil :</p>   
-    {% for user in users %}
-        <a class="containerPlayers" href="{{ path('user_show', {id: user.id}) }}">
-            <div class='players'>
-                <div class='playerImage'><img class='playerPhoto' src="https://via.placeholder.com/80/FF0000/808080" alt="avatar"></div>
-                <div class='playerPseudo'>{{user.pseudo}}</div>
-                <div class='playerSex'>{{user.sex}}</div>
-                <div class='playerLevel'>{{user.level}}</div>
-                <div class='playerDate'></div>
-            </div>
-        </a>
-    {% endfor %}
+    <div class="backgroundAllUsers">
+        <h2 class='searchTitleUsers'>Trouver un adversaire: </h2>
+        {% for user in users %}
+            <a class="containerPlayers" href="{{ path('user_show', {id: user.id}) }}">
+                <div class='players'>
+                    <img class='playerPhoto' src="https://picsum.photos/100" alt="avatar">
+                    <div class="container_1_players">
+                        <p class='playerItem playerPseudo'>{{user.pseudo}}</p>
+                        <p class='playerItem playerSex'>{{user.sex}}</p>
+                        <p class='playerItem playerAge'>{{user.age}}ans</p>
+                        <p class='playerItem playerLevel'>{{user.level}}</p>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+        <div class="blank"></div>
         <a href="{{ path('user_new') }}">
             Ajouter un joueur
-        </a>  
+        </a>
+    </div>
 </div>
 {% endblock %}
