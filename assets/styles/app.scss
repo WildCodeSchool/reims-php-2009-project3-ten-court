@@ -118,17 +118,25 @@ body {
 }
 
 //USER SHOW PART
+.backgroundShowUser {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .containerUserProfileShow {
-    flex: 1 0 auto;
+    padding: 20px;
+    margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(10px, auto);
-    grid-gap: 1rem; 
     grid-template-areas: 
         "picture pseudo pseudo"
-        "avatar avatar avatar"
-        "info info info"
         "description description description"
+        "info info info"
     ;
 }
 
@@ -138,6 +146,8 @@ body {
 }
 
 .userPseudoShow {
+    display: flex;
+    align-items: center;
     grid-area: pseudo;
     font-weight: bold;
     font-size: 2rem;
@@ -146,7 +156,8 @@ body {
 }
 
 .userDescriptionShow {
-    grid-area: avatar;
+    padding: 50px 0;
+    grid-area: description;
     display: flex;
 }
 
@@ -154,18 +165,61 @@ body {
     grid-area: info;
     display: flex;
     justify-content: space-around;
-    border: solid whitesmoke 1px;
+    border: solid HSL(218, 26%, 91%) 1px;
+    background-color: HSL(128, 56%, 52%);
+    padding: 20px;
+    border-radius: 5px;
 }
 .userInformationItem {
+    font-size: 1.2rem;
+    color: white;
     align-self: center;
     margin: 0.5rem;
 }
 .userContactShow {
-    grid-area: description;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    border: solid whitesmoke 1px;
+}
+
+.userContactPhone, .userContactMail, .userContactAddress {
+    padding: 10px 0;
+}
+
+.userPhoneShow {
+    padding: 15px 0;
+    background-color: hsl(120, 100%, 97%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userEmailShow {
+    padding: 15px 0;
+    background-color: hsl(120, 100%, 97%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userAddressShow {
+    padding: 15px 0;
+    background-color: hsl(120, 100%, 97%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userContactItem {
+    font-weight: bold;
+    
+}
+
+.userContactPhone, .userContactMail, .userContactAddress {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 //NAVBAR
