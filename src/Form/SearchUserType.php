@@ -9,7 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SearchUserType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('level', ChoiceType::class, [
@@ -19,7 +19,8 @@ class SearchUserType extends AbstractType
                     'Intermediaire' => 'Intermediaire',
                     'Expert' => 'Expert',
                     'Professionnel' => 'Professionnel',
-                ]
+                ],
+                'attr' => ['placeholder' => 'Niveau'],
             ])
             ->add('sex', ChoiceType::class, [
                 'label' => 'Sexe',
@@ -31,7 +32,7 @@ class SearchUserType extends AbstractType
         ;
     }
 
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
             // Configure your form options here

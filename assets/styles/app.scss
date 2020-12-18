@@ -19,6 +19,15 @@ body {
     font-family: "Excellence" ,impact , helvetica , arial, sans-serif; 
 }
 
+//SEARCH
+.backgroundSearchUsers {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
 //LOGIN
 .homepageLogin {
     background-image: url("../../assets/images/backgroundImages/Login.jpg");
@@ -29,7 +38,7 @@ body {
 }
 
 .homepageLogin button:hover {
-    background-color: rgb(227, 227, 227);
+    background-color: hsl(0, 0%, 89%);
     cursor: pointer;
 }
 .submitConnexion {
@@ -298,4 +307,47 @@ body {
 
 .containerEdit h2 {
     text-align: center;
+}
+
+//SEARCH
+select {
+    padding: 5px 8px;
+    border: none;
+    box-shadow: none;
+    background-color: hsla(348, 2%, 93%, 0.92);
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+label {
+    display: inline-block;
+    min-width: 50px;
+    text-align: left;
+    margin-right: 1rem;
+}
+.row {
+    padding: 0.5rem;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: hsla(348, 2%, 93%, 0.8);
+    border-radius: 5px;
+    border: hsla(348, 2%, 93%, 0.92);
+    margin: 2rem 1rem 3rem 1rem;
+    padding: 1rem;
+}
+button {
+    max-width: 8rem;
+    background-color: HSL(128, 56%, 52%);
+    color: hsla(348, 2%, 93%, 0.92);
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+.resultSearch {
+    text-align: center;
+
 }
