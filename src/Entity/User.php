@@ -39,6 +39,36 @@ class User
      */
     private DateTimeInterface $birthdate;
 
+    /**
+     * @ORM\Column(type="string", length=100, nullable=true)
+     */
+    private string $address;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private string $postalcode;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private string $city;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private string $description;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private string $email;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private string $phone;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -97,5 +127,77 @@ class User
         $dateInterval = $this->birthdate->diff(new DateTime());
 
         return $dateInterval->y;
+    }
+
+    public function getAddress(): ?string
+    {
+        return $this->address;
+    }
+
+    public function setAddress(?string $address): self
+    {
+        $this->address = $address;
+
+        return $this;
+    }
+
+    public function getPostalcode(): ?string
+    {
+        return $this->postalcode;
+    }
+
+    public function setPostalcode(?string $postalcode): self
+    {
+        $this->postalcode = $postalcode;
+
+        return $this;
+    }
+
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+
+    public function setCity(string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(?string $phone): self
+    {
+        $this->phone = $phone;
+
+        return $this;
     }
 }
