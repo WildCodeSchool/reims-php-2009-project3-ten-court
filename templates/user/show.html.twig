@@ -8,26 +8,23 @@
             <img class="userPictureProfileShow"src="https://picsum.photos/100"/>
             <p class="userPseudoShow">{{ user.pseudo }}</p>
             <div class="userDescriptionShow">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                </p>
+                <p>{{user.description}}</p>
             </div>
             <div class="userInformationShow">
-                <p class="userInformationItem userAgeShow">Age</p>
-                <p class="userInformationItem userLocalisationShow">Localisation</p>
-                <p class="userInformationItem userLevelShow">Niveau</p>
+                <p class="userInformationItem userAgeShow">{{user.age ~ ' ans'}}</p>
+                <p class="userInformationItem userLocalisationShow">{{user.city}}</p>
+                <p class="userInformationItem userLevelShow">{{user.level}}</p>
             </div>
         </div>
         <div class="userContactShow">
             <div class="userContactPhone">Numéro de telephone:</div>
-            <div class="userPhoneShow">510-396-0827</div>
+            <div class="userPhoneShow">{{user.phone}}</div>
 
             <div class="userContactMail">Adresse Mail:</div>
-            <div class="userEmailShow">contact@gmail.com</div>
+            <div class="userEmailShow">{{user.email}}</div>
 
             <div class="userContactAddress">Adresse:</div>
-            <div class="userAddressShow">3140  Doctors Drive, 90017, Los Angeles, California</div>
+            <div class="userAddressShow">{{user.address ~ ' ' ~ user.postalcode ~ ' ' ~ user.city}}</div>
         </div>
     </div>
 {% endblock %}
