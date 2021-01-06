@@ -43,6 +43,12 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('pseudo')
+            ->add('sex')
+            ->add('level')
+            ->add('city')
+            ->add('birthdate')
+
         ;
     }
 
