@@ -1,9 +1,17 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Connexion{% endblock %}
-
-{% block body %}
-<form method="post">
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}" />
+    <title>{% block title %}Connexion{% endblock %}</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+        <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -39,4 +47,12 @@
         Connexion
     </button>
 </form>
-{% endblock %}
+    {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+</body>
+</html>
+
+
