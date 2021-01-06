@@ -30,30 +30,38 @@ body {
 }
 //LOGIN
 .homepageLogin {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
     background-image: url("../../assets/images/backgroundImages/Login.jpg");
     background-repeat: no-repeat;
     height: 100vh;
     background-position: center;
     background-size: cover;
+
+}
+.containerAuthButtons {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
 }
 
 .homepageLogin button:hover {
-    background-color: hsl(0, 0%, 89%);
+    background-color: hsl(129, 87%, 26%);
     cursor: pointer;
 }
-.submitConnexion {
+.submitConnexion, .submitRegister {
     font-family: "Excellence" ,impact , helvetica , arial, sans-serif;
     font-size: 1rem;
-    padding: 20px 60px;
+    padding: 20px 20px;
     border: none;
     border-radius: 10px;
-    bottom: 100px;
-
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
+    margin: 10px;
+}
+.submitRegister a, .submitConnexion a {
+    color: white;
+    text-decoration: none;
 }
 
 //ALL USERS PART
