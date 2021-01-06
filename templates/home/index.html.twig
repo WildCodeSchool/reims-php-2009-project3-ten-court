@@ -13,7 +13,17 @@
 
 {% block body %}
     <div class="homepageLogin">
-        <a href="{{ path('user_index') }}"><button class="submitConnexion" type="submit">Entrer</button></a>
+        {% if app.user %}
+            <div class="containerAuthButtons">
+                <button class="submitConnexion" type="submit"><a href="{{ path('user_index') }}">Entrer</a></button>
+                <button class="submitConnexion" type="submit"><a href="{{ path('app_logout') }}">Deconnexion</a></button>
+            </div>
+        {% else %}
+            <div class="containerAuthButtons">
+                <button class="submitConnexion" type="submit"><a href="{{ path('app_login') }}">S'indentifier</a></button>
+                <button class="submitRegister" type="submit"><a href="{{ path('app_register') }}">S'inscrire</a></button>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
 
