@@ -20,6 +20,28 @@ body {
 }
 
 //LOGIN
+.loginPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background-image: url("../../assets/images/backgroundImages/Login.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+.subscriptionPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background-image: url("../../assets/images/backgroundImages/subscription.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
 .homepageLogin {
     display: flex;
     flex-direction: column;
@@ -30,7 +52,46 @@ body {
     height: 100vh;
     background-position: center;
     background-size: cover;
-
+}
+.containerLoginWelcomeMessage {
+    margin-bottom: 20px;
+}
+.containerLoginWelcomeMessage p {
+    text-align: center;
+}
+.containerLoginForm {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 40px;
+    margin-bottom: 120px;
+}
+.loginConnected {
+    padding: 0px 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.loginTitleForm {
+    align-self: center;
+}
+.LoginPasswordInput, .LoginEmailInput {
+    -webkit-box-shadow: 1px -1px 24px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px -1px 24px -10px rgba(0,0,0,0.75);
+    box-shadow: 1px -1px 24px -10px rgba(0,0,0,0.75);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+.loginLabelPassword, .loginLabelEmail {
+    margin-top: 20px;
+}
+.LoginSubmitButton {
+    border-radius: 10px;
+    margin: 15px 0;
+    background-color: hsl(128, 56%, 52%);
+    border: none;
+    color: white;
+    padding: 10px 20px;
 }
 .containerAuthButtons {
     display: flex;
@@ -42,18 +103,117 @@ body {
     background-color: hsl(129, 87%, 26%);
     cursor: pointer;
 }
-.submitConnexion, .submitRegister {
+.submitConnexion {
     background-color: hsl(128, 56%, 52%);
     font-family: "Excellence" ,impact , helvetica , arial, sans-serif;
     font-size: 1rem;
-    padding: 20px 20px;
+    padding: 10px 100px;
     border: none;
     border-radius: 10px;
     margin: 10px;
 }
-.submitRegister a, .submitConnexion a {
+.submitConnexion a {
     color: white;
     text-decoration: none;
+}
+.loggedPageLogoutButton {
+    align-self: center;
+}
+.subscriptionForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.subscriptionTitleForm {
+    align-self: center;
+}
+.subscriptionText {
+    text-align: center;
+}
+.registrationItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+.registrationItemForm label {
+    text-align: center;
+}
+.registrationItemForm, .registrationBirtdateForm, .registrationAgreeTermsForm {
+    margin: 10px 0px;
+}
+#registration_form_email {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#registration_form_plainPassword_first {
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#registration_form_plainPassword_second {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#registration_form_pseudo {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#registration_form_level {
+    padding: 10px 55px;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#registration_form_sex {
+    padding: 10px 65px;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#registration_form_city {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#registration_form_birthdate_day, #registration_form_birthdate_month, #registration_form_birthdate_year {
+    padding: 10px 20px;
+    background-color: hsl(128, 56%, 52%);
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+.registrationAgreeTermsForm {
+    display: flex;
+    justify-content:center;
+}
+.registrationBirtdateForm {
+    display: flex;
+    justify-content:center;
+}
+#registration_form_save {
+    background-color: hsl(128, 56%, 52%);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 100px;
+}
+.registrationBackButton, .subscriptionBackButton {
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 //ALL USERS PART

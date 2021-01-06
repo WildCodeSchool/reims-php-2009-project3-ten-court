@@ -26,7 +26,7 @@ class RegistrationFormType extends AbstractType
         ->add('email', TextType::class, [
             'label' => 'Email',
             'attr' => [
-                'placeholder' => 'Ex: prenom-nom@gmail.com'
+                'placeholder' => 'Ex: prenom-nom@gmail.com',
             ]
         ])
             ->add('agreeTerms', CheckboxType::class, [
@@ -40,8 +40,12 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
-                'first_options'  => array('label' => 'Mot de passe'),
-                'second_options' => array('label' => 'Confirmer le mot de passe'),
+                'first_options'  => array(
+                    'label' => 'Mot de passe',
+                ),
+                'second_options' => array(
+                    'label' => 'Confirmer le mot de passe',
+                ),
                 'invalid_message' => 'Le mot de passe doit être identique',
                 'mapped' => false,
                 'constraints' => [
@@ -59,7 +63,7 @@ class RegistrationFormType extends AbstractType
             ->add('pseudo', TextType::class, [
                 'label' => 'Pseudo',
                 'attr' => [
-                    'placeholder' => 'Ex: Albert51'
+                    'placeholder' => 'Ex: Albert51',
                 ]
             ])
             ->add('sex', ChoiceType::class, [
@@ -82,7 +86,7 @@ class RegistrationFormType extends AbstractType
             ->add('city', TextType::class, [
                 'label' => 'Ville',
                 'attr' => [
-                    'placeholder' => 'Ex: Toulouse'
+                    'placeholder' => 'Ex: Toulouse',
                 ]
             ])
             ->add('birthdate', BirthdayType::class, [

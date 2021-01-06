@@ -13,17 +13,23 @@
 
 {% block body %}
     <div class="homepageLogin">
-        {% if app.user %}
-            <div class="containerAuthButtons">
-                <button class="submitConnexion" type="submit"><a href="{{ path('user_index') }}">Entrer</a></button>
-                <button class="submitConnexion" type="submit"><a href="{{ path('app_logout') }}">Deconnexion</a></button>
+{#         <div class="containerLoginForm"> #}
+            <div class="containerLoginWelcomeMessage">
+                <p>Bonjour et bienvenue sur TEN'COURT</p>
+                <p>Trouver un adversaire en quelques cliques</p>
             </div>
-        {% else %}
-            <div class="containerAuthButtons">
-                <button class="submitConnexion" type="submit"><a href="{{ path('app_login') }}">S'indentifier</a></button>
-                <button class="submitRegister" type="submit"><a href="{{ path('app_register') }}">S'inscrire</a></button>
-            </div>
-        {% endif %}
+            {% if app.user %}
+                <div class="containerAuthButtons">
+                    <button class="submitConnexion" type="submit"><a href="{{ path('user_index') }}">Entrer</a></button>
+                    <a class="loggedPageLogoutButton" href="{{ path('app_logout') }}">Déconnexion</a>
+                </div>
+            {% else %}
+                <div class="containerAuthButtons">
+                    <button class="submitConnexion" type="submit"><a href="{{ path('app_login') }}">S'indentifier</a></button>
+                    <a class="subscriptionText" href="{{ path('app_register') }}">Pas encore inscrit ? Créez un compte !</a>
+                </div>
+            {% endif %}
+{#         </div> #}
     </div>
 {% endblock %}
 
