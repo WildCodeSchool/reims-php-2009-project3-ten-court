@@ -3,75 +3,165 @@
 namespace App\Entity;
 
 use DateTime;
-use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
+use Symfony\Component\Validator\Constraints\Date;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private int $id;
+    private ?int $id;
+
+    /**
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private ?string $email;
+
+    /**
+     * @var array<string>
+     * @ORM\Column(type="json")
+     */
+    private array $roles = [];
+
+    /**
+     * @var string The hashed password
+     * @ORM\Column(type="string")
+     */
+    private string $password;
 
     /**
      * @ORM\Column(type="string", length=50)
      */
-    private string $pseudo;
+    private ?string $pseudo;
 
     /**
      * @ORM\Column(type="string", length=20)
      */
-    private string $sex;
-
-    /**
-     * @ORM\Column(type="string", length=50)
-     */
-    private string $level;
-
-    /**
-     * @ORM\Column(type="date")
-     */
-    private DateTimeInterface $birthdate;
-
-    /**
-     * @ORM\Column(type="string", length=100, nullable=true)
-     */
-    private string $address;
-
-    /**
-     * @ORM\Column(type="string", length=50, nullable=true)
-     */
-    private string $postalcode;
-
-    /**
-     * @ORM\Column(type="string", length=100)
-     */
-    private string $city;
+    private ?string $sex;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private string $description;
+    private ?string $level;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private string $email;
+    private ?string $address;
 
     /**
      * @ORM\Column(type="string", length=50, nullable=true)
      */
-    private string $phone;
+    private ?string $postalcode;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private ?string $city;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private ?string $description;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private ?string $phone;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private ?DateTime $birthdate;
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    /**
+     * @param array<string> $roles
+     */
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getPassword(): string
+    {
+        return (string) $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed when using the "bcrypt" algorithm in security.yaml
+        return null;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials(): void
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 
     public function getPseudo(): ?string
@@ -108,25 +198,6 @@ class User
         $this->level = $level;
 
         return $this;
-    }
-
-    public function getBirthdate(): ?\DateTimeInterface
-    {
-        return $this->birthdate;
-    }
-
-    public function setBirthdate(\DateTimeInterface $birthdate): self
-    {
-        $this->birthdate = $birthdate;
-
-        return $this;
-    }
-
-    public function getAge(): int
-    {
-        $dateInterval = $this->birthdate->diff(new DateTime());
-
-        return $dateInterval->y;
     }
 
     public function getAddress(): ?string
@@ -170,21 +241,9 @@ class User
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
-
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->email;
-    }
-
-    public function setEmail(string $email): self
-    {
-        $this->email = $email;
 
         return $this;
     }
@@ -200,4 +259,24 @@ class User
 
         return $this;
     }
+
+    public function getBirthdate(): ?DateTime
+    {
+        return $this->birthdate;
+    }
+
+    public function setBirthdate(DateTime $birthdate): self
+    {
+        $this->birthdate = $birthdate;
+
+        return $this;
+    }
+
+/*     public function getAge(): int
+    {
+        $date = new DateTime();
+        $dateInterval = $this->birthdate->diff($date);
+
+        return $dateInterval->y;
+    } */
 }
