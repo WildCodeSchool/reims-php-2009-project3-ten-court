@@ -94,7 +94,7 @@ class RegistrationFormType extends AbstractType
                 'format' => 'dd-MM-yyyy'
             ])
             ->add('save', SubmitType::class, [
-                'label' => 'Soumettre',
+                'label' => 'S\'inscrire',
             ]);
 
         ;
