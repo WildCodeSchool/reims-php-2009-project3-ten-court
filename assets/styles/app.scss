@@ -532,10 +532,12 @@ select {
 }
 
 #search_user_level {
+    border-radius: 10px;
     padding: 10px 120px;
     text-align: center;
 }
 #search_user_sex {
+    border-radius: 10px;
     padding: 10px 130px;
     text-align: center;
 }
@@ -543,7 +545,7 @@ select {
     cursor: pointer;
     background-color: HSL(128, 56%, 52%);
     color: hsla(348, 2%, 93%, 0.92);
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 10px 20px;
     font-size: 1rem;
     border: none;
