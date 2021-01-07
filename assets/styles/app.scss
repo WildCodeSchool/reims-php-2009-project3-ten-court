@@ -501,17 +501,6 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
-select {
-    padding: 5px 8px;
-    border: none;
-    box-shadow: none;
-    background-color: hsla(348, 2%, 93%, 0.92);
-    background-image: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    cursor: pointer;
-}
 .containerSearchUsers {
     display: flex;
     flex-direction: column;
@@ -537,7 +526,10 @@ select {
 .searchFormRow #search_user_level {
     text-align: center;
 }
-
+#search_user_level, #search_user_sex { 
+    border: none;
+    appearance: none;
+}
 #search_user_level {
     border-radius: 10px;
     padding: 10px 120px;
@@ -557,6 +549,10 @@ select {
     font-size: 1rem;
     border: none;
 }
+.searchFormUserButton:hover {
+    background-color: hsl(129, 87%, 26%);
+}
+
 .resultSearch {
     text-align: center;
 }
