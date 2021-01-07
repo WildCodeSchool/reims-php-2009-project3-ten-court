@@ -227,6 +227,9 @@ body {
     border-radius: 10px;
     padding: 10px 100px;
 }
+#registration_form_save:hover {
+    background-color: hsl(129, 87%, 26%);
+}
 .registrationBackButton, .subscriptionBackButton {
     text-align: center;
     margin-bottom: 15px;
