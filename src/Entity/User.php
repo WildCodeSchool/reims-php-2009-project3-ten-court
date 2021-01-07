@@ -5,9 +5,9 @@ namespace App\Entity;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -273,13 +273,12 @@ class User implements UserInterface
 
         return $this;
     }
-//We have to work on it
 
-/*     public function getAge(): int
+    public function getAge(): int
     {
         $date = new DateTime();
         $dateInterval = $this->birthdate->diff($date);
 
         return $dateInterval->y;
-    } */
+    }
 }

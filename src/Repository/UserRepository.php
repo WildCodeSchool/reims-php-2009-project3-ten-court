@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Data\SearchService;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -40,16 +41,29 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
      * @return User[] Returns an array of User objects
      *
      */
-    public function search(string $level, string $sex): array
+    public function search(SearchService $search): array
     {
-        return $this->createQueryBuilder('u')
-            ->Where('u.level = :level')
-            ->andWhere('u.sex = :sex')
-            ->setParameter('level', $level)
-            ->setParameter('sex', $sex)
-            ->getQuery()
-            ->getResult()
-        ;
+        $query = $this
+            ->createQueryBuilder('u');
+
+                $query = $query
+                ->andWhere('u.level = :level')
+                ->setParameter('level', $search->level)
+                ->andWhere('u.sex = :sex')
+                ->setParameter('sex', $search->sex);
+
+        if (!empty($search->min)) {
+            $query = $query
+            ->andWhere('DATE_DIFF(CURRENT_DATE(), u.birthdate)  >= :min*365.25')
+            ->setParameter('min', $search->min);
+        }
+        if (!empty($search->max)) {
+            $query = $query
+            ->andWhere('DATE_DIFF(CURRENT_DATE(), u.birthdate)  <= :max*365.25')
+            ->setParameter('max', $search->max);
+        }
+
+        return $query->getQuery()->getResult();
     }
 
     // /**
