@@ -17,9 +17,11 @@
             </div>
         </div>
         <div class="userContactShow">
+        {% if user.phone %}
             <div class="userContactPhone">Numéro de telephone:</div>
             <div class="userPhoneShow">{{user.phone}}</div>
-
+        {% endif %}
+        
             <div class="userContactMail">Adresse Mail:</div>
             <div class="userEmailShow">{{user.email}}</div>
 

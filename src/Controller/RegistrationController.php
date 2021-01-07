@@ -42,11 +42,14 @@ class RegistrationController extends AbstractController
             $user->setSex($form->get('sex')->getData());
             $user->setLevel($form->get('level')->getData());
             $user->setBirthdate($form->get('birthdate')->getData());
+            $user->setRoles(['ROLE_CONTRIBUTOR']);
             $user->setAvatar($form->get('avatar')->getData());
             $avatarFile = $form->get('avatar')->getData();
             if ($avatarFile) {
                 $fileName = $fileUploader->upload($avatarFile);
                 $user->setAvatar($fileName);
+
+
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
