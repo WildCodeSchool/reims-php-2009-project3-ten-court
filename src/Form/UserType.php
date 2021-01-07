@@ -3,41 +3,42 @@
 namespace App\Form;
 
 use App\Entity\User;
-use Amp\Internal\Placeholder;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 
-class UserType extends AbstractType
+class User1Type extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('pseudo', TextType::class, [
-                'label' => 'Pseudo',
-                'attr' => [
-                    'placeholder' => 'Insérez votre pseudo'
-                ]
-            ])
+            ->add('email')
+/*             ->add('password') */ //We have to know how to re encrypte the password through this form
+            ->add('pseudo')
             ->add('sex', ChoiceType::class, [
                 'label' => 'Sexe',
                 'choices' => [
-                    'Homme' => 'homme',
-                    'Femme' => 'femme'
+                    'Homme' => 'Homme',
+                    'Femme' => 'Femme',
+                    'Autre' => 'Autre',
                 ]
             ])
             ->add('level', ChoiceType::class, [
                 'label' => 'Niveau',
                 'choices' => [
-                    'Débutant' => 'debutant',
-                    'Intermédiaire' => 'intermediaire',
-                    'Expert' => 'expert',
-                    'professionnel' => 'professionnel'
+                    'Débutant' => 'Débutant',
+                    'Intermediaire' => 'Intermediaire',
+                    'Expert' => 'Expert',
+                    'Professionnel' => 'Professionnel',
                 ]
             ])
+            ->add('address')
+            ->add('postalcode')
+            ->add('city')
+            ->add('description')
+            ->add('phone')
             ->add('birthdate', BirthdayType::class, [
                 'placeholder' => [
                     'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
