@@ -15,12 +15,12 @@ class SearchService
     public $max;
 
     /**
-    * @var string
+    * @var string|null
     */
     public $level;
 
     /**
-    * @var string
+    * @var string|null
     */
     public $sex;
 }

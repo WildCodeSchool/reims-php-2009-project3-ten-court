@@ -46,11 +46,17 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $query = $this
             ->createQueryBuilder('u');
 
+        if (!empty($search->level)) {
+            $query = $query
+            ->andWhere('u.level = :level')
+            ->setParameter('level', $search->level);
+        }
+
+        if (!empty($search->sex)) {
                 $query = $query
-                ->andWhere('u.level = :level')
-                ->setParameter('level', $search->level)
                 ->andWhere('u.sex = :sex')
                 ->setParameter('sex', $search->sex);
+        }
 
         if (!empty($search->min)) {
             $query = $query
