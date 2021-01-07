@@ -40,6 +40,7 @@ class RegistrationController extends AbstractController
             $user->setSex($form->get('sex')->getData());
             $user->setLevel($form->get('level')->getData());
             $user->setBirthdate($form->get('birthdate')->getData());
+            $user->setRoles(['ROLE_CONTRIBUTOR']);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);

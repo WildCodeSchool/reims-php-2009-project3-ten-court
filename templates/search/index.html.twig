@@ -5,12 +5,12 @@
 {% block body %}
     <div class="backgroundSearchUsers">
         {{ form_start(searchForm) }}
-            <div class="col">
-                <div class="row">
+            <div class="containerSearchUsers">
+                <div class="searchFormRow">
                     {{ form_row(searchForm.level, ) }}
                 </div>
-                <div class="row">
-                    {{ form_row(searchForm.sex, { 'attr': {'class': 'xxx'} }) }}
+                <div class="searchFormRow">
+                    {{ form_row(searchForm.sex,) }}
                 </div>
                 <button class="searchFormUserButton">Rechercher</button>
             </div>
@@ -18,19 +18,20 @@
 
         <div class='searchcontainer'>
             <h2 class='resultSearch'>Résultat de votre Recherche</h2> 
-                {% for user in users %}
-                    <a class="containerPlayers" href="{{ path('user_show', {id: user.id}) }}">
-                        <div class='players'>
-                            <img class='playerPhoto' src="https://picsum.photos/100" alt="avatar">
-                            <div class="container_1_players">
-                                <p class='playerItem playerPseudo'>{{user.pseudo}}</p>
-                                <p class='playerItem playerSex'>{{user.sex}}</p>
+            {% for user in users %}
+                <a class="containerPlayers" href="{{ path('user_show', {id: user.id}) }}">
+                    <div class='players'>
+                        <img class='playerPhoto' src="https://picsum.photos/100" alt="avatar">
+                        <div class="container_1_players">
+                            <p class='playerItem playerPseudo'>{{user.pseudo}}</p>
+                            <p class='playerItem playerSex'>{{user.sex}}</p>
 {#                                 <p class='playerItem playerAge'>{{user.age}}ans</p> #}
-                                <p class='playerItem playerLevel'>{{user.level}}</p>
-                            </div>
+                            <p class='playerItem playerLevel'>{{user.level}}</p>
                         </div>
-                    </a>
-                {% endfor %}
+                    </div>
+                </a>
+            {% endfor %}
         </div>
+        <div class="blank"></div>
     </div>
 {% endblock %}
