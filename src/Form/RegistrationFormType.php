@@ -64,7 +64,19 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Pseudo',
                 'attr' => [
                     'placeholder' => 'Ex: Albert51',
-                ]
+                ],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez renseigner un pseudo',
+                    ]),
+                    new Length([
+                        'min' => 2,
+                        'minMessage' => 'Votre pseudo doit faire au moins {{ limit }} caractères',
+                        // max length allowed by Symfony for security reasons
+                        'max' => 10,
+                        'maxMessage' => 'Votre pseudo doit faire moins de {{ limit }} caractères'
+                    ]),
+                ],
             ])
             ->add('sex', ChoiceType::class, [
                 'label' => 'Sexe',
@@ -87,7 +99,12 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Ville',
                 'attr' => [
                     'placeholder' => 'Ex: Toulouse',
-                ]
+                ],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez renseigner votre ville',
+                    ]),
+                ],
             ])
             ->add('birthdate', BirthdayType::class, [
                 'label' => 'Date de naissance',
