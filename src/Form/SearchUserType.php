@@ -27,6 +27,7 @@ class SearchUserType extends AbstractType
                 'choices' => [
                     'Homme' => 'Homme',
                     'Femme' => 'Femme',
+                    'Autre' => 'Autre',
                 ]
             ])
         ;
