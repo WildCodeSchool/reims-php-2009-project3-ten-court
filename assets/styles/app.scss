@@ -95,6 +95,9 @@ body {
     cursor: pointer;
     font-size: 1rem;
 }
+.LoginSubmitButton:hover {
+    background-color: hsl(129, 87%, 26%);
+}
 .containerAuthButtons {
     display: flex;
     flex-direction: column;
@@ -226,6 +229,9 @@ body {
     border: none;
     border-radius: 10px;
     padding: 10px 100px;
+}
+#registration_form_save:hover {
+    background-color: hsl(129, 87%, 26%);
 }
 .registrationBackButton, .subscriptionBackButton {
     text-align: center;
