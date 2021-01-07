@@ -151,6 +151,8 @@ body {
 }
 
 .userPictureProfileShow {
+    height : 100px ;
+    width : 100px ;
     grid-area: picture;
     border-radius: 50%;
 }
@@ -319,6 +321,12 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+
+.players .playerphoto {
+    height: 120px;
+    width: 120px;
+}
+
 select {
     padding: 5px 8px;
     border: none;
