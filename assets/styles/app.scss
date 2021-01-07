@@ -538,6 +538,13 @@ body {
     padding: 10px 120px;
     text-align: center;
 }
+#search_user_min, #search_user_max {
+    border: none;
+    appearance: none;
+    border-radius: 10px;
+    padding: 10px 85px;
+    text-align: center;
+}
 #search_user_sex {
     border-radius: 10px;
     padding: 10px 135px;
