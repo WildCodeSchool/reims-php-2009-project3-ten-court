@@ -6,7 +6,10 @@
     <div class="backgroundShowUser">
         <div class="containerUserProfileShow">
             <img class="userPictureProfileShow"src="https://picsum.photos/100"/>
-            <p class="userPseudoShow">{{ user.pseudo }}</p>
+            <div class="userPseudoShow">
+                <p class="userPseudoShowItem">{{ user.pseudo }}</p>
+                <p class="userSexShowItem">{{ user.sex }}</p>
+            </div>
             <div class="userDescriptionShow">
                 <p>{{user.description}}</p>
             </div>
