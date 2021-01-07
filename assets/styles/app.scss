@@ -145,6 +145,18 @@ body {
 .registrationItemForm, .registrationBirtdateForm, .registrationAgreeTermsForm {
     margin: 10px 0px;
 }
+.registrationBirtdateForm label {
+    display: flex;
+    justify-content: center;
+}
+.loginLabelEmail, .loginLabelPassword {
+    align-self: center;
+    text-align: center;
+}
+#inputEmail, #inputPassword, #registration_form_email, #registration_form_pseudo, #registration_form_city,
+#registration_form_plainPassword_first, #registration_form_plainPassword_second {
+    text-align: center;
+}
 #registration_form_email {
     padding: 10px 50px;
     border-radius: 10px;
@@ -497,7 +509,7 @@ label {
     display: inline-block;
     min-width: 50px;
     text-align: left;
-    margin-right: 1rem;
+/*     padding: 1rem; */
 }
 .row {
     padding: 0.5rem;
