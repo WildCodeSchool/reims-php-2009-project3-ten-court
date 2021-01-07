@@ -505,16 +505,7 @@ select {
     appearance: none;
     cursor: pointer;
 }
-label {
-    display: inline-block;
-    min-width: 50px;
-    text-align: left;
-/*     padding: 1rem; */
-}
-.row {
-    padding: 0.5rem;
-}
-.col {
+.containerSearchUsers {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -524,16 +515,35 @@ label {
     margin: 2rem 1rem 3rem 1rem;
     padding: 1rem;
 }
+.searchFormRow {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+}
+.searchFormRow div {
+    display: flex;
+    flex-direction: column;
+}
+.searchFormRow label {
+    text-align: center;
+}
+#search_user_level {
+    padding: 10px 120px;
+    text-align: center;
+}
+#search_user_sex {
+    padding: 10px 130px;
+    text-align: center;
+}
 .searchFormUserButton {
-    max-width: 8rem;
     cursor: pointer;
     background-color: HSL(128, 56%, 52%);
     color: hsla(348, 2%, 93%, 0.92);
     border-radius: 5px;
-    padding: 0.5rem;
+    padding: 10px 20px;
+    font-size: 1rem;
     border: none;
 }
 .resultSearch {
     text-align: center;
-
 }
