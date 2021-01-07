@@ -12,6 +12,12 @@
                 <div class="searchFormRow">
                     {{ form_row(searchForm.sex,) }}
                 </div>
+                <div class="row">
+                    {{ form_row(searchForm.min, ) }}
+                </div>
+                <div class="row">
+                    {{ form_row(searchForm.max, ) }}
+                </div>
                 <button class="searchFormUserButton">Rechercher</button>
             </div>
         {{ form_end(searchForm) }}
