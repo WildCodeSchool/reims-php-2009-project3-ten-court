@@ -23,7 +23,7 @@ class UserFixtures extends Fixture
         $faker = Factory::create('fr_FR');
 
         //Generate Women Users
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             // Création d’un utilisateur de type “contributeur” (= auteur)
             $contributor = new User();
             $contributor->setEmail($faker->email);
@@ -51,7 +51,7 @@ class UserFixtures extends Fixture
         }
 
         //Generate Men Users
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 30; $i++) {
             // Création d’un utilisateur de type “contributeur” (= auteur)
             $contributor = new User();
             $contributor->setEmail($faker->email);
