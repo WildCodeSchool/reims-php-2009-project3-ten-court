@@ -7,6 +7,9 @@ use App\Form\UserType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\UserRepository;
+use App\Service\FileUploader;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
@@ -31,13 +34,17 @@ class UserController extends AbstractController
     /**
      * @Route("/new", name="new")
      */
-    public function new(Request $request): Response
+    public function new(Request $request , FileUploader $fileUploader): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $avatarFile = $form->get('avatar')->getData();
+            if ($avatarFile) {
+                $FileName = $fileUploader->upload($avatarFile);
+                $user->setAvatar($FileName);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
@@ -49,6 +56,7 @@ class UserController extends AbstractController
             "form" => $form->createView(),
         ]);
     }
+    }    
 
     /**
      * @Route("/show/{id<^[0-9]+$>}", name="show")

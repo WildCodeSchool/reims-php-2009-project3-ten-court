@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
+use App\Service\FileUploader;
 
 class RegistrationController extends AbstractController
 {
@@ -21,7 +22,8 @@ class RegistrationController extends AbstractController
         Request $request,
         UserPasswordEncoderInterface $passwordEncoder,
         GuardAuthenticatorHandler $guardHandler,
-        LoginFormAuthenticator $authenticator
+        LoginFormAuthenticator $authenticator,
+        FileUploader $fileUploader
     ): ?Response {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -40,18 +42,24 @@ class RegistrationController extends AbstractController
             $user->setSex($form->get('sex')->getData());
             $user->setLevel($form->get('level')->getData());
             $user->setBirthdate($form->get('birthdate')->getData());
+            $user->setAvatar($form->get('avatar')->getData());
+            $avatarFile = $form->get('avatar')->getData();
+            if ($avatarFile) {
+                $fileName = $fileUploader->upload($avatarFile);
+                $user->setAvatar($fileName);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
-            // do anything else you need here, like send an email
+        // do anything else you need here, like send an email
 
-            return $guardHandler->authenticateUserAndHandleSuccess(
+                return $guardHandler->authenticateUserAndHandleSuccess(
                 $user,
                 $request,
                 $authenticator,
                 'main' // firewall name in security.yaml
-            );
+                );
+            }
         }
 
         return $this->render('registration/register.html.twig', [
