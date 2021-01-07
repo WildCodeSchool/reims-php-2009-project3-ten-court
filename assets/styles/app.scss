@@ -192,12 +192,14 @@ body {
     border-radius: 10px;
     border: none;
     border: solid 1px hsl(128, 56%, 52%);
+    appearance: none;
 }
 #registration_form_sex {
     padding: 10px 95px;
     align-items: center;
     border-radius: 10px;
     border: none;
+    appearance: none;
     border: solid 1px hsl(128, 56%, 52%);
 }
 #registration_form_city {
@@ -211,6 +213,7 @@ body {
     background-color: hsl(128, 56%, 52%);
     border-radius: 10px;
     border: none;
+    appearance: none;
     border: solid 1px hsl(128, 56%, 52%);
 }
 .registrationAgreeTermsForm {
