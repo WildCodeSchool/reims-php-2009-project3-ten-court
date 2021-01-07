@@ -23,8 +23,8 @@ class UserController extends AbstractController
     public function index(): Response
     {
         $users = $this->getDoctrine()
-        ->getRepository(User::class)
-        ->findAll();
+            ->getRepository(User::class)
+            ->findAll();
 
         return $this->render('user/index.html.twig', [
             'users' => $users,
@@ -34,7 +34,7 @@ class UserController extends AbstractController
     /**
      * @Route("/new", name="new")
      */
-    public function new(Request $request , FileUploader $fileUploader): Response
+    public function new(Request $request, FileUploader $fileUploader): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
@@ -43,20 +43,20 @@ class UserController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $avatarFile = $form->get('avatar')->getData();
             if ($avatarFile) {
-                $FileName = $fileUploader->upload($avatarFile);
-                $user->setAvatar($FileName);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
+                $fileName = $fileUploader->upload($avatarFile);
+                $user->setAvatar($fileName);
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($user);
+                $entityManager->flush();
 
-            return $this->redirectToRoute('user_index');
+                return $this->redirectToRoute('user_index');
+            }
+
+            return $this->render('user/new.html.twig', [
+                "form" => $form->createView(),
+            ]);
         }
-
-        return $this->render('user/new.html.twig', [
-            "form" => $form->createView(),
-        ]);
     }
-    }    
 
     /**
      * @Route("/show/{id<^[0-9]+$>}", name="show")
