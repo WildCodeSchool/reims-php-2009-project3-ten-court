@@ -36,7 +36,7 @@ class UserFixtures extends Fixture
             $contributor->setPhone($faker->phoneNumber);
             $contributor->setBirthdate(new DateTime($faker->date(
                 'Y-m-d', //format
-                '2005-12-12'/* 'now' */ //date max
+                '2005-12-12' //date max - You can replace the date by 'now' to get the actual date
             )));
             $contributor->setCity($faker->city);
             $contributor->setPostalcode($faker->postcode);
@@ -64,7 +64,7 @@ class UserFixtures extends Fixture
             $contributor->setPhone($faker->phoneNumber);
             $contributor->setBirthdate(new DateTime($faker->date(
                 'Y-m-d', //format
-                '2005-12-12'/* 'now' */ //date max
+                '2005-12-12' //date max - You can replace the date by 'now' to get the actual date
             )));
             $contributor->setCity($faker->city);
             $contributor->setPostalcode($faker->postcode);
