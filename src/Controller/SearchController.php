@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
+use App\Data\SearchService;
 use App\Form\SearchUserType;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,14 +20,12 @@ class SearchController extends AbstractController
      */
     public function search(Request $request, UserRepository $userRepository): Response
     {
-        $users = new User();
-        $searchUserForm = $this->createForm(SearchUserType::class, $users);
+        $search = new SearchService();
+        $searchUserForm = $this->createForm(SearchUserType::class, $search);
         $searchUserForm->handleRequest($request);
 
         if ($searchUserForm->isSubmitted() && $searchUserForm->isValid()) {
-            $level = $users->getLevel();
-            $sex = $users->getSex();
-            $users = $userRepository->search($level, $sex);
+            $users = $userRepository->search($search);
         } else {
             $users = $userRepository->findAll();
         }
