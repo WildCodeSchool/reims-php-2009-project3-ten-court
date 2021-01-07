@@ -6,6 +6,7 @@ use DateTime;
 use App\Entity\User;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Faker\Factory;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserFixtures extends Fixture
@@ -19,85 +20,75 @@ class UserFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        // Création d’un utilisateur de type “contributeur” (= auteur)
-        $contributor = new User();
-        $contributor->setEmail('axel@gmail.com');
-        $contributor->setRoles(['ROLE_CONTRIBUTOR']);
-        $contributor->setPseudo('Axel');
-        $contributor->setSex('Homme');
-        $contributor->setLevel('intermediaire');
-        $contributor->setPhone('438-396-1459');
-        $contributor->setBirthdate(new DateTime('1990/11/30'));
-        $contributor->setCity('Montréal');
-        $contributor->setDescription('Je souhaite commencer à jouer au tennis');
-        $contributor->setPassword($this->passwordEncoder->encodePassword(
-            $contributor,
-            'password'
-        ));
-        $manager->persist($contributor);
+        $faker = Factory::create('fr_FR');
 
-        // Création d’un utilisateur de type “contributeur” (= auteur)
-        $contributor = new User();
-        $contributor->setEmail('damien@gmail.com');
-        $contributor->setRoles(['ROLE_CONTRIBUTOR']);
-        $contributor->setPseudo('Damien');
-        $contributor->setSex('Homme');
-        $contributor->setLevel('expert');
-        $contributor->setPhone('06 30 20 10 90');
-        $contributor->setBirthdate(new DateTime('1976/02/24'));
-        $contributor->setCity('Rethel');
-        $contributor->setDescription('Je voudrais rencontrer du monde afin de jouer et être plus experimenté');
-        $contributor->setPassword($this->passwordEncoder->encodePassword(
-            $contributor,
-            'password'
-        ));
-        $manager->persist($contributor);
+        //Generate Women Users
+        for ($i = 0; $i < 20; $i++) {
+            // Création d’un utilisateur de type “contributeur” (= auteur)
+            $contributor = new User();
+            $contributor->setEmail($faker->email);
+            $contributor->setRoles(['ROLE_CONTRIBUTOR']);
+            $contributor->setPseudo($faker->firstNameFemale);
+            $contributor->setSex('Femme');
+            $contributor->setLevel($faker->randomElement(array (
+                'Débutant', 'Intermediaire', 'Expert', 'Professionnel'
+            )));
+            $contributor->setPhone($faker->phoneNumber);
+            $contributor->setBirthdate(new DateTime($faker->date(
+                'Y-m-d', //format
+                '2005-12-12'/* 'now' */ //date max
+            )));
+            $contributor->setCity($faker->city);
+            $contributor->setPostalcode($faker->postcode);
+            $contributor->setAddress($faker->streetAddress);
+            $contributor->setDescription($faker->sentence(20));
+            $contributor->setPassword($this->passwordEncoder->encodePassword(
+                $contributor,
+                'password'
+            ));
 
-        // Création d’un utilisateur de type “contributeur” (= auteur)
-        $contributor = new User();
-        $contributor->setEmail('alexandre@gmail.com');
-        $contributor->setRoles(['ROLE_CONTRIBUTOR']);
-        $contributor->setPseudo('Alexandre');
-        $contributor->setSex('Homme');
-        $contributor->setLevel('débutant');
-        $contributor->setPhone('202-555-0101');
-        $contributor->setBirthdate(new DateTime('1970/04/10'));
-        $contributor->setCity('California');
-        $contributor->setDescription('J\'ai décidé de changer de sport et de me mettre au tennis');
-        $contributor->setPassword($this->passwordEncoder->encodePassword(
-            $contributor,
-            'password'
-        ));
-        $manager->persist($contributor);
+            $manager->persist($contributor);
+        }
 
-        // Création d’un utilisateur de type “contributeur” (= auteur)
-        $contributor = new User();
-        $contributor->setEmail('olivier@gmail.com');
-        $contributor->setRoles(['ROLE_CONTRIBUTOR']);
-        $contributor->setPseudo('Olivier');
-        $contributor->setSex('Homme');
-        $contributor->setLevel('professionnel');
-        $contributor->setPhone('06 21 29 98 10');
-        $contributor->setBirthdate(new DateTime('1970/07/03'));
-        $contributor->setCity('Troyes');
-        $contributor->setDescription('Je souhaite rencontrer des personnes pour jouer');
-        $contributor->setPassword($this->passwordEncoder->encodePassword(
-            $contributor,
-            'password'
-        ));
-        $manager->persist($contributor);
+        //Generate Men Users
+        for ($i = 0; $i < 20; $i++) {
+            // Création d’un utilisateur de type “contributeur” (= auteur)
+            $contributor = new User();
+            $contributor->setEmail($faker->email);
+            $contributor->setRoles(['ROLE_CONTRIBUTOR']);
+            $contributor->setPseudo($faker->firstNameMale);
+            $contributor->setSex('Homme');
+            $contributor->setLevel($faker->randomElement(array(
+                'Débutant', 'Intermediaire', 'Expert', 'Professionnel'
+            )));
+            $contributor->setPhone($faker->phoneNumber);
+            $contributor->setBirthdate(new DateTime($faker->date(
+                'Y-m-d', //format
+                '2005-12-12'/* 'now' */ //date max
+            )));
+            $contributor->setCity($faker->city);
+            $contributor->setPostalcode($faker->postcode);
+            $contributor->setAddress($faker->streetAddress);
+            $contributor->setDescription($faker->sentence(20));
+            $contributor->setPassword($this->passwordEncoder->encodePassword(
+                $contributor,
+                'password'
+            ));
 
-        // Création d’un utilisateur de type “administrateur”
+            $manager->persist($contributor);
+        }
+
+        // Create an admin User
         $admin = new User();
         $admin->setEmail('admin@monsite.com');
         $admin->setRoles(['ROLE_ADMIN']);
         $admin->setPseudo('Administrator');
         $admin->setSex('Homme');
         $admin->setLevel('Expert');
-        $admin->setPhone('06 98 98 98 99');
-        $admin->setBirthdate(new DateTime('2000/02/24'));
-        $admin->setCity('Nowhere');
-        $admin->setDescription('Admin Account');
+        $admin->setPhone('06 10 20 30 40');
+        $admin->setBirthdate(new DateTime('1990/12/24'));
+        $admin->setCity('Bakersfield');
+        $admin->setDescription('Je suis l\'administrateur de cette application');
         $admin->setPassword($this->passwordEncoder->encodePassword(
             $admin,
             'adminpassword'
