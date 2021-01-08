@@ -1,43 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}User
-{% endblock %}
+{% block title %}Profile{% endblock %}
 
 {% block body %}
+    <div class="containerMyProfile">
+        <h1 class="myProfileTitle">Mon compte</h1>
 
-	<h1 class="h1-profil-user">Mon compte</h1>
-
-	<table class="user-profil">
-		<tbody>
-			<tr>
-				<th>Prénom:</th>
-				<td>{{ user.pseudo }}</td>
-			</tr>
-			<tr>
-				<th>Date d'anniversaire</th>
-				<td>{{ user.birthdate|date('d-m-Y') }}</td>
-			</tr>
-			<tr>
-				<th>Email:</th>
-				<td>{{ user.email }}</td>
-			</tr>
-			<tr>
-				<th>Numéro de téléphone:
-				</th>
-				<td>{{ user.phone }}</td>
-			</tr>
-			<tr>
-				<th>Adresse</th>
-				<td>{{ user.city }}</td>
-			</tr>
-		</tbody>
-	</table>
-
-	<div class="edit-delete-section">
-		<a class="disconnect-profil" href = "{{ path('app_logout') }}">Déconnection</a>
-		<a class="edit-profil" href="{{ path('user_edit', {'id': user.id}) }}">Modifier le profil</a>
-		{{ include('user/_delete_form.html.twig') }}
-	</div>
-
+        <div class="MyProfile">
+            <div class="myProfilePicture"></div>
+            <div class="myProfilePseudo">
+                {{ user.pseudo}}
+            </div>
+            <div class="myProfileEmail">
+                <p class="myProfileEmailTitle">Email</p>
+                <p class="myProfileEmailValue">{{ user.email}}</p>
+            </div>
+            <div class="myProfileBirthday">
+                <p class="myProfileBirthdateTitle">Date de naissance</p>
+                <p class="myProfileBirthdayValue">{{ user.birthdate|date('d-m-Y') }}</p>
+            </div>
+            <div class="myProfilePhone">
+                <p class="myProfilePhoneTitle">Numero de téléphone</p>
+                <p class="myProfilePhoneValue">{{ user.phone }}</p>
+            </div>
+            <div class="myProfileAdress">
+            <p class="myProfileAddressTitle">Adresse postale</p>
+                <p class="myProfileAddressValue">
+                    {{ user.address}}
+                    {{ user.postalcode}}
+                    {{ user.city }}
+                </p>
+            </div>
+        </div>
+        <div class="myProfileContainerButtons">
+            <div class="myProfileEdition">
+                <a class="myProfileEditButton" href="{{ path('user_edit', {'id': user.id}) }}">Modifier mon profil</a>
+            </div>
+            <div class="myProfileDeconnexion">
+                <a class="myProfileDeconnexionButton" href = "{{ path('app_logout') }}">Déconnexion</a>
+            </div>
+        </div>
+    </div>
 
 {% endblock %}

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello SearchController!{% endblock %}
+{% block title %}Recherche de joueurs{% endblock %}
 
 {% block body %}
     <div class="backgroundSearchUsers">
@@ -19,6 +19,7 @@
                     {{ form_row(searchForm.max, ) }}
                 </div>
                 <button class="searchFormUserButton">Rechercher</button>
+                <a class="backButtonShowAllUsers" href="{{ path('user_index') }}">Accueil</a>
             </div>
         {{ form_end(searchForm) }}
 
@@ -38,6 +39,6 @@
                 </a>
             {% endfor %}
         </div>
-        <div class="blank"></div>
+        <div class="blankShowUserPage"></div>
     </div>
 {% endblock %}

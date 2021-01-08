@@ -209,6 +209,7 @@ body {
 #registration_form_birthdate_day, #registration_form_birthdate_month, #registration_form_birthdate_year {
     padding: 10px 20px;
     background-color: hsl(128, 56%, 52%);
+    color: white;
     border-radius: 10px;
     border: none;
     appearance: none;
@@ -237,6 +238,245 @@ body {
 .registrationBackButton, .subscriptionBackButton {
     text-align: center;
     margin-bottom: 15px;
+}
+//MY PROFILE
+.containerMyProfile {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.myProfileTitle {
+    color: black;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+.MyProfile {
+    display: flex;
+    flex-direction: column;
+}
+.myProfilePicture {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    align-self: center;
+    background-color: grey;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+}
+.myProfilePseudo {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+.myProfileEmailTitle, .myProfileBirthdateTitle, .myProfilePhoneTitle, .myProfileAddressTitle {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.myProfileEmail, .myProfileBirthday, .myProfilePhone, .myProfileAdress {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.myProfileEmailValue, .myProfileBirthdayValue, .myProfilePhoneValue, .myProfileAddressValue {
+    padding: 10px;
+    background-color: hsl(120, 100%, 97%);
+}
+
+.myProfileEdition {
+    text-align: center;
+    background-color: hsl(128, 56%, 52%);
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin: 10px;
+}
+.myProfileDeconnexion {
+    text-align: center;
+    background-color: HSL(0, 70%, 43%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin: 10px;
+}
+.myProfileEditButton {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+}
+.myProfileDeconnexionButton {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+}
+
+//EDIT USER
+.editionPage {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.containerEditionForm {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.editionTitleForm {
+    margin-top: 20px;
+    text-align: center;
+}
+.editionItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+.editionItemForm label {
+    text-align: center;
+}
+.editionItemForm, .editionBirtdateForm {
+    margin: 10px 0px;
+}
+.editionBirtdateForm label {
+    display: flex;
+    justify-content: center;
+}
+.editionLabelEmail, .editionLabelPassword {
+    align-self: center;
+    text-align: center;
+}
+#user1_email, #user1_pseudo, #user1_sex, #user1_level, #user1_address,
+#user1_postalcode, #user1_city, #user1_description, #user1_phone {
+    text-align: center;
+    width: 95%;
+}
+#user1_birthdate_month, #user1_birthdate_day, #user1_birthdate_year {
+    padding: 10px 40px;
+    color: white;
+    background-color: hsl(128, 56%, 52%);
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+
+.editionBirtdateForm {
+    display: flex;
+    justify-content: center;
+}
+
+#user1_update {
+    background-color: hsl(128, 56%, 52%);
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 126px;
+    width: 95%;
+}
+
+#user1_email, #user1_pseudo {
+    padding: 10px 50px;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#user1_sex{
+    padding: 10px 95px;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#user1_level {
+    padding: 10px 85px;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+    appearance: none;
+}
+#user1_address, #user1_postalcode, #user1_phone, #user1_city {
+    padding: 10px 50px;
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+#user1_description {
+    border-radius: 10px;
+    border: none;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+.EditAccueilButton {
+    text-align: center;
+    margin-top: 10px;
+    align-self: center;
+    background-color: HSL(24, 68%, 44%);
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 147px;
+    width: 95%;
+}
+.backButtonEditProfile {
+    text-align: center;
+    align-self: center;
+    background-color: HSL(24, 68%, 44%);
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 147px;
+    width: 95%;
+}
+.DeleteButtonEditProfile {
+    margin-top: 80px;
+    text-align: center;
+    align-self: center;
+    background-color: HSL(0, 70%, 43%);
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 148px;
+    width: 95%;
+
+    display: flex;
+    justify-content:center;
+}
+.DeleteButtonEditProfile button.btn {
+    cursor: pointer;
+    clear: both;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    align-self: center;
+    text-align: center;
+    font-size: 1rem;
+    border: none;
+    color: white;
+    background-color: HSL(0, 70%, 43%);
+}
+.blankEditionPage {
+    height: 80px;
 }
 
 //ALL USERS PART
@@ -308,6 +548,19 @@ body {
 
 .playerItem {
     margin: 5px;
+}
+.backButtonShowAllUsers {
+    margin-top: 10px;
+    align-self: center;
+
+    background-color: HSL(24, 68%, 44%);
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 130px;
 }
 
 //USER SHOW PART
@@ -477,7 +730,7 @@ body {
     padding-right: 1rem;
 }
 
-.blank {
+.blankShowUserPage {
     height: 80px;
 }
 
@@ -520,6 +773,10 @@ body {
     border: hsla(348, 2%, 93%, 0.92);
     margin: 2rem 1rem 3rem 1rem;
     padding: 1rem;
+
+    -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
 }
 .searchFormRow {
     display: flex;
@@ -534,7 +791,16 @@ body {
     text-align: center;
 }
 .searchFormRow #search_user_level {
-    text-align: center;
+    border: solid 1px hsl(128, 56%, 52%);
+}
+.searchFormRow #search_user_sex {
+    border: solid 1px hsl(128, 56%, 52%);
+}
+.searchFormRow #search_user_min {
+    border: solid 1px hsl(128, 56%, 52%);
+}
+.searchFormRow #search_user_max {
+    border: solid 1px hsl(128, 56%, 52%);
 }
 #search_user_level, #search_user_sex { 
     border: none;
@@ -558,13 +824,15 @@ body {
     text-align: center;
 }
 .searchFormUserButton {
-    cursor: pointer;
+    align-self: center;
     background-color: HSL(128, 56%, 52%);
-    color: hsla(348, 2%, 93%, 0.92);
-    border-radius: 10px;
-    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
     font-size: 1rem;
+    text-decoration: none;
     border: none;
+    border-radius: 10px;
+    padding: 10px 115px;
 }
 .searchFormUserButton:hover {
     background-color: hsl(129, 87%, 26%);

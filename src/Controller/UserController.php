@@ -58,7 +58,7 @@ class UserController extends AbstractController
             'user' => $user,
         ]);
     }
-    
+
     /**
      * @Route("/{id}", name="profile", methods={"GET"})
      */
@@ -85,7 +85,7 @@ class UserController extends AbstractController
 
         return $this->render('user/edit.html.twig', [
             'user' => $user,
-            'form' => $form->createView(),
+            'editUserForm' => $form->createView(),
         ]);
     }
 
