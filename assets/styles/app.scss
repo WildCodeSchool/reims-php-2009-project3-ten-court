@@ -352,12 +352,12 @@ body {
     align-self: center;
     text-align: center;
 }
-#user1_email, #user1_pseudo, #user1_sex, #user1_level, #user1_address,
-#user1_postalcode, #user1_city, #user1_description, #user1_phone {
+#user_email, #user_pseudo, #user_sex, #user_level, #user_address,
+#user_postalcode, #user_city, #user_description, #user_phone {
     text-align: center;
     width: 95%;
 }
-#user1_birthdate_month, #user1_birthdate_day, #user1_birthdate_year {
+#user_birthdate_month, #user_birthdate_day, #user_birthdate_year {
     padding: 10px 40px;
     color: white;
     background-color: hsl(128, 56%, 52%);
@@ -372,7 +372,7 @@ body {
     justify-content: center;
 }
 
-#user1_update {
+#user_update {
     background-color: hsl(128, 56%, 52%);
     color: white;
     cursor: pointer;
@@ -383,13 +383,13 @@ body {
     width: 95%;
 }
 
-#user1_email, #user1_pseudo {
+#user_email, #user_pseudo {
     padding: 10px 50px;
     border-radius: 10px;
     border: none;
     border: solid 1px hsl(128, 56%, 52%);
 }
-#user1_sex{
+#user_sex{
     padding: 10px 95px;
     align-items: center;
     border-radius: 10px;
@@ -397,7 +397,7 @@ body {
     appearance: none;
     border: solid 1px hsl(128, 56%, 52%);
 }
-#user1_level {
+#user_level {
     padding: 10px 85px;
     align-items: center;
     text-align: center;
@@ -406,13 +406,13 @@ body {
     border: solid 1px hsl(128, 56%, 52%);
     appearance: none;
 }
-#user1_address, #user1_postalcode, #user1_phone, #user1_city {
+#user_address, #user_postalcode, #user_phone, #user_city {
     padding: 10px 50px;
     border-radius: 10px;
     border: none;
     border: solid 1px hsl(128, 56%, 52%);
 }
-#user1_description {
+#user_description {
     border-radius: 10px;
     border: none;
     border: solid 1px hsl(128, 56%, 52%);
