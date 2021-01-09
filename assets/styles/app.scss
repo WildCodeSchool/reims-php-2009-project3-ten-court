@@ -93,6 +93,10 @@ body {
     cursor: pointer;
     font-size: 1rem;
 }
+.containerLoginForm .alert {
+    text-align: center;
+    color: red;
+}
 
 .containerAuthButtons {
     display: flex;
