@@ -4,6 +4,13 @@
 
 {% block body %}
     <div class="containerMyProfile">
+
+        {% for message in app.flashes('success') %}
+            <div class="updateMessageSuccess">
+                {{ message }}
+            </div>
+        {% endfor %}
+
         <h1 class="myProfileTitle">Mon compte</h1>
 
         <div class="MyProfile">

@@ -314,6 +314,12 @@ body {
 }
 
 //EDIT USER
+.updateMessageSuccess {
+    background-color: HSL(127, 56%, 52%); 
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
 .editionPage {
     background-image: url("../../assets/images/backgroundImages/Default.jpg");
     background-repeat: no-repeat;
