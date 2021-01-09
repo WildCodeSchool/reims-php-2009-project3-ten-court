@@ -10,3 +10,11 @@ import '../styles/app.scss';
 
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
+
+
+/* MyProfile */
+
+//SuccesButton (When user profile is updated)
+setTimeout(function() {
+    $('#updateMessageSuccess').fadeOut('fast');
+}, 2000); // <-- time in milliseconds

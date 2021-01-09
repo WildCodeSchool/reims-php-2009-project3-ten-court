@@ -6,7 +6,7 @@
     <div class="containerMyProfile">
 
         {% for message in app.flashes('success') %}
-            <div class="updateMessageSuccess">
+            <div id="updateMessageSuccess">
                 {{ message }}
             </div>
         {% endfor %}
@@ -47,7 +47,6 @@
                 <a class="myProfileDeconnexionButton" href = "{{ path('app_logout') }}">Déconnexion</a>
             </div>
         </div>
-        <div class="blankMyProfile"></div>
     </div>
 
 {% endblock %}
