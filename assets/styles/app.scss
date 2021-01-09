@@ -93,19 +93,13 @@ body {
     cursor: pointer;
     font-size: 1rem;
 }
-.LoginSubmitButton:hover {
-    background-color: hsl(129, 87%, 26%);
-}
+
 .containerAuthButtons {
     display: flex;
     flex-direction: column;
     margin-bottom: 50px;
 }
 
-.homepageLogin button:hover {
-    background-color: hsl(129, 87%, 26%);
-    cursor: pointer;
-}
 .submitConnexion {
     background-color: hsl(128, 56%, 52%);
     font-family: "Excellence" ,impact , helvetica , arial, sans-serif;
@@ -845,9 +839,6 @@ body {
     border: none;
     border-radius: 10px;
     padding: 10px 115px;
-}
-.searchFormUserButton:hover {
-    background-color: hsl(129, 87%, 26%);
 }
 
 .resultSearch {
