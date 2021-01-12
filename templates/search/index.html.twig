@@ -28,7 +28,7 @@
 
             {% for user in users %}
                 {% set user = random(users) %}
-                <a class="containerPlayers" href="{{ path('user_show', {id: user.id}) }}">
+                <a class="containerPlayers" href="{{ path('user_show', {'slug': user.slug}) }}">
                     <div class='players'>
                         {% if user.avatar == null %}
                             <img class='playerPhoto' src="https://picsum.photos/100" alt="avatar">
