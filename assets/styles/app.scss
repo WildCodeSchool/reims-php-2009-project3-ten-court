@@ -75,12 +75,10 @@ body {
     align-self: center;
 }
 .LoginPasswordInput, .LoginEmailInput {
-    -webkit-box-shadow: 1px -1px 24px -10px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px -1px 24px -10px rgba(0,0,0,0.75);
-    box-shadow: 1px -1px 24px -10px rgba(0,0,0,0.75);
     border: none;
     border-radius: 10px;
     padding: 10px;
+    border: solid 1px hsl(128, 56%, 52%);
 }
 .loginLabelPassword, .loginLabelEmail {
     margin-top: 20px;
@@ -231,7 +229,7 @@ body {
     font-size: 1rem;
     border: none;
     border-radius: 10px;
-    padding: 10px 100px;
+    padding: 10px 90px;
 }
 #registration_form_save:hover {
     background-color: hsl(129, 87%, 26%);
@@ -566,6 +564,13 @@ label {
 #search_user_level {
     border-radius: 10px;
     padding: 10px 120px;
+    text-align: center;
+}
+#search_user_min, #search_user_max {
+    border: none;
+    appearance: none;
+    border-radius: 10px;
+    padding: 10px 85px;
     text-align: center;
 }
 #search_user_sex {
