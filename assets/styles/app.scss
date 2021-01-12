@@ -269,15 +269,16 @@ body {
     font-size: 2rem;
     margin-bottom: 40px;
 }
-.myProfileEmailTitle, .myProfileBirthdateTitle, .myProfilePhoneTitle, .myProfileAddressTitle {
+
+.myProfileEmailTitle, .myProfileBirthdateTitle, .myProfilePhoneTitle, .myProfileAddressTitle, .myProfileFirstnameTitle, .myProfileNameTitle {
     font-weight: bold;
     font-size: 1.2rem;
 }
-.myProfileEmail, .myProfileBirthday, .myProfilePhone, .myProfileAdress {
+.myProfileEmail, .myProfileBirthday, .myProfilePhone, .myProfileAdress, .myProfileFirstname, .myProfileName {
     text-align: center;
     margin-bottom: 10px;
 }
-.myProfileEmailValue, .myProfileBirthdayValue, .myProfilePhoneValue, .myProfileAddressValue {
+.myProfileEmailValue, .myProfileBirthdayValue, .myProfilePhoneValue, .myProfileAddressValue, .myProfileFirstnameValue, .myProfileNameValue {
     padding: 10px;
     background-color: hsl(120, 100%, 97%);
 }
@@ -309,6 +310,9 @@ body {
     text-decoration: none;
     font-size: 1rem;
     color: white;
+}
+.blankMyProfilePage {
+    height: 40px;
 }
 
 //EDIT USER
@@ -572,6 +576,7 @@ body {
     border-radius: 10px;
     padding: 10px 130px;
 }
+
 
 //USER SHOW PART
 .backgroundShowUser {
