@@ -115,7 +115,7 @@ class RegistrationFormType extends AbstractType
                 'format' => 'dd-MM-yyyy'
             ])
             ->add('avatar', FileType::class, [
-                'label' => 'Avatar (jpg, jpeg, png, webp)',
+                'label' => 'Photo profile (jpg, jpeg, png, webp)',
                 'required' => false,
                 'constraints' => [
                     new File([
