@@ -14,7 +14,13 @@
         <h1 class="myProfileTitle">Mon compte</h1>
 
         <div class="MyProfile">
-            <img class="userPictureProfileShow myProfilePicture"src="https://picsum.photos/100"/>
+            {% if user.avatar == NULL  %}
+                <img class='userPictureProfileShow myProfilePicture' src="https://picsum.photos/100" alt="avatar">
+            {% else %}
+
+                <img class="userPictureProfileShow myProfilePicture" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
+
+            {% endif %}
             <div class="myProfilePseudo">
                 {{ user.pseudo}}
             </div>
@@ -22,6 +28,18 @@
                 <p class="myProfileEmailTitle">Email</p>
                 <p class="myProfileEmailValue">{{ user.email}}</p>
             </div>
+            {% if user.firstname %}
+            <div class="myProfileFirstname">
+                <p class="myProfileFirstnameTitle">Prénom</p>
+                <p class="myProfileFirstnameValue">{{user.firstname}}</p>
+            </div>
+            {% endif %}
+            {% if user.name %}
+            <div class="myProfileName">
+                <p class="myProfileNameTitle">Nom</p>
+                <p class="myProfileNameValue">{{user.name}}</p>
+            </div>
+            {% endif %}
             <div class="myProfileBirthday">
                 <p class="myProfileBirthdateTitle">Date de naissance</p>
                 <p class="myProfileBirthdayValue">{{ user.birthdate|date('d-m-Y') }}</p>
@@ -47,6 +65,7 @@
                 <a class="myProfileDeconnexionButton" href = "{{ path('app_logout') }}">Déconnexion</a>
             </div>
         </div>
+        <div class="blankMyProfilePage"></div>
     </div>
 
 {% endblock %}

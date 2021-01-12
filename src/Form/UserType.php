@@ -45,9 +45,11 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('address', TextType::class, [
+                'required' => false,
                 'label' => 'Adresse postale',
             ])
             ->add('postalcode', TextType::class, [
+                'required' => false,
                 'label' => 'Code postale',
             ])
             ->add('city', TextType::class, [
@@ -63,7 +65,7 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('avatar', FileType::class, [
-                'label' => 'Avatar (jpg, jpeg, png, webp)',
+                'label' => 'Photo profile (jpg, jpeg, png, webp)',
                 'required' => false,
                 'constraints' => [
                     new File([
@@ -76,6 +78,17 @@ class UserType extends AbstractType
                         'mimeTypesMessage' => 'Seuls les fichiers jpg, jpeg, png et webp sont acceptés',
                     ])
                 ],
+            ])
+            ->add('firstname', TextType::class, [
+                'label' => 'Prénom',
+                'required' => false,
+            ])
+            ->add('name', TextType::class, [
+                'label' => 'Nom',
+                'required' => false,
+            ])
+            ->add('update', SubmitType::class, [
+                'label' => 'Sauvegarder',
             ]);
             $builder->get('avatar')->addModelTransformer(new CallBackTransformer(
                 function ($avatar) {
@@ -84,10 +97,7 @@ class UserType extends AbstractType
                 function ($avatar) {
                     return $avatar;
                 }
-            ))
-            ->add('update', SubmitType::class, [
-                'label' => 'Sauvegarder',
-            ]);
+            ));
 
         ;
     }

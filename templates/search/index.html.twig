@@ -27,17 +27,23 @@
             <h2 class='resultSearch'>Résultat de votre Recherche</h2> 
 
             {% for user in users %}
+                {% set user = random(users) %}
                 <a class="containerPlayers" href="{{ path('user_show', {'slug': user.slug}) }}">
                     <div class='players'>
-                        <img class='playerPhoto' src="https://picsum.photos/100" alt="avatar">
+                        {% if user.avatar == null %}
+                            <img class='playerPhoto' src="https://picsum.photos/100" alt="avatar">
+                        {% else %}
+
+                            <img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
+
+                        {% endif %}
                         <div class="container_1_players">
                             <p class='playerItem playerPseudo'>{{user.pseudo}}</p>
                             <p class='playerItem playerSex'>{{user.sex}}</p>
                             <p class='playerItem playerAge'>{{user.age}} ans</p>
                             <p class='playerItem playerLevel'>{{user.level}}</p>
                         </div>
-                    </div>
-                </a>
+                    </a>
             {% endfor %}
         </div>
         <div class="blankShowUserPage"></div>
