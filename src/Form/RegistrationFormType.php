@@ -9,6 +9,9 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -17,6 +20,7 @@ use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+
 
 class RegistrationFormType extends AbstractType
 {
@@ -110,9 +114,41 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Date de naissance',
                 'format' => 'dd-MM-yyyy'
             ])
+
+            ->add('pseudo')
+            ->add('sex')
+            ->add('level')
+            ->add('city')
+            ->add('birthdate')
+            ->add('avatar', FileType::class, [
+                'label' => 'Avatar (jpg, jpeg, png, webp)',
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '2m',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                            'image/webp'
+                        ],
+                        'mimeTypesMessage' => 'Seuls les fichiers jpg, jpeg, png et webp sont acceptés',
+                    ])
+                ],
+            ]);
+            $builder->get('avatar')->addModelTransformer(new CallBackTransformer(
+                function ($avatar) {
+                    return null;
+                },
+                function ($avatar) {
+                    return $avatar;
+                }
+            ))
+
+
             ->add('save', SubmitType::class, [
                 'label' => 'S\'inscrire',
             ]);
+
 
         ;
     }
