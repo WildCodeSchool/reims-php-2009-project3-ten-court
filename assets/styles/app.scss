@@ -370,7 +370,7 @@ body {
     text-align: center;
 }
 #user_email, #user_pseudo, #user_sex, #user_level, #user_address,
-#user_postalcode, #user_city, #user_description, #user_phone {
+#user_postalcode, #user_city, #user_description, #user_phone, #user_firstname, #user_name {
     text-align: center;
     width: 95%;
 }
@@ -400,7 +400,7 @@ body {
     width: 95%;
 }
 
-#user_email, #user_pseudo {
+#user_email, #user_pseudo, #user_firstname, #user_name {
     padding: 10px 50px;
     border-radius: 10px;
     border: none;
