@@ -5,8 +5,11 @@
 {% block body %}
     <div class="backgroundShowUser">
         <div class="containerUserProfileShow">
-        <img class="userPictureProfileShow" src="{{ asset('/build/uploads/' ~ user.avatar) }}" />
-            <p class="userPseudoShow">{{ user.pseudo }}</p>
+            <img class="userPictureProfileShow" src="{{ asset('/build/uploads/' ~ user.avatar) }}"/>
+            <div class="userPseudoShow">
+                <p class="userPseudoShowItem">{{ user.pseudo }}</p>
+                <p class="userSexShowItem">{{ user.sex }}</p>
+            </div>
             <div class="userDescriptionShow">
                 <p>{{user.description}}</p>
             </div>

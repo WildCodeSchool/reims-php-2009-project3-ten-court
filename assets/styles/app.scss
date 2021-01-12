@@ -293,7 +293,7 @@ body {
 
 .playerPseudo {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.3rem;
     color: HSL(128, 56%, 52%);
 }
 
@@ -342,12 +342,18 @@ body {
 
 .userPseudoShow {
     display: flex;
-    align-items: center;
-    grid-area: pseudo;
-    font-weight: bold;
-    font-size: 2rem;
-    display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    grid-area: pseudo;
+}
+.userPseudoShowItem {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.userSexShowItem {
+    font-weight: light;
+    font-size: 1rem;
 }
 
 .userDescriptionShow {
@@ -366,7 +372,7 @@ body {
     border-radius: 5px;
 }
 .userInformationItem {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     color: white;
     align-self: center;
     margin: 0.5rem;
@@ -381,7 +387,11 @@ body {
 .userContactPhone, .userContactMail, .userContactAddress {
     padding: 10px 0;
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1rem;
+}
+
+.userPhoneShow, .userEmailShow, .userAddressShow, .userContactItem {
+    font-size: 0.9rem;
 }
 
 .userPhoneShow {
@@ -410,7 +420,6 @@ body {
 
 .userContactItem {
     font-weight: bold;
-    
 }
 
 .userContactPhone, .userContactMail, .userContactAddress {

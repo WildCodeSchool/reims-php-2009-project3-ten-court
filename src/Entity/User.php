@@ -87,7 +87,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $avatar;
+    private ?string $avatar;
     
     public function getId(): ?int
     {
@@ -285,7 +285,7 @@ class User implements UserInterface
         $dateInterval = $this->birthdate->diff($date);
 
         return $dateInterval->y;
-    } 
+    }
 
     public function getAvatar(): ?string
     {
@@ -294,7 +294,7 @@ class User implements UserInterface
 
     public function setAvatar(?string $avatar): self
     {
-    $this->avatar = $avatar;
+        $this->avatar = $avatar;
 
         return $this;
     }
