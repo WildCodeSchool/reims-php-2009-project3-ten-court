@@ -32,7 +32,7 @@
                         {% if user.avatar == null %}
                             <img class='playerPhoto' src="https://picsum.photos/100" alt="avatar">
                         {% else %}
-                            <img class="playerPhoto" src="{{ asset('/build/uploads/' ~ app.user.avatar) }}"/>
+                            <img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
                         {% endif %}
                         <div class="container_1_players">
                             <p class='playerItem playerPseudo'>{{user.pseudo}}</p>
