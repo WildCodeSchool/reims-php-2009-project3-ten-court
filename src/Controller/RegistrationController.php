@@ -48,19 +48,16 @@ class RegistrationController extends AbstractController
             if ($avatarFile) {
                 $fileName = $fileUploader->upload($avatarFile);
                 $user->setAvatar($fileName);
-
-
-
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
-        // do anything else you need here, like send an email
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($user);
+                $entityManager->flush();
+                 // do anything else you need here, like send an email
 
                 return $guardHandler->authenticateUserAndHandleSuccess(
-                $user,
-                $request,
-                $authenticator,
-                'main' // firewall name in security.yaml
+                    $user,
+                    $request,
+                    $authenticator,
+                    'main' // firewall name in security.yaml
                 );
             }
         }
