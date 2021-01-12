@@ -7,6 +7,9 @@ use App\Form\UserType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\UserRepository;
+use App\Service\FileUploader;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
@@ -20,8 +23,8 @@ class UserController extends AbstractController
     public function index(): Response
     {
         $users = $this->getDoctrine()
-        ->getRepository(User::class)
-        ->findAll();
+            ->getRepository(User::class)
+            ->findAll();
 
         return $this->render('user/index.html.twig', [
             'users' => $users,
@@ -31,23 +34,28 @@ class UserController extends AbstractController
     /**
      * @Route("/new", name="new")
      */
-    public function new(Request $request): Response
+    public function new(Request $request, FileUploader $fileUploader): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
+            $avatarFile = $form->get('avatar')->getData();
+            if ($avatarFile) {
+                $fileName = $fileUploader->upload($avatarFile);
+                $user->setAvatar($fileName);
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($user);
+                $entityManager->flush();
 
-            return $this->redirectToRoute('user_index');
+                return $this->redirectToRoute('user_index');
+            }
+
+            return $this->render('user/new.html.twig', [
+                "form" => $form->createView(),
+            ]);
         }
-
-        return $this->render('user/new.html.twig', [
-            "form" => $form->createView(),
-        ]);
     }
 
     /**

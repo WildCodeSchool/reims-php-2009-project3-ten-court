@@ -3,13 +3,15 @@
 namespace App\Form;
 
 use App\Entity\User;
-use Amp\Internal\Placeholder;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Form\CallbackTransformer;
 
 class UserType extends AbstractType
 {
@@ -43,6 +45,30 @@ class UserType extends AbstractType
                     'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
                 ]
             ])
+            ->add('avatar', FileType::class, [
+                'label' => 'Avatar (jpg, jpeg, png, webp)',
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '2m',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                            'image/webp'
+                        ],
+                        'mimeTypesMessage' => 'Seuls les fichiers jpg, jpeg, png et webp sont acceptés',
+                    ])
+                ],
+            ]);
+            $builder->get('avatar')->addModelTransformer(new CallBackTransformer(
+                function ($avatar) {
+                    return null;
+                },
+                function ($avatar) {
+                    return $avatar;
+                }
+            ))
+
         ;
     }
 

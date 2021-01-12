@@ -336,6 +336,8 @@ body {
 }
 
 .userPictureProfileShow {
+    height : 100px ;
+    width : 100px ;
     grid-area: picture;
     border-radius: 50%;
 }
@@ -504,7 +506,35 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+
+.players .playerphoto {
+    height: 120px;
+    width: 120px;
+}
+
+select {
+    padding: 5px 8px;
+    border: none;
+    box-shadow: none;
+    background-color: hsla(348, 2%, 93%, 0.92);
+    background-image: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+label {
+    display: inline-block;
+    min-width: 50px;
+    text-align: left;
+    margin-right: 1rem;
+}
+.row {
+    padding: 0.5rem;
+}
+
 .containerSearchUsers {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
