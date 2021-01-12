@@ -76,6 +76,9 @@ class UserType extends AbstractType
                         'mimeTypesMessage' => 'Seuls les fichiers jpg, jpeg, png et webp sont acceptés',
                     ])
                 ],
+            ])
+            ->add('update', SubmitType::class, [
+                'label' => 'Sauvegarder',
             ]);
             $builder->get('avatar')->addModelTransformer(new CallBackTransformer(
                 function ($avatar) {
@@ -84,10 +87,7 @@ class UserType extends AbstractType
                 function ($avatar) {
                     return $avatar;
                 }
-            ))
-            ->add('update', SubmitType::class, [
-                'label' => 'Sauvegarder',
-            ]);
+            ));
 
         ;
     }
