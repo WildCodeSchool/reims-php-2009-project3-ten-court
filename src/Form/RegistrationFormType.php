@@ -114,12 +114,6 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Date de naissance',
                 'format' => 'dd-MM-yyyy'
             ])
-
-            ->add('pseudo')
-            ->add('sex')
-            ->add('level')
-            ->add('city')
-            ->add('birthdate')
             ->add('avatar', FileType::class, [
                 'label' => 'Avatar (jpg, jpeg, png, webp)',
                 'required' => false,
@@ -132,8 +126,12 @@ class RegistrationFormType extends AbstractType
                             'image/webp'
                         ],
                         'mimeTypesMessage' => 'Seuls les fichiers jpg, jpeg, png et webp sont acceptés',
-                    ])
-                ],
+                        ])
+                    ],
+                ]
+            )
+            ->add('save', SubmitType::class, [
+                'label' => 'S\'inscrire',
             ]);
             $builder->get('avatar')->addModelTransformer(new CallBackTransformer(
                 function ($avatar) {
@@ -142,12 +140,9 @@ class RegistrationFormType extends AbstractType
                 function ($avatar) {
                     return $avatar;
                 }
-            ))
+            ));
 
 
-            ->add('save', SubmitType::class, [
-                'label' => 'S\'inscrire',
-            ]);
 
 
         ;

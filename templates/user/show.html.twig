@@ -5,7 +5,11 @@
 {% block body %}
     <div class="backgroundShowUser">
         <div class="containerUserProfileShow">
-            <img class="userPictureProfileShow" src="{{ asset('/build/uploads/' ~ user.avatar) }}"/>
+            {% if not user.avatar %}
+                <img class='playerPhoto' src="https://picsum.photos/100" alt="avatar">
+            {% else %}
+                <img class="playerPhoto" src="{{ asset('/build/uploads/' ~ app.user.avatar) }}"/>
+            {% endif %}
             <div class="userPseudoShow">
                 <p class="userPseudoShowItem">{{ user.pseudo }}</p>
                 <p class="userSexShowItem">{{ user.sex }}</p>
