@@ -44,7 +44,7 @@ class UserController extends AbstractController
                 $fileName = $fileUploader->upload($avatarFile);
                 $user->setAvatar($fileName);
                 $entityManager = $this->getDoctrine()->getManager();
-                $slug = $slugify->generate($user->getPseudo());
+                $slug = $slugify->generate($user->getPseudo() ?? '');
                 $user->setSlug($slug);
                 $entityManager->persist($user);
                 $entityManager->flush();
