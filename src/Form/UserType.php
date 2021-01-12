@@ -11,6 +11,9 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Form\CallbackTransformer;
 
 class UserType extends AbstractType
 {
@@ -59,9 +62,33 @@ class UserType extends AbstractType
                     'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
                 ]
             ])
+            ->add('avatar', FileType::class, [
+                'label' => 'Avatar (jpg, jpeg, png, webp)',
+                'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '2m',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                            'image/webp'
+                        ],
+                        'mimeTypesMessage' => 'Seuls les fichiers jpg, jpeg, png et webp sont acceptés',
+                    ])
+                ],
+            ]);
+            $builder->get('avatar')->addModelTransformer(new CallBackTransformer(
+                function ($avatar) {
+                    return null;
+                },
+                function ($avatar) {
+                    return $avatar;
+                }
+            ))
             ->add('update', SubmitType::class, [
                 'label' => 'Sauvegarder',
             ]);
+
         ;
     }
 
