@@ -45,9 +45,11 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('address', TextType::class, [
+                'required' => false,
                 'label' => 'Adresse postale',
             ])
             ->add('postalcode', TextType::class, [
+                'required' => false,
                 'label' => 'Code postale',
             ])
             ->add('city', TextType::class, [
@@ -63,7 +65,7 @@ class UserType extends AbstractType
                 ]
             ])
             ->add('avatar', FileType::class, [
-                'label' => 'Avatar (jpg, jpeg, png, webp)',
+                'label' => 'Photo profile (jpg, jpeg, png, webp)',
                 'required' => false,
                 'constraints' => [
                     new File([
