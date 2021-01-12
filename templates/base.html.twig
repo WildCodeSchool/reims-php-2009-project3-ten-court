@@ -22,12 +22,13 @@
             <li class="addAnnounce"><img class="logoNavBar" src="{{ asset('build/images/navbar/add.png') }}"></li>
             <a href="{{ path('search_users') }}"><li class="search"><img class="logoNavBar" src="{{ asset('build/images/navbar/search.png') }}"></li></a>
             <li class="location"><img class="logoNavBar" src="{{ asset('build/images/navbar/location.png') }}"></li>
-            {# <a href="{{ path('TODO') }}"> #}<li class="userDirection"><img class="logoNavBar" src="{{ asset('build/images/navbar/profile.png') }}"></li>{# </a> #}
+            <a href="{{ path('user_profile', {'id': app.user.id}) }}"><li class="userDirection"><img class="logoNavBar" src="{{ asset('build/images/navbar/profile.png') }}"></li></a>
         </ul>
     </nav>
 {% endblock %}
 
 {% block javascripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     {{ encore_entry_script_tags('app') }}
 {% endblock %}
 </body>
