@@ -27,7 +27,7 @@
             <h2 class='resultSearch'>Résultat de votre Recherche</h2> 
 
             {% for user in users %}
-                <a class="containerPlayers" href="{{ path('user_show', {id: user.id}) }}">
+                <a class="containerPlayers" href="{{ path('user_show', {'slug': user.slug}) }}">
                     <div class='players'>
                         <img class='playerPhoto' src="https://picsum.photos/100" alt="avatar">
                         <div class="container_1_players">
