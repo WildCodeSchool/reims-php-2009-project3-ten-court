@@ -88,6 +88,11 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private ?string $avatar;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private ?string $slug;
     
     public function getId(): ?int
     {
@@ -295,6 +300,18 @@ class User implements UserInterface
     public function setAvatar(?string $avatar): self
     {
         $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
