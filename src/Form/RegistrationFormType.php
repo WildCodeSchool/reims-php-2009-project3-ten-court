@@ -21,7 +21,6 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
-
 class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -114,37 +113,9 @@ class RegistrationFormType extends AbstractType
                 'label' => 'Date de naissance',
                 'format' => 'dd-MM-yyyy'
             ])
-            ->add('avatar', FileType::class, [
-                'label' => 'Avatar (jpg, jpeg, png, webp)',
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '2m',
-                        'mimeTypes' => [
-                            'image/jpeg',
-                            'image/png',
-                            'image/webp'
-                        ],
-                        'mimeTypesMessage' => 'Seuls les fichiers jpg, jpeg, png et webp sont acceptés',
-                        ])
-                    ],
-                ]
-            )
             ->add('save', SubmitType::class, [
                 'label' => 'S\'inscrire',
             ]);
-            $builder->get('avatar')->addModelTransformer(new CallBackTransformer(
-                function ($avatar) {
-                    return null;
-                },
-                function ($avatar) {
-                    return $avatar;
-                }
-            ));
-
-
-
-
         ;
     }
 

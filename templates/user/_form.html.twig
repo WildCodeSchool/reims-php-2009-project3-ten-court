@@ -11,7 +11,7 @@
          <div class="registrationItemForm">
             {{ form_row(editUserForm.name) }}
         </div>
-        <div class="registrationItemForm">
+        <div class="editionItemForm">
             {{ form_row(editUserForm.pseudo) }}
         </div>
         <div class="editionItemForm">
@@ -37,6 +37,9 @@
         </div>
         <div class="editionItemForm">
             {{ form_row(editUserForm.description,{ 'attr': {'cols': '30', 'rows': '10' } }) }}
+        </div>
+        <div class="editionItemForm">
+            {{ form_row(editUserForm.avatar) }}
         </div>
         <div class="editionItemForm">
             {{ form_row(editUserForm.update) }}
