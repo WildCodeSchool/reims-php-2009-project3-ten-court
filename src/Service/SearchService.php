@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Data;
+namespace App\Service;
 
 class SearchService
 {
