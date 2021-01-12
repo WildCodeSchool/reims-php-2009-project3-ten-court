@@ -14,10 +14,12 @@
         <h1 class="myProfileTitle">Mon compte</h1>
 
         <div class="MyProfile">
-            {% if not user.avatar %}
+            {% if user.avatar == NULL  %}
                 <img class='userPictureProfileShow myProfilePicture' src="https://picsum.photos/100" alt="avatar">
             {% else %}
-                <img class="userPictureProfileShow myProfilePicture" src="{{ asset('/build/uploads/' ~ user.avatar) }}"/>
+
+                <img class="userPictureProfileShow myProfilePicture" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
+
             {% endif %}
             <div class="myProfilePseudo">
                 {{ user.pseudo}}

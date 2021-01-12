@@ -9,10 +9,12 @@
         {% for user in users %}
             <a class="containerPlayers" href="{{ path('user_show', {id: user.id}) }}">
                 <div class='players'>
-                {% if not user.avatar %}
+                {% if user.avatar == NULL %}
                     <img class='playerPhoto' src="https://picsum.photos/100" alt="avatar">
                 {% else %}
-                    <img class="playerPhoto" src="{{ asset('/build/uploads/' ~ user.avatar) }}"/>
+                
+                <img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
+
                 {% endif %}
                     <div class="container_1_players">
                         <p class='playerItem playerPseudo'>{{user.pseudo}}</p>
