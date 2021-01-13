@@ -44,10 +44,12 @@
                 <p class="myProfileBirthdateTitle">Date de naissance</p>
                 <p class="myProfileBirthdayValue">{{ user.birthdate|date('d-m-Y') }}</p>
             </div>
+            {% if user.phone %}
             <div class="myProfilePhone">
                 <p class="myProfilePhoneTitle">Numero de téléphone</p>
                 <p class="myProfilePhoneValue">{{ user.phone }}</p>
             </div>
+            {% endif %}
             <div class="myProfileAdress">
             <p class="myProfileAddressTitle">Adresse postale</p>
                 <p class="myProfileAddressValue">
