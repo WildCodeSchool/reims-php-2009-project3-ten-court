@@ -37,16 +37,11 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $avatarFile = $form->get('avatar')->getData();
-            if ($avatarFile) {
-                $fileName = $fileUploader->upload($avatarFile);
-                $user->setAvatar($fileName);
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($user);
                 $entityManager->flush();
 
                 return $this->redirectToRoute('user_index');
-            }
         }
 
         return $this->render('user/new.html.twig', [
@@ -78,17 +73,27 @@ class UserController extends AbstractController
     /**
      * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, User $user): Response
+    public function edit(Request $request, User $user, FileUploader $fileUploader): Response
     {
+        /* $user->setAvatar(new File($this->getParameter('image_directory').'/'.$user->getAvatar())); */
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
+            $avatarFile = $form->get('avatar')->getData();
+            if ($avatarFile) {
+                $fileName = $fileUploader->upload($avatarFile);
+                $user->setAvatar($fileName);
+
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($user);
+                $entityManager->flush();
+            }
             $this->getDoctrine()->getManager()->flush();
-            $this->addFlash(
-                'success',
-                'Profile mis à jour avec succès !'
-            );
+
+                $this->addFlash(
+                    'success',
+                    'Profile mis à jour avec succès !'
+                );
             return $this->redirectToRoute('user_profile', ['id' => $user->getId()]);
         }
 
