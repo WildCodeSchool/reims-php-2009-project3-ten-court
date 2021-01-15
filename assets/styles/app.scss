@@ -786,8 +786,10 @@ body {
     height: 120px;
     width: 120px;
 }
-
-select {
+.searchFormRow select {
+    text-align: center;
+}
+.searchFormRow select {
     padding: 5px 8px;
     border: none;
     box-shadow: none;
@@ -798,7 +800,7 @@ select {
     appearance: none;
     cursor: pointer;
 }
-label {
+.searchFormRow label {
     display: inline-block;
     min-width: 50px;
     text-align: left;
