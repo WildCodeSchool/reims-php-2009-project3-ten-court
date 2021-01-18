@@ -101,7 +101,7 @@ class UserController extends AbstractController
                     'success',
                     'Profile mis à jour avec succès !'
                 );
-            return $this->redirectToRoute('user_profile', ['id' => $user->getId()]);
+            return $this->redirectToRoute('user_profile', ['slug' => $user->getSlug()]);
         }
 
 
