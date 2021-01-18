@@ -12,6 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
 use App\Service\FileUploader;
+use App\Service\Slugify;
 
 class RegistrationController extends AbstractController
 {
@@ -23,7 +24,8 @@ class RegistrationController extends AbstractController
         UserPasswordEncoderInterface $passwordEncoder,
         GuardAuthenticatorHandler $guardHandler,
         LoginFormAuthenticator $authenticator,
-        FileUploader $fileUploader
+        FileUploader $fileUploader,
+        Slugify $slugify
     ): ?Response {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -43,6 +45,8 @@ class RegistrationController extends AbstractController
             $user->setLevel($form->get('level')->getData());
             $user->setBirthdate($form->get('birthdate')->getData());
             $user->setRoles(['ROLE_CONTRIBUTOR']);
+            $slug = $slugify->generate($user->getPseudo() ?? '');
+            $user->setSlug($slug);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
