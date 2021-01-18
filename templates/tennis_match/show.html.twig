@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TennisMatch{% endblock %}
+
+{% block body %}
+    <h1>TennisMatch</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tennis_match.id }}</td>
+            </tr>
+            <tr>
+                <th>StartHour</th>
+                <td>{{ tennis_match.startHour ? tennis_match.startHour|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>EndHour</th>
+                <td>{{ tennis_match.endHour ? tennis_match.endHour|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ tennis_match.name }}</td>
+            </tr>
+            <tr>
+                <th>Adress</th>
+                <td>{{ tennis_match.adress }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ tennis_match.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('tennis_match_index') }}">back to list</a>
+
+    <a href="{{ path('tennis_match_edit', {'id': tennis_match.id}) }}">edit</a>
+
+    {{ include('tennis_match/_delete_form.html.twig') }}
+{% endblock %}
