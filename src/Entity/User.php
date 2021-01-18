@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use phpDocumentor\Reflection\Types\Self_;
@@ -104,6 +106,28 @@ class User implements UserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private ?string $lastname;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, inversedBy="friends")
+     */
+    private $friend;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="friend")
+     */
+    private $friends;
+
+    /**
+     * @ORM\OneToMany(targetEntity=TennisMatch::class, mappedBy="organizer", orphanRemoval=true)
+     */
+    private $tennisMatches;
+
+    public function __construct()
+    {
+        $this->friend = new ArrayCollection();
+        $this->friends = new ArrayCollection();
+        $this->tennisMatches = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -347,6 +371,68 @@ class User implements UserInterface
     public function setLastname(?string $lastname): self
     {
         $this->lastname = $lastname;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|self[]
+     */
+    public function getFriend(): Collection
+    {
+        return $this->friend;
+    }
+
+    public function addFriend(self $friend): self
+    {
+        if (!$this->friend->contains($friend)) {
+            $this->friend[] = $friend;
+        }
+
+        return $this;
+    }
+
+    public function removeFriend(self $friend): self
+    {
+        $this->friend->removeElement($friend);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|self[]
+     */
+    public function getFriends(): Collection
+    {
+        return $this->friends;
+    }
+
+    /**
+     * @return Collection|TennisMatch[]
+     */
+    public function getTennisMatches(): Collection
+    {
+        return $this->tennisMatches;
+    }
+
+    public function addTennisMatch(TennisMatch $tennisMatch): self
+    {
+        if (!$this->tennisMatches->contains($tennisMatch)) {
+            $this->tennisMatches[] = $tennisMatch;
+            $tennisMatch->setOrganizer($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTennisMatch(TennisMatch $tennisMatch): self
+    {
+        if ($this->tennisMatches->removeElement($tennisMatch)) {
+            // set the owning side to null (unless already changed)
+            if ($tennisMatch->getOrganizer() === $this) {
+                $tennisMatch->setOrganizer(null);
+            }
+        }
 
         return $this;
     }
