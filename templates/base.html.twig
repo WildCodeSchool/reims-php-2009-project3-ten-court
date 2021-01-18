@@ -19,8 +19,8 @@
 {% block navbar %}
     <nav class="containerNavbar">
         <ul class="navbar">
-            <li class="addAnnounce"><img class="logoNavBar" src="{{ asset('build/images/navbar/add.png') }}"></li>
             <a href="{{ path('search_users') }}"><li class="search"><img class="logoNavBar" src="{{ asset('build/images/navbar/search.png') }}"></li></a>
+            <a href="{{ path('tennis_match_new') }}"><li class="addAnnounce"><img class="logoNavBar" src="{{ asset('build/images/navbar/add.png') }}"></li></a>
             <li class="location"><img class="logoNavBar" src="{{ asset('build/images/navbar/location.png') }}"></li>
             <a href="{{ path('user_profile', {'slug': app.user.slug}) }}"><li class="userDirection"><img class="logoNavBar" src="{{ asset('build/images/navbar/profile.png') }}"></li></a>
         </ul>
