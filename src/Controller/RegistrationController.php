@@ -43,15 +43,10 @@ class RegistrationController extends AbstractController
             $user->setLevel($form->get('level')->getData());
             $user->setBirthdate($form->get('birthdate')->getData());
             $user->setRoles(['ROLE_CONTRIBUTOR']);
-            $user->setAvatar($form->get('avatar')->getData());
-            $avatarFile = $form->get('avatar')->getData();
-            if ($avatarFile) {
-                $fileName = $fileUploader->upload($avatarFile);
-                $user->setAvatar($fileName);
-                $entityManager = $this->getDoctrine()->getManager();
-                $entityManager->persist($user);
-                $entityManager->flush();
-                 // do anything else you need here, like send an email
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+                // do anything else you need here, like send an email
 
                 return $guardHandler->authenticateUserAndHandleSuccess(
                     $user,
@@ -59,7 +54,6 @@ class RegistrationController extends AbstractController
                     $authenticator,
                     'main' // firewall name in security.yaml
                 );
-            }
         }
 
         return $this->render('registration/register.html.twig', [

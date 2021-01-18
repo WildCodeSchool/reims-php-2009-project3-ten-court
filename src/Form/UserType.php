@@ -55,8 +55,12 @@ class UserType extends AbstractType
             ->add('city', TextType::class, [
                 'label' => 'Ville',
             ])
-            ->add('description', TextareaType::class)
+            ->add('description', TextareaType::class, [
+                'required' => false,
+                'label' => 'Description',
+            ])
             ->add('phone', TextType::class, [
+                'required' => false,
                 'label' => 'Telephone',
             ])
             ->add('birthdate', BirthdayType::class, [

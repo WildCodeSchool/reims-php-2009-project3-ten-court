@@ -25,7 +25,7 @@ class UserFixtures extends Fixture
         $slugify = new Slugify();
 
         //Generate Women Users
-        for ($i = 0; $i < 30; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             // Création d’un utilisateur de type “contributeur” (= auteur)
             $contributor = new User();
             $contributor->setEmail($faker->email);
@@ -55,7 +55,7 @@ class UserFixtures extends Fixture
         }
 
         //Generate Men Users
-        for ($i = 0; $i < 30; $i++) {
+        for ($i = 0; $i < 5; $i++) {
             // Création d’un utilisateur de type “contributeur” (= auteur)
             $contributor = new User();
             $contributor->setEmail($faker->email);

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Menu - Utilisateurs{% endblock %}
+{% block title %}Utilisateurs - TenCourt{% endblock %}
 
 {% block body %}
 <div class='containerSearch'>
@@ -9,12 +9,10 @@
         {% for user in users %}
             <a class="containerPlayers" href="{{ path('user_show', {'slug': user.slug}) }}">
                 <div class='players'>
-                {% if user.avatar == NULL %}
+                {% if user.avatar == null %}
                     <img class='playerPhoto' src="https://picsum.photos/100" alt="avatar">
                 {% else %}
-                
-                <img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
-
+                    <img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
                 {% endif %}
                     <div class="container_1_players">
                         <p class='playerItem playerPseudo'>{{user.pseudo}}</p>
