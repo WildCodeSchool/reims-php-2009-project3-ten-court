@@ -4,13 +4,15 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Service\Slugify;
+use App\Service\FileUploader;
 use App\Repository\UserRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
-use App\Service\FileUploader;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 /**
  * @Route("/users", name="user_")
@@ -30,7 +32,7 @@ class UserController extends AbstractController
     /**
      * @Route("/new", name="new", methods={"GET","POST"})
      */
-    public function new(Request $request, FileUploader $fileUploader): Response
+    public function new(Request $request, FileUploader $fileUploader, Slugify $slugify): Response
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
@@ -38,6 +40,8 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
                 $entityManager = $this->getDoctrine()->getManager();
+                $slug = $slugify->generate($user->getPseudo() ?? '');
+                $user->setSlug($slug);
                 $entityManager->persist($user);
                 $entityManager->flush();
 
@@ -51,7 +55,8 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/show/{id<^[0-9]+$>}", name="show", methods={"GET"})
+     * @Route("/show/{slug}", name="show", methods={"GET"})
+     * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
     public function show(User $user): Response
     {
@@ -61,7 +66,8 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="profile", methods={"GET"})
+     * @Route("/{slug}", name="profile", methods={"GET"})
+     * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
     public function myProfile(User $user): Response
     {
@@ -71,7 +77,8 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
+     * @Route("/{slug}/edit", name="edit", methods={"GET","POST"})
+     * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
     public function edit(Request $request, User $user, FileUploader $fileUploader): Response
     {
@@ -105,11 +112,12 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="delete", methods={"DELETE"})
+     * @Route("/{slug}", name="delete", methods={"DELETE"})
+     * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
     public function delete(Request $request, User $user): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $user->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
             $entityManager->flush();

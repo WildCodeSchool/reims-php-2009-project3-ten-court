@@ -5,6 +5,7 @@ namespace App\Entity;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
+use phpDocumentor\Reflection\Types\Self_;
 use Symfony\Component\Validator\Constraints\Date;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -90,6 +91,11 @@ class User implements UserInterface
     private ?string $avatar;
 
     /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private ?string $slug;
+    
+    /*
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private ?string $name;
@@ -305,6 +311,18 @@ class User implements UserInterface
     public function setAvatar(?string $avatar): self
     {
         $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

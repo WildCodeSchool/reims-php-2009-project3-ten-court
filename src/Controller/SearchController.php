@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Data\SearchService;
+use App\Service\SearchService;
 use App\Form\SearchUserType;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;

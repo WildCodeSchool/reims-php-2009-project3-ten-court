@@ -4,6 +4,7 @@ namespace App\DataFixtures;
 
 use DateTime;
 use App\Entity\User;
+use App\Service\Slugify;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Faker\Factory;
@@ -21,6 +22,7 @@ class UserFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr_FR');
+        $slugify = new Slugify();
 
         //Generate Women Users
         for ($i = 0; $i < 5; $i++) {
@@ -41,6 +43,8 @@ class UserFixtures extends Fixture
             $contributor->setCity($faker->city);
             $contributor->setPostalcode($faker->postcode);
             $contributor->setAddress($faker->streetAddress);
+            $slug = $slugify->generate($contributor->getPseudo() ?? '');
+            $contributor->setSlug($slug);
             $contributor->setDescription($faker->sentence(20));
             $contributor->setPassword($this->passwordEncoder->encodePassword(
                 $contributor,
@@ -69,6 +73,8 @@ class UserFixtures extends Fixture
             $contributor->setCity($faker->city);
             $contributor->setPostalcode($faker->postcode);
             $contributor->setAddress($faker->streetAddress);
+            $slug = $slugify->generate($contributor->getPseudo() ?? '');
+            $contributor->setSlug($slug);
             $contributor->setDescription($faker->sentence(20));
             $contributor->setPassword($this->passwordEncoder->encodePassword(
                 $contributor,
@@ -88,6 +94,7 @@ class UserFixtures extends Fixture
         $admin->setPhone('06 10 20 30 40');
         $admin->setBirthdate(new DateTime('1990/12/24'));
         $admin->setCity('Bakersfield');
+        $admin->setSlug('admin');
         $admin->setDescription('Je suis l\'administrateur de cette application');
         $admin->setPassword($this->passwordEncoder->encodePassword(
             $admin,
