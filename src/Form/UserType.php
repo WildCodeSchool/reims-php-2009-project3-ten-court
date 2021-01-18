@@ -87,7 +87,7 @@ class UserType extends AbstractType
                 'label' => 'Prénom',
                 'required' => false,
             ])
-            ->add('name', TextType::class, [
+            ->add('lastname', TextType::class, [
                 'label' => 'Nom',
                 'required' => false,
             ])
