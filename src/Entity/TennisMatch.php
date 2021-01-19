@@ -47,7 +47,7 @@ class TennisMatch
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tennisMatches")
      * @ORM\JoinColumn(nullable=false)
      */
-    private int $organizer;
+    private  $organizer;
 
     public function getId(): ?int
     {
@@ -119,7 +119,7 @@ class TennisMatch
         return $this->organizer;
     }
 
-    public function setOrganizer(?User $organizer): self
+    public function setOrganizer(User $organizer): self
     {
         $this->organizer = $organizer;
 

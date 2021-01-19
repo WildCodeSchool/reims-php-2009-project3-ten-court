@@ -15,8 +15,9 @@
                     <div class="searchFormRow">
                         {{ form_row(searchMatchForm.endHour, ) }}
                     </div>
-                    
+                    <div class="searchFormRow">
                     <a>{{ form_row(searchMatchForm.save)}}</a>
+                    </div>
                     <a class="backButtonShowAllUsers" href="{{ path('user_index') }}">Accueil</a>
                 </div>
         {{ form_end(searchMatchForm) }}

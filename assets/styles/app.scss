@@ -949,9 +949,16 @@ body {
     border-radius: 10px;
     padding:10px 105px 10px 115px;  
 }
-.containerMatchs {
+.searchMatchContainer {
     display: flex;
     flex-direction: column;
+
+}
+.containerMatchs {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    max-width: 375px;
     justify-content: center;
     background-color: hsla(348, 2%, 93%, 0.8);
     border-radius: 5px;
