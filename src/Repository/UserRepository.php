@@ -68,6 +68,11 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
             ->andWhere('DATE_DIFF(CURRENT_DATE(), u.birthdate)  <= :max*365.25')
             ->setParameter('max', $search->max);
         }
+        if (!empty($search->city)) {
+            $query = $query
+            ->andWhere('u.city = :city')
+            ->setParameter('city', $search->city);
+        }
 
         return $query->getQuery()->getResult();
     }

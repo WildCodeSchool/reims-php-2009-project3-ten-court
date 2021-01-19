@@ -852,6 +852,9 @@ body {
 .searchFormRow #search_user_max {
     border: solid 1px hsl(128, 56%, 52%);
 }
+.searchFormRow #search_user_city {
+    border: solid 1px hsl(128, 56%, 52%);
+}
 #search_user_level, #search_user_sex { 
     border: none;
     appearance: none;
@@ -867,6 +870,15 @@ body {
     border-radius: 10px;
     padding: 10px 85px;
     text-align: center;
+}
+#search_user_city {
+    border: none;
+    appearance: none;
+    border-radius: 10px;
+    padding: 10px 85px;
+    text-align: center;
+    margin-bottom: 15px;
+
 }
 #search_user_sex {
     border-radius: 10px;
