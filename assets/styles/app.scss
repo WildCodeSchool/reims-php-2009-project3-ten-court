@@ -91,7 +91,9 @@ body {
     color: white;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1rem;    
+    border: solid 2px rgb(13, 170, 26);      
+    font-weight : bold ;
 }
 .containerLoginForm .alert {
     text-align: center;
@@ -568,14 +570,15 @@ body {
 .backButtonShowAllUsers {
     margin-top: 10px;
     align-self: center;
-    background-color: hsl(128, 56%, 52%);
+    background-color: hsl(128, 56%, 52%);    
     color: white;
     cursor: pointer;
     font-size: 1.1rem;
     text-decoration: none;
-    border: none;
     border-radius: 10px;
     padding: 10px 130px;
+    border: solid 2px rgb(13, 170, 26);      
+    font-weight : bold ;
 }
 
 
@@ -893,7 +896,8 @@ body {
     cursor: pointer;
     font-size: 1rem;
     text-decoration: none;
-    border: none;
+    border: solid 2px rgb(13, 170, 26);      
+    font-weight : bold ;
     border-radius: 10px;
     padding: 10px 115px;
 }
