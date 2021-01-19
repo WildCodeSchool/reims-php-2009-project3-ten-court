@@ -4,44 +4,23 @@
 
 {% block body %}
    
-   
-   <h1>Trouver un match</h1>
-
-
     {{ form_start(searchMatchForm) }}
         {{ form_widget(searchMatchForm) }}
     {{ form_end(searchMatchForm) }}
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>StartHour</th>
-                <th>EndHour</th>
-                <th>Name</th>
-                <th>Adress</th>
-                <th>Description</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-        {% for match in matchs %}
-            <tr>
-                <td>{{ match.startHour ? match.startHour|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ match.endHour ? match.endHour|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ match.name }}</td>
-                <td>{{ match.adress }}</td>
-                <td>{{ match.description }}</td>
-{#                 <td>
-                    <a href="{{ path('tennis_match_show', {'id': tennis_match.id}) }}">show</a>
-                    <a href="{{ path('tennis_match_edit', {'id': tennis_match.id}) }}">edit</a>
-                </td> #}
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table> 
 
+    {# TODO: REMOVE ALL <br> and <b> to do the css #}
+
+    <div class="searchMatchContainer">
+        <h2 class='resultSearchMatch'>Résultat de votre Recherche</h2><br>      
+        {% for match in matchs %}
+            <div class="matchs">
+                <p><b>Date de début:</b> {{ match.startHour ? match.startHour|date('d-m-Y H:i:s') : '' }}</p>
+                <p><b>Date de fin:</b> {{ match.endHour ? match.endHour|date('d-m-Y H:i:s') : '' }}</p>
+                <p><b>Nom:</b> {{ match.name }}</p>
+                <p><b>Addresse:</b> {{ match.adress }}</p>
+                <p><b>Description:</b> {{ match.description }}</p><br>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
