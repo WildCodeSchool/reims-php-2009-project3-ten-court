@@ -111,7 +111,8 @@ class RegistrationFormType extends AbstractType
             ])
             ->add('birthdate', BirthdayType::class, [
                 'label' => 'Date de naissance',
-                'format' => 'dd-MM-yyyy'
+                'format' => 'dd-MM-yyyy',
+                'years' => range(2003,1940) , 
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'S\'inscrire',

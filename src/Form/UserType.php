@@ -66,7 +66,8 @@ class UserType extends AbstractType
             ->add('birthdate', BirthdayType::class, [
                 'placeholder' => [
                     'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
-                ]
+                ],
+                'years' => range(2003,1940) ,
             ])
             ->add('avatar', FileType::class, [
                 'label' => 'Photo profile (jpg, jpeg, png, webp)',
