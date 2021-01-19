@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
@@ -121,8 +122,15 @@ class UserController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($user);
             $entityManager->flush();
-        }
 
-        return $this->redirectToRoute('user_index');
+            $fileToDelete = __DIR__ . '/../../public/uploads/' . $user->getAvatar();
+            if (file_exists($fileToDelete)) {
+                unlink($fileToDelete);
+            }
+        }
+        $session = new Session();
+        $session->invalidate();
+
+        return $this->redirectToRoute('app_logout');
     }
 }

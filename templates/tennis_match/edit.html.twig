@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit TennisMatch{% endblock %}
+
+{% block body %}
+    <h1>Edit TennisMatch</h1>
+
+    {{ include('tennis_match/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('tennis_match_index') }}">back to list</a>
+
+    {{ include('tennis_match/_delete_form.html.twig') }}
+{% endblock %}
