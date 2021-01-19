@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Service\SearchService;
 use App\Form\SearchUserType;
+use App\Repository\TennisMatchRepository;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
