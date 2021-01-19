@@ -11,6 +11,18 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
 {
+    private $city = [
+        'Paris',
+        'Reims',
+        'Epernay',
+        'Bordeaux',
+        'Lyon',
+        'Toulouse',
+        'Marseille',
+        'Brest',
+        'Lille',
+    ];
+
     public function getDependencies()
     {
         return [UserFixtures::class];
@@ -28,7 +40,8 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
             $match->setEndHour($faker->dateTimeBetween('now', '2 years'));
             $match->setName('match amical');
             $match->setDescription($faker->paragraph());
-            $match->setAdress($faker->city);
+            $randKey = array_rand($this->city, 1);
+            $match->setAdress($this->city[$randKey]);
             $match->setOrganizer($this->getReference('admin'));
             $manager->persist($match);
         }
