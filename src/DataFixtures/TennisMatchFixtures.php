@@ -36,8 +36,8 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
         for ($i = 0; $i < 50; $i++) {
             // Création d’un utilisateur de type “contributeur” (= auteur)
             $match = new TennisMatch();
-            $match->setStartHour($faker->dateTimeBetween('now', '2 years'));
-            $match->setEndHour($faker->dateTimeBetween('now', '2 years'));
+            $match->setStartHour($faker->dateTimeBetween('now', '2 months'));
+            $match->setEndHour($faker->dateTimeBetween('2months', ' 4 months'));
             $match->setName('match amical');
             $match->setDescription($faker->paragraph());
             $randKey = array_rand($this->cities, 1);
