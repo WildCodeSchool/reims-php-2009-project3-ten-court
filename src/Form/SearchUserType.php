@@ -4,11 +4,12 @@ namespace App\Form;
 
 use App\Service\SearchService;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SearchUserType extends AbstractType
 {
@@ -40,6 +41,10 @@ class SearchUserType extends AbstractType
             ])
             ->add('max', IntegerType::class, [
                 'label' => 'Age maximum',
+                'required' => false,
+            ])
+            ->add('city', TextType::class, [
+                'label' => 'Ville',
                 'required' => false,
             ])
 
