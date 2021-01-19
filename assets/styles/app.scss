@@ -901,3 +901,81 @@ body {
 .resultSearch {
     text-align: center;
 }
+
+//MATCH CREATE CSS
+
+.backgroundMatchCreate {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.createMatchPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-image: url("../../assets/images/backgroundImages/subscription.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.createMatchItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;}
+
+.createMatchItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+
+.createMatchItemForm input[type="text"] {  border-radius : 10px ; border: solid 1px #40c952; width: 220px;height : 30px }
+
+.createMatchDateItemForm input[type="date"] {  border-radius : 10px ; border: solid 1px #40c952; height : 30px ; text-align : right  }
+
+.createMatchDateItemForm input[type="time"] {  border-radius : 10px ; border: solid 1px #40c952; height : 30px ; text-align : right}
+
+.createMatchItemForm textarea {  border-radius : 10px ; border: solid 1px #40c952;width: 220px; height : 60px }
+
+.createMatchSaveItemForm button {  
+    border-radius : 10px ; 
+    border: solid 2px rgb(13, 170, 26);  
+    background-color : #40c952 ; 
+    height : 40px ; 
+    margin-top: 30px ;
+    padding-left : 20px ; 
+    padding-right : 20px ;
+    font-weight : bold ;
+    
+}
+
+.createMatchSaveItemForm{
+    margin-bottom: 50px ;
+}
+
+.createMatchItemForm label {
+    text-align: center;
+}
+
+.createMatchItemForm {
+    margin: 10px 0px;
+}
+
+.backgroundMatchCreate {
+    text-align : center ;
+}
+
+.createMatchDateItemForm{
+    margin-top: 10px ;
+}
+
+    //MATCH CREATE CSS (fin)

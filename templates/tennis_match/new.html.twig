@@ -3,9 +3,39 @@
 {% block title %}New TennisMatch{% endblock %}
 
 {% block body %}
-    <h1>Create new TennisMatch</h1>
+<div class='backgroundMatchCreate'>
 
-    {{ include('tennis_match/_form.html.twig') }}
+   <div class="createMatchPage">
+            <div class="createMatchForm">
+               <h1 class="createMatchTitleForm">Créer Match</h1>
+                {{ form_start(tennismatchform) }}
+
+                    <div class="containerCreationMatchForm">
+                         <div class="createMatchItemForm">
+                            {{ form_row(tennismatchform.name) }}
+                        </div>
+                        <div class="createMatchDateItemForm">
+                            {{ form_row(tennismatchform.startHour) }}
+                        </div>
+                        <div class="createMatchDateItemForm">
+                            {{ form_row(tennismatchform.endHour) }}
+                        </div>
+                        <div class="createMatchItemForm">
+                            {{ form_row(tennismatchform.adress) }}
+                        </div>
+                        <div class="createMatchItemForm">
+                            {{ form_row(tennismatchform.description) }}
+                        </div>
+                        <div class="createMatchSaveItemForm">
+                            {{ form_row(tennismatchform.save) }}
+                        </div>
+                    
+                    </div>
+                 {{ form_end(tennismatchform) }}
+               
+
+    {# {{ include('tennis_match/_form.html.twig') }} #}
 
     <a href="{{ path('tennis_match_index') }}">back to list</a>
+</div>
 {% endblock %}
