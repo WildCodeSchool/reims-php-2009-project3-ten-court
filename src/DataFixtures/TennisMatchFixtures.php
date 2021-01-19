@@ -11,7 +11,7 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
 class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
 {
-    private $city = [
+    private $cities = [
         'Paris',
         'Reims',
         'Epernay',
@@ -40,8 +40,8 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
             $match->setEndHour($faker->dateTimeBetween('now', '2 years'));
             $match->setName('match amical');
             $match->setDescription($faker->paragraph());
-            $randKey = array_rand($this->city, 1);
-            $match->setAdress($this->city[$randKey]);
+            $randKey = array_rand($this->cities, 1);
+            $match->setAdress($this->cities[$randKey]);
             $match->setOrganizer($this->getReference('admin'));
             $manager->persist($match);
         }
