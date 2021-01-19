@@ -35,4 +35,24 @@ class SearchController extends AbstractController
             'users' => $users,
         ]);
     }
+
+    /**
+     * @Route("/matchs", name="matchs")
+     */
+    public function searchMatch(Request $request, TennisMatchRepository $tennisMatchRepository): Response
+    {
+        $search = new SearchService();
+        $searchMatchForm = $this->createForm(SearchMatchType::class, $search);
+        $searchMatchForm->handleRequest($request);
+
+        if ($searchMatchForm->isSubmitted() && $searchMatchForm->isValid()) {
+            $matchs = $tennisMatchRepository->search($search);
+        } else {
+            $matchs = $tennisMatchRepository->findAll();
+        }
+        return $this->render('search/index.html.twig', [
+            'searchForm' => $searchMatchForm->createView(),
+            'matchs' => $matchs,
+        ]);
+    }
 }
