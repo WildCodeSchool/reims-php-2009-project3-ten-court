@@ -44,7 +44,7 @@ class TennisMatchController extends AbstractController
 
         return $this->render('tennis_match/new.html.twig', [
             'tennis_match' => $tennisMatch,
-            'form' => $form->createView(),
+            'tennismatchform' => $form->createView(),
         ]);
     }
 
