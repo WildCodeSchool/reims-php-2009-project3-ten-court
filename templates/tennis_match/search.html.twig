@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche de matchs{% endblock %}
+
+{% block body %}
+   
+    {{ form_start(searchMatchForm) }}
+        {{ form_widget(searchMatchForm) }}
+    {{ form_end(searchMatchForm) }}
+
+
+    {# TODO: REMOVE ALL <br> and <b> to do the css #}
+
+    <div class="searchMatchContainer">
+        <h2 class='resultSearchMatch'>Résultat de votre Recherche</h2><br>      
+        {% for match in matchs %}
+            <div class="matchs">
+                <p><b>Date de début:</b> {{ match.startHour ? match.startHour|date('d-m-Y H:i:s') : '' }}</p>
+                <p><b>Date de fin:</b> {{ match.endHour ? match.endHour|date('d-m-Y H:i:s') : '' }}</p>
+                <p><b>Nom:</b> {{ match.name }}</p>
+                <p><b>Addresse:</b> {{ match.adress }}</p>
+                <p><b>Description:</b> {{ match.description }}</p><br>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

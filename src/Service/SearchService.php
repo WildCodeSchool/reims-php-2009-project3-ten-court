@@ -23,4 +23,9 @@ class SearchService
     * @var string|null
     */
     public $sex;
+
+    /**
+     * @var string|null
+     */
+    public $city;
 }

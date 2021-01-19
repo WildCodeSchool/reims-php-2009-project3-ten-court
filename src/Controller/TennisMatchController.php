@@ -2,13 +2,15 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\TennisMatch;
 use App\Form\TennisMatchType;
 use App\Repository\TennisMatchRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @Route("/tennis/match")
@@ -36,6 +38,7 @@ class TennisMatchController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $tennisMatch->setOrganizer($this->getUser());
             $entityManager->persist($tennisMatch);
             $entityManager->flush();
 

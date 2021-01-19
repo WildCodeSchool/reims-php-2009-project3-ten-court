@@ -18,6 +18,9 @@
                 <div class="searchFormRow">
                     {{ form_row(searchForm.max, ) }}
                 </div>
+                <div class="searchFormRow">
+                    {{ form_row(searchForm.city, ) }}
+                </div>
                 <button class="searchFormUserButton">Rechercher</button>
                 <a class="backButtonShowAllUsers" href="{{ path('user_index') }}">Accueil</a>
             </div>
@@ -39,9 +42,12 @@
                             <p class='playerItem playerSex'>{{user.sex}}</p>
                             <p class='playerItem playerAge'>{{user.age}} ans</p>
                             <p class='playerItem playerLevel'>{{user.level}}</p>
+                            <p class='playerItem playerLevel'>{{user.city}}</p>
                         </div>
                     </div>
                 </a>
+            {% else %}
+            <p class="resultSearch"> il n'y a pas de résultat pour votre recherche </p>
             {% endfor %}
         </div>
         <div class="blankShowUserPage"></div>
