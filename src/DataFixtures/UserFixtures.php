@@ -12,6 +12,18 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserFixtures extends Fixture
 {
+    private $cities = [
+        'Paris',
+        'Reims',
+        'Epernay',
+        'Bordeaux',
+        'Lyon',
+        'Toulouse',
+        'Marseille',
+        'Brest',
+        'Lille',
+    ];
+
     private $passwordEncoder;
 
     public function __construct(UserPasswordEncoderInterface $passwordEncoder)
@@ -40,7 +52,8 @@ class UserFixtures extends Fixture
                 'Y-m-d', //format
                 '2005-12-12' //date max - You can replace the date by 'now' to get the actual date
             )));
-            $contributor->setCity($faker->city);
+            $randKey = array_rand($this->cities, 1);
+            $contributor->setCity($this->cities[$randKey]);
             $contributor->setPostalcode($faker->postcode);
             $contributor->setAddress($faker->streetAddress);
             $slug = $slugify->generate($contributor->getPseudo() ?? '');
@@ -70,7 +83,8 @@ class UserFixtures extends Fixture
                 'Y-m-d', //format
                 '2005-12-12' //date max - You can replace the date by 'now' to get the actual date
             )));
-            $contributor->setCity($faker->city);
+            $randKey = array_rand($this->cities, 1);
+            $contributor->setCity($this->cities[$randKey]);
             $contributor->setPostalcode($faker->postcode);
             $contributor->setAddress($faker->streetAddress);
             $slug = $slugify->generate($contributor->getPseudo() ?? '');
