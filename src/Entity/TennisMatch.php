@@ -47,7 +47,7 @@ class TennisMatch
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tennisMatches")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $organizer;
+    private int $organizer;
 
     public function getId(): ?int
     {
@@ -59,7 +59,7 @@ class TennisMatch
         return $this->startHour;
     }
 
-    public function setStartHour(\DateTimeInterface $startHour): self
+    public function setStartHour(?\DateTimeInterface $startHour): self
     {
         $this->startHour = $startHour;
 
@@ -71,7 +71,7 @@ class TennisMatch
         return $this->endHour;
     }
 
-    public function setEndHour(\DateTimeInterface $endHour): self
+    public function setEndHour(?\DateTimeInterface $endHour): self
     {
         $this->endHour = $endHour;
 
