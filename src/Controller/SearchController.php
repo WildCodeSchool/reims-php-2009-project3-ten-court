@@ -2,10 +2,12 @@
 
 namespace App\Controller;
 
-use App\Service\SearchService;
+use App\Entity\TennisMatch;
 use App\Form\SearchUserType;
-use App\Repository\TennisMatchRepository;
+use App\Form\SearchMatchType;
+use App\Service\SearchService;
 use App\Repository\UserRepository;
+use App\Repository\TennisMatchRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -39,19 +41,22 @@ class SearchController extends AbstractController
     /**
      * @Route("/matchs", name="matchs")
      */
-    public function searchMatch(Request $request, TennisMatchRepository $tennisMatchRepository): Response
+    public function searchMatch(Request $request, TennisMatchRepository $tennisMatch): Response
     {
-        $search = new SearchService();
-        $searchMatchForm = $this->createForm(SearchMatchType::class, $search);
+        $matchs = new TennisMatch();
+        $searchMatchForm = $this->createForm(SearchMatchType::class, $matchs);
         $searchMatchForm->handleRequest($request);
 
         if ($searchMatchForm->isSubmitted() && $searchMatchForm->isValid()) {
-            $matchs = $tennisMatchRepository->search($search);
+            $startHour = $matchs->getStartHour();
+            $endHour = $matchs->getEndHour();
+            $adress = $matchs->getAdress();
+            $matchs = $tennisMatch->searchMatch($startHour, $endHour, $adress);
         } else {
-            $matchs = $tennisMatchRepository->findAll();
+            $matchs = $tennisMatch->findAll();
         }
-        return $this->render('search/index.html.twig', [
-            'searchForm' => $searchMatchForm->createView(),
+        return $this->render('tennis_match/search.html.twig', [
+            'searchMatchForm' => $searchMatchForm->createView(),
             'matchs' => $matchs,
         ]);
     }

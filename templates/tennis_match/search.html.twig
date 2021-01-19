@@ -1,35 +1,40 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Matchs • Tencourt{% endblock %}
+{% block title %}Recherche de matchs{% endblock %}
 
 {% block body %}
+   
+   
+   <h1>Trouver un match</h1>
 
+
+    {{ form_start(searchMatchForm) }}
+        {{ form_widget(searchMatchForm) }}
+    {{ form_end(searchMatchForm) }}
 
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>StartHour</th>
                 <th>EndHour</th>
                 <th>Name</th>
                 <th>Adress</th>
                 <th>Description</th>
-                <th>actions</th>
+                
             </tr>
         </thead>
         <tbody>
-        {% for tennis_match in tennis_matches %}
+        {% for match in matchs %}
             <tr>
-                <td>{{ tennis_match.id }}</td>
-                <td>{{ tennis_match.startHour ? tennis_match.startHour|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ tennis_match.endHour ? tennis_match.endHour|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ tennis_match.name }}</td>
-                <td>{{ tennis_match.adress }}</td>
-                <td>{{ tennis_match.description }}</td>
-                <td>
+                <td>{{ match.startHour ? match.startHour|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ match.endHour ? match.endHour|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ match.name }}</td>
+                <td>{{ match.adress }}</td>
+                <td>{{ match.description }}</td>
+{#                 <td>
                     <a href="{{ path('tennis_match_show', {'id': tennis_match.id}) }}">show</a>
                     <a href="{{ path('tennis_match_edit', {'id': tennis_match.id}) }}">edit</a>
-                </td>
+                </td> #}
             </tr>
         {% else %}
             <tr>
@@ -39,5 +44,4 @@
         </tbody>
     </table> 
 
-    <a href="{{ path('tennis_match_new') }}">Create new</a>
 {% endblock %}

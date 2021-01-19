@@ -19,32 +19,29 @@ class TennisMatchRepository extends ServiceEntityRepository
         parent::__construct($registry, TennisMatch::class);
     }
 
-    // /**
-    //  * @return TennisMatch[] Returns an array of TennisMatch objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function searchMatch($startHour, $endHour, $adress): array
     {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $query = $this
+            ->createQueryBuilder('t');
 
-    /*
-    public function findOneBySomeField($value): ?TennisMatch
-    {
-        return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            if (!empty($startHour)) {
+                $query = $query
+                ->andWhere('t.startHour >= :startHour')
+                ->setParameter('startHour', $startHour);
+            }
+
+            if (!empty($endHour)) {
+                $query = $query
+                ->andWhere('t.endHour <= :endHour')
+                ->setParameter('endHour', $endHour);
+            }
+
+            if (!empty($adress)) {
+                $query = $query
+                ->andWhere('t.adress = :adress')
+                ->setParameter('adress', $adress);
+            }
+
+            return $query->getQuery()->getResult();
     }
-    */
 }
