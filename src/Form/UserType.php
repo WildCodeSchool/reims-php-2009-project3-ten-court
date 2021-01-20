@@ -67,9 +67,9 @@ class UserType extends AbstractType
                 'placeholder' => [
                     'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
                 ],
-                'years' => range(2003,1940) ,
+                'years' => range(2003, 1940),
             ])
-            ->add('avatar', FileType::class, [
+/*             ->add('avatar', FileType::class, [
                 'label' => 'Photo profile (jpg, jpeg, png, webp)',
                 'required' => false,
                 'constraints' => [
@@ -83,7 +83,7 @@ class UserType extends AbstractType
                         'mimeTypesMessage' => 'Seuls les fichiers jpg, jpeg, png et webp sont acceptés',
                     ])
                 ],
-            ])
+            ]) */
             ->add('firstname', TextType::class, [
                 'label' => 'Prénom',
                 'required' => false,
@@ -95,15 +95,6 @@ class UserType extends AbstractType
             ->add('update', SubmitType::class, [
                 'label' => 'Sauvegarder',
             ]);
-            $builder->get('avatar')->addModelTransformer(new CallBackTransformer(
-                function ($avatar) {
-                    return null;
-                },
-                function ($avatar) {
-                    return $avatar;
-                }
-            ));
-
         ;
     }
 

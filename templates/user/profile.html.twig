@@ -14,6 +14,9 @@
         <h1 class="myProfileTitle">Mon compte</h1>
 
         <div class="MyProfile">
+
+            <a class="user-button" id= "editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier mon avatar</a>
+
             {% if user.avatar == NULL  %}
                 <img class='userPictureProfileShow myProfilePicture' src="https://picsum.photos/100" alt="avatar">
             {% else %}
