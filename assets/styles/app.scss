@@ -91,7 +91,9 @@ body {
     color: white;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1rem;    
+    border: solid 2px rgb(13, 170, 26);      
+    font-weight : bold ;
 }
 .containerLoginForm .alert {
     text-align: center;
@@ -568,14 +570,15 @@ body {
 .backButtonShowAllUsers {
     margin-top: 10px;
     align-self: center;
-    background-color: hsl(128, 56%, 52%);
+    background-color: hsl(128, 56%, 52%);    
     color: white;
     cursor: pointer;
     font-size: 1.1rem;
     text-decoration: none;
-    border: none;
     border-radius: 10px;
     padding: 10px 130px;
+    border: solid 2px rgb(13, 170, 26);      
+    font-weight : bold ;
 }
 
 
@@ -893,7 +896,8 @@ body {
     cursor: pointer;
     font-size: 1rem;
     text-decoration: none;
-    border: none;
+    border: solid 2px rgb(13, 170, 26);      
+    font-weight : bold ;
     border-radius: 10px;
     padding: 10px 115px;
 }
@@ -902,16 +906,88 @@ body {
     text-align: center;
 }
 
-//MATCH CREATE CSS
+//CSS for search match page 
 
-.backgroundMatchCreate {
-    background-image: url("../../assets/images/backgroundImages/Default.jpg");
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
+#search_match_adress {
+    border: none;
+    appearance: none;
+    border-radius: 10px;
+    padding: 10px 85px;
+    text-align: center;
+    margin-bottom: 15px;
+    border: solid 1px hsl(128, 56%, 52%);
+
 }
+#search_match_startHour, #search_match_endHour {
+    background-color: hsla(348, 2%, 93%, 0.8);
+    flex-direction: row;
+    border: none;
+    
+    border-radius: 10px;
+    padding: 10px 10px;
+    text-align: center;
+    
+}
+.searchFormRow #search_match_startHour, .searchFormRow #search_match_endHour {
+    border: solid 1px hsl(128, 56%, 52%);
+    
+}
+#search_match_startHour_date, #search_match_endHour_date {
+    flex-direction: row;
+    max-width: 120px;
+    
+
+}
+#search_match_startHour_time, #search_match_endHour_time {
+    display: block;
+    
+}
+#search_match_save { 
+    margin-top: 10px;
+    align-self: center;
+    background-color: hsl(128, 56%, 52%);
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    padding:10px 105px 10px 115px;  
+}
+.searchMatchContainer {
+    display: flex;
+    flex-direction: column;
+
+}
+.containerMatchs {
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    max-width: 375px;
+    justify-content: center;
+    background-color: hsla(348, 2%, 93%, 0.8);
+    border-radius: 5px;
+    border: hsla(348, 2%, 93%, 0.92);
+    margin: 2rem 1rem 3rem 1rem;
+    padding: 1rem;
+    -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+}
+.matchs.event {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.matchs.startHour, .matchs.endHour {
+    color: hsl(128, 56%, 52%);
+    text-align: center;
+    padding: 5px 5px;
+}
+.matchs.location, .matchs.description {
+    padding-left: 60px;
+    padding-top: 5px;
+}
+//MATCH CREATE
 
 .createMatchPage {
     display: flex;
@@ -978,4 +1054,4 @@ body {
     margin-top: 10px ;
 }
 
-    //MATCH CREATE CSS (fin)
+//MATCH CREATE END

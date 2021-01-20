@@ -38,7 +38,7 @@ class TennisMatch
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tennisMatches")
      * @ORM\JoinColumn(nullable=false)
      */
-    private ?User $organizer;
+    private $organizer;
 
     /**
      * @ORM\Column(type="time")

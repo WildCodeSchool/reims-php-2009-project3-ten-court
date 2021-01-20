@@ -3,13 +3,27 @@
 {% block title %}Recherche de matchs{% endblock %}
 
 {% block body %}
-   
-    {{ form_start(searchMatchForm) }}
-        {{ form_widget(searchMatchForm) }}
-    {{ form_end(searchMatchForm) }}
+   <div class="backgroundSearchUsers">
+        {{ form_start(searchMatchForm) }}
+            <div class="containerSearchUsers">
+                    <div class="searchFormRow">
+                        {{ form_row(searchMatchForm.adress, ) }}
+                    </div>
+                    <div class="searchFormRow">
+                        {{ form_row(searchMatchForm.startHour) }}
+                    </div>
+                    <div class="searchFormRow">
+                        {{ form_row(searchMatchForm.endHour, ) }}
+                    </div>
+                    <div class="searchFormRow">
+                    <a>{{ form_row(searchMatchForm.save)}}</a>
+                    </div>
+                    <a class="backButtonShowAllUsers" href="{{ path('user_index') }}">Accueil</a>
+                </div>
+        {{ form_end(searchMatchForm) }}
 
 
-    {# TODO: REMOVE ALL <br> and <b> to do the css #}
+        {# TODO: REMOVE ALL <br> and <b> to do the css #}
 
     <div class="searchMatchContainer">
         <h2 class='resultSearchMatch'>Résultat de votre Recherche</h2><br>      

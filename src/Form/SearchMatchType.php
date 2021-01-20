@@ -43,7 +43,7 @@ class SearchMatchType extends AbstractType
                 'required' => false,
             ])
             ->add('save', SubmitType::class, [
-                'label' => 'Chercher',
+                'label' => 'Rechercher',
             ]);
         ;
     }
