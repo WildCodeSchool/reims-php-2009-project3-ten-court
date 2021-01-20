@@ -47,7 +47,7 @@ class TennisMatchController extends AbstractController
 
         return $this->render('tennis_match/new.html.twig', [
             'tennis_match' => $tennisMatch,
-            'form' => $form->createView(),
+            'tennismatchform' => $form->createView(),
         ]);
     }
 
@@ -86,7 +86,7 @@ class TennisMatchController extends AbstractController
      */
     public function delete(Request $request, TennisMatch $tennisMatch): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$tennisMatch->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $tennisMatch->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($tennisMatch);
             $entityManager->flush();
