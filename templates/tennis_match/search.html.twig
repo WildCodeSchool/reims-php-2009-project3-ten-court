@@ -34,10 +34,13 @@
                     <p class="matchs endHour">Au: {{ match.endHour ? match.endHour|date('d-m-Y H:i') : '' }}</p>           
                     <p class="matchs location">Lieu: {{ match.adress }}</p>
                     <p class="matchs description">Description: {{ match.description }}</p><br>
+                    <a href="#" class="participate">Participer</a>
                 </div>
+                
             {% else %}
             <p class="resultSearch"> il n'y a pas de résultat pour votre recherche </p>
             {% endfor %}
+            
         </div>
     </div>
 {% endblock %}
