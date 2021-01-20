@@ -43,11 +43,12 @@
                 <div class="containerSearchMatchName">
                     <p class="itemMatchResult"><span class="titleItemMatchResult">Nom de l'évènement:</span> {{ match.name }}</p>
                 </div>
-                <div class="containerSearchMatchDateStart">
-                    <p class="itemMatchResult"><span class="titleItemMatchResult">Du:</span> {{ match.startHour ? match.startHour|date('H:i') : '' }}</p>
+                <div class="containerSearchMatchDate">
+                    <p class="itemMatchResult"><span class="titleItemMatchResult">Date:</span> {{ match.eventDate ? match.eventDate|date('d/m/Y') }}</p>
                 </div>
-                <div class="containerSearchMatchDateEnd">
-                    <p class="itemMatchResult"><span class="titleItemMatchResult">Au:</span> {{ match.endHour ? match.endHour|date('H:i') : '' }}</p>    
+                <div class="containerHourDateStartEnd">
+                    <p class="itemMatchResult"><span class="titleItemMatchResult">De:</span> {{ match.startHour ? match.startHour|date('H:i') : '' }}</p>
+                    <p class="itemMatchResult"><span class="titleItemMatchResult">À:</span> {{ match.endHour ? match.endHour|date('H:i') : '' }}</p>    
                 </div>
                 <div class="containerSearchMatchAddress">     
                     <p class="itemMatchResult"><span class="titleItemMatchResult">Lieu:</span> {{ match.adress }}</p>
@@ -55,10 +56,12 @@
                 <div class="containerSearchMatchDescription">  
                     <p class="itemMatchResult"><span class="titleItemMatchResult">Description:</span> {{ match.description }}</p><br>
                 </div>
+                <a href="{{ path('tennis_match_show', {'id':match.id}) }}" class="watch">Voir</a>
             </div>
             {% else %}
             <p class="resultSearch"> il n'y a pas de résultat pour votre recherche </p>
             {% endfor %}
+            
         </div>
     </div>
 {% endblock %}
