@@ -67,6 +67,18 @@ class UserController extends AbstractController
     }
 
     /**
+     * @Route("/matches/{id}", name="mymatches",requirements={"id"="\d+"} , methods={"GET"})
+     */
+    public function show_match(User $user): Response
+    {   
+        $match = $user->getTennisMatches();
+        return $this->render('user/show_match.html.twig', [
+            'user' => $user,
+            'matches' => $match
+        ]);
+    }
+
+    /**
      * @Route("/{slug}", name="profile", methods={"GET"})
      * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
