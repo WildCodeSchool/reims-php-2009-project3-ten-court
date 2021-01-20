@@ -824,15 +824,15 @@ body {
     appearance: none;
     cursor: pointer;
 }
-.searchFormRow label {
+/* .searchFormRow label {
     display: inline-block;
     min-width: 50px;
     text-align: left;
     margin-right: 1rem;
-}
-.row {
+} */
+/* .row {
     padding: 0.5rem;
-}
+} */
 
 .containerSearchUsers {
     display: flex;
@@ -850,8 +850,8 @@ body {
 .searchFormRow {
     display: flex;
     justify-content: center;
-    padding: 0.5rem;
-/*     width: 100%; */
+    margin-bottom: 10px;
+    width: 100%;
 }
 .searchFormRow div {
     display: flex;
@@ -1060,7 +1060,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url("../../assets/images/backgroundImages/subscription.jpg");
+    background-image: url("../../assets/images/backgroundImages/withoutLogo.jpg");
     background-repeat: no-repeat;
     height: 100vh;
     background-position: center;
@@ -1104,15 +1104,9 @@ body {
     background-color : #40c952 ; 
     height : 40px ; 
     margin-top: 30px ;
-    padding-left : 20px ; 
-    padding-right : 20px ;
     font-weight : bold ;
     color: white;
-    
-}
-
-#tennis_match_adress {
-    margin : auto  ;
+    width: 220px;
 }
 
 .createMatchSaveItemForm{
@@ -1130,10 +1124,22 @@ body {
 .createMatchDateItemForm{
     margin-top: 10px ;
 }
+@media (min-width: 300px) {
+    #tennis_match_name, #tennis_match_adress, #tennis_match_description,
+    #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate {
+        width: 280px;
+    }
+    .createMatchSaveItemForm button {  
+        width: 280px;
+    }
+}
 @media (min-width: 500px) {
     #tennis_match_name, #tennis_match_adress, #tennis_match_description,
     #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate {
-        width: 420px;
+        width: 500px;
+    }
+    .createMatchSaveItemForm button {  
+        width: 500px;
     }
 }
 @media (min-width: 700px) {
@@ -1146,19 +1152,9 @@ body {
     #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate {
         width: 620px;
     }
-}
-
-
-#tennis_match_name {
-    text-align: center ;
-}
-
-#tennis_match_description {
-    text-align: center ;
-}
-
-#tennis_match_adress {
-    text-align : center ;
+    .createMatchSaveItemForm button {  
+        width: 620px;
+    }
 }
 
 // PROFIL LIST MATCHES
@@ -1227,53 +1223,60 @@ body {
     background-size: cover;
 
 }
+.matchTitleTennisMatchShow {
+    margin: 20px;
+}
 .matchDescriptionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: hsla(348, 2%, 93%, 0.8);
+        border-radius: 10px;
+        margin: 20px;
+        padding: 20px;
+        width: 80%;
+        -webkit-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+}
+
+.titleItemTennisMatchShow {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-top: 65px;
-    background-color: hsla(348, 2%, 93%, 0.8);
-    max-width: 80%;
-    padding: 50px;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    color: hsl(128, 56%, 52%);
+    font-weight: bold;
+    margin: 5px;
 }
-.matchDescriptionContainer h1 {
-    margin-bottom: 15px;
-}
-.descriptionRow {
+.containerDescriptionDateTennisMatchShow {
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
 }
-.descriptionRow.date {
-    color: HSL(127, 56%, 52%);
+.containerDateTennisMatchShow, .containerDescriptionDateTennisMatchShow,
+.containerAddressTennisMatchShow, .containerDescriptionTennisMatchShow {
+    margin: 10px;
 }
-.descriptionRow p {
-    padding-right: 5px;
-    padding-left: 5px;
+.containerDescriptionDateTennisMatchShow p {
+    margin: 10px;
 }
-.button {
+.containerButtonTennisMatchShow {
     display: flex;
     flex-direction: column;
     width: 80%;
 }
-.back, .participate {
+.backButtonTennisMatchShow, .participateButtonTennisMatchShow {
     text-align: center;
     align-self: center;
-    background-color: hsl(128, 56%, 52%);
-    border: solid 2px #0daa1a;
+    background-color: HSL(128, 56%, 52%);
     color: white;
     cursor: pointer;
-    font-size: 1.1rem;
     text-decoration: none;
-    margin-top: 5px;
+    border: solid 2px #0daa1a;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 10px 10px;
     width: 100%;
+    margin: 5px;
 
 }
 
