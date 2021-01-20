@@ -239,6 +239,11 @@ body {
     text-align: center;
     margin-bottom: 15px;
 }
+@media (min-width: 500px) {
+    .subscriptionPage {
+        background-image: url("../../assets/images/backgroundImages/subscriptionIpad.jpg");
+    }
+}
 //MY PROFILE
 .containerMyProfile {
     background-image: url("../../assets/images/backgroundImages/Default.jpg");
@@ -323,11 +328,9 @@ body {
     text-align: center;
     padding: 20px;
     color: white;
-
     width: 100%;
     z-index: 1;
     position: fixed;
-    z-index: 1;
     left: 0;
     top: 0;
     overflow: auto; /* Enable scroll if needed */
@@ -568,17 +571,16 @@ body {
     margin: 5px;
 }
 .backButtonShowAllUsers {
-    margin-top: 10px;
+    text-align: center;
     align-self: center;
-    background-color: hsl(128, 56%, 52%);    
+    background-color: HSL(128, 56%, 52%);
     color: white;
     cursor: pointer;
-    font-size: 1.1rem;
     text-decoration: none;
+    border: solid 2px #0daa1a;
     border-radius: 10px;
-    padding: 10px 130px;
-    border: solid 2px rgb(13, 170, 26);      
-    font-weight : bold ;
+    padding: 10px 10px;
+    width: 100%;
 }
 
 
@@ -818,7 +820,6 @@ body {
 }
 
 .containerSearchUsers {
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -836,36 +837,32 @@ body {
     display: flex;
     justify-content: center;
     padding: 0.5rem;
+/*     width: 100%; */
 }
 .searchFormRow div {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 .searchFormRow label {
     text-align: center;
 }
+
+.searchFormRow #search_user_city, .searchFormRow #search_user_max, 
+.searchFormRow #search_user_min, .searchFormRow #search_user_sex, 
 .searchFormRow #search_user_level {
     border: solid 1px hsl(128, 56%, 52%);
+    background-color: white;
 }
-.searchFormRow #search_user_sex {
-    border: solid 1px hsl(128, 56%, 52%);
-}
-.searchFormRow #search_user_min {
-    border: solid 1px hsl(128, 56%, 52%);
-}
-.searchFormRow #search_user_max {
-    border: solid 1px hsl(128, 56%, 52%);
-}
-.searchFormRow #search_user_city {
-    border: solid 1px hsl(128, 56%, 52%);
-}
+
 #search_user_level, #search_user_sex { 
     border: none;
     appearance: none;
+    padding: 10px 85px;
 }
 #search_user_level {
     border-radius: 10px;
-    padding: 10px 120px;
+/*     padding: 10px 120px; */
     text-align: center;
 }
 #search_user_min, #search_user_max {
@@ -886,22 +883,23 @@ body {
 }
 #search_user_sex {
     border-radius: 10px;
-    padding: 10px 135px;
+/*     padding: 10px 135px; */
     text-align: center;
 }
+
 .searchFormUserButton {
     align-self: center;
     background-color: HSL(128, 56%, 52%);
     color: white;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-decoration: none;
-    border: solid 2px rgb(13, 170, 26);      
-    font-weight : bold ;
+    border: solid 2px rgb(13, 170, 26);
     border-radius: 10px;
-    padding: 10px 115px;
+    padding: 10px 10px;
+    width: 100%;
+    margin-bottom: 10px;
 }
-
 .resultSearch {
     text-align: center;
 }
@@ -993,7 +991,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     background-image: url("../../assets/images/backgroundImages/subscription.jpg");
     background-repeat: no-repeat;
     height: 100vh;
@@ -1031,6 +1028,7 @@ body {
     padding-left : 20px ; 
     padding-right : 20px ;
     font-weight : bold ;
+    color: white;
     
 }
 
@@ -1052,6 +1050,11 @@ body {
 
 .createMatchDateItemForm{
     margin-top: 10px ;
+}
+@media (min-width: 500px) {
+    .createMatchPage {
+        background-image: url("../../assets/images/backgroundImages/subscriptionIpad.jpg");
+    }
 }
 
 //MATCH CREATE END
