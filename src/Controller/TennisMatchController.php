@@ -39,6 +39,7 @@ class TennisMatchController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $tennisMatch->setOrganizer($this->getUser());
+            $tennisMatch->addParticipent($this->getUser());
             $entityManager->persist($tennisMatch);
             $entityManager->flush();
 
