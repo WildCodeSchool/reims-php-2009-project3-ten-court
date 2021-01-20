@@ -1047,7 +1047,18 @@ body {
     background-position: center;
     background-size: cover;
 }
+.containerCreationMatchForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.containerCreationMatchForm div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
+}
 .createMatchItemForm div {
     display: flex;
     flex-direction: column;
@@ -1060,17 +1071,14 @@ body {
     align-items: center;
     align-self: center;
 }
-
-.createMatchItemForm input[type="text"] {  border-radius : 10px ; border: solid 1px #40c952; width: 220px;height : 30px }
-
-.createMatchDateItemForm input[type="date"] {  border-radius : 10px ; border: solid 1px #40c952; height : 30px ; text-align : right  }
-
-.createMatchDateItemForm input[type="time"] {  border-radius : 10px ; border: solid 1px #40c952; height : 30px ; text-align : right}
-
-.createMatchItemForm textarea {  border-radius : 10px ; border: solid 1px #40c952;width: 220px; height : 60px }
-
-
-
+#tennis_match_name, #tennis_match_adress, #tennis_match_description,
+#tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate {
+    border-radius : 10px;
+    border: solid 1px #40c952;
+    width: 220px;
+    padding: 10px;
+    text-align: center;
+}
 .createMatchSaveItemForm button {  
     border-radius : 10px ; 
     border: solid 2px rgb(13, 170, 26);  
@@ -1104,8 +1112,20 @@ body {
     margin-top: 10px ;
 }
 @media (min-width: 500px) {
+    #tennis_match_name, #tennis_match_adress, #tennis_match_description,
+    #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate {
+        width: 420px;
+    }
+}
+@media (min-width: 700px) {
     .createMatchPage {
         background-image: url("../../assets/images/backgroundImages/subscriptionIpad.jpg");
+    }
+}
+@media (min-width: 800px) {
+    #tennis_match_name, #tennis_match_adress, #tennis_match_description,
+    #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate {
+        width: 620px;
     }
 }
 
