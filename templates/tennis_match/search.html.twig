@@ -3,24 +3,41 @@
 {% block title %}Recherche de matchs{% endblock %}
 
 {% block body %}
-   
-    {{ form_start(searchMatchForm) }}
-        {{ form_widget(searchMatchForm) }}
-    {{ form_end(searchMatchForm) }}
+   <div class="backgroundSearchUsers">
+        {{ form_start(searchMatchForm) }}
+            <div class="containerSearchUsers">
+                    <div class="searchFormRow">
+                        {{ form_row(searchMatchForm.adress, ) }}
+                    </div>
+                    <div class="searchFormRow">
+                        {{ form_row(searchMatchForm.startHour) }}
+                    </div>
+                    <div class="searchFormRow">
+                        {{ form_row(searchMatchForm.endHour, ) }}
+                    </div>
+                    <div class="searchFormRow">
+                    <a>{{ form_row(searchMatchForm.save)}}</a>
+                    </div>
+                    <a class="backButtonShowAllUsers" href="{{ path('user_index') }}">Accueil</a>
+                </div>
+        {{ form_end(searchMatchForm) }}
 
 
-    {# TODO: REMOVE ALL <br> and <b> to do the css #}
+        {# TODO: REMOVE ALL <br> and <b> to do the css #}
 
-    <div class="searchMatchContainer">
-        <h2 class='resultSearchMatch'>Résultat de votre Recherche</h2><br>      
-        {% for match in matchs %}
-            <div class="matchs">
-                <p><b>Date de début:</b> {{ match.startHour ? match.startHour|date('d-m-Y H:i:s') : '' }}</p>
-                <p><b>Date de fin:</b> {{ match.endHour ? match.endHour|date('d-m-Y H:i:s') : '' }}</p>
-                <p><b>Nom:</b> {{ match.name }}</p>
-                <p><b>Addresse:</b> {{ match.adress }}</p>
-                <p><b>Description:</b> {{ match.description }}</p><br>
-            </div>
-        {% endfor %}
+        <div class="searchMatchContainer">
+            <h2 class='resultSearch'>Résultat de votre Recherche</h2><br>      
+            {% for match in matchs %}
+                <div class="containerMatchs">
+                    <p class="matchs event">Nom de l'évènement: {{ match.name }}</p>
+                    <p class="matchs startHour">Du: {{ match.startHour ? match.startHour|date('d-m-Y H:i:s') : '' }}</p>
+                    <p class="matchs endHour">Au: {{ match.endHour ? match.endHour|date('d-m-Y H:i:s') : '' }}</p>           
+                    <p class="matchs location">Lieu: {{ match.adress }}</p>
+                    <p class="matchs description">Description: {{ match.description }}</p><br>
+                </div>
+            {% else %}
+            <p class="resultSearch"> il n'y a pas de résultat pour votre recherche </p>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

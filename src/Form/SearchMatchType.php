@@ -20,13 +20,17 @@ class SearchMatchType extends AbstractType
                 'label' => 'Ville'
             ])
             ->add('startHour', DateTimeType::class, [
-                'label' => 'Date de début'
+                'label' => 'Date et heure de début',
+                'date_widget' => 'single_text' ,
+                'time_widget' => 'single_text'
             ])
             ->add('endHour', DateTimeType::class, [
-                'label' => 'Date de fin'
+                'label' => 'Date et heure de début',
+                'date_widget' => 'single_text' ,
+                'time_widget' => 'single_text'
             ])
             ->add('save', SubmitType::class, [
-                'label' => 'Chercher',
+                'label' => 'Rechercher',
             ]);
         ;
     }
