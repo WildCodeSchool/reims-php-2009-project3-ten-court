@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\TennisMatch;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Service\SearchMatchService;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method TennisMatch|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,29 +20,45 @@ class TennisMatchRepository extends ServiceEntityRepository
         parent::__construct($registry, TennisMatch::class);
     }
 
-    public function searchMatch($startHour, $endHour, $adress): array
+    /**
+     * @return TennisMatch[] Returns an array of User objects
+     *
+     */
+    public function searchMatch(SearchMatchService $search): array
     {
         $query = $this
             ->createQueryBuilder('t');
 
-            if (!empty($startHour)) {
-                $query = $query
-                ->andWhere('t.startHour >= :startHour')
-                ->setParameter('startHour', $startHour);
-            }
+        if (!empty($search->min)) {
+            $query = $query
+            ->andWhere('t.eventDate >= :min')
+            ->setParameter('min', $search->min);
+        }
 
-            if (!empty($endHour)) {
-                $query = $query
-                ->andWhere('t.endHour <= :endHour')
-                ->setParameter('endHour', $endHour);
-            }
+        if (!empty($search->max)) {
+            $query = $query
+            ->andWhere('t.eventDate <= :max')
+            ->setParameter('max', $search->max);
+        }
 
-            if (!empty($adress)) {
-                $query = $query
-                ->andWhere('t.adress = :adress')
-                ->setParameter('adress', $adress);
-            }
+        if (!empty($search->startHour)) {
+            $query = $query
+            ->andWhere('t.startHour >= :startHour')
+            ->setParameter('startHour', $search->startHour);
+        }
 
-            return $query->getQuery()->getResult();
+        if (!empty($search->endHour)) {
+            $query = $query
+            ->andWhere('t.endHour <= :endHour')
+            ->setParameter('endHour', $search->endHour);
+        }
+
+        if (!empty($search->adress)) {
+            $query = $query
+            ->andWhere('t.adress = :adress')
+            ->setParameter('adress', $search->adress);
+        }
+
+        return $query->getQuery()->getResult();
     }
 }

@@ -3,40 +3,59 @@
 {% block title %}Recherche de matchs{% endblock %}
 
 {% block body %}
-   <div class="backgroundSearchUsers">
+   <div class="backgroundSearchMatchs">
+        <div class="containerSearchMatchForm">
         {{ form_start(searchMatchForm) }}
-            <div class="containerSearchUsers">
-                    <div class="searchFormRow">
-                        {{ form_row(searchMatchForm.adress, ) }}
-                    </div>
-                    <div class="searchFormRow">
-                        {{ form_row(searchMatchForm.startHour) }}
-                    </div>
-                    <div class="searchFormRow">
-                        {{ form_row(searchMatchForm.endHour, ) }}
-                    </div>
-                    <div class="searchFormRow">
-                    <a>{{ form_row(searchMatchForm.save)}}</a>
-                    </div>
-                    <a class="backButtonShowAllUsers" href="{{ path('user_index') }}">Accueil</a>
+            <div class="containerSearchMatchs">
+                <div class="searchFormMatchRow">
+                    {{ form_row(searchMatchForm.adress) }}
                 </div>
+                <div class="searchFormMatchRow">
+                    {{ form_row(searchMatchForm.min) }}
+                </div>
+                <div class="searchFormMatchRow">
+                    {{ form_row(searchMatchForm.max) }}
+                </div>
+                <div class="searchFormMatchRow">
+                    {{ form_row(searchMatchForm.startHour) }}
+                </div>
+                <div class="searchFormMatchRow">
+                    {{ form_row(searchMatchForm.endHour) }}
+                </div>
+                <div class="searchFormMatchRow">
+                    <a>{{ form_row(searchMatchForm.save)}}</a>
+                </div>
+                <a class="backButtonShowAllUsers" href="{{ path('user_index') }}">Accueil</a>
+            </div>
         {{ form_end(searchMatchForm) }}
+        </div>
 
 
         {# TODO: REMOVE ALL <br> and <b> to do the css #}
 
-        <div class="searchMatchContainer">
+        <div class="ContainerSearchMatchResult">
             <h2 class='resultSearch'>Résultat de votre Recherche</h2><br>      
             {% for match in matchs %}
-                <div class="containerMatchs">
-                    <p class="matchs event">Nom de l'évènement: {{ match.name }}</p>
-                    <p class="matchs startHour">Du: {{ match.startHour ? match.startHour|date('d-m-Y H:i') : '' }}</p>
-                    <p class="matchs endHour">Au: {{ match.endHour ? match.endHour|date('d-m-Y H:i') : '' }}</p>           
-                    <p class="matchs location">Lieu: {{ match.adress }}</p>
-                    <p class="matchs description">Description: {{ match.description }}</p><br>
-                    <a href="{{ path('tennis_match_show', {'id':match.id}) }}" class="participate">Voir</a>
+            <div class="containerMatchsResult">
+                <div class="containerSearchMatchOrganizerName">
+                    <p class="itemMatchOrganizerResult"><span class="titleItemMatchOrganizerResult">Organisateur:</span> {{ match.organizer.pseudo }}</p>
                 </div>
-                
+                <div class="containerSearchMatchName">
+                    <p class="itemMatchResult"><span class="titleItemMatchResult">Nom de l'évènement:</span> {{ match.name }}</p>
+                </div>
+                <div class="containerSearchMatchDateStart">
+                    <p class="itemMatchResult"><span class="titleItemMatchResult">Du:</span> {{ match.startHour ? match.startHour|date('H:i') : '' }}</p>
+                </div>
+                <div class="containerSearchMatchDateEnd">
+                    <p class="itemMatchResult"><span class="titleItemMatchResult">Au:</span> {{ match.endHour ? match.endHour|date('H:i') : '' }}</p>    
+                </div>
+                <div class="containerSearchMatchAddress">     
+                    <p class="itemMatchResult"><span class="titleItemMatchResult">Lieu:</span> {{ match.adress }}</p>
+                </div>
+                <div class="containerSearchMatchDescription">  
+                    <p class="itemMatchResult"><span class="titleItemMatchResult">Description:</span> {{ match.description }}</p><br>
+                </div>
+            </div>
             {% else %}
             <p class="resultSearch"> il n'y a pas de résultat pour votre recherche </p>
             {% endfor %}
