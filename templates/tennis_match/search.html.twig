@@ -43,6 +43,9 @@
                 <div class="containerSearchMatchName">
                     <p class="itemMatchResult"><span class="titleItemMatchResult">Nom de l'évènement:</span> {{ match.name }}</p>
                 </div>
+                <div class="containerSearchMatchDate">
+                    <p class="itemMatchResult"><span class="titleItemMatchResult">Date:</span> {{ match.eventDate ? match.eventDate|date('d/m/Y') }}</p>
+                </div>
                 <div class="containerSearchMatchDateStart">
                     <p class="itemMatchResult"><span class="titleItemMatchResult">Du:</span> {{ match.startHour ? match.startHour|date('H:i') : '' }}</p>
                 </div>
