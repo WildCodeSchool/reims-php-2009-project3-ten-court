@@ -1033,15 +1033,15 @@ body {
     text-align: center;
     align-self: center;
     background-color: hsl(128, 56%, 52%);
+    border: solid 2px #0daa1a;
     color: white;
     cursor: pointer;
     font-size: 1.1rem;
     text-decoration: none;
-    border: none;
     margin-top: 5px;
     border-radius: 10px;
     padding: 5px 10px;
-    max-width: 130px;
+    width: 100%;
 
 }
 //MATCH CREATE CSS
@@ -1222,19 +1222,20 @@ body {
 .button {
     display: flex;
     flex-direction: column;
+    width: 80%;
 }
 .back, .participate {
     text-align: center;
     align-self: center;
     background-color: hsl(128, 56%, 52%);
+    border: solid 2px #0daa1a;
     color: white;
     cursor: pointer;
     font-size: 1.1rem;
     text-decoration: none;
-    border: none;
     margin-top: 5px;
     border-radius: 10px;
     padding: 5px 10px;
-    width: 180px;
+    width: 100%;
 
 }
