@@ -47,7 +47,6 @@ class SearchController extends AbstractController
         $matchs = new TennisMatch();
         $searchMatchForm = $this->createForm(SearchMatchType::class, $matchs);
         $searchMatchForm->handleRequest($request);
-        //dd($matchs);
         if ($searchMatchForm->isSubmitted() && $searchMatchForm->isValid()) {
             $startHour = $matchs->getStartHour();
             $endHour = $matchs->getEndHour();
