@@ -38,9 +38,21 @@ class SearchUserType extends AbstractType
             ->add('min', IntegerType::class, [
                 'label' => 'Age minimum',
                 'required' => false,
+                'attr' => [
+                    'min' => 18,
+                    'max' => 100,
+                ]
             ])
             ->add('max', IntegerType::class, [
                 'label' => 'Age maximum',
+                'required' => false,
+                'attr' => [
+                    'min' => 18,
+                    'max' => 100,
+                ]
+            ])
+            ->add('city', TextType::class, [
+                'label' => 'Ville',
                 'required' => false,
             ])
             ->add('city', TextType::class, [
