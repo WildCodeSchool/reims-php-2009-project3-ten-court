@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use DateTime;
 use DateTimeInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\TennisMatchRepository;
 
@@ -54,6 +56,16 @@ class TennisMatch
      * @ORM\Column(type="date")
      */
     private ?DateTime $eventDate;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=User::class, mappedBy="participationMatch")
+     */
+    private $participent;
+
+    public function __construct()
+    {
+        $this->participent = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -140,6 +152,33 @@ class TennisMatch
     public function setEventDate(DateTime $eventDate): self
     {
         $this->eventDate = $eventDate;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getParticipent(): Collection
+    {
+        return $this->participent;
+    }
+
+    public function addParticipent(User $participent): self
+    {
+        if (!$this->participent->contains($participent)) {
+            $this->participent[] = $participent;
+            $participent->addParticipationMatch($this);
+        }
+
+        return $this;
+    }
+
+    public function removeParticipent(User $participent): self
+    {
+        if ($this->participent->removeElement($participent)) {
+            $participent->removeParticipationMatch($this);
+        }
 
         return $this;
     }

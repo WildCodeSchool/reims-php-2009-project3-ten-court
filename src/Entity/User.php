@@ -16,6 +16,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ * @UniqueEntity(fields={"pseudo"}, message="There is already an account with this pseudo")
  */
 class User implements UserInterface
 {
@@ -123,11 +124,17 @@ class User implements UserInterface
      */
     private $tennisMatches;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=TennisMatch::class, inversedBy="participent")
+     */
+    private $participationMatch;
+
     public function __construct()
     {
         $this->friend = new ArrayCollection();
         $this->friends = new ArrayCollection();
         $this->tennisMatches = new ArrayCollection();
+        $this->participationMatch = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -440,5 +447,29 @@ class User implements UserInterface
     public function __toString()
     {
         return (string) $this->id;
+    }
+
+    /**
+     * @return Collection|TennisMatch[]
+     */
+    public function getParticipationMatch(): Collection
+    {
+        return $this->participationMatch;
+    }
+
+    public function addParticipationMatch(TennisMatch $participationMatch): self
+    {
+        if (!$this->participationMatch->contains($participationMatch)) {
+            $this->participationMatch[] = $participationMatch;
+        }
+
+        return $this;
+    }
+
+    public function removeParticipationMatch(TennisMatch $participationMatch): self
+    {
+        $this->participationMatch->removeElement($participationMatch);
+
+        return $this;
     }
 }
