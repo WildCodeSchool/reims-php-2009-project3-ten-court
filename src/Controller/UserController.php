@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserType;
+use App\Form\AvatarType;
 use App\Service\Slugify;
 use App\Service\FileUploader;
 use App\Repository\UserRepository;
@@ -81,34 +82,57 @@ class UserController extends AbstractController
      * @Route("/{slug}/edit", name="edit", methods={"GET","POST"})
      * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
-    public function edit(Request $request, User $user, FileUploader $fileUploader): Response
+    public function edit(Request $request, User $user): Response
     {
         /* $user->setAvatar(new File($this->getParameter('image_directory').'/'.$user->getAvatar())); */
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+
+            $this->addFlash(
+                'success',
+                'Profile mis à jour avec succès !'
+            );
+
+            return $this->redirectToRoute('user_profile', ['slug' => $user->getSlug()]);
+        }
+
+        return $this->render('user/edit.html.twig', [
+            'user' => $user,
+            'editUserForm' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/editAvatar", name="edit_avatar", methods={"GET","POST"})
+     */
+    public function editAvatar(Request $request, User $user, FileUploader $fileUploader): Response
+    {
+        $form = $this->createForm(AvatarType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
             $avatarFile = $form->get('avatar')->getData();
             if ($avatarFile) {
-                $fileName = $fileUploader->upload($avatarFile);
-                $user->setAvatar($fileName);
+                $avatarFileName = $fileUploader->upload($avatarFile);
+                $user->setAvatar($avatarFileName);
 
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($user);
                 $entityManager->flush();
             }
-            $this->getDoctrine()->getManager()->flush();
-
-                $this->addFlash(
-                    'success',
-                    'Profile mis à jour avec succès !'
-                );
+            $this->addFlash(
+                'success',
+                'Profile mis à jour avec succès !'
+            );
             return $this->redirectToRoute('user_profile', ['slug' => $user->getSlug()]);
         }
-
-
-        return $this->render('user/edit.html.twig', [
-            'user' => $user,
-            'editUserForm' => $form->createView(),
+        return $this->render('user/editAvatar.html.twig', [
+                'user' => $user,
+                'formAvatar' => $form->createView(),
         ]);
     }
 
