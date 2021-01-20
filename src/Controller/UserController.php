@@ -60,9 +60,10 @@ class UserController extends AbstractController
      * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
     public function show(User $user): Response
-    {
-        return $this->render('user/show.html.twig', [
+    {   
+            return $this->render('user/show.html.twig', [
             'user' => $user,
+            
         ]);
     }
 
@@ -71,9 +72,10 @@ class UserController extends AbstractController
      * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
     public function myProfile(User $user): Response
-    {
+    {   $match = $user->getTennisMatches();
         return $this->render('user/profile.html.twig', [
             'user' => $user,
+            'matches' => $match
         ]);
     }
 

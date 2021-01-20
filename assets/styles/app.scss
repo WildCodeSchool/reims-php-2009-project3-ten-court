@@ -1022,6 +1022,8 @@ body {
 
 .createMatchItemForm textarea {  border-radius : 10px ; border: solid 1px #40c952;width: 220px; height : 60px }
 
+
+
 .createMatchSaveItemForm button {  
     border-radius : 10px ; 
     border: solid 2px rgb(13, 170, 26);  
@@ -1034,16 +1036,16 @@ body {
     
 }
 
+#tennis_match_adress {
+    margin : auto  ;
+}
+
 .createMatchSaveItemForm{
     margin-bottom: 50px ;
 }
 
-.createMatchItemForm label {
-    text-align: center;
-}
-
 .createMatchItemForm {
-    margin: 10px 0px;
+   margin: 10px 0px;
 }
 
 .backgroundMatchCreate {
@@ -1054,4 +1056,33 @@ body {
     margin-top: 10px ;
 }
 
-//MATCH CREATE END
+
+#tennis_match_name {
+    text-align: center ;
+}
+
+#tennis_match_description {
+    text-align: center ;
+}
+
+#tennis_match_adress {
+    text-align : center ;
+}
+
+// PROFIL MATCH
+
+.matchList{
+    margin-top: 2px ;
+    text-decoration: none ;
+    text-align : center ;
+    padding: 8px ;
+    border-radius: 10px;    
+    border: solid 1px hsl(128, 56%, 52%);
+    margin-left: 10px ;
+    margin-right: 10px ;
+  }
+  
+  .matchList a{
+    text-decoration : none ;
+  }
+
