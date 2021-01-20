@@ -3,13 +3,15 @@
 namespace App\Form;
 
 use App\Entity\TennisMatch;
+use App\Service\SearchMatchService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
 class SearchMatchType extends AbstractType
 {
@@ -17,17 +19,28 @@ class SearchMatchType extends AbstractType
     {
         $builder
             ->add('adress', TextType::class, [
-                'label' => 'Ville'
+                'label' => 'Ville',
+                'required' => false,
             ])
-            ->add('startHour', DateTimeType::class, [
-                'label' => 'Date et heure de début',
-                'date_widget' => 'single_text' ,
-                'time_widget' => 'single_text'
+            ->add('min', DateType::class, [
+                'label' => 'Date de début',
+                'widget' => 'single_text',
+                'required' => false,
             ])
-            ->add('endHour', DateTimeType::class, [
-                'label' => 'Date et heure de début',
-                'date_widget' => 'single_text' ,
-                'time_widget' => 'single_text'
+            ->add('max', DateType::class, [
+                'label' => 'Date de fin',
+                'widget' => 'single_text',
+                'required' => false,
+            ])
+            ->add('startHour', TimeType::class, [
+                'label' => 'Heure de début',
+                'widget' => 'single_text',
+                'required' => false,
+            ])
+            ->add('endHour', TimeType::class, [
+                'label' => 'Heure de fin',
+                'widget' => 'single_text',
+                'required' => false,
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'Rechercher',
@@ -38,7 +51,9 @@ class SearchMatchType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => TennisMatch::class,
+            'data_class' => SearchMatchService::class,
+            'method' => 'GET',
+            'csrf_protection' => false,
         ]);
     }
 }

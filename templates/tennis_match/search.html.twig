@@ -25,19 +25,17 @@
 
         {# TODO: REMOVE ALL <br> and <b> to do the css #}
 
-        <div class="searchMatchContainer">
-            <h2 class='resultSearch'>Résultat de votre Recherche</h2><br>      
-            {% for match in matchs %}
-                <div class="containerMatchs">
-                    <p class="matchs event">Nom de l'évènement: {{ match.name }}</p>
-                    <p class="matchs startHour">Du: {{ match.startHour ? match.startHour|date('d-m-Y H:i:s') : '' }}</p>
-                    <p class="matchs endHour">Au: {{ match.endHour ? match.endHour|date('d-m-Y H:i:s') : '' }}</p>           
-                    <p class="matchs location">Lieu: {{ match.adress }}</p>
-                    <p class="matchs description">Description: {{ match.description }}</p><br>
-                </div>
-            {% else %}
-            <p class="resultSearch"> il n'y a pas de résultat pour votre recherche </p>
-            {% endfor %}
-        </div>
+    <div class="searchMatchContainer">
+        <h2 class='resultSearchMatch'>Résultat de votre Recherche</h2><br>      
+        {% for match in matchs %}
+            <div class="matchs">
+                <p><b>Date:</b> {{ match.eventDate ? match.eventDate|date('d-m-Y') : ''}}</p>
+                <p><b>Heure de début:</b> {{ match.startHour ? match.startHour|date('H:i') : '' }}</p>
+                <p><b>Heure de fin:</b> {{ match.endHour ? match.endHour|date('H:i') : '' }}</p>
+                <p><b>Nom:</b> {{ match.name }}</p>
+                <p><b>Addresse:</b> {{ match.adress }}</p>
+                <p><b>Description:</b> {{ match.description }}</p><br>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

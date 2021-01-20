@@ -8,16 +8,16 @@
     <table class="table">
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ tennis_match.id }}</td>
+                <th>Date du match</th>
+                <td>{{ tennis_match.eventDate ? tennis_match.eventDate|date('d-m-Y') : ''}}</td>
             </tr>
             <tr>
                 <th>StartHour</th>
-                <td>{{ tennis_match.startHour ? tennis_match.startHour|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ tennis_match.startHour ? tennis_match.startHour|date('H:i') : '' }}</td>
             </tr>
             <tr>
                 <th>EndHour</th>
-                <td>{{ tennis_match.endHour ? tennis_match.endHour|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ tennis_match.endHour ? tennis_match.endHour|date('H:i') : '' }}</td>
             </tr>
             <tr>
                 <th>Name</th>

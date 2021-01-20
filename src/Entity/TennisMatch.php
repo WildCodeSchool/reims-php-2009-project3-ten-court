@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use DateTime;
+use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\TennisMatchRepository;
 
@@ -17,16 +18,6 @@ class TennisMatch
      * @ORM\Column(type="integer")
      */
     private ?int $id;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private ?DateTime $startHour;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private ?DateTime $endHour;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -47,35 +38,26 @@ class TennisMatch
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tennisMatches")
      * @ORM\JoinColumn(nullable=false)
      */
-    private  $organizer;
+    private $organizer;
+
+    /**
+     * @ORM\Column(type="time")
+     */
+    private ?DateTimeInterface $startHour;
+
+    /**
+     * @ORM\Column(type="time")
+     */
+    private ?DateTimeInterface $endHour;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private ?DateTime $eventDate;
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getStartHour(): ?\DateTimeInterface
-    {
-        return $this->startHour;
-    }
-
-    public function setStartHour(?\DateTimeInterface $startHour): self
-    {
-        $this->startHour = $startHour;
-
-        return $this;
-    }
-
-    public function getEndHour(): ?\DateTimeInterface
-    {
-        return $this->endHour;
-    }
-
-    public function setEndHour(?\DateTimeInterface $endHour): self
-    {
-        $this->endHour = $endHour;
-
-        return $this;
     }
 
     public function getName(): ?string
@@ -119,9 +101,45 @@ class TennisMatch
         return $this->organizer;
     }
 
-    public function setOrganizer(User $organizer): self
+    public function setOrganizer(?User $organizer): self
     {
         $this->organizer = $organizer;
+
+        return $this;
+    }
+
+    public function getStartHour(): ?DateTimeInterface
+    {
+        return $this->startHour;
+    }
+
+    public function setStartHour(DateTimeInterface $startHour): self
+    {
+        $this->startHour = $startHour;
+
+        return $this;
+    }
+
+    public function getEndHour(): ?DateTimeInterface
+    {
+        return $this->endHour;
+    }
+
+    public function setEndHour(DateTimeInterface $endHour): self
+    {
+        $this->endHour = $endHour;
+
+        return $this;
+    }
+
+    public function getEventDate(): ?DateTime
+    {
+        return $this->eventDate;
+    }
+
+    public function setEventDate(DateTime $eventDate): self
+    {
+        $this->eventDate = $eventDate;
 
         return $this;
     }
