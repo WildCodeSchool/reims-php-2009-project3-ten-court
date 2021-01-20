@@ -13,7 +13,7 @@
         {% for match in matches %}
             <div class="matchListing">
                  <div><a href="{{ path('tennis_match_show', { 'id' : match.id }) }}"> {{ match.name }}</div>
-                 <div>Date : {{match.eventDate|date("m/d/Y")}}  à {{match.eventDate|date("h")}}H{{match.eventDate|date("i")}}</div></a>
+                 <div>Le {{match.eventDate|date("m/d/Y")}}  à {{match.startHour|date("h")}}H{{match.startHour|date("i")}}</div></a>
             </div>
         {% endfor %}
         <div>
