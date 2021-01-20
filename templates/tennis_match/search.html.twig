@@ -37,11 +37,14 @@
                 <div class="containerSearchMatchName">
                     <p class="itemMatchResult"><span class="titleItemMatchResult">Nom de l'évènement:</span> {{ match.name }}</p>
                 </div>
+                <div class="containerSearchMatchDate">
+                    <p class="itemMatchResult"><span class="titleItemMatchResult">Date:</span> {{ match.eventDate ? match.eventDate|date('d-m-Y') : ''}}</p>
+                </div>
                 <div class="containerSearchMatchDateStart">
-                    <p class="itemMatchResult"><span class="titleItemMatchResult">Du:</span> {{ match.startHour ? match.startHour|date('d-m-Y H:i:s') : '' }}</p>
+                    <p class="itemMatchResult"><span class="titleItemMatchResult">Du:</span> {{ match.startHour ? match.startHour|date('H:i') : '' }}</p>
                 </div>
                 <div class="containerSearchMatchDateEnd">
-                    <p class="itemMatchResult"><span class="titleItemMatchResult">Au:</span> {{ match.endHour ? match.endHour|date('d-m-Y H:i:s') : '' }}</p>    
+                    <p class="itemMatchResult"><span class="titleItemMatchResult">Au:</span> {{ match.endHour ? match.endHour|date('H:i') : '' }}</p>    
                 </div>
                 <div class="containerSearchMatchAddress">     
                     <p class="itemMatchResult"><span class="titleItemMatchResult">Lieu:</span> {{ match.adress }}</p>

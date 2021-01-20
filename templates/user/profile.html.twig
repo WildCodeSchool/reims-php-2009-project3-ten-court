@@ -63,6 +63,18 @@
             <div class="myProfileEdition">
                 <a class="myProfileEditButton" href="{{ path('user_edit', {'slug': user.slug}) }}">Modifier mon profil</a>
             </div>
+
+        
+        <h2 class='h2Match'>Mes Matchs  </h2>
+
+        
+        {% for match in matches %}
+        <div class="matchList">
+        <a href="{{ path('tennis_match_show', { 'id' : match.id }) }}"> {{ match.name }} </a> </br>
+        </div>
+        {% endfor %}
+        
+
             <div class="myProfileDeconnexion">
                 <a class="myProfileDeconnexionButton" href = "{{ path('app_logout') }}">Déconnexion</a>
             </div>
