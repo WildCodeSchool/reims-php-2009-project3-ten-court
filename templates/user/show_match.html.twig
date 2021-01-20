@@ -11,10 +11,12 @@
         
         <div class='myBlockListMatches'>
         {% for match in matches %}
-            <div class="matchListing">
-                 <div><a href="{{ path('tennis_match_show', { 'id' : match.id }) }}"> {{ match.name }}</div>
-                 <div>Le {{match.eventDate|date("m/d/Y")}}  à {{match.startHour|date("h")}}H{{match.startHour|date("i")}}</div></a>
-            </div>
+            {% if date(match.eventDate) > date() %}
+                <div class="matchListing">
+                    <div><a href="{{ path('tennis_match_show', { 'id' : match.id }) }}"> {{ match.name }}</div>
+                    <div>Le {{match.eventDate|date("m/d/Y")}}  à {{match.startHour|date("h")}}H{{match.startHour|date("i")}}</div></a>
+                </div>
+            {% endif %}
         {% endfor %}
         <div>
 
