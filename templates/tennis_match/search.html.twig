@@ -30,8 +30,8 @@
             {% for match in matchs %}
                 <div class="containerMatchs">
                     <p class="matchs event">Nom de l'évènement: {{ match.name }}</p>
-                    <p class="matchs startHour">Du: {{ match.startHour ? match.startHour|date('d-m-Y H:i:s') : '' }}</p>
-                    <p class="matchs endHour">Au: {{ match.endHour ? match.endHour|date('d-m-Y H:i:s') : '' }}</p>           
+                    <p class="matchs startHour">Du: {{ match.startHour ? match.startHour|date('d-m-Y H:i') : '' }}</p>
+                    <p class="matchs endHour">Au: {{ match.endHour ? match.endHour|date('d-m-Y H:i') : '' }}</p>           
                     <p class="matchs location">Lieu: {{ match.adress }}</p>
                     <p class="matchs description">Description: {{ match.description }}</p><br>
                 </div>
