@@ -69,21 +69,6 @@ class UserType extends AbstractType
                 ],
                 'years' => range(2003, 1940),
             ])
-/*             ->add('avatar', FileType::class, [
-                'label' => 'Photo profile (jpg, jpeg, png, webp)',
-                'required' => false,
-                'constraints' => [
-                    new File([
-                        'maxSize' => '2m',
-                        'mimeTypes' => [
-                            'image/jpeg',
-                            'image/png',
-                            'image/webp'
-                        ],
-                        'mimeTypesMessage' => 'Seuls les fichiers jpg, jpeg, png et webp sont acceptés',
-                    ])
-                ],
-            ]) */
             ->add('firstname', TextType::class, [
                 'label' => 'Prénom',
                 'required' => false,

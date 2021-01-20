@@ -308,17 +308,98 @@ body {
 .myProfileEdition {
     text-align: center;
     background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(128, 84%, 32%);
     cursor: pointer;
-    border: none;
     border-radius: 10px;
     padding: 10px 50px;
     margin: 10px;
 }
+.ModifyAvatarButtonMyProfile {
+    align-self: center;
+    color: white;
+    position: relative;
+    bottom: 40px;
+}
+.myProfileAvatarEdit {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.editionItemFormAvatar  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.editionItemFormAvatar div  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.editionItemFormAvatar:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+#avatar_avatar {
+    margin-top: 10px;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(128, 84%, 32%);
+    border-radius: 10px;
+}
+.editionButtonsFormAvatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+.updateButtonAvatar {
+    margin: 10px;
+    text-align: center;
+    align-self: center;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(128, 84%, 32%);
+  /*   cursor: pointer; */
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    width: 95%;
+}
+#avatar_update {
+    background-color: hsl(128, 56%, 52%);
+    color: white;
+    border: none;
+    font-size: 0.8rem;
+}
+
+.backButtonEditAvatar, .EditAccueilButtonAvatar, .updateButtonAvatar {
+    margin: 10px;
+    text-align: center;
+    align-self: center;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(128, 84%, 32%);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    width: 95%;
+}
+.myProfileAvatarEditItem {
+    width:300px;
+    border-radius: 10px;
+}
+.blankMyEditAvatarPage {
+    height: 80px;
+}
 .myProfileDeconnexion {
     text-align: center;
     background-color: HSL(0, 70%, 43%);
+    border: solid 2px hsl(0, 69%, 34%);
     color: white;
-    border: none;
     border-radius: 10px;
     padding: 10px 50px;
     margin: 10px;
@@ -336,6 +417,59 @@ body {
 .blankMyProfilePage {
     height: 40px;
 }
+
+// PROFILE LIST MATCHES
+
+.containerMyMatches {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+  
+  .myMatchesTitle {
+    color: black;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  
+  .matchList {
+    margin-top: 5px ;
+    text-decoration: none ;
+    text-align : center ;
+    padding: 8px ;
+    border-radius: 10px;   
+    background-color: #40c952 ;
+    border: solid 2px hsl(128, 84%, 32%);
+    font-weight: bold ;
+    margin-left: 10px ;
+    margin-right: 10px ;
+  }
+  .matchList a {
+    color: white;
+  }
+  
+  .matchListing {
+    margin-top: 5px ;
+    text-decoration: none ;
+    text-align : center ;
+    padding: 10px ;
+    border-radius: 10px;   
+    background-color: #40c952 ;
+    border: solid 1px hsl(128, 84%, 32%);
+    font-weight: bold ;
+    margin-left: 10% ;
+    margin-right: 10% ;
+  }
+  
+  .matchList a {
+    text-decoration : none ;
+  }
 
 //EDIT USER
 #updateMessageSuccess {
@@ -367,6 +501,7 @@ body {
 }
 .editionTitleForm {
     margin-top: 20px;
+    font-size: 1.3rem;
     text-align: center;
 }
 .editionItemForm div {
@@ -511,7 +646,7 @@ body {
     background-color: HSL(0, 70%, 43%);
 }
 .blankEditionPage {
-    height: 40px;
+    height: 10px;
 }
 
 //ALL USERS PART
@@ -824,15 +959,6 @@ body {
     appearance: none;
     cursor: pointer;
 }
-/* .searchFormRow label {
-    display: inline-block;
-    min-width: 50px;
-    text-align: left;
-    margin-right: 1rem;
-} */
-/* .row {
-    padding: 0.5rem;
-} */
 
 .containerSearchUsers {
     display: flex;
@@ -876,7 +1002,6 @@ body {
 }
 #search_user_level {
     border-radius: 10px;
-/*     padding: 10px 120px; */
     text-align: center;
 }
 #search_user_min, #search_user_max {
@@ -897,7 +1022,6 @@ body {
 }
 #search_user_sex {
     border-radius: 10px;
-/*     padding: 10px 135px; */
     text-align: center;
 }
 
@@ -1047,13 +1171,15 @@ body {
     width: 100%;
 
 }
-//MATCH CREATE CSS
-
+.blankShowTennisMatchPage {
+    height: 60px;
+}
 @media (min-width: 1000px) {
     .containerMatchsResult {
         min-width: 1000px;
     }
 }
+
 //MATCH CREATE
 
 .createMatchPage {
@@ -1156,59 +1282,6 @@ body {
         width: 620px;
     }
 }
-
-// PROFIL LIST MATCHES
-
-.containerMyMatches {
-    background-image: url(/build/images/Default.22be3a4e.jpg);
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-  }
-  
-  
-  .myMatchesTitle {
-    color: black;
-    padding: 20px;
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  
-  .matchList{
-    margin-top: 5px ;
-    text-decoration: none ;
-    text-align : center ;
-    padding: 8px ;
-    border-radius: 10px;   
-    background-color: #e9ec07 ;
-    border: solid 1px black;
-    font-weight: bold ;
-    margin-left: 10px ;
-    margin-right: 10px ;
-  }
-  
-  .matchListing {
-    margin-top: 5px ;
-    text-decoration: none ;
-    text-align : center ;
-    padding: 10px ;
-    border-radius: 10px;   
-    background-color: #40c952 ;
-    border: solid 1px hsl(128, 84%, 32%);
-    font-weight: bold ;
-    margin-left: 10% ;
-    margin-right: 10% ;
-  }
-  
-  .matchList a {
-    text-decoration : none ;
-  }
-
-
-    //MATCH CREATE CSS (fin)
 
 // MATCH DESCRIPTION PAGE
 .backgroundDescriptionContainer {
