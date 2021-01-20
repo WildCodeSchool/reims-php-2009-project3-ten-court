@@ -8,6 +8,7 @@ use App\Form\SearchMatchType;
 use App\Service\SearchService;
 use App\Repository\UserRepository;
 use App\Repository\TennisMatchRepository;
+use App\Service\SearchMatchService;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -44,14 +45,11 @@ class SearchController extends AbstractController
      */
     public function searchMatch(Request $request, TennisMatchRepository $tennisMatch): Response
     {
-        $matchs = new TennisMatch();
-        $searchMatchForm = $this->createForm(SearchMatchType::class, $matchs);
+        $search = new SearchMatchService();
+        $searchMatchForm = $this->createForm(SearchMatchType::class, $search);
         $searchMatchForm->handleRequest($request);
         if ($searchMatchForm->isSubmitted() && $searchMatchForm->isValid()) {
-            $startHour = $matchs->getStartHour();
-            $endHour = $matchs->getEndHour();
-            $adress = $matchs->getAdress();
-            $matchs = $tennisMatch->searchMatch($startHour, $endHour, $adress);
+            $matchs = $tennisMatch->searchMatch($search);
         } else {
             $matchs = $tennisMatch->findAll();
         }
