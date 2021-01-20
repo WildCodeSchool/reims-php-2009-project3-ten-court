@@ -91,7 +91,7 @@ body {
     color: white;
     padding: 10px 20px;
     cursor: pointer;
-    font-size: 1rem;    
+    font-size: 0.8rem; 
     border: solid 2px rgb(13, 170, 26);      
     font-weight : bold ;
 }
@@ -114,6 +114,12 @@ body {
     border: none;
     border-radius: 10px;
     margin: 10px;
+
+    border: none;
+    color: white;
+    cursor: pointer;
+    border: solid 2px hsl(125, 86%, 36%);
+    font-weight: bold;
 }
 .submitConnexion a {
     color: white;
@@ -155,7 +161,7 @@ body {
     text-align: center;
 }
 #inputEmail, #inputPassword, #registration_form_email, #registration_form_pseudo, #registration_form_city,
-#registration_form_plainPassword_first, #registration_form_plainPassword_second {
+#registration_form_plainPassword_first, #registration_form_plainPassword_second, #registration_form_sex {
     text-align: center;
 }
 #registration_form_email {
@@ -213,7 +219,7 @@ body {
     border-radius: 10px;
     border: none;
     appearance: none;
-    border: solid 1px hsl(128, 56%, 52%);
+    border: solid 2px hsl(125, 86%, 36%);
 }
 .registrationAgreeTermsForm {
     display: flex;
@@ -230,7 +236,9 @@ body {
     font-size: 1rem;
     border: none;
     border-radius: 10px;
-    padding: 10px 90px;
+    padding: 10px 100px;
+    border: none;
+    border: solid 2px hsl(125, 86%, 36%);
 }
 #registration_form_save:hover {
     background-color: hsl(129, 87%, 26%);
@@ -238,6 +246,13 @@ body {
 .registrationBackButton, .subscriptionBackButton {
     text-align: center;
     margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+    #registration_form_email, #registration_form_plainPassword_first,
+    #registration_form_plainPassword_second, #registration_form_pseudo, #registration_form_sex,
+    #registration_form_level, #registration_form_city {
+        width: 90%;
+    }
 }
 @media (min-width: 500px) {
     .subscriptionPage {
@@ -828,7 +843,6 @@ body {
     border: hsla(348, 2%, 93%, 0.92);
     margin: 2rem 1rem 3rem 1rem;
     padding: 1rem;
-
     -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
@@ -906,63 +920,19 @@ body {
 
 //CSS for search match page 
 
-#search_match_adress {
-    border: none;
-    appearance: none;
-    border-radius: 10px;
-    padding: 10px 85px;
-    text-align: center;
-    margin-bottom: 15px;
-    border: solid 1px hsl(128, 56%, 52%);
-
+.backgroundSearchMatchs {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
 }
-#search_match_startHour, #search_match_endHour {
-    background-color: hsla(348, 2%, 93%, 0.8);
-    flex-direction: row;
-    border: none;
-    
-    border-radius: 10px;
-    padding: 10px 10px;
-    text-align: center;
-    
-}
-.searchFormRow #search_match_startHour, .searchFormRow #search_match_endHour {
-    border: solid 1px hsl(128, 56%, 52%);
-    
-}
-#search_match_startHour_date, #search_match_endHour_date {
-    flex-direction: row;
-    max-width: 120px;
-    
-
-}
-#search_match_startHour_time, #search_match_endHour_time {
-    display: block;
-    
-}
-#search_match_save { 
-    margin-top: 10px;
-    align-self: center;
-    background-color: hsl(128, 56%, 52%);
-    color: white;
-    cursor: pointer;
-    font-size: 1.1rem;
-    text-decoration: none;
-    border: none;
-    border-radius: 10px;
-    padding:10px 105px 10px 115px;  
-}
-.searchMatchContainer {
+.containerSearchMatchs {
     display: flex;
     flex-direction: column;
-
-}
-.containerMatchs {
-    display: flex;
-    align-self: center;
-    flex-direction: column;
-    max-width: 375px;
     justify-content: center;
+    text-align: center;
     background-color: hsla(348, 2%, 93%, 0.8);
     border-radius: 5px;
     border: hsla(348, 2%, 93%, 0.92);
@@ -972,18 +942,86 @@ body {
     -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
 }
-.matchs.event {
-    font-weight: bold;
-    margin-bottom: 10px;
+.searchFormMatchRow #search_match_startHour, .searchFormMatchRow #search_match_endHour, .searchFormMatchRow #search_match_adress {
+    border: solid 1px hsl(128, 56%, 52%);
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
-.matchs.startHour, .matchs.endHour {
-    color: hsl(128, 56%, 52%);
+#search_match_save, #search_match_adress, #search_match_startHour, #search_match_endHour { 
+    background-color: hsl(128, 56%, 52%);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.8rem;
     text-align: center;
-    padding: 5px 5px;
+    align-self: center;
+    border: solid 2px #0daa1a;
+    padding: 10px 10px;
+    width: 100%;
+    margin: 10px 0px;
+
 }
-.matchs.location, .matchs.description {
-    padding-left: 60px;
-    padding-top: 5px;
+.ContainerSearchMatchResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.containerMatchsResult {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: hsla(348, 2%, 93%, 0.8);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    -webkit-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+    max-width: 500px;
+}
+.itemMatchOrganizerResult {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.itemMatchResult {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.containerSearchMatchOrganizerName {
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(125, 86%, 36%);
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.titleItemMatchOrganizerResult {
+    color: white;
+    font-weight: bold;
+    margin: 5px;
+}
+.titleItemMatchResult {
+    color: hsl(128, 56%, 52%);
+    font-weight: bold;
+    margin: 5px;
 }
 //MATCH CREATE
 
