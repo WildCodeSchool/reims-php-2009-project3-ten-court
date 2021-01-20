@@ -1069,20 +1069,58 @@ body {
     text-align : center ;
 }
 
-// PROFIL MATCH
+// PROFIL LIST MATCHES
 
-.matchList{
-    margin-top: 2px ;
+.containerMyMatches {
+    background-image: url(/build/images/Default.22be3a4e.jpg);
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+  
+  .myMatchesTitle {
+    color: black;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  
+  .matchList{
+    margin-top: 5px ;
     text-decoration: none ;
     text-align : center ;
     padding: 8px ;
-    border-radius: 10px;    
-    border: solid 1px hsl(128, 56%, 52%);
+    border-radius: 10px;   
+    background-color: #e9ec07 ;
+    border: solid 1px black;
+    font-weight: bold ;
     margin-left: 10px ;
     margin-right: 10px ;
   }
   
-  .matchList a{
+  .matchListing {
+    margin-top: 5px ;
+    text-decoration: none ;
+    text-align : center ;
+    padding: 10px ;
+    border-radius: 10px;   
+    background-color: #40c952 ;
+    border: solid 1px hsl(128, 84%, 32%);
+    font-weight: bold ;
+    margin-left: 10% ;
+    margin-right: 10% ;
+  }
+  
+  .matchList a {
     text-decoration : none ;
   }
-
+  
+  .matchListing a {
+    text-decoration : none ;
+    color :rgba(0, 0, 0, 0.75);
+  }
+  
