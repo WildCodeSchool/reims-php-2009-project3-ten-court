@@ -119,7 +119,7 @@ class TennisMatch
         return $this->organizer;
     }
 
-    public function setOrganizer(User $organizer): self
+    public function setOrganizer(?User $organizer): self
     {
         $this->organizer = $organizer;
 

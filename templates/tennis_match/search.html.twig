@@ -34,7 +34,7 @@
                     <p class="matchs endHour">Au: {{ match.endHour ? match.endHour|date('d-m-Y H:i') : '' }}</p>           
                     <p class="matchs location">Lieu: {{ match.adress }}</p>
                     <p class="matchs description">Description: {{ match.description }}</p><br>
-                    <a href="#" class="participate">Participer</a>
+                    <a href="{{ path('tennis_match_show', {'id':match.id}) }}" class="participate">Voir</a>
                 </div>
                 
             {% else %}
