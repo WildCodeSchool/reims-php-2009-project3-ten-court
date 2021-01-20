@@ -987,7 +987,7 @@ body {
     padding-left: 60px;
     padding-top: 5px;
 }
-.participate {
+.watch {
     text-align: center;
     align-self: center;
     background-color: hsl(128, 56%, 52%);
@@ -1079,3 +1079,65 @@ body {
 }
 
     //MATCH CREATE CSS (fin)
+
+// MATCH DESCRIPTION PAGE
+.backgroundDescriptionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+.matchDescriptionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 65px;
+    background-color: hsla(348, 2%, 93%, 0.8);
+    max-width: 80%;
+    padding: 50px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+}
+.matchDescriptionContainer h1 {
+    margin-bottom: 15px;
+}
+.descriptionRow {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.descriptionRow.date {
+    color: HSL(127, 56%, 52%);
+}
+.descriptionRow p {
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.button {
+    display: flex;
+    flex-direction: column;
+}
+.back, .participate {
+    text-align: center;
+    align-self: center;
+    background-color: hsl(128, 56%, 52%);
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: none;
+    border: none;
+    margin-top: 5px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 180px;
+
+}
