@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profile • Tencourt{% endblock %}
+
+{% block body %}
+    <div class="containerMyMatches">
+
+        <h1 class="myMatchesTitle">Mes matchs</h1>          
+        
+        <div class='myBlockListMatches'>
+        {% for match in matches %}
+            <div class="matchListing">
+                 <div><a href="{{ path('tennis_match_show', { 'id' : match.id }) }}"> {{ match.name }}</div>
+                 <div>Le {{match.eventDate|date("m/d/Y")}}  à {{match.startHour|date("h")}}H{{match.startHour|date("i")}}</div></a>
+            </div>
+        {% endfor %}
+        <div>
+
+        <div class="myProfileDeconnexion">
+            <a class="myProfileDeconnexionButton" href = "{{ path('app_logout') }}">Déconnexion</a>
+        </div>
+        
+
+        <div class="blankMyProfilePage"></div>
+    </div>
+
+{% endblock %}

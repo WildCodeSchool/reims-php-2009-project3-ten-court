@@ -308,17 +308,100 @@ body {
 .myProfileEdition {
     text-align: center;
     background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(128, 84%, 32%);
     cursor: pointer;
-    border: none;
     border-radius: 10px;
     padding: 10px 50px;
     margin: 10px;
 }
+.ModifyAvatarButtonMyProfile {
+    align-self: center;
+    color: white;
+    position: relative;
+    bottom: 40px;
+}
+.myProfileAvatarEdit {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.editionItemForm {
+    margin: 5px 0px 10px 0px;
+}
+.editionItemFormAvatar  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.editionItemFormAvatar div  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.editionItemFormAvatar:nth-child(1){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+#avatar_avatar {
+    margin-top: 10px;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(128, 84%, 32%);
+    border-radius: 10px;
+}
+.editionButtonsFormAvatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+.updateButtonAvatar {
+    margin: 10px;
+    text-align: center;
+    align-self: center;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(128, 84%, 32%);
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    width: 95%;
+}
+#avatar_update {
+    background-color: hsl(128, 56%, 52%);
+    color: white;
+    border: none;
+    font-size: 0.8rem;
+}
+
+.backButtonEditAvatar, .EditAccueilButtonAvatar, .updateButtonAvatar {
+    margin: 10px;
+    text-align: center;
+    align-self: center;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px hsl(128, 84%, 32%);
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 50px;
+    width: 95%;
+}
+.myProfileAvatarEditItem {
+    width:300px;
+    border-radius: 10px;
+}
+.blankMyEditAvatarPage {
+    height: 80px;
+}
 .myProfileDeconnexion {
     text-align: center;
     background-color: HSL(0, 70%, 43%);
+    border: solid 2px hsl(0, 69%, 34%);
     color: white;
-    border: none;
     border-radius: 10px;
     padding: 10px 50px;
     margin: 10px;
@@ -336,6 +419,51 @@ body {
 .blankMyProfilePage {
     height: 40px;
 }
+
+// PROFILE LIST MATCHES
+
+.containerMyMatches {
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  .myMatchesTitle {
+    color: black;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .matchList {
+    margin: 10px;
+    text-decoration: none ;
+    text-align : center ;
+    padding: 10px 50px;
+    border-radius: 10px;   
+    background-color: #40c952 ;
+    border: solid 2px hsl(128, 84%, 32%);
+  }
+  .matchList a {
+    color: white;
+  }
+  .matchListing {
+    margin-top: 5px ;
+    text-decoration: none ;
+    text-align : center ;
+    padding: 10px ;
+    border-radius: 10px;   
+    background-color: #40c952 ;
+    border: solid 1px hsl(128, 84%, 32%);
+    font-weight: bold ;
+    margin-left: 10% ;
+    margin-right: 10% ;
+  }
+  
+  .matchList a {
+    text-decoration : none ;
+  }
 
 //EDIT USER
 #updateMessageSuccess {
@@ -363,11 +491,10 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 10px;
 }
 .editionTitleForm {
-    margin-top: 20px;
     text-align: center;
+    margin: 20px;
 }
 .editionItemForm div {
     display: flex;
@@ -377,9 +504,6 @@ body {
 }
 .editionItemForm label {
     text-align: center;
-}
-.editionItemForm, .editionBirtdateForm {
-    margin: 10px 0px;
 }
 .editionBirtdateForm label {
     display: flex;
@@ -401,117 +525,88 @@ body {
     border-radius: 10px;
     border: none;
     appearance: none;
-    border: solid 1px hsl(128, 56%, 52%);
+    border: solid 2px #0d961f;
 }
-
 .editionBirtdateForm {
     display: flex;
     justify-content: center;
 }
 
-#user_update {
-    background-color: hsl(128, 56%, 52%);
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 126px;
-    width: 95%;
-}
-
 #user_email, #user_pseudo, #user_firstname, #user_lastname {
-    padding: 10px 50px;
-    border-radius: 10px;
-    border: none;
-    border: solid 1px hsl(128, 56%, 52%);
-}
-#user_sex{
-    padding: 10px 95px;
-    align-items: center;
-    border-radius: 10px;
-    border: none;
-    appearance: none;
-    border: solid 1px hsl(128, 56%, 52%);
-}
-#user_level {
-    padding: 10px 85px;
-    align-items: center;
     text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
     border-radius: 10px;
-    border: none;
-    border: solid 1px hsl(128, 56%, 52%);
-    appearance: none;
-}
-#user_address, #user_postalcode, #user_phone, #user_city {
     padding: 10px 50px;
+    color: white;
+}
+#user_sex, #user_level {
+    padding: 10px 50px;
+    align-items: center;
     border-radius: 10px;
     border: none;
-    border: solid 1px hsl(128, 56%, 52%);
+    appearance: none;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    color: white;
 }
-#user_description {
+#user_address, #user_postalcode, #user_phone, #user_city, #user_description {
+    padding: 10px 50px;
+    align-items: center;
     border-radius: 10px;
     border: none;
-    border: solid 1px hsl(128, 56%, 52%);
+    appearance: none;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    color: white;
 }
-.EditAccueilButton {
+.EditAccueilButton, .backButtonEditProfile, #user_update {
     text-align: center;
     margin-top: 10px;
     align-self: center;
-    background-color: hsl(128, 56%, 52%);
     color: white;
     cursor: pointer;
-    font-size: 1.1rem;
     text-decoration: none;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 147px;
     width: 95%;
+    padding: 10px 50px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px #0d961f;
 }
-.backButtonEditProfile {
-    text-align: center;
-    align-self: center;
-    background-color: hsl(128, 56%, 52%);
-    color: white;
-    cursor: pointer;
-    font-size: 1.1rem;
-    text-decoration: none;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 147px;
-    width: 95%;
+#user_update {
+    font-size: 0.9rem;
 }
 .DeleteButtonEditProfile {
-    margin-top: 80px;
-    text-align: center;
+    margin-top: 60px;
     align-self: center;
-    background-color: HSL(0, 70%, 43%);
-    color: white;
+    background-color: hsl(0, 70%, 43%);
     cursor: pointer;
-    font-size: 1.1rem;
     text-decoration: none;
-    border: none;
     border-radius: 10px;
-    padding: 10px 148px;
     width: 95%;
-
     display: flex;
     justify-content:center;
+    background-color: hsl(0, 70%, 43%);
+    border: solid 2px hsl(0, 69%, 34%);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 50px;
 }
 .DeleteButtonEditProfile button.btn {
+    font-size: 0.9rem;
     cursor: pointer;
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
     align-self: center;
     text-align: center;
-    font-size: 1rem;
     border: none;
     color: white;
-    background-color: HSL(0, 70%, 43%);
+    background-color: hsl(0, 70%, 43%);
 }
 .blankEditionPage {
-    height: 40px;
+    height: 60px;
 }
 
 //ALL USERS PART
@@ -824,15 +919,6 @@ body {
     appearance: none;
     cursor: pointer;
 }
-.searchFormRow label {
-    display: inline-block;
-    min-width: 50px;
-    text-align: left;
-    margin-right: 1rem;
-}
-.row {
-    padding: 0.5rem;
-}
 
 .containerSearchUsers {
     display: flex;
@@ -850,8 +936,8 @@ body {
 .searchFormRow {
     display: flex;
     justify-content: center;
-    padding: 0.5rem;
-/*     width: 100%; */
+    margin-bottom: 10px;
+    width: 100%;
 }
 .searchFormRow div {
     display: flex;
@@ -876,7 +962,6 @@ body {
 }
 #search_user_level {
     border-radius: 10px;
-/*     padding: 10px 120px; */
     text-align: center;
 }
 #search_user_min, #search_user_max {
@@ -897,7 +982,6 @@ body {
 }
 #search_user_sex {
     border-radius: 10px;
-/*     padding: 10px 135px; */
     text-align: center;
 }
 
@@ -962,8 +1046,7 @@ body {
     color: rgb(255, 255, 255);
 }
 #search_match_save, #search_match_adress, #search_match_startHour, #search_match_endHour, #search_match_min, #search_match_max { 
-    background-color: hsl(128, 56%, 52%);
-    cursor: pointer;
+    background-color: hsl(128, 56%, 52%);/*  */
     text-decoration: none;
     border: none;
     border-radius: 10px;
@@ -1047,20 +1130,22 @@ body {
     width: 100%;
 
 }
-//MATCH CREATE CSS
-
+.blankShowTennisMatchPage {
+    height: 60px;
+}
 @media (min-width: 1000px) {
     .containerMatchsResult {
         min-width: 1000px;
     }
 }
+
 //MATCH CREATE
 
 .createMatchPage {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: url("../../assets/images/backgroundImages/subscription.jpg");
+    background-image: url("../../assets/images/backgroundImages/withoutLogo.jpg");
     background-repeat: no-repeat;
     height: 100vh;
     background-position: center;
@@ -1104,15 +1189,9 @@ body {
     background-color : #40c952 ; 
     height : 40px ; 
     margin-top: 30px ;
-    padding-left : 20px ; 
-    padding-right : 20px ;
     font-weight : bold ;
     color: white;
-    
-}
-
-#tennis_match_adress {
-    margin : auto  ;
+    width: 220px;
 }
 
 .createMatchSaveItemForm{
@@ -1130,10 +1209,22 @@ body {
 .createMatchDateItemForm{
     margin-top: 10px ;
 }
+@media (min-width: 300px) {
+    #tennis_match_name, #tennis_match_adress, #tennis_match_description,
+    #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate {
+        width: 280px;
+    }
+    .createMatchSaveItemForm button {  
+        width: 280px;
+    }
+}
 @media (min-width: 500px) {
     #tennis_match_name, #tennis_match_adress, #tennis_match_description,
     #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate {
-        width: 420px;
+        width: 500px;
+    }
+    .createMatchSaveItemForm button {  
+        width: 500px;
     }
 }
 @media (min-width: 700px) {
@@ -1146,39 +1237,10 @@ body {
     #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate {
         width: 620px;
     }
+    .createMatchSaveItemForm button {  
+        width: 620px;
+    }
 }
-
-
-#tennis_match_name {
-    text-align: center ;
-}
-
-#tennis_match_description {
-    text-align: center ;
-}
-
-#tennis_match_adress {
-    text-align : center ;
-}
-
-// PROFIL MATCH
-
-.matchList{
-    margin-top: 2px ;
-    text-decoration: none ;
-    text-align : center ;
-    padding: 8px ;
-    border-radius: 10px;    
-    border: solid 1px hsl(128, 56%, 52%);
-    margin-left: 10px ;
-    margin-right: 10px ;
-  }
-  
-  .matchList a{
-    text-decoration : none ;
-  }
-
-    //MATCH CREATE CSS (fin)
 
 // MATCH DESCRIPTION PAGE
 .backgroundDescriptionContainer {
@@ -1193,52 +1255,60 @@ body {
     background-size: cover;
 
 }
+.matchTitleTennisMatchShow {
+    margin: 20px;
+}
 .matchDescriptionContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: hsla(348, 2%, 93%, 0.8);
+        border-radius: 10px;
+        margin: 20px;
+        padding: 20px;
+        width: 80%;
+        -webkit-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
+}
+
+.titleItemTennisMatchShow {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-top: 65px;
-    background-color: hsla(348, 2%, 93%, 0.8);
-    max-width: 80%;
-    padding: 50px;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    color: hsl(128, 56%, 52%);
+    font-weight: bold;
+    margin: 5px;
 }
-.matchDescriptionContainer h1 {
-    margin-bottom: 15px;
-}
-.descriptionRow {
+.containerDescriptionDateTennisMatchShow {
     display: flex;
     flex-direction: row;
-    margin-top: 10px;
 }
-.descriptionRow.date {
-    color: HSL(127, 56%, 52%);
+.containerDateTennisMatchShow, .containerDescriptionDateTennisMatchShow,
+.containerAddressTennisMatchShow, .containerDescriptionTennisMatchShow {
+    margin: 10px;
 }
-.descriptionRow p {
-    padding-right: 5px;
-    padding-left: 5px;
+.containerDescriptionDateTennisMatchShow p {
+    margin: 10px;
 }
-.button {
+.containerButtonTennisMatchShow {
     display: flex;
     flex-direction: column;
     width: 80%;
 }
-.back, .participate {
+.backButtonTennisMatchShow, .participateButtonTennisMatchShow {
     text-align: center;
     align-self: center;
-    background-color: hsl(128, 56%, 52%);
-    border: solid 2px #0daa1a;
+    background-color: HSL(128, 56%, 52%);
     color: white;
     cursor: pointer;
-    font-size: 1.1rem;
     text-decoration: none;
-    margin-top: 5px;
+    border: solid 2px #0daa1a;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 10px 10px;
     width: 100%;
+    margin: 5px;
 
 }
+

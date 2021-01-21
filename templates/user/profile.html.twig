@@ -17,9 +17,8 @@
             {% if user.avatar == NULL  %}
                 <img class='userPictureProfileShow myProfilePicture' src="https://picsum.photos/100" alt="avatar">
             {% else %}
-
                 <img class="userPictureProfileShow myProfilePicture" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
-
+                <a class="ModifyAvatarButtonMyProfile" id= "editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
             {% endif %}
             <div class="myProfilePseudo">
                 {{ user.pseudo}}
@@ -63,22 +62,17 @@
             <div class="myProfileEdition">
                 <a class="myProfileEditButton" href="{{ path('user_edit', {'slug': user.slug}) }}">Modifier mon profil</a>
             </div>
-
-        
-        <h2 class='h2Match'>Mes Matchs  </h2>
-
-        
-        {% for match in matches %}
-        <div class="matchList">
-        <a href="{{ path('tennis_match_show', { 'id' : match.id }) }}"> {{ match.name }} </a> </br>
         </div>
-        {% endfor %}
-        
+
+
+        <div class="matchList">
+            <a href="{{ path('user_mymatches', {'id': user.id}) }}">Mes matchs</a>
+        </div>
 
             <div class="myProfileDeconnexion">
                 <a class="myProfileDeconnexionButton" href = "{{ path('app_logout') }}">Déconnexion</a>
             </div>
-        </div>
+        
         <div class="blankMyProfilePage"></div>
     </div>
 

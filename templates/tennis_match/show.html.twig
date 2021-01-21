@@ -1,36 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}TennisMatch{% endblock %}
+{% block title %}Tennis Match - TenCourt{% endblock %}
 
 {% block body %}
 <div class="backgroundDescriptionContainer">
-    
-        <div class="matchDescriptionContainer"> 
-            <h1>{{ tennis_match.name }}</h1>  
-                <div class="descrpitionRow MatchDate">
-                    <p class="itemMatchResult"><span class="titleItemMatchResult">Date:</span> {{ tennis_match.eventDate ? tennis_match.eventDate|date('d/m/Y') }}</p>
-                </div>
-                <div class="descriptionRow date">
-                    <p>De </p>
-                    <p>{{ tennis_match.startHour ? tennis_match.startHour|date('H:i') : '' }}</p>
-                    <p>à </p>
-                    <p>{{ tennis_match.endHour ? tennis_match.endHour|date('H:i') : '' }}</p>
-                </div>
-                <div class="descriptionRow">
-                    <p>Lieu: </p>
-                    <p>{{ tennis_match.adress }}</p>
-                </div>
-                <div class="descriptionRow">
-                    <p>Description</p>
-                    <p>{{ tennis_match.description }}</p>
-                </div>
+    <div class="matchDescriptionContainer"> 
+        <h1 class="matchTitleTennisMatchShow">{{ tennis_match.name }}</h1>  
+        <div class="containerDateTennisMatchShow">
+            <p class="itemDateTennisMatchShow"><span class="titleItemTennisMatchShow">Date:</span> {{ tennis_match.eventDate ? tennis_match.eventDate|date('d/m/Y') }}</p>
         </div>
-    <div class="button">
-        <a class="back" href="{{ path('search_matchs') }}">retour à la liste</a>
-        <a class="participate" href="{{ path('tennis_match_edit', {'id': tennis_match.id}) }}">participer</a>
+        <div class="containerDescriptionDateTennisMatchShow">
+            <p class="itemDescriptionTennisMatchShow"><span class="titleItemTennisMatchShow">De</span> {{ tennis_match.startHour ? tennis_match.startHour|date('H:i') : '' }}</p>
+            <p class="itemDescriptionTennisMatchShow"><span class="titleItemTennisMatchShow">À</span> {{ tennis_match.endHour ? tennis_match.endHour|date('H:i') : '' }}</p>
+        </div>
+        <div class="containerAddressTennisMatchShow">
+            <p class="itemAddressTennisMatchShow"><span class="titleItemTennisMatchShow">Lieu:</span> {{ tennis_match.adress }}</p>
+        </div>
+        <div class="containerDescriptionTennisMatchShow">
+            <p class="itemDescriptionTennisMatchShow"><span class="titleItemTennisMatchShow">Description</span> {{ tennis_match.description }}</p>
+        </div>
     </div>
-
-   
+    <div class="containerButtonTennisMatchShow">
+        <a class="backButtonTennisMatchShow" href="{{ path('search_matchs') }}">Retour à la liste</a>
+        <a class="participateButtonTennisMatchShow" href="{{ path('tennis_match_edit', {'id': tennis_match.id}) }}">Participer</a>
+    </div>
 </div>
 {{ include('tennis_match/_delete_form.html.twig') }}
 {% endblock %}
