@@ -2,13 +2,13 @@
     <h1 class="editionTitleForm">Modifier mon profile</h1>
     {{ form_start(editUserForm) }}
     <div class="containerEditionForm">
-        <div class="editionItemForm">
+        <div class="editionItemForm editionItemEmail">
             {{ form_row(editUserForm.email) }}
         </div>
          <div class="editionItemForm">
             {{ form_row(editUserForm.firstname) }}
         </div>
-         <div class="registrationItemForm">
+         <div class="editionItemForm">
             {{ form_row(editUserForm.lastname) }}
         </div>
         <div class="editionItemForm">
