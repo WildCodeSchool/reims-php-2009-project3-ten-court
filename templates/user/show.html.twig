@@ -6,7 +6,7 @@
     <div class="backgroundShowUser">
         <div class="containerUserProfileShow">
             {% if user.avatar == NULL  %}
-                <img class="myProfilePicture" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
+                <img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
             {% else %}
 
                 <img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
