@@ -64,6 +64,7 @@ class UserType extends AbstractType
                 'label' => 'Telephone',
             ])
             ->add('birthdate', BirthdayType::class, [
+                'label' => 'Date d\'anniversaire',
                 'placeholder' => [
                     'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
                 ],
