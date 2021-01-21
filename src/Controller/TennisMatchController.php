@@ -58,8 +58,12 @@ class TennisMatchController extends AbstractController
      */
     public function show(TennisMatch $tennisMatch): Response
     {
+        $participents = $tennisMatch->getParticipent();
+        $nbParticipents = count($participents);
+
         return $this->render('tennis_match/show.html.twig', [
             'tennis_match' => $tennisMatch,
+            'nbParticipents' => $nbParticipents,
         ]);
     }
 
@@ -108,6 +112,25 @@ class TennisMatchController extends AbstractController
         $this->addFlash(
             'success',
             'Votre participation a bien été prise en compte !'
+        );
+
+        return $this->redirectToRoute('tennis_match_show', [
+            'id' => $match->getId(),
+        ]);
+    }
+
+    /**
+     * @Route("/{id}/remove", name="tennis_match_remove")
+     */
+    public function removeIntoTheMatch(TennisMatch $match, EntityManagerInterface $em): Response
+    {
+        $match->removeParticipent($this->getUser());
+
+        $em->flush();
+
+        $this->addFlash(
+            'success',
+            'Vous ne participez plus à ce match !'
         );
 
         return $this->redirectToRoute('tennis_match_show', ['id' => $match->getId()]);
