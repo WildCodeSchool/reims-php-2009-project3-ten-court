@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\TennisMatch;
 use App\Form\UserType;
 use App\Form\AvatarType;
 use App\Service\Slugify;
@@ -68,14 +69,29 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/matches/{id}", name="mymatches",requirements={"id"="\d+"} , methods={"GET"})
+     * @Route("/{slug}/matches", name="matches", requirements={"user"="\d+"} , methods={"GET"})
+     * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
-    public function showMatch(User $user): Response
+    public function showMatches(User $user): Response
     {
-        $match = $user->getTennisMatches();
+        $matches = $user->getTennisMatches();
         return $this->render('user/show_match.html.twig', [
             'user' => $user,
-            'matches' => $match
+            'matches' => $matches
+        ]);
+    }
+
+    /**
+     * @Route("/{user}/matches/{tennisMatch}", name="match_show",
+     * requirements={"user"="\d+", "tennisMatch"="\d+"}, methods={"GET"})
+     * @Route("/tennis/match/show", name="tennis_match_show")
+     * @Route("/tennis/match/show/{id}", name="tennis_match_show", methods={"GET"})
+     */
+    public function showMatch(TennisMatch $tennisMatch, User $user): Response
+    {
+        return $this->render('tennis_match/show.html.twig', [
+            'tennis_match' => $tennisMatch,
+            'user' => $user,
         ]);
     }
 
@@ -85,10 +101,10 @@ class UserController extends AbstractController
      */
     public function myProfile(User $user): Response
     {
-        $match = $user->getTennisMatches();
+        $matches = $user->getTennisMatches();
         return $this->render('user/profile.html.twig', [
             'user' => $user,
-            'matches' => $match
+            'matches' => $matches
         ]);
     }
 

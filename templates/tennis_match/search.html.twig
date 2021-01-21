@@ -56,7 +56,7 @@
                 <div class="containerSearchMatchDescription">  
                     <p class="itemMatchResult"><span class="titleItemMatchResult">Description:</span> {{ match.description }}</p><br>
                 </div>
-                <a href="{{ path('tennis_match_show', {'id':match.id}) }}" class="watch">Voir</a>
+                <a href="{{ path('user_tennis_match_show', {'id':match.id}) }}" class="watch">Voir</a>
             </div>
             {% else %}
             <p class="resultSearch"> il n'y a pas de résultat pour votre recherche </p>

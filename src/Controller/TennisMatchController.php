@@ -52,16 +52,6 @@ class TennisMatchController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="tennis_match_show", methods={"GET"})
-     */
-    public function show(TennisMatch $tennisMatch): Response
-    {
-        return $this->render('tennis_match/show.html.twig', [
-            'tennis_match' => $tennisMatch,
-        ]);
-    }
-
-    /**
      * @Route("/{id}/edit", name="tennis_match_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, TennisMatch $tennisMatch): Response

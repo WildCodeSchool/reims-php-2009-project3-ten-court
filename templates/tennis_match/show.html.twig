@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="containerButtonTennisMatchShow">
-        <a class="backButtonTennisMatchShow" href="{{ path('search_matchs') }}">Retour à la liste</a>
+        <a class="backButtonTennisMatchBack" href="{{ path('user_matches', {'slug': user.id}) }}">Retour à la liste</a>
         <a class="participateButtonTennisMatchShow" href="{{ path('tennis_match_edit', {'id': tennis_match.id}) }}">Participer</a>
     </div>
 </div>
