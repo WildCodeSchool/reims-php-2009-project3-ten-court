@@ -326,6 +326,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+.editionItemForm {
+    margin: 5px 0px 10px 0px;
+}
 .editionItemFormAvatar  {
     display: flex;
     justify-content: center;
@@ -362,7 +365,6 @@ body {
     align-self: center;
     background-color: hsl(128, 56%, 52%);
     border: solid 2px hsl(128, 84%, 32%);
-  /*   cursor: pointer; */
     text-decoration: none;
     border-radius: 10px;
     padding: 10px 50px;
@@ -489,12 +491,10 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 10px;
 }
 .editionTitleForm {
-    margin-top: 20px;
-    font-size: 1.3rem;
     text-align: center;
+    margin: 20px;
 }
 .editionItemForm div {
     display: flex;
@@ -504,9 +504,6 @@ body {
 }
 .editionItemForm label {
     text-align: center;
-}
-.editionItemForm, .editionBirtdateForm {
-    margin: 10px 0px;
 }
 .editionBirtdateForm label {
     display: flex;
@@ -541,7 +538,6 @@ body {
     border: solid 2px #0d961f;
     border-radius: 10px;
     padding: 10px 50px;
-    margin: 10px;
     color: white;
 }
 #user_sex, #user_level {
@@ -582,7 +578,7 @@ body {
     font-size: 0.9rem;
 }
 .DeleteButtonEditProfile {
-    margin-top: 80px;
+    margin-top: 60px;
     align-self: center;
     background-color: hsl(0, 70%, 43%);
     cursor: pointer;
@@ -610,7 +606,7 @@ body {
     background-color: hsl(0, 70%, 43%);
 }
 .blankEditionPage {
-    height: 40px;
+    height: 60px;
 }
 
 //ALL USERS PART
@@ -1050,8 +1046,7 @@ body {
     color: rgb(255, 255, 255);
 }
 #search_match_save, #search_match_adress, #search_match_startHour, #search_match_endHour, #search_match_min, #search_match_max { 
-    background-color: hsl(128, 56%, 52%);
-    cursor: pointer;
+    background-color: hsl(128, 56%, 52%);/*  */
     text-decoration: none;
     border: none;
     border-radius: 10px;
