@@ -69,7 +69,7 @@ class UserType extends AbstractType
                 'placeholder' => [
                     'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour',
                 ],
-                'years' => range(2003, 1940),
+                'years' => range(2003, 1930),
             ])
             ->add('firstname', TextType::class, [
                 'label' => 'Prénom',
