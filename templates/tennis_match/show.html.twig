@@ -31,13 +31,14 @@
             <p>Match complet</p>
         {% else %}
             {% if app.user == tennis_match.organizer %}
-                <p>Vous êtes l'organisateur</p>
+                <p class="TennisMatchShowMessage">Vous êtes l'organisateur de ce match</p>
+                <a href="{{path('tennis_match_delete', {'id': tennis_match.id})}}"><div class="deleteOrganizerButtonTennisMatchShow">{{ include('tennis_match/_delete_form.html.twig') }}</div></a>
             {% else %}
                 <a class="participateButtonTennisMatchShow" href="{{ path('tennis_match_add', {'id': tennis_match.id}) }}">Participer</a>
             {% endif %}
         {% endif %}
         <a class="backButtonTennisMatchShow" href="{{ path('search_matchs') }}">Retour à la liste</a>
+    <div class="blankTennisMatchDetailPage"></div>
     </div>
 </div>
-{{ include('tennis_match/_delete_form.html.twig') }}
 {% endblock %}
