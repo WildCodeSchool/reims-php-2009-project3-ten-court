@@ -44,6 +44,7 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
             $randKey = array_rand($this->cities, 1);
             $match->setAdress($this->cities[$randKey]);
             $match->setOrganizer($this->getReference('admin'));
+            $match->addParticipent($this->getReference('admin'));
             $manager->persist($match);
         }
         $manager->flush();
