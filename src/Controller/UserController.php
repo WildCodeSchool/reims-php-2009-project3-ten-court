@@ -177,7 +177,7 @@ class UserController extends AbstractController
      * @Route("/{slug}/deleteAvatar", name="delete_avatar", methods={"GET","POST"})
      * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
-    public function deleteAvatar(EntityManagerInterface $em, Request $request, User $user): Response
+    public function deleteAvatar(EntityManagerInterface $em, User $user): Response
     {
         $fileToDelete = __DIR__ . '/../../public/uploads/' . $user->getAvatar();
         if (file_exists($fileToDelete)) {
