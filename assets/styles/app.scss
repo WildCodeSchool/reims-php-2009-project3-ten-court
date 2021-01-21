@@ -428,32 +428,24 @@ body {
     background-attachment: fixed;
     background-size: cover;
   }
-  
-  
   .myMatchesTitle {
     color: black;
     padding: 20px;
     margin-top: 20px;
     text-align: center;
   }
-  
-  
   .matchList {
-    margin-top: 5px ;
+    margin: 10px;
     text-decoration: none ;
     text-align : center ;
-    padding: 8px ;
+    padding: 10px 50px;
     border-radius: 10px;   
     background-color: #40c952 ;
     border: solid 2px hsl(128, 84%, 32%);
-    font-weight: bold ;
-    margin-left: 10px ;
-    margin-right: 10px ;
   }
   .matchList a {
     color: white;
   }
-  
   .matchListing {
     margin-top: 5px ;
     text-decoration: none ;
@@ -536,117 +528,89 @@ body {
     border-radius: 10px;
     border: none;
     appearance: none;
-    border: solid 1px hsl(128, 56%, 52%);
+    border: solid 2px #0d961f;
 }
-
 .editionBirtdateForm {
     display: flex;
     justify-content: center;
 }
 
-#user_update {
-    background-color: hsl(128, 56%, 52%);
-    color: white;
-    cursor: pointer;
-    font-size: 1rem;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 126px;
-    width: 95%;
-}
-
 #user_email, #user_pseudo, #user_firstname, #user_lastname {
-    padding: 10px 50px;
-    border-radius: 10px;
-    border: none;
-    border: solid 1px hsl(128, 56%, 52%);
-}
-#user_sex{
-    padding: 10px 95px;
-    align-items: center;
-    border-radius: 10px;
-    border: none;
-    appearance: none;
-    border: solid 1px hsl(128, 56%, 52%);
-}
-#user_level {
-    padding: 10px 85px;
-    align-items: center;
     text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
     border-radius: 10px;
-    border: none;
-    border: solid 1px hsl(128, 56%, 52%);
-    appearance: none;
-}
-#user_address, #user_postalcode, #user_phone, #user_city {
     padding: 10px 50px;
+    margin: 10px;
+    color: white;
+}
+#user_sex, #user_level {
+    padding: 10px 50px;
+    align-items: center;
     border-radius: 10px;
     border: none;
-    border: solid 1px hsl(128, 56%, 52%);
+    appearance: none;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    color: white;
 }
-#user_description {
+#user_address, #user_postalcode, #user_phone, #user_city, #user_description {
+    padding: 10px 50px;
+    align-items: center;
     border-radius: 10px;
     border: none;
-    border: solid 1px hsl(128, 56%, 52%);
+    appearance: none;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    color: white;
 }
-.EditAccueilButton {
+.EditAccueilButton, .backButtonEditProfile, #user_update {
     text-align: center;
     margin-top: 10px;
     align-self: center;
-    background-color: hsl(128, 56%, 52%);
     color: white;
     cursor: pointer;
-    font-size: 1.1rem;
     text-decoration: none;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 147px;
     width: 95%;
+    padding: 10px 50px;
+    align-items: center;
+    border-radius: 10px;
+    background-color: hsl(128, 56%, 52%);
+    border: solid 2px #0d961f;
 }
-.backButtonEditProfile {
-    text-align: center;
-    align-self: center;
-    background-color: hsl(128, 56%, 52%);
-    color: white;
-    cursor: pointer;
-    font-size: 1.1rem;
-    text-decoration: none;
-    border: none;
-    border-radius: 10px;
-    padding: 10px 147px;
-    width: 95%;
+#user_update {
+    font-size: 0.9rem;
 }
 .DeleteButtonEditProfile {
     margin-top: 80px;
-    text-align: center;
     align-self: center;
-    background-color: HSL(0, 70%, 43%);
-    color: white;
+    background-color: hsl(0, 70%, 43%);
     cursor: pointer;
-    font-size: 1.1rem;
     text-decoration: none;
-    border: none;
     border-radius: 10px;
-    padding: 10px 148px;
     width: 95%;
-
     display: flex;
     justify-content:center;
+    background-color: hsl(0, 70%, 43%);
+    border: solid 2px hsl(0, 69%, 34%);
+    color: white;
+    border-radius: 10px;
+    padding: 10px 50px;
 }
 .DeleteButtonEditProfile button.btn {
+    font-size: 0.9rem;
     cursor: pointer;
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
     align-self: center;
     text-align: center;
-    font-size: 1rem;
     border: none;
     color: white;
-    background-color: HSL(0, 70%, 43%);
+    background-color: hsl(0, 70%, 43%);
 }
 .blankEditionPage {
-    height: 10px;
+    height: 40px;
 }
 
 //ALL USERS PART
