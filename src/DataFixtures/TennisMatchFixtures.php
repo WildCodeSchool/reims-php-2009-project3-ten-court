@@ -47,7 +47,20 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
                 $match->setOrganizer($this->getReference('user' . $userReferenceNumber));
                 $manager->persist($match);
             }
-        }
-        $manager->flush();
+            for ($i = 0; $i < 50; $i++) {
+                // Création d’un utilisateur de type “contributeur” (= auteur)
+                $match = new TennisMatch();
+                $match->setEventDate($faker->dateTimeBetween('now', '2 years'));
+                $match->setStartHour($faker->dateTimeBetween('now', '2 years'));
+                $match->setEndHour($faker->dateTimeBetween('now', '2 years'));
+                $match->setName('match amical');
+                $match->setDescription($faker->paragraph());
+                $randKey = array_rand($this->cities, 1);
+                $match->setAdress($this->cities[$randKey]);
+                $match->setOrganizer($this->getReference('admin'));
+                $match->addParticipent($this->getReference('admin'));
+                $manager->persist($match);
+            }
+        } $manager->flush();
     }
 }

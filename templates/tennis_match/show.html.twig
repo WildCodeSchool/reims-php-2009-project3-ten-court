@@ -3,6 +3,11 @@
 {% block title %}Tennis Match - TenCourt{% endblock %}
 
 {% block body %}
+    {% for message in app.flashes('success') %}
+        <div id="updateMessageSuccess">
+            {{ message }}
+        </div>
+    {% endfor %}
 <div class="backgroundDescriptionContainer">
     <div class="matchDescriptionContainer"> 
         <h1 class="matchTitleTennisMatchShow">{{ tennis_match.name }}</h1>  
@@ -21,8 +26,19 @@
         </div>
     </div>
     <div class="containerButtonTennisMatchShow">
-        <a class="backButtonTennisMatchBack" href="{{ path('search_matches') }}">Retour à la liste</a>
-        <a class="participateButtonTennisMatchShow" href="{{ path('tennis_match_edit', {'id': tennis_match.id}) }}">Participer</a>
+        <a class="backButtonTennisMatchShow" href="{{ path('search_matches') }}">Retour à la liste</a>
+        
+        {% if nbParticipents >= 2 or  app.user == tennis_match.participent %}
+            <a href="{{ path('tennis_match_remove', {'id': tennis_match.id}) }}">Annuler participation</a>
+            <p>Match complet</p>
+        {% else %}
+            {% if app.user == tennis_match.organizer %}
+                <p>Vous êtes l'organisateur</p>
+            {% else %}
+                <a class="participateButtonTennisMatchShow" href="{{ path('tennis_match_add', {'id': tennis_match.id}) }}">Participer</a>
+            {% endif %}
+        {% endif %}
+            
     </div>
 </div>
 {{ include('tennis_match/_delete_form.html.twig') }}
