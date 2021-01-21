@@ -8,6 +8,7 @@ use App\Form\AvatarType;
 use App\Service\Slugify;
 use App\Service\FileUploader;
 use App\Repository\UserRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\File\File;
@@ -170,5 +171,22 @@ class UserController extends AbstractController
         $session->invalidate();
 
         return $this->redirectToRoute('app_logout');
+    }
+
+    /**
+     * @Route("/{slug}/deleteAvatar", name="delete_avatar", methods={"GET","POST"})
+     * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
+     */
+    public function deleteAvatar(EntityManagerInterface $em, Request $request, User $user): Response
+    {
+        
+        $fileToDelete = __DIR__ . '/../../public/uploads/' . $user->getAvatar();
+        if (file_exists($fileToDelete)) {
+            unlink($fileToDelete);
+        }
+        $user->setAvatar(null);
+        $em->flush();
+
+        return $this->redirectToRoute('user_profile', ['slug' => $user->getSlug()]);
     }
 }
