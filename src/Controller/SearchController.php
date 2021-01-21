@@ -41,7 +41,7 @@ class SearchController extends AbstractController
     }
 
     /**
-     * @Route("/matchs", name="matchs")
+     * @Route("/matchs", name="matches")
      */
     public function searchMatch(Request $request, TennisMatchRepository $tennisMatch): Response
     {

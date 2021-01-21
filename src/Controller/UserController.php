@@ -69,7 +69,7 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}/matches", name="matches", requirements={"user"="\d+"} , methods={"GET"})
+     * @Route("/{slug}/matches", name="matches", methods={"GET"})
      * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
     public function showMatches(User $user): Response
@@ -84,8 +84,6 @@ class UserController extends AbstractController
     /**
      * @Route("/{user}/matches/{tennisMatch}", name="match_show",
      * requirements={"user"="\d+", "tennisMatch"="\d+"}, methods={"GET"})
-     * @Route("/tennis/match/show", name="tennis_match_show")
-     * @Route("/tennis/match/show/{id}", name="tennis_match_show", methods={"GET"})
      */
     public function showMatch(TennisMatch $tennisMatch, User $user): Response
     {
