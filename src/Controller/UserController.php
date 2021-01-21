@@ -179,7 +179,6 @@ class UserController extends AbstractController
      */
     public function deleteAvatar(EntityManagerInterface $em, Request $request, User $user): Response
     {
-        
         $fileToDelete = __DIR__ . '/../../public/uploads/' . $user->getAvatar();
         if (file_exists($fileToDelete)) {
             unlink($fileToDelete);
