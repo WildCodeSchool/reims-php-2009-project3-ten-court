@@ -27,7 +27,18 @@
     </div>
     <div class="containerButtonTennisMatchShow">
         <a class="backButtonTennisMatchShow" href="{{ path('search_matchs') }}">Retour à la liste</a>
-        <a class="participateButtonTennisMatchShow" href="{{ path('tennis_match_add', {'id': tennis_match.id}) }}">Participer</a>
+        
+        {% if nbParticipents >= 2 or  app.user == tennis_match.participent%}
+            <a href="{{ path('tennis_match_remove', {'id': tennis_match.id}) }}">Annuler participation</a>
+            <p>Match complet</p>
+        {% else %}
+            {% if app.user == tennis_match.organizer %}
+                <p>Vous êtes l'organisateur</p>
+            {% else %}
+                <a class="participateButtonTennisMatchShow" href="{{ path('tennis_match_add', {'id': tennis_match.id}) }}">Participer</a>
+            {% endif %}
+        {% endif %}
+            
     </div>
 </div>
 {{ include('tennis_match/_delete_form.html.twig') }}
