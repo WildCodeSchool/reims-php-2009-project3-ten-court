@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Entity\TennisMatch;
 use App\Form\TennisMatchType;
 use App\Repository\TennisMatchRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -94,5 +95,21 @@ class TennisMatchController extends AbstractController
         }
 
         return $this->redirectToRoute('tennis_match_index');
+    }
+    /**
+     * @Route("/{id}/participent", name="tennis_match_add")
+     */
+    public function addToMatch(TennisMatch $match, EntityManagerInterface $em): Response
+    {
+        $match->addParticipent($this->getUser());
+
+        $em->flush();
+
+        $this->addFlash(
+            'success',
+            'Votre participation a bien été prise en compte !'
+        );
+
+        return $this->redirectToRoute('tennis_match_show', ['id' => $match->getId()]);
     }
 }
