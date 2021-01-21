@@ -324,7 +324,9 @@ body {
     margin: 10px;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
+    margin-top: 100px;
 }
 .editionItemForm {
     margin: 5px 0px 10px 0px;
@@ -375,11 +377,6 @@ body {
     color: white;
     border: none;
     font-size: 0.8rem;
-}
-.myProfileAvatarEdit {
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
 }
 .myProfileAvatarEdit a {
     align-self: center;
