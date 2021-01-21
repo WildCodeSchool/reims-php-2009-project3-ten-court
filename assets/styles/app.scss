@@ -376,7 +376,14 @@ body {
     border: none;
     font-size: 0.8rem;
 }
-
+.myProfileAvatarEdit {
+    display: flex;
+    flex-direction: column;
+}
+.myProfileAvatarEdit a {
+    align-self: center;
+    color: hsl(0, 70%, 43%);
+}
 .backButtonEditAvatar, .EditAccueilButtonAvatar, .updateButtonAvatar {
     margin: 10px;
     text-align: center;
@@ -389,10 +396,6 @@ body {
     border-radius: 10px;
     padding: 10px 50px;
     width: 95%;
-}
-.myProfileAvatarEditItem {
-    width:300px;
-    border-radius: 10px;
 }
 .blankMyEditAvatarPage {
     height: 80px;
@@ -422,7 +425,7 @@ body {
 
 // PROFILE LIST MATCHES
 
-.containerMyMatches {
+.containerMyMatchesBackground {
     background-image: url("../../assets/images/backgroundImages/Default.jpg");
     background-repeat: no-repeat;
     height: 100vh;
@@ -430,40 +433,66 @@ body {
     background-attachment: fixed;
     background-size: cover;
   }
-  .myMatchesTitle {
+.myMatchesTitle {
     color: black;
     padding: 20px;
     margin-top: 20px;
     text-align: center;
-  }
-  .matchList {
-    margin: 10px;
-    text-decoration: none ;
-    text-align : center ;
+}
+.containerMatchlisting {
+    text-decoration: none;
+}
+.myBlockListMatches {
+    display: grid;
+    grid-template-areas:
+        'match match';
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.myProfileMatchButton {
+    text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    cursor: pointer;
+    border-radius: 10px;
     padding: 10px 50px;
-    border-radius: 10px;   
-    background-color: #40c952 ;
-    border: solid 2px hsl(128, 84%, 32%);
-  }
-  .matchList a {
+    margin: 10px;
+}
+.myProfileMatchButton a {
     color: white;
-  }
-  .matchListing {
-    margin-top: 5px ;
-    text-decoration: none ;
-    text-align : center ;
-    padding: 10px ;
-    border-radius: 10px;   
-    background-color: #40c952 ;
-    border: solid 1px hsl(128, 84%, 32%);
-    font-weight: bold ;
-    margin-left: 10% ;
-    margin-right: 10% ;
-  }
-  
-  .matchList a {
-    text-decoration : none ;
-  }
+    text-decoration: none;
+}
+.matchListing {
+    grid-area: match;
+    padding: 40px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #40c952;
+    border: solid 2px hsl(128, 84%, 32%);
+}
+.matchListingTitleMatch {
+    font-size: 1.8rem;
+    color: hsl(128, 84%, 32%);
+}
+.matchListingDateMatch {
+    color: white;
+}
+.blankMyProfileShowMatchPage {
+    height: 200px;
+}
+@media (min-width: 0px) and (max-width: 500px) {
+    .myBlockListMatches {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .blankMyProfileShowMatchPage {
+        height: 120px;
+    }
+}
 
 //EDIT USER
 #updateMessageSuccess {
@@ -1077,7 +1106,7 @@ body {
     -webkit-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
-    max-width: 500px;
+    width: 700px;
 }
 .itemMatchOrganizerResult {
     margin: 10px;
@@ -1133,9 +1162,14 @@ body {
 .blankShowTennisMatchPage {
     height: 60px;
 }
-@media (min-width: 1000px) {
+@media (min-width: 440px) {
     .containerMatchsResult {
-        min-width: 1000px;
+        width: 90%;
+    }
+}
+@media (max-width:440px) {
+    .containerMatchsResult {
+        width: 340px;
     }
 }
 
@@ -1266,7 +1300,7 @@ body {
         text-align: center;
         background-color: hsla(348, 2%, 93%, 0.8);
         border-radius: 10px;
-        margin: 20px;
+        margin-top: 50px;
         padding: 20px;
         width: 80%;
         -webkit-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
@@ -1309,6 +1343,8 @@ body {
     padding: 10px 10px;
     width: 100%;
     margin: 5px;
-
+}
+.backButtonTennisMatchShow {
+    margin-top: 50px;
 }
 
