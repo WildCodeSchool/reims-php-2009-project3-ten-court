@@ -16,7 +16,7 @@ body {
     display: flex;
     flex-direction: column;
     color: black;  
-    font-family: "Excellence" ,impact , helvetica , arial, sans-serif; 
+    font-family: "Excellence" ,impact , helvetica , arial, sans-serif;
 }
 
 //LOGIN
@@ -1032,7 +1032,7 @@ body {
     display: flex;
 }
 
-//CSS for search match page 
+//SEARCH MATCH PAGE 
 
 .backgroundSearchMatchs {
     background-image: url("../../assets/images/backgroundImages/Default.jpg");
@@ -1275,6 +1275,38 @@ body {
 }
 
 // MATCH DESCRIPTION PAGE
+
+.TennisMatchShowMessage {
+    padding: 20px;
+    background-color: hsl(0, 70%, 43%);
+    border: solid 2px hsl(0, 69%, 34%);
+    border-radius: 10px;
+    margin: 20px 0px 10px 0px;
+    color: white;
+    align-self: center;
+}
+.deleteOrganizerButtonTennisMatchShow {
+    align-self: center;
+    padding: 20px;
+    background-color: hsl(0, 70%, 43%);
+    border: solid 2px hsl(0, 69%, 34%);
+    text-align: center;
+    justify-content:center;
+    align-self: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 10px;
+    width: 100%;
+}
+.deleteOrganizerButtonTennisMatchShow button.btn{
+    background-color: hsl(0, 70%, 43%);
+    border: none;
+    color: white;
+    font-size: 0.9rem;
+
+
+}
 .backgroundDescriptionContainer {
     display: flex;
     flex-direction: column;
@@ -1344,5 +1376,8 @@ body {
 }
 .backButtonTennisMatchShow {
     margin-top: 50px;
+}
+.blankTennisMatchDetailPage {
+    height: 100px;
 }
 
