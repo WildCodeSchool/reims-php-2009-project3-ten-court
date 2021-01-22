@@ -1196,7 +1196,7 @@ body {
 
 //MATCH CREATE
 
-.createMatchPage {
+.backgroundMatchCreate {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1297,6 +1297,87 @@ body {
     }
 }
 
+// MATCH UPDATE -> This is related to CREATE with his #
+.backgroundMatchEdit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../../assets/images/backgroundImages/withoutLogo.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+.containerEditMatchForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.containerEditMatchForm div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.editMatchItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;}
+
+.editMatchItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+.editMatchSaveItemForm button {  
+    border-radius : 10px ; 
+    border: solid 2px rgb(13, 170, 26);  
+    background-color : #40c952 ; 
+    height : 40px ; 
+    margin-top: 30px ;
+    color: white;
+    width: 220px;
+}
+
+.editMatchSaveItemForm{
+    margin-bottom: 50px ;
+}
+
+.editMatchItemForm {
+   margin: 10px 0px;
+}
+
+.backgroundMatchEdit {
+    text-align : center ;
+}
+
+.editMatchDateItemForm{
+    margin-top: 10px ;
+}
+@media (min-width: 300px) {
+    .editMatchSaveItemForm button {  
+        width: 280px;
+    }
+}
+@media (min-width: 500px) {
+    .editMatchSaveItemForm button {  
+        width: 500px;
+    }
+}
+@media (min-width: 700px) {
+    .editMatchPage {
+        background-image: url("../../assets/images/backgroundImages/subscriptionIpad.jpg");
+    }
+}
+@media (min-width: 800px) {
+    .editMatchSaveItemForm button {  
+        width: 620px;
+    }
+}
+
 // MATCH DESCRIPTION PAGE
 
 .TennisMatchShowMessage {
@@ -1337,6 +1418,22 @@ body {
 .itemInteractionParticipeMatch {
     border: solid 2px rgb(13, 170, 26);  
     background-color : #40c952;
+}
+.updateOrganizerButtonTennisMatchShow {
+    align-self: center;
+    padding: 20px;
+    background-color: HSL(128, 56%, 52%);
+    border: solid 2px #0daa1a;
+    text-align: center;
+    justify-content:center;
+    align-self: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 80px;
+    width: 100%;
+    color: white;
+    margin-bottom: 10px;
 }
 .deleteOrganizerButtonTennisMatchShow {
     align-self: center;

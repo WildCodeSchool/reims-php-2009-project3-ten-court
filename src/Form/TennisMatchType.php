@@ -47,9 +47,8 @@ class TennisMatchType extends AbstractType
             ->add('adress', TextType::class, [
                 'label' => 'Adresse'
             ])
-            ->add('description', TextareaType::class)
-            ->add('save', SubmitType::class, [
-                'label' => 'Créer le Match'
+            ->add('description', TextareaType::class, [
+                'required' => false,
             ]);
     }
 

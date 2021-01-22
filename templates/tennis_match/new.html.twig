@@ -32,10 +32,11 @@
                     {{ form_row(tennismatchform.description) }}
                 </div>
                 <div class="createMatchSaveItemForm">
-                    {{ form_row(tennismatchform.save) }}
+                    <button class="btn">{{ button_label|default('Créer le match') }}</button>
                 </div>
             </div>
             {{ form_end(tennismatchform) }}
         </div>
+    </div>
 </div>
 {% endblock %}

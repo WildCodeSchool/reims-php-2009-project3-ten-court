@@ -64,16 +64,12 @@
                 <a class="myProfileEditButton" href="{{ path('user_edit', {'slug': user.slug}) }}">Modifier mon profil</a>
             </div>
         </div>
-
-
         <div class="myProfileMatchButton">
             <a href="{{ path('user_matches', {'slug': user.slug}) }}">Mes matchs</a>
         </div>
-
-            <div class="myProfileDeconnexion">
-                <a class="myProfileDeconnexionButton" href = "{{ path('app_logout') }}">Déconnexion</a>
-            </div>
-        
+        <div class="myProfileDeconnexion">
+            <a class="myProfileDeconnexionButton" href = "{{ path('app_logout') }}">Déconnexion</a>
+        </div>
         <div class="blankMyProfilePage"></div>
     </div>
 

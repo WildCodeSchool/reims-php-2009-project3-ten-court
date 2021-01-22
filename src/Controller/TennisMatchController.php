@@ -86,12 +86,12 @@ class TennisMatchController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('tennis_match_index');
+            return $this->redirectToRoute('search_matches');
         }
 
         return $this->render('tennis_match/edit.html.twig', [
             'tennis_match' => $tennisMatch,
-            'form' => $form->createView(),
+            'formEditMatch' => $form->createView(),
         ]);
     }
 
