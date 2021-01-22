@@ -10,10 +10,13 @@
             <h1 class="createMatchTitleForm">Créer Match</h1>
             {{ form_start(tennismatchform) }}
             <div class="containerCreationMatchForm">
-                    <div class="createMatchItemForm">
+                <div class="createMatchItemForm">
                     {{ form_row(tennismatchform.name) }}
                 </div>
-                    <div class="createMatchDateItemForm">
+                <div class="createMatchItemForm">
+                    {{ form_row(tennismatchform.level) }}
+                </div>
+                <div class="createMatchDateItemForm">
                     {{ form_row(tennismatchform.eventDate) }}
                 </div>
                 <div class="createMatchDateItemForm">

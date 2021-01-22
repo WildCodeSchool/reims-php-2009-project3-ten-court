@@ -63,6 +63,11 @@ class TennisMatch
      */
     private Collection $participent;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private ?string $level;
+
     public function __construct()
     {
         $this->participent = new ArrayCollection();
@@ -180,6 +185,18 @@ class TennisMatch
         if ($this->participent->removeElement($participent)) {
             $participent->removeParticipationMatch($this);
         }
+
+        return $this;
+    }
+
+    public function getLevel(): ?string
+    {
+        return $this->level;
+    }
+
+    public function setLevel(?string $level): self
+    {
+        $this->level = $level;
 
         return $this;
     }
