@@ -33,26 +33,11 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
         $faker = Factory::create('fr_FR');
 
         for ($userReferenceNumber = 0; $userReferenceNumber < 10; $userReferenceNumber++) {
-            for ($i = 0; $i < 5; $i++) {
-                // Création d’un utilisateur de type “contributeur” (= auteur)
+            for ($i = 0; $i < 20; $i++) {
                 $match = new TennisMatch();
-                $match->setEventDate($faker->dateTimeBetween('now', '2 years'));
-                $match->setStartHour($faker->dateTimeBetween('now', '2 years'));
-                $match->setEndHour($faker->dateTimeBetween('now', '2 years'));
-                $match->setName($faker->randomElement(array (
-                    'Match de folie', 'Match en plein air', 'Match sur terre battue',
-                    'Match pour Débutant', 'Match experimenté', 'Entrainement',
-                    'Match féminin', 'Match masculin',
+                $match->setLevel($faker->randomElement(array (
+                    'Débutant', 'Intermediaire', 'Expert', 'Professionnel'
                 )));
-                $match->setDescription($faker->paragraph());
-                $randKey = array_rand($this->cities, 1);
-                $match->setAdress($this->cities[$randKey]);
-                $match->setOrganizer($this->getReference('user' . $userReferenceNumber));
-                $manager->persist($match);
-            }
-            for ($i = 0; $i < 50; $i++) {
-                // Création d’un utilisateur de type “contributeur” (= auteur)
-                $match = new TennisMatch();
                 $match->setEventDate($faker->dateTimeBetween('now', '2 years'));
                 $match->setStartHour($faker->dateTimeBetween('now', '2 years'));
                 $match->setEndHour($faker->dateTimeBetween('now', '2 years'));
@@ -68,6 +53,8 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
                 $match->addParticipent($this->getReference('admin'));
                 $manager->persist($match);
             }
-        } $manager->flush();
+        } 
+        
+        $manager->flush();
     }
 }

@@ -92,10 +92,10 @@ class RegistrationFormType extends AbstractType
             ->add('level', ChoiceType::class, [
                 'label' => 'Niveau',
                 'choices'  => [
-                    'Débutant' => 'debutant',
-                    'Intermediaire' => 'intermediaire',
-                    'Expert' => 'expert',
-                    'Professionnel' => 'professionnel',
+                    'Débutant' => 'Débutant',
+                    'Intermediaire' => 'Intermediaire',
+                    'Expert' => 'Expert',
+                    'Professionnel' => 'Professionnel',
                 ]
             ])
             ->add('city', TextType::class, [
