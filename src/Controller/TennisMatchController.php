@@ -13,6 +13,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+use function Amp\Iterator\toArray;
+
 /**
  * @Route("/tennis/match")
  */
@@ -61,9 +63,15 @@ class TennisMatchController extends AbstractController
         $participents = $tennisMatch->getParticipent();
         $nbParticipents = count($participents);
 
+        $isParticipent = false;
+        if (in_array($this->getUser(), $participents->getValues())) {
+            $isParticipent = true;
+        }
+
         return $this->render('tennis_match/show.html.twig', [
             'tennis_match' => $tennisMatch,
             'nbParticipents' => $nbParticipents,
+            'isParticipent' => $isParticipent,
         ]);
     }
 
@@ -98,7 +106,7 @@ class TennisMatchController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('tennis_match_index');
+        return $this->redirectToRoute('search_matches');
     }
     /**
      * @Route("/{id}/participent", name="tennis_match_add")
