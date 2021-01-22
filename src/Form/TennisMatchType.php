@@ -19,7 +19,8 @@ class TennisMatchType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'label' => 'Nom de l\'évènement'])
+                'label' => 'Nom de l\'évènement'
+            ])
             ->add('eventDate', DateType::class, [
                 'label' => 'Date du match',
                 'widget' => 'single_text',
