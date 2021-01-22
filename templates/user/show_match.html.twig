@@ -10,7 +10,7 @@
                 <a  class="containerMatchlisting" href="{{ path('tennis_match_show', { 'id' : match.id }) }}">
                     <div class="matchListing">
                         <p class="matchListingTitleMatch">{{ match.name }}</p>
-                        <p class="matchListingDateMatch">Le {{match.eventDate|date("m/d/Y")}}  à {{match.startHour|date("h")}}H{{match.startHour|date("i")}}</p>
+                        <p class="matchListingDateMatch">Le {{match.eventDate|date("d/m/Y")}}  à {{match.startHour|date("h")}}H{{match.startHour|date("i")}}</p>
                     </div>
                 </a>
             {% endfor %}
