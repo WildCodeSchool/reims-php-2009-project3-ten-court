@@ -471,12 +471,19 @@ body {
     border-radius: 10px;
     background-color: #40c952;
     border: solid 2px hsl(128, 84%, 32%);
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .matchListingTitleMatch {
     font-size: 1.8rem;
     color: hsl(128, 84%, 32%);
 }
 .matchListingDateMatch {
+    margin-top: 10px;
     color: white;
 }
 .blankMyProfileShowMatchPage {
