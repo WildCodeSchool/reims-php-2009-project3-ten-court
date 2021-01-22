@@ -26,9 +26,9 @@
         </div>
     </div>
     <div class="containerButtonTennisMatchShow">
-        <a class="backButtonTennisMatchShow" href="{{ path('search_matchs') }}">Retour à la liste</a>
+        <a class="backButtonTennisMatchShow" href="{{ path('search_matches') }}">Retour à la liste</a>
         
-        {% if nbParticipents >= 2 or  app.user == tennis_match.participent%}
+        {% if nbParticipents >= 2 or  app.user == tennis_match.participent %}
             <a href="{{ path('tennis_match_remove', {'id': tennis_match.id}) }}">Annuler participation</a>
             <p>Match complet</p>
         {% else %}

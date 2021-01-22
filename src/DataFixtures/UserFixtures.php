@@ -36,6 +36,8 @@ class UserFixtures extends Fixture
         $faker = Factory::create('fr_FR');
         $slugify = new Slugify();
 
+        $userReferenceNumber = 0;
+
         //Generate Women Users
         for ($i = 0; $i < 5; $i++) {
             // Création d’un utilisateur de type “contributeur” (= auteur)
@@ -65,6 +67,8 @@ class UserFixtures extends Fixture
             ));
 
             $manager->persist($contributor);
+            $this->addReference('user' . $userReferenceNumber, $contributor);
+            $userReferenceNumber++;
         }
 
         //Generate Men Users
@@ -96,6 +100,8 @@ class UserFixtures extends Fixture
             ));
 
             $manager->persist($contributor);
+            $this->addReference('user' . $userReferenceNumber, $contributor);
+            $userReferenceNumber++;
         }
 
         // Create an admin User

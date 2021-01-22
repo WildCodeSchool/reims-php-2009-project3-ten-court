@@ -3,11 +3,12 @@
 namespace App\Entity;
 
 use DateTime;
+use App\Entity\User;
 use DateTimeInterface;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\TennisMatchRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=TennisMatchRepository::class)
@@ -40,7 +41,7 @@ class TennisMatch
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="tennisMatches")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $organizer;
+    private ?User $organizer;
 
     /**
      * @ORM\Column(type="time")
@@ -60,7 +61,7 @@ class TennisMatch
     /**
      * @ORM\ManyToMany(targetEntity=User::class, mappedBy="participationMatch")
      */
-    private $participent;
+    private Collection $participent;
 
     public function __construct()
     {
