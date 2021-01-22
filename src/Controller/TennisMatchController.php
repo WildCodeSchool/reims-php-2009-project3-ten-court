@@ -130,7 +130,7 @@ class TennisMatchController extends AbstractController
     /**
      * @Route("/{id}/remove", name="tennis_match_remove")
      */
-    public function removeIntoTheMatch(TennisMatch $match, EntityManagerInterface $em): Response
+    public function removeFromTheMatch(TennisMatch $match, EntityManagerInterface $em): Response
     {
         $match->removeParticipent($this->getUser());
 
