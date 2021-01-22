@@ -14,6 +14,9 @@
         <div class="containerDateTennisMatchShow">
             <p class="itemDateTennisMatchShow"><span class="titleItemTennisMatchShow">Date:</span> {{ tennis_match.eventDate ? tennis_match.eventDate|date('d/m/Y') }}</p>
         </div>
+        <div class="containerLevelTennisMatchShow">
+            <p class="itemLevelTennisMatchShow"><span class="titleItemTennisMatchShow">Niveau:</span> {{ tennis_match.level }}</p>
+        </div>
         <div class="containerDescriptionDateTennisMatchShow">
             <p class="itemDescriptionTennisMatchShow"><span class="titleItemTennisMatchShow">De</span> {{ tennis_match.startHour ? tennis_match.startHour|date('H:i') : '' }}</p>
             <p class="itemDescriptionTennisMatchShow"><span class="titleItemTennisMatchShow">À</span> {{ tennis_match.endHour ? tennis_match.endHour|date('H:i') : '' }}</p>
