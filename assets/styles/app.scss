@@ -439,6 +439,7 @@ body {
 }
 .containerMatchlisting {
     text-decoration: none;
+    width: 300px;
 }
 .myBlockListMatches {
     display: grid;
@@ -480,7 +481,7 @@ body {
 .blankMyProfileShowMatchPage {
     height: 200px;
 }
-@media (min-width: 0px) and (max-width: 500px) {
+@media (min-width: 0px) and (max-width: 600px) {
     .myBlockListMatches {
         display: flex;
         justify-content: center;
@@ -490,6 +491,10 @@ body {
     .blankMyProfileShowMatchPage {
         height: 120px;
     }
+    .containerMatchlisting {
+        width: 300px;
+    }
+
 }
 
 //EDIT USER
