@@ -24,7 +24,6 @@ class TennisMatchType extends AbstractType
             ])
             ->add('level', ChoiceType::class, [
                 'label' => 'Niveau',
-                'required' => false,
                 'choices' => [
                     'Débutant' => 'Débutant',
                     'Intermediaire' => 'Intermediaire',

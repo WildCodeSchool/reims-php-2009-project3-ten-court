@@ -28,13 +28,13 @@ class TennisMatchRepository extends ServiceEntityRepository
     {
         $query = $this
             ->createQueryBuilder('t');
-            
+
         if (!empty($search->level)) {
             $query = $query
             ->andWhere('t.level = :level')
             ->setParameter('level', $search->level);
         }
-        
+
         if (!empty($search->min)) {
             $query = $query
             ->andWhere('t.eventDate >= :min')
