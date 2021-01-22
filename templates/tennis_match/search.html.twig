@@ -30,11 +30,8 @@
         {{ form_end(searchMatchForm) }}
         </div>
 
-
-        {# TODO: REMOVE ALL <br> and <b> to do the css #}
-
         <div class="ContainerSearchMatchResult">
-            <h2 class='resultSearch'>Résultat de votre Recherche</h2><br>      
+            <h2 class='resultSearch'>Résultat de votre Recherche</h2>   
             {% for match in matchs %}
             <div class="containerMatchsResult">
                 <div class="containerSearchMatchOrganizerName">
