@@ -10,6 +10,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 
@@ -21,6 +22,16 @@ class SearchMatchType extends AbstractType
             ->add('adress', TextType::class, [
                 'label' => 'Ville',
                 'required' => false,
+            ])
+            ->add('level', ChoiceType::class, [
+                'label' => 'Niveau',
+                'required' => false,
+                'choices' => [
+                    'Débutant' => 'Débutant',
+                    'Intermediaire' => 'Intermediaire',
+                    'Expert' => 'Expert',
+                    'Professionnel' => 'Professionnel',
+                ]
             ])
             ->add('min', DateType::class, [
                 'label' => 'Date de début',

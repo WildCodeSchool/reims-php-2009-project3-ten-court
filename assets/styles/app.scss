@@ -1077,8 +1077,9 @@ body {
     box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
 }
 .searchFormMatchRow #search_match_startHour, .searchFormMatchRow #search_match_endHour, 
-.searchFormMatchRow #search_match_adress,
-.searchFormMatchRow #search_match_min, .searchFormMatchRow #search_match_max{
+.searchFormMatchRow #search_match_adress, .searchFormMatchRow #search_match_level,
+.searchFormMatchRow #search_match_min, .searchFormMatchRow #search_match_max {
+    appearance: none;
     border: solid 1px hsl(128, 56%, 52%);
     background-color: white;
     display: flex;
@@ -1086,13 +1087,15 @@ body {
     align-items: center;
     
 }
-#search_match_adress, #search_match_startHour, #search_match_endHour, #search_match_min, #search_match_max { 
+#search_match_adress, #search_match_startHour, #search_match_endHour, 
+#search_match_min, #search_match_max, #search_match_level { 
     color: rgb(0, 0, 0);
 }
 #search_match_save { 
     color: rgb(255, 255, 255);
 }
-#search_match_save, #search_match_adress, #search_match_startHour, #search_match_endHour, #search_match_min, #search_match_max { 
+#search_match_save, #search_match_adress, #search_match_startHour, 
+#search_match_endHour, #search_match_min, #search_match_max, #search_match_level { 
     background-color: hsl(128, 56%, 52%);/*  */
     text-decoration: none;
     border: none;
