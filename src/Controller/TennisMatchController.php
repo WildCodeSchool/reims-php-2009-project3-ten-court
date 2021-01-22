@@ -44,7 +44,7 @@ class TennisMatchController extends AbstractController
             $entityManager->persist($tennisMatch);
             $entityManager->flush();
 
-            return $this->redirectToRoute('search_matchs');
+            return $this->redirectToRoute('search_matches');
         }
 
         return $this->render('tennis_match/new.html.twig', [
