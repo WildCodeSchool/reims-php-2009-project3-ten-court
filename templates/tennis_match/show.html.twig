@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tennis Match - TenCourt{% endblock %}
+{% block title %}{{ tennis_match.name }} - TenCourt{% endblock %}
 
 {% block body %}
     {% for message in app.flashes('success') %}
