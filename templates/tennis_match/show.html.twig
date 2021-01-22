@@ -27,8 +27,10 @@
     </div>
     <div class="containerButtonTennisMatchShow">
         {% if nbParticipents >= 2 or  app.user == tennis_match.participent%}
-            <a href="{{ path('tennis_match_remove', {'id': tennis_match.id}) }}">Annuler participation</a>
-            <p>Match complet</p>
+            <div class="containerInteractionParticipeMatch">
+                <p class="itemInteractionParticipeMatchComplete">Ce match est complet</p>
+                <a class="itemInteractionParticipeMatch" href="{{ path('tennis_match_remove', {'id': tennis_match.id}) }}">Annuler participation</a>
+            </div>
         {% else %}
             {% if app.user == tennis_match.organizer %}
                 <p class="TennisMatchShowMessage">Vous êtes l'organisateur de ce match</p>
