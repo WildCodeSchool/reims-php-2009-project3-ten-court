@@ -15,7 +15,7 @@
 
         <div class="MyProfile">
             {% if user.avatar == NULL  %}
-                <img class='userPictureProfileShow myProfilePicture' src="https://picsum.photos/100" alt="avatar">
+                <img class="myProfilePicture" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
                 <a class="ModifyAvatarButtonMyProfile" id= "editAvatar" href="{{ path('user_edit_avatar', {'id': user.id}) }}">Modifier</a>
             {% else %}
                 <img class="userPictureProfileShow myProfilePicture" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
@@ -66,7 +66,7 @@
         </div>
 
 
-        <div class="matchList">
+        <div class="myProfileMatchButton">
             <a href="{{ path('user_matches', {'slug': user.slug}) }}">Mes matchs</a>
         </div>
 

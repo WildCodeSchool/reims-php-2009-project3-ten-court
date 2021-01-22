@@ -33,7 +33,7 @@
                 <a class="containerPlayers" href="{{ path('user_show', {'slug': user.slug}) }}">
                     <div class='players'>
                         {% if user.avatar == null %}
-                            <img class='playerPhoto' src="https://picsum.photos/100" alt="avatar">
+                            <img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
                         {% else %}
                             <img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
                         {% endif %}
@@ -47,7 +47,7 @@
                     </div>
                 </a>
             {% else %}
-            <p class="resultSearch"> il n'y a pas de résultat pour votre recherche </p>
+            <p class="resultSearchMessage"> il n'y a pas de résultat pour votre recherche </p>
             {% endfor %}
         </div>
         <div class="blankShowUserPage"></div>

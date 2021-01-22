@@ -4,9 +4,14 @@
 
 {% block body %}
     <div class="myProfileAvatarEdit">
-		<img class="myProfileAvatarEditItem" src="{{'/uploads/' ~ user.avatar }}"/>
+    {% if user.avatar %}
+		<img class="myProfilePicture  userPictureProfileShow" src="{{'/uploads/' ~ user.avatar }}"/>
+        <a href="{{ path('user_delete_avatar', {'slug': user.slug}) }}">Supprimer</a>
+    {% else %}
+        <img class="myProfilePicture" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
+    {% endif %}
 	</div>
-
     {{ include('user/_avatarForm.html.twig', {'button_label': 'Mettre à jour'}) }}
-    <div class="blankMyEditAvatarPage"></div>
+
+    {# <div class="blankMyEditAvatarPage"></div> #}
 {% endblock %}

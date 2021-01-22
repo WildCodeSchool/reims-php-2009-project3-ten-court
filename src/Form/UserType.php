@@ -64,10 +64,12 @@ class UserType extends AbstractType
                 'label' => 'Telephone',
             ])
             ->add('birthdate', BirthdayType::class, [
+                'label' => 'Date d\'anniversaire',
+                'format' => 'dd-MM-yyyy',
                 'placeholder' => [
-                    'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
+                    'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour',
                 ],
-                'years' => range(2003, 1940),
+                'years' => range(2003, 1930),
             ])
             ->add('firstname', TextType::class, [
                 'label' => 'Prénom',

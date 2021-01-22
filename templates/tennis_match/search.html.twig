@@ -30,11 +30,8 @@
         {{ form_end(searchMatchForm) }}
         </div>
 
-
-        {# TODO: REMOVE ALL <br> and <b> to do the css #}
-
         <div class="ContainerSearchMatchResult">
-            <h2 class='resultSearch'>Résultat de votre Recherche</h2><br>      
+            <h2 class='resultSearch'>Résultat de votre Recherche</h2>   
             {% for match in matchs %}
             <div class="containerMatchsResult">
                 <div class="containerSearchMatchOrganizerName">
@@ -59,7 +56,7 @@
                 <a href="{{ path('tennis_match_show', {'id':match.id}) }}" class="watch">Voir</a>
             </div>
             {% else %}
-            <p class="resultSearch"> il n'y a pas de résultat pour votre recherche </p>
+            <p class="resultSearchMessage">Il n'y a pas de résultat pour votre recherche </p>
             {% endfor %}
         </div>
         <div class="blankShowTennisMatchPage"></div>

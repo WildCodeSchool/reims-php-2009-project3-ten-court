@@ -32,7 +32,6 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
     {
         $faker = Factory::create('fr_FR');
 
-        //Generate Women Users
         for ($userReferenceNumber = 0; $userReferenceNumber < 10; $userReferenceNumber++) {
             for ($i = 0; $i < 5; $i++) {
                 // Création d’un utilisateur de type “contributeur” (= auteur)
@@ -40,7 +39,11 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
                 $match->setEventDate($faker->dateTimeBetween('now', '2 years'));
                 $match->setStartHour($faker->dateTimeBetween('now', '2 years'));
                 $match->setEndHour($faker->dateTimeBetween('now', '2 years'));
-                $match->setName('match amical');
+                $match->setName($faker->randomElement(array (
+                    'Match de folie', 'Match en plein air', 'Match sur terre battue',
+                    'Match pour Débutant', 'Match experimenté', 'Entrainement',
+                    'Match féminin', 'Match masculin',
+                )));
                 $match->setDescription($faker->paragraph());
                 $randKey = array_rand($this->cities, 1);
                 $match->setAdress($this->cities[$randKey]);
@@ -53,7 +56,11 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
                 $match->setEventDate($faker->dateTimeBetween('now', '2 years'));
                 $match->setStartHour($faker->dateTimeBetween('now', '2 years'));
                 $match->setEndHour($faker->dateTimeBetween('now', '2 years'));
-                $match->setName('match amical');
+                $match->setName($faker->randomElement(array (
+                    'Match de folie', 'Match en plein air', 'Match sur terre battue',
+                    'Match pour Débutant', 'Match experimenté', 'Entrainement',
+                    'Match féminin', 'Match masculin',
+                )));
                 $match->setDescription($faker->paragraph());
                 $randKey = array_rand($this->cities, 1);
                 $match->setAdress($this->cities[$randKey]);

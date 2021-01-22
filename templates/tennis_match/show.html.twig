@@ -10,7 +10,7 @@
     {% endfor %}
 <div class="backgroundDescriptionContainer">
     <div class="matchDescriptionContainer"> 
-        <h1 class="matchTitleTennisMatchShow">{{ tennis_match.name }}</h1>  
+        <h1 class="matchTitleTennisMatchShow">{{ tennis_match.name }}</h1>
         <div class="containerDateTennisMatchShow">
             <p class="itemDateTennisMatchShow"><span class="titleItemTennisMatchShow">Date:</span> {{ tennis_match.eventDate ? tennis_match.eventDate|date('d/m/Y') }}</p>
         </div>
@@ -26,20 +26,21 @@
         </div>
     </div>
     <div class="containerButtonTennisMatchShow">
-        <a class="backButtonTennisMatchShow" href="{{ path('search_matches') }}">Retour à la liste</a>
-        
-        {% if nbParticipents >= 2 or  app.user == tennis_match.participent %}
-            <a href="{{ path('tennis_match_remove', {'id': tennis_match.id}) }}">Annuler participation</a>
-            <p>Match complet</p>
+        {% if nbParticipents >= 2 or  app.user == tennis_match.participent%}
+            <div class="containerInteractionParticipeMatch">
+                <p class="itemInteractionParticipeMatchComplete">Ce match est complet</p>
+                <a class="itemInteractionParticipeMatch" href="{{ path('tennis_match_remove', {'id': tennis_match.id}) }}">Annuler participation</a>
+            </div>
         {% else %}
             {% if app.user == tennis_match.organizer %}
-                <p>Vous êtes l'organisateur</p>
+                <p class="TennisMatchShowMessage">Vous êtes l'organisateur de ce match</p>
+                <a href="{{path('tennis_match_delete', {'id': tennis_match.id})}}"><div class="deleteOrganizerButtonTennisMatchShow">{{ include('tennis_match/_delete_form.html.twig') }}</div></a>
             {% else %}
                 <a class="participateButtonTennisMatchShow" href="{{ path('tennis_match_add', {'id': tennis_match.id}) }}">Participer</a>
             {% endif %}
         {% endif %}
-            
+        <a class="backButtonTennisMatchShow" href="{{ path('search_matches') }}">Retour à la liste</a>
+    <div class="blankTennisMatchDetailPage"></div>
     </div>
 </div>
-{{ include('tennis_match/_delete_form.html.twig') }}
 {% endblock %}
