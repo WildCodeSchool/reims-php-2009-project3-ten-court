@@ -1026,8 +1026,14 @@ body {
     width: 100%;
     margin-bottom: 10px;
 }
-.resultSearch {
+.resultSearch, .resultSearchMessage {
     text-align: center;
+}
+.resultSearchMessage {
+    background-color: hsl(0, 70%, 43%);
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
 }
 .containerHourDateStartEnd {
     display: flex;
