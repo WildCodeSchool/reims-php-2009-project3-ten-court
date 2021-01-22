@@ -1026,14 +1026,22 @@ body {
     width: 100%;
     margin-bottom: 10px;
 }
+.searchcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .resultSearch, .resultSearchMessage {
     text-align: center;
 }
 .resultSearchMessage {
     background-color: hsl(0, 70%, 43%);
     color: white;
+    border-radius: 10px;
     padding: 20px;
     margin-top: 20px;
+    width: 300px;
 }
 .containerHourDateStartEnd {
     display: flex;
