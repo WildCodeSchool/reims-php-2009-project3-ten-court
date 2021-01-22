@@ -44,7 +44,7 @@ class TennisMatchRepository extends ServiceEntityRepository
         if (!empty($search->level)) {
             $query = $query
             ->andWhere('t.level >= :level')
-            ->setParameter('leve', $search->level);
+            ->setParameter('level', $search->level);
         }
 
         if (!empty($search->startHour)) {
