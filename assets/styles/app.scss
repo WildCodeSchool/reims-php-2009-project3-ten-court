@@ -1105,6 +1105,16 @@ body {
     justify-content: center;
     align-items: center;
 }
+.resultSearch {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+    width: 100%;
+}
 .resultSearch, .resultSearchMessage {
     text-align: center;
 }
