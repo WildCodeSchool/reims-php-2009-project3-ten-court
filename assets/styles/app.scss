@@ -450,7 +450,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.myProfileMatchButton {
+.myProfileMatchButton, .myProfileParticipationsButton {
     text-align: center;
     background-color: #40c952;
     border: solid 2px #0d961f;
@@ -459,7 +459,7 @@ body {
     padding: 10px 50px;
     margin: 10px;
 }
-.myProfileMatchButton a {
+.myProfileMatchButton a, .myProfileParticipationsButton a {
     color: white;
     text-decoration: none;
 }
