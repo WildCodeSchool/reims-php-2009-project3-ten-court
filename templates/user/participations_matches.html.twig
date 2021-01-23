@@ -7,9 +7,13 @@
         <h1 class="myMatchesTitle">Mes participations</h1>
         <div class='myBlockListMatches'>
             {% for participation in participationsMatches %}
-                <a  class="containerMatchlisting" href="{{ path('tennis_match_show', { 'id' : participation.id }) }}">
-                    <div class="matchListing">
-                        <p class="matchListingTitleMatch">{{ participation.name }}</p>
+                <a class="containerMatchlisting" href="{{ path('tennis_match_show', { 'id' : participation.id }) }}">
+                    <div class="{{app.user.id != participation.organizer.id ? "matchListing" : "matchListingOwn"}}">
+                        <p class="{{app.user.id != participation.organizer.id ? "matchListingTitleMatch" : "matchListingTitleMatchOwn"}}">{{ participation.name }}</p>
+                        <p class="matchListingDateMatch">Le {{participation.eventDate|date("d/m/Y")}}  à {{participation.startHour|date("h")}}H{{participation.startHour|date("i")}}</p>
+                        {% if app.user.id == participation.organizer.id %}
+                            <p class="matchListingMessageOwner">Vous êtes l'organisateur de ce match</p>
+                        {% endif %}
                     </div>
                 </a>
             {% endfor %}

@@ -478,12 +478,38 @@ body {
     align-items: center;
     flex-direction: column;
 }
+.matchListingOwn {
+    grid-area: match;
+    padding: 40px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #d3721d;
+    border: solid 2px #aa5c18;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 .matchListingTitleMatch {
     font-size: 1.8rem;
     color: hsl(128, 84%, 32%);
 }
+.matchListingTitleMatchOwn {
+    font-size: 1.8rem;
+    color: #aa5c18;
+}
 .matchListingDateMatch {
     margin-top: 10px;
+    color: white;
+}
+.matchListingMessageOwner {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color:#aa5c18;
     color: white;
 }
 .blankMyProfileShowMatchPage {
@@ -507,7 +533,7 @@ body {
 
 //EDIT USER
 #updateMessageSuccess {
-    background-color: HSL(127, 56%, 52%); 
+    background-color: hsl(127, 56%, 52%); 
     text-align: center;
     padding: 20px;
     color: white;
