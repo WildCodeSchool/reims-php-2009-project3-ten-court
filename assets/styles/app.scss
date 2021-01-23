@@ -1365,9 +1365,9 @@ body {
 .editMatchDateItemForm{
     margin-top: 10px ;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
     .editMatchSaveItemForm button {  
-        width: 280px;
+        width: 620px;
     }
 }
 @media (min-width: 500px) {
@@ -1375,14 +1375,9 @@ body {
         width: 500px;
     }
 }
-@media (min-width: 700px) {
-    .editMatchPage {
-        background-image: url("../../assets/images/backgroundImages/subscriptionIpad.jpg");
-    }
-}
-@media (min-width: 800px) {
+@media (min-width: 300px) {
     .editMatchSaveItemForm button {  
-        width: 620px;
+        width: 280px;
     }
 }
 
