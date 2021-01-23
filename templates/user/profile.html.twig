@@ -11,8 +11,8 @@
             </div>
         {% endfor %}
 
-        <h1 class="myProfileTitle">Mon compte</h1>
 
+        <h1 class="myProfileTitle">Mon compte</h1>
         <div class="MyProfile">
             {% if user.avatar == NULL  %}
                 <img class="myProfilePicture" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>

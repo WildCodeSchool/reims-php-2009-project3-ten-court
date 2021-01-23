@@ -3,8 +3,8 @@
 {% block title %}Participations • Tencourt{% endblock %}
 
 {% block body %}
+    <h1 class="myMatchesTitle">Mes participations</h1>
     <div class="containerMyMatchesBackground">
-        <h1 class="myMatchesTitle">Mes participations</h1>
         <div class='myBlockListMatches'>
             {% for participation in participationsMatches %}
                 <a class="containerMatchlisting" href="{{ path('tennis_match_show', { 'id' : participation.id }) }}">
@@ -17,7 +17,7 @@
                     </div>
                 </a>
             {% endfor %}
-        <div>
-    </div>
+            <a class="backButtonParticipationMatchProfile" href="{{ path('user_profile', {'slug': user.slug}) }}">Retour</a>
+        </div>
     <div class="blankMyProfileShowMatchPage"></div>
 {% endblock %}

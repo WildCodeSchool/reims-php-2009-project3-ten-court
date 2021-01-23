@@ -269,6 +269,9 @@ body {
 .myProfileTitle {
     color: white;
     padding: 20px;
+    margin: 20px 0px 40px 0px;
+    position: fixed;
+    width: 100%;
     margin-top: 20px;
     text-align: center;
     background-color: HSL(127, 56%, 52%);
@@ -280,7 +283,7 @@ body {
     flex-direction: column;
 }
 .myProfilePicture {
-    margin-top: 40px;
+    margin-top: 100px;
     margin-bottom: 15px;
     align-self: center;
     height: 160px;
@@ -432,11 +435,14 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-  }
+}
 .myMatchesTitle {
     color: white;
     padding: 20px;
     margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    position: fixed;
+    width: 100%;
     margin-top: 20px;
     text-align: center;
     background-color: HSL(127, 56%, 52%);
@@ -445,16 +451,15 @@ body {
 }
 .containerMatchlisting {
     text-decoration: none;
-    width: 300px;
+    width: 90%;
     cursor: pointer;
 }
 .myBlockListMatches {
-    display: grid;
-    grid-template-areas:
-        'match match';
+    display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
 }
 .myProfileMatchButton, .myProfileParticipationsButton {
     text-align: center;
@@ -470,7 +475,6 @@ body {
     text-decoration: none;
 }
 .matchListing {
-    grid-area: match;
     padding: 40px;
     margin: 10px;
     text-align: center;
@@ -485,7 +489,6 @@ body {
     flex-direction: column;
 }
 .matchListingOwn {
-    grid-area: match;
     padding: 40px;
     margin: 10px;
     text-align: center;
@@ -518,6 +521,18 @@ body {
     background-color:#aa5c18;
     color: white;
 }
+.backButtonParticipationMatchProfile, .backButtonShowMatchProfile {
+    text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin: 10px;
+    width: 85%;
+    color: white;
+    text-decoration: none;
+}
 .blankMyProfileShowMatchPage {
     height: 200px;
 }
@@ -531,10 +546,6 @@ body {
     .blankMyProfileShowMatchPage {
         height: 120px;
     }
-    .containerMatchlisting {
-        width: 300px;
-    }
-
 }
 
 //EDIT USER
@@ -565,10 +576,17 @@ body {
     justify-content: center;
     flex-direction: column;
 }
+.containerEditionForm:nth-child(1) {
+    margin-top: 100px;
+}
 .editionTitleForm {
     color: white;
     padding: 20px;
     margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    position: fixed;
+    width: 100%;
+    margin-top: 20px;
     text-align: center;
     background-color: HSL(127, 56%, 52%);
     margin-top: 0;
@@ -1003,6 +1021,8 @@ body {
     background-color: HSL(127, 56%, 52%);
     margin-top: 0;
     font-size: 1.5rem;
+    position: fixed;
+    width: 100%;
 }
 .players .playerphoto {
     height: 120px;
@@ -1028,7 +1048,7 @@ body {
     background-color: hsla(348, 2%, 93%, 0.8);
     border-radius: 5px;
     border: hsla(348, 2%, 93%, 0.92);
-    margin: 2rem 1rem 3rem 1rem;
+    margin: 100px 1rem 3rem 1rem;
     padding: 1rem;
     -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
@@ -1143,7 +1163,9 @@ body {
 .searchMatchesTitle {
     color: white;
     padding: 20px;
-    margin: 20px 0px 40px 0px;
+/*     margin: 20px 0px 40px 0px; */
+    position: fixed;
+    width: 100%;
     margin-top: 20px;
     text-align: center;
     background-color: HSL(127, 56%, 52%);
@@ -1158,7 +1180,7 @@ body {
     background-color: hsla(348, 2%, 93%, 0.8);
     border-radius: 5px;
     border: hsla(348, 2%, 93%, 0.92);
-    margin: 2rem 1rem 3rem 1rem;
+    margin: 100px 1rem 3rem 1rem;
     padding: 1rem;
     -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
@@ -1292,6 +1314,8 @@ body {
     background-color: HSL(127, 56%, 52%);
     margin-top: 0;
     font-size: 1.5rem;
+    position: fixed;
+    width: 100%;
 }
 .backgroundMatchCreate {
     display: flex;
@@ -1487,6 +1511,7 @@ body {
     margin-top: 0;
     width: 100%;
     font-size: 1.5rem;
+    position: fixed;
 }
 .TennisMatchShowMessage {
     padding: 20px;
@@ -1504,6 +1529,8 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 10px;
+/*     height: 100px; */
     width: 100%;
 }
 .itemInteractionParticipeMatchComplete, .itemInteractionParticipeMatch {
@@ -1589,7 +1616,7 @@ body {
         text-align: center;
         background-color: hsla(348, 2%, 93%, 0.8);
         border-radius: 10px;
-        margin-top: 50px;
+        margin-top: 100px;
         padding: 20px;
         width: 80%;
         -webkit-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
