@@ -988,7 +988,15 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
-
+.searchPlayersTitle {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+        margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+}
 .players .playerphoto {
     height: 120px;
     width: 120px;
@@ -1114,6 +1122,15 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
+}
+.searchMatchesTitle {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+        margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
 }
 .containerSearchMatchs {
     display: flex;
