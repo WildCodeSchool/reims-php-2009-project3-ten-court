@@ -67,6 +67,7 @@
         <div class="myProfileMatchButton">
             <a href="{{ path('user_matches', {'slug': user.slug}) }}">Mes matchs</a>
         </div>
+        <a href="{{ path('user_participations_matches', {'slug': user.slug}) }}">Mes participations</a>
         <div class="myProfileDeconnexion">
             <a class="myProfileDeconnexionButton" href = "{{ path('app_logout') }}">Déconnexion</a>
         </div>
