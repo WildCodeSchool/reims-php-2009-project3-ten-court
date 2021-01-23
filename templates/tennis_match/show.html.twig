@@ -9,8 +9,9 @@
         </div>
     {% endfor %}
 <div class="backgroundDescriptionContainer">
+<h1 class="matchShowTitle">Match de {{ tennis_match.organizer.pseudo }}</h1>
     <div class="matchDescriptionContainer"> 
-        <h1 class="matchTitleTennisMatchShow">{{ tennis_match.name }}</h1>
+        <h2 class="matchTitleTennisMatchShow">{{ tennis_match.name }}</h2>
         <div class="containerDateTennisMatchShow">
             <p class="itemDateTennisMatchShow"><span class="titleItemTennisMatchShow">Date:</span> {{ tennis_match.eventDate ? tennis_match.eventDate|date('d/m/Y') }}</p>
         </div>

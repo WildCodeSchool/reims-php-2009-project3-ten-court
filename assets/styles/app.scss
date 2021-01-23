@@ -268,10 +268,12 @@ body {
     background-size: cover;
 }
 .myProfileTitle {
-    color: black;
+    color: white;
     padding: 20px;
     margin-top: 20px;
     text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
 }
 .MyProfile {
     display: flex;
@@ -432,10 +434,13 @@ body {
     background-size: cover;
   }
 .myMatchesTitle {
-    color: black;
+    color: white;
     padding: 20px;
-    margin-top: 20px;
+    margin: 20px 0px 40px 0px;
+        margin-top: 20px;
     text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
 }
 .containerMatchlisting {
     text-decoration: none;
@@ -533,9 +538,10 @@ body {
 
 //EDIT USER
 #updateMessageSuccess {
-    background-color: hsl(127, 56%, 52%); 
+    background-color: hsl(126, 41%, 56%); 
+    border: solid 2px #0d961f;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
     color: white;
     width: 100%;
     z-index: 1;
@@ -559,8 +565,21 @@ body {
     flex-direction: column;
 }
 .editionTitleForm {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
     text-align: center;
-    margin: 20px;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+}
+.editionTitleFormAvatar {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+        margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
 }
 .editionItemForm div {
     display: flex;
@@ -1229,14 +1248,22 @@ body {
 }
 
 //MATCH CREATE
-
+.createMatchTitleForm {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 0px 0px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+}
 .backgroundMatchCreate {
     display: flex;
     flex-direction: column;
     justify-content: center;
     background-image: url("../../assets/images/backgroundImages/withoutLogo.jpg");
     background-repeat: no-repeat;
-    height: 100vh;
+    height: calc(100vh - 73.08px);
     background-position: center;
     background-size: cover;
 }
@@ -1404,6 +1431,16 @@ body {
 
 // MATCH DESCRIPTION PAGE
 
+.matchShowTitle {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    width: 100%;
+}
 .TennisMatchShowMessage {
     padding: 20px;
     background-color: hsl(28, 76%, 47%);

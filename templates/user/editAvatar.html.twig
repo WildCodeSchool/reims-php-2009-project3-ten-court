@@ -3,6 +3,8 @@
 {% block title %}Modification Avatar • TenCourt{% endblock %}
 
 {% block body %}
+<div class="containerEditAvatarBackground">
+    <h1 class="editionTitleFormAvatar">Modifier mon avatar</h1>
     <div class="myProfileAvatarEdit">
     {% if user.avatar %}
 		<img class="myProfilePicture  userPictureProfileShow" src="{{'/uploads/' ~ user.avatar }}"/>
@@ -14,4 +16,5 @@
     {{ include('user/_avatarForm.html.twig', {'button_label': 'Mettre à jour'}) }}
 
     {# <div class="blankMyEditAvatarPage"></div> #}
+</div>
 {% endblock %}
