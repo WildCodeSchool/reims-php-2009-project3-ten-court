@@ -1387,9 +1387,19 @@ body {
     justify-content: center;
     background-image: url("../../assets/images/backgroundImages/withoutLogo.jpg");
     background-repeat: no-repeat;
-    height: 100vh;
+    height: calc(100vh - 73.08px);
     background-position: center;
     background-size: cover;
+}
+.editMatchTitleForm {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 0px 0px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
 }
 .containerEditMatchForm {
     display: flex;
