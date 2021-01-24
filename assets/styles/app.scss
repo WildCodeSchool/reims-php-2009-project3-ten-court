@@ -1348,8 +1348,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-self: center;}
-
+    align-self: center;
+}
+.createMatchItemForm li {
+    list-style-type: none;
+    font-size: 0.8rem;
+    color: red;
+}
 .createMatchItemForm div {
     display: flex;
     flex-direction: column;
