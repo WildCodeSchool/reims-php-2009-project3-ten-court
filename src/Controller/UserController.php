@@ -22,7 +22,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 
-
 /**
  * @Route("/users", name="user_")
  */
@@ -212,18 +211,15 @@ class UserController extends AbstractController
      * @Route("/mail/{slug}", name="mail")
      * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
-    public function sendMail(Request $request, MailerInterface $mailer , User $user ): Response
-    {   
-        
-            
+    public function sendMail(Request $request, MailerInterface $mailer, User $user): Response
+    {
             $form = $this->createForm(MailType::class);
             $form->handleRequest($request);
-            if ($form->isSubmitted() && $form->isValid())
-            {
+        if ($form->isSubmitted() && $form->isValid()) {
                 $contact = [
-                    $form->get('from')->getData(), 
-                    $form->get('to')->getData(), 
-                    $form->get('subject')->getData(), 
+                    $form->get('from')->getData(),
+                    $form->get('to')->getData(),
+                    $form->get('subject')->getData(),
                     $form->get('html')->getData()];
 
                 $email = (new Email())
@@ -231,18 +227,19 @@ class UserController extends AbstractController
                     ->to($contact[1])
                     ->subject($contact[2])
                     ->html($contact[3]);
-    
+
                 $mailer->send($email);
                 $this->addFlash('message', 'Votre e-mail a bien été envoyé');
-            return $this->render('user/show.html.twig',[
-                'user' => $user 
-            ]);
+                return $this->render('user/show.html.twig', [
+                'user' => $user
+                ]);
         }
-        return $this->render('emails/index.html.twig',
-        [
+        return $this->render(
+            'emails/index.html.twig',
+            [
             'form' => $form->createView(),
-            'user' => $user 
-        ]
+            'user' => $user
+            ]
         );
     }
 }
