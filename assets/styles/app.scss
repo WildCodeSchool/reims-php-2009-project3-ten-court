@@ -723,11 +723,13 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+.backgroundAllUsers  {
+    padding-top:100px;
+}
 .containerSearch {
     display: flex;
     flex-direction: column;
 }
-
 .containerPlayers {
     text-decoration: none;
     cursor: pointer;
@@ -742,6 +744,8 @@ body {
     background-color: HSL(127, 56%, 52%);
     margin-top: 0;
     font-size: 1.5rem;
+    position: fixed;
+    width: 100%;
 }
 
 .players {
