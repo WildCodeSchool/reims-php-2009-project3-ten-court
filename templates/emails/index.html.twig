@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{{parent()}}
+{% endblock %}
+
+{% block body %}
+	<div class="contact-container">
+		<div class="contact-block-title">
+			<h1>Envoyer un message</h1>
+		</div>
+		<div class="block-form">
+			{{ form_start (form) }}
+
+			<div class="block-widgetmail">
+				<div class='emailFrom'>
+					From : {{ form_widget(form.from, {'attr':  {'placeholder': 'Votre Email '}}) }}
+				</div>
+				<div class='emailTo'>
+					To : {{ form_widget(form.to, {'value':  user.email  }) }}
+				</div>
+				<div class='emailTitle'>
+					{{ form_widget(form.subject, {'attr': {'placeholder': 'Sujet du Message'}}) }}
+				</div>
+				<div class='emailText'>
+					{{ form_widget(form.html, {'attr': {'placeholder': 'Votre Message'}}) }}
+				</div>
+
+				<div class="block-button">
+					<div>
+						<a href="/mail"><input class="account-block-next-button" name="" type="submit" value="Envoyé"></a>
+					</div>
+				</div>
+				{{ form_end (form) }}
+			</div>
+
+		</div>
+    </div>
+	{% endblock %}

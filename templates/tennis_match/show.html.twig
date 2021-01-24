@@ -2,12 +2,7 @@
 
 {% block title %}Tennis Match - TenCourt{% endblock %}
 
-{% block body %}
-    {% for message in app.flashes('success') %}
-        <div id="updateMessageSuccess">
-            {{ message }}
-        </div>
-    {% endfor %}
+{% block body %}   
 <div class="backgroundDescriptionContainer">
     <div class="matchDescriptionContainer"> 
         <h1 class="matchTitleTennisMatchShow">{{ tennis_match.name }}</h1>
