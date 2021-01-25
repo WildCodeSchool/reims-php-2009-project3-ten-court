@@ -27,30 +27,32 @@
             </div>
         {{ form_end(searchForm) }}
 
-        <div class='searchcontainer'>
-            <h2 class='resultSearch'>Résultat de votre Recherche</h2> 
-            {% for user in users %}
-                {# {% set user = random(users) %} #} {# TODO -> the random makes some bugs: there is duplicated users in it #}
-                <a class="containerPlayers" href="{{ path('user_show', {'slug': user.slug}) }}">
-                    <div class='players'>
-                        {% if user.avatar == null %}
-                            <img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
-                        {% else %}
-                            <img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
-                        {% endif %}
-                        <div class="container_1_players">
-                            <p class='playerItem playerPseudo'>{{user.pseudo}}</p>
-                            <p class='playerItem playerSex'>{{user.sex}}</p>
-                            <p class='playerItem playerAge'>{{user.age}} ans</p>
-                            <p class='playerItem playerLevel'>{{user.level}}</p>
-                            <p class='playerItem playerLevel'>{{user.city}}</p>
+        {% if users %}
+            <div class='searchcontainer'>
+                <h2 class='resultSearch'>Résultat de votre Recherche</h2> 
+                {% for user in users %}
+                    {# {% set user = random(users) %} #} {# TODO -> the random makes some bugs: there is duplicated users in it #}
+                    <a class="containerPlayers" href="{{ path('user_show', {'slug': user.slug}) }}">
+                        <div class='players'>
+                            {% if user.avatar == null %}
+                                <img class="playerPhoto" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
+                            {% else %}
+                                <img class="playerPhoto" src="{{ asset('/uploads/' ~ user.avatar) }}"/>
+                            {% endif %}
+                            <div class="container_1_players">
+                                <p class='playerItem playerPseudo'>{{user.pseudo}}</p>
+                                <p class='playerItem playerSex'>{{user.sex}}</p>
+                                <p class='playerItem playerAge'>{{user.age}} ans</p>
+                                <p class='playerItem playerLevel'>{{user.level}}</p>
+                                <p class='playerItem playerLevel'>{{user.city}}</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-            {% else %}
-            <p class="resultSearchMessage"> il n'y a pas de résultat pour votre recherche </p>
-            {% endfor %}
-        </div>
+                    </a>
+                {% else %}
+                <p class="resultSearchMessage"> il n'y a pas de résultat pour votre recherche </p>
+                {% endfor %}
+            </div>
+        {% endif %}
         <div class="blankShowUserPage"></div>
     </div>
 {% endblock %}

@@ -32,7 +32,7 @@ class SearchController extends AbstractController
         if ($searchUserForm->isSubmitted() && $searchUserForm->isValid()) {
             $users = $userRepository->search($search);
         } else {
-            $users = $userRepository->findAll();
+            $users = null;
         }
         return $this->render('search/index.html.twig', [
             'searchForm' => $searchUserForm->createView(),
@@ -51,7 +51,7 @@ class SearchController extends AbstractController
         if ($searchMatchForm->isSubmitted() && $searchMatchForm->isValid()) {
             $matchs = $tennisMatch->searchMatch($search);
         } else {
-            $matchs = $tennisMatch->findAll();
+            $matchs = null;
         }
         return $this->render('tennis_match/search.html.twig', [
             'searchMatchForm' => $searchMatchForm->createView(),
