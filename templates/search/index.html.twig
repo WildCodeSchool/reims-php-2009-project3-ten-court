@@ -31,7 +31,6 @@
             <div class='searchcontainer'>
                 <h2 class='resultSearch'>Résultat de votre Recherche</h2> 
                 {% for user in users %}
-                    {# {% set user = random(users) %} #} {# TODO -> the random makes some bugs: there is duplicated users in it #}
                     <a class="containerPlayers" href="{{ path('user_show', {'slug': user.slug}) }}">
                         <div class='players'>
                             {% if user.avatar == null %}
