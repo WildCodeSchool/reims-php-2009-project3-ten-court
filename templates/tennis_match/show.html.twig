@@ -4,7 +4,16 @@
 
 {% block body %}   
 <div class="backgroundDescriptionContainer">
+    
 <h1 class="matchShowTitle">Match de {{ tennis_match.organizer.pseudo }}</h1>
+    {% for message in app.flashes('success') %}
+            <div id="modifiedMatch" >
+                <p class="successModifiedMessage">{{ message }}</p>
+            </div>
+            <script language='javascript'>
+            temp=document.getElementById('modifiedMatch');
+            setTimeout('temp.style.display="none"',3000);</script>     
+    {% endfor %}
     <div class="matchDescriptionContainer"> 
         <h2 class="matchTitleTennisMatchShow">{{ tennis_match.name }}</h2>
         <div class="containerDateTennisMatchShow">
@@ -41,16 +50,21 @@
             {% if app.user == tennis_match.organizer %}
                 <p class="TennisMatchShowMessage">Vous êtes l'organisateur de ce match</p>
                 <a class="updateOrganizerButtonTennisMatchShow" href="{{path('tennis_match_edit', {'id': tennis_match.id})}}">Modifier le match</a>
-                <a class="deleteOrganizerButtonTennisMatchShow" href="{{path('tennis_match_delete', {'id': tennis_match.id})}}">{{ include('tennis_match/_delete_form.html.twig') }}</a>
+                <a class="deleteOrganizerButtonTennisMatchShow" href="{{path('tennis_match_delete', {'id': tennis_match.id, 'slug': tennis_match.organizer.slug})}}">{{ include('tennis_match/_delete_form.html.twig') }}</a>
              {% else %}
                 <a class="participateButtonTennisMatchShow" href="{{ path('tennis_match_add', {'id': tennis_match.id}) }}">Participer</a>
             {% endif %}
         {% endif %}
+<<<<<<< HEAD
+        <a class="backButtonTennisMatchShow" href="{{ path('user_matches', {'id': tennis_match.id, 'slug': tennis_match.organizer.slug}) }}">Retour</a>
+    <div class="blankTennisMatchDetailPage"></div>
+=======
         {% if app.user != tennis_match.organizer %}
             <a class="backButtonTennisMatchShow" href="{{ path('user_show', {'slug': user.slug}) }}">Profil/Contact de l'Organisateur</a>
         {% endif %}
         <a class="backButtonTennisMatchShow" href="{{ path('search_matches') }}">Retour</a>
         <div class="blankTennisMatchDetailPage"></div>
+>>>>>>> 5aa6cf7ef3b1a5e8e122837e60a5277442ab0716
     </div>
 </div>
 {% endblock %}
