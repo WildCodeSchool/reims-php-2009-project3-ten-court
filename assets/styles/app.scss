@@ -1673,7 +1673,7 @@ body {
     border: solid 2px #0daa1a;
     border-radius: 10px;
     padding: 10px 10px;
-    width: 80%;
+    width: 90%;
     margin-bottom: 10px;
     margin-top: 20px;
 
@@ -1831,13 +1831,16 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 50px;
+    align-items: center;
+    padding-bottom: 20px;
+    margin-top: 100px;
     background-color: hsla(348, 2%, 93%, 0.8);
     border-radius: 5px;
     border: hsla(348, 2%, 93%, 0.92);
     -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    width: 330px;
 }
 .emailTo [type="email"] , .emailFrom [type="email"] {
     color : grey  ;
@@ -1855,13 +1858,6 @@ body {
     background-color: HSL(127, 56%, 52%);
     margin-top: 0;
     font-size: 1.5rem;
-}
-.containerMessage {
-    margin-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }
 .emailFrom, .emailTo, .emailSubject, .emailText {
     display: flex;
@@ -1899,7 +1895,7 @@ body {
     border: solid 2px #0daa1a;
     border-radius: 10px;
     padding: 10px 10px;
-    width: 80%;
+    width: 90%;
     margin-bottom: 10px;
     margin-top: 20px;
 }
@@ -1940,7 +1936,7 @@ body {
     font-size: 0.8rem;
 }
 .blankSendMessagePage {
-    height: 20px;
+    height: 50px;
 }
 @media (min-width:450px) {
     #mail_from, #mail_to, #mail_subject, #mail_html {
@@ -1951,6 +1947,9 @@ body {
     }
     .backButtonSendMessage {
         width: 400px;
+    }
+    .containerMessage{
+        width: 420px;
     }
 }
 @media (min-width:600px) {
@@ -1963,6 +1962,9 @@ body {
     .backButtonSendMessage {
         width: 500px;
     }
+    .containerMessage{
+        width: 520px;
+    }
 }
 @media (min-width:700px) {
     #mail_from, #mail_to, #mail_subject, #mail_html {
@@ -1973,5 +1975,8 @@ body {
     }
     .backButtonSendMessage {
         width: 600px;
+    }
+    .containerMessage{
+        width: 620px;
     }
 }
