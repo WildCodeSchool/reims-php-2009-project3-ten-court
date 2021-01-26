@@ -46,7 +46,9 @@ class TennisMatchController extends AbstractController
             $entityManager->persist($tennisMatch);
             $entityManager->flush();
 
-            return $this->redirectToRoute('search_matches');
+            return $this->redirectToRoute('tennis_match_show', [
+                'id' => $tennisMatch->getId()
+            ]);
         }
 
         return $this->render('tennis_match/new.html.twig', [
@@ -76,7 +78,7 @@ class TennisMatchController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/edit", name="tennis_match_edit", methods={"GET","POST"})
+     * @Route("/matches/{id}/edit", name="tennis_match_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, TennisMatch $tennisMatch): Response
     {
@@ -86,7 +88,9 @@ class TennisMatchController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('search_matches');
+            return $this->redirectToRoute('tennis_match_show', [
+                'id' => $tennisMatch->getId()
+            ]);
         }
 
         return $this->render('tennis_match/edit.html.twig', [
@@ -96,9 +100,9 @@ class TennisMatchController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="tennis_match_delete", methods={"DELETE"})
+     * @Route("/{slug}/{id}", name="tennis_match_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, TennisMatch $tennisMatch): Response
+    public function delete(Request $request, TennisMatch $tennisMatch, string $slug): Response
     {
         if ($this->isCsrfTokenValid('delete' . $tennisMatch->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
@@ -106,7 +110,7 @@ class TennisMatchController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('search_matches');
+        return $this->redirectToRoute('user_matches', ['slug' => $slug,]);
     }
     /**
      * @Route("/{id}/participent", name="tennis_match_add")
