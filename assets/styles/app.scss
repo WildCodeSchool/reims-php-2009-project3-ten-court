@@ -1705,22 +1705,22 @@ body {
 }
 
 .userEmailShow{
-    margin-top : 3em ;
-    margin-right: 20% ;
-    margin-left : 20% ;
-    text-align: center;
     align-self: center;
     background-color: HSL(128, 56%, 52%);
-    color: white;
     cursor: pointer;
+    font-size: 0.8rem;
+    text-decoration: none;
     border: solid 2px #0daa1a;
     border-radius: 10px;
     padding: 10px 10px;
-    }
+    width: 80%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
 
 .userEmailShow a{
+    color: white;
     text-decoration: none ;
-    color : black ;
 }
 
 
