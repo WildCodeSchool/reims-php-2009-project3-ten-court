@@ -830,9 +830,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    
 }
-
 .containerUserProfileShow {
     padding: 20px;
     margin-top: 50px;
@@ -844,18 +842,13 @@ body {
         "description description description"
         "info info info"
     ;
-    
-    
-    
 }
-
 .userPictureProfileShow {
     height : 100px ;
     width : 100px ;
     grid-area: picture;
     border-radius: 50%;
 }
-
 .userPseudoShow {
     display: flex;
     justify-content: center;
@@ -877,7 +870,6 @@ body {
     grid-area: description;
     display: flex;
 }
-
 .userInformationShow {
     grid-area: info;
     display: flex;
@@ -910,7 +902,6 @@ body {
 .userPhoneShow, .userEmailShow, .userAddressShow, .userContactItem {
     font-size: 0.9rem;
 }
-
 .userPhoneShow {
     padding: 15px 0;
     background-color: hsl(120, 100%, 97%);
@@ -918,7 +909,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .userEmailShow {
     padding: 15px 0;
     background-color: hsl(120, 100%, 97%);
@@ -926,7 +916,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .userAddressShow {
     padding: 15px 0;
     background-color: hsl(120, 100%, 97%);
@@ -934,11 +923,9 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .userContactItem {
     font-weight: bold;
 }
-
 .userContactPhone, .userContactMail, .userContactAddress {
     display: flex;
     justify-content: center;
@@ -954,7 +941,6 @@ body {
     bottom: 0;
     background-color: HSL(128, 56%, 52%);
 }
-
 .navbar {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -965,23 +951,19 @@ body {
         "search add localisation user";
     padding: 0;
 }
-
 .logoNavBar {
     width: 18px;
     cursor: pointer;
 }
-
 .localisation {
     grid-area: localisation;
 }
 .addAnnounce {
     grid-area: add;
 }
-
 .search {
     grid-area: search;
 }
-
 .userDirect {
     display: grid ;
     grid-area: user;
@@ -995,7 +977,6 @@ body {
     padding-left: 0.5rem;
     padding-right: 1rem;
 }
-
 .blankShowUserPage {
     height: 80px;
 }
@@ -1007,16 +988,13 @@ body {
     font-size: 30px;
     padding-top: 20px ;
 }
-
 .widget label {
     padding-right: 20px ;
 }
-
 .containerEdit button {
    margin-top: 50px ;
    float : right ;
 }
-
 .containerEdit h2 {
     text-align: center;
 }
@@ -1046,7 +1024,6 @@ body {
     height: 120px;
     width: 120px;
 }
-
 .searchFormRow select {
     padding: 5px 8px;
     border: none;
@@ -1093,7 +1070,6 @@ body {
     border: solid 1px hsl(128, 56%, 52%);
     background-color: white;
 }
-
 #search_user_level, #search_user_sex { 
     border: none;
     appearance: none;
@@ -1117,13 +1093,11 @@ body {
     padding: 10px 85px;
     text-align: center;
     margin-bottom: 15px;
-
 }
 #search_user_sex {
     border-radius: 10px;
     text-align: center;
 }
-
 .searchFormUserButton {
     align-self: center;
     background-color: HSL(128, 56%, 52%);
@@ -1170,7 +1144,6 @@ body {
 }
 
 //SEARCH MATCH PAGE 
-
 .backgroundSearchMatchs {
     background-image: url("../../assets/images/backgroundImages/Default.jpg");
     background-repeat: no-repeat;
@@ -1182,7 +1155,6 @@ body {
 .searchMatchesTitle {
     color: white;
     padding: 20px;
-/*     margin: 20px 0px 40px 0px; */
     position: fixed;
     width: 100%;
     margin-top: 20px;
