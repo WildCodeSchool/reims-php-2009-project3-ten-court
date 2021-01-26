@@ -52,14 +52,9 @@ class SearchUserType extends AbstractType
                 ]
             ])
             ->add('city', TextType::class, [
-                'label' => 'Ville',
+                'label' => 'Adresse / Ville',
                 'required' => false,
             ])
-            ->add('city', TextType::class, [
-                'label' => 'Ville',
-                'required' => false,
-            ])
-
         ;
     }
 
