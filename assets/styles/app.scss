@@ -1491,6 +1491,27 @@ body {
 .editMatchDateItemForm{
     margin-top: 10px ;
 }
+
+
+.UpdateButtonEditMatch , .backButtonEditTennisMatch {
+    border-radius: 10px;
+    margin: 15px 0;
+    background-color: hsl(128, 56%, 52%);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.8rem; 
+    border: solid 2px rgb(13, 170, 26); 
+    width : 280px ;
+}
+
+.containerButtonEditMatch a{
+    text-decoration: none ;
+}
+
+
+
 @media (min-width: 800px) {
     .editMatchSaveItemForm button {  
         width: 620px;
