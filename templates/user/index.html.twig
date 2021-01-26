@@ -4,8 +4,8 @@
 
 {% block body %}
 <h1 class='searchTitleUsers'>Recherche rapide de joueur</h1>
-<div class='containerSearch'>
-    <div class="backgroundAllUsers">
+<div class="backgroundAllUsers">
+    <div class='containerSearch'>
         {% for user in users %}
             <a class="containerPlayers" href="{{ path('user_show', {'slug': user.slug}) }}">
                 <div class='players'>
