@@ -1756,6 +1756,23 @@ body {
     color: white;
     border: none;
 }
+.containerBottomSendMessage {
+    display: flex;
+    flex-direction: column;
+}
+.backButtonSendMessage {
+    text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin: 10px;
+    width: 310px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
 @media (min-width:400px) {
     #mail_from, #mail_to, #mail_subject {
         padding: 10px 115px;
@@ -1763,9 +1780,10 @@ body {
     #mail_html {
         padding: 10px 105px;
     }
-    .SendAMessageSubmitButton {
+    .SendAMessageSubmitButton, .backButtonSendMessage {
         width:370px;
     }
+        
 }
 @media (min-width:600px) {
     #mail_from, #mail_to, #mail_subject {
@@ -1774,7 +1792,7 @@ body {
     #mail_html {
         padding: 10px 135px;
     }
-    .SendAMessageSubmitButton {
+    .SendAMessageSubmitButton, .backButtonSendMessage {
         width:430px;
     }
 }
