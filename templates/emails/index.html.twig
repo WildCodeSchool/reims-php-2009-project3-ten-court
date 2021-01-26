@@ -4,31 +4,33 @@
 {% endblock %}
 
 {% block body %}
+			<h1 class="SendAMessageTitle">Envoyer un message</h1>
 	<div class="contact-container">
 		<div class="contact-block-title">
-			<h1>Envoyer un message</h1>
 		</div>
-		<div class="block-form">
+		<div class="containerMessageForm">
 			{{ form_start (form) }}
 
-			<div class="block-widgetmail">
+			<div class="containerMessage">
 				<div class='emailFrom'>
-					From : {{ form_widget(form.from, {'attr':  {'placeholder': 'Votre Email '}}) }}
+					<p class="emailFromTitle">De:</p>
+					<p>{{ form_widget(form.from, {'attr':  {'placeholder': 'Votre Email '}}) }}</p>
 				</div>
 				<div class='emailTo'>
-					To : {{ form_widget(form.to, {'value':  user.email  }) }}
+					<p class="emailToTitle">À:</p>
+					<p>{{ form_widget(form.to, {'value':  user.email  }) }}</p>
 				</div>
-				<div class='emailTitle'>
-					{{ form_widget(form.subject, {'attr': {'placeholder': 'Sujet du Message'}}) }}
+				<div class='emailSubject'>
+					<p class="emailSubjectTitle">Sujet:</p> 
+					<p>{{ form_widget(form.subject, {'attr': {'placeholder': 'Sujet du Message'}}) }}</p>
 				</div>
 				<div class='emailText'>
-					{{ form_widget(form.html, {'attr': {'placeholder': 'Votre Message'}}) }}
+					<p class="emailTextTitle">Message:</p>
+					<p>{{ form_widget(form.html, {'attr': {'placeholder': 'Votre Message'}}) }}</p>
 				</div>
 
-				<div class="block-button">
-					<div>
-						<a href="/mail"><input class="account-block-next-button" name="" type="submit" value="Envoyé"></a>
-					</div>
+				<div class="containerSendMessage">
+					<a class="SendAMessageSubmitButton" href="/mail"><input class="account-block-next-button" name="" type="submit" value="Envoyé"></a>
 				</div>
 				{{ form_end (form) }}
 			</div>
