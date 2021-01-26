@@ -1691,7 +1691,8 @@ body {
 }
 .containerMessage {
     margin-top: 100px;
-    margin-bottom: 20px ;
+    margin-bottom: 20px;
+    padding-top: 100px;
 
     display: flex;
     justify-content: center;
@@ -1703,10 +1704,10 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 20px;
+    margin: 10px;
 }
 .emailFromTitle, .emailToTitle, .emailSubjectTitle, .emailTextTitle {
-    margin: 10px;
+    margin: 5px;
 }
 #mail_from, #mail_to, #mail_subject {
     border: solid 1px #40c952;
