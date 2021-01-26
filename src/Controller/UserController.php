@@ -284,7 +284,7 @@ class UserController extends AbstractController
                 );
                 $entityManager->persist($user);
                 $entityManager->flush();
-                $this->addFlash('notice', 'Votre mot de passe à bien été changé !');
+                $this->addFlash('success', 'Votre mot de passe à bien été changé !');
                 return $this->redirectToRoute('user_profile', ['slug' => $user->getSlug()]);
             } else {
                 $form->addError(new FormError('Ancien mot de passe incorrect'));
