@@ -14,7 +14,8 @@
 			<div class="containerMessage">
 				<div class='emailFrom'>
 					<p class="emailFromTitle">De:</p>
-					<p>{{ form_widget(form.from, {'attr':  {'placeholder': 'Votre Email '}}) }}</p>
+					<p>{{ form_widget(form.from, {'value':  app.user.email  }) }}</p>
+					{# <p>{{ form_widget(form.from, {'attr':  {'placeholder': 'Votre Email '}}) }}</p> #}
 				</div>
 				<div class='emailTo'>
 					<p class="emailToTitle">À:</p>
