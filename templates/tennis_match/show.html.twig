@@ -4,7 +4,16 @@
 
 {% block body %}   
 <div class="backgroundDescriptionContainer">
+    
 <h1 class="matchShowTitle">Match de {{ tennis_match.organizer.pseudo }}</h1>
+    {% for message in app.flashes('success') %}
+            <div id="modifiedMatch" >
+                <p class="successModifiedMessage">{{ message }}</p>
+            </div>
+            <script language='javascript'>
+            temp=document.getElementById('modifiedMatch');
+            setTimeout('temp.style.display="none"',3000);</script>     
+    {% endfor %}
     <div class="matchDescriptionContainer"> 
         <h2 class="matchTitleTennisMatchShow">{{ tennis_match.name }}</h2>
         <div class="containerDateTennisMatchShow">

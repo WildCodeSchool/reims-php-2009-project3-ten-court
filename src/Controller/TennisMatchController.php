@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 use function Amp\Iterator\toArray;
 
@@ -31,9 +32,10 @@ class TennisMatchController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="tennis_match_new", methods={"GET","POST"})
+     * @Route("/{slug}/new", name="tennis_match_new", methods={"GET","POST"})
+     * 
      */
-    public function new(Request $request): Response
+    public function new(Request $request, string $slug): Response
     {
         $tennisMatch = new TennisMatch();
         $form = $this->createForm(TennisMatchType::class, $tennisMatch);
@@ -45,9 +47,14 @@ class TennisMatchController extends AbstractController
             $tennisMatch->addParticipent($this->getUser());
             $entityManager->persist($tennisMatch);
             $entityManager->flush();
+            $this->addFlash(
+                'success',
+                'Votre match a bien été ajouté!'
+            );
 
-            return $this->redirectToRoute('tennis_match_show', [
-                'id' => $tennisMatch->getId()
+            return $this->redirectToRoute('user_matches', [
+                'slug' => $slug,
+                
             ]);
         }
 
@@ -88,6 +95,11 @@ class TennisMatchController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            $this->addFlash(
+                'success',
+                'Votre match a bien été modifié'
+            );
+
             return $this->redirectToRoute('tennis_match_show', [
                 'id' => $tennisMatch->getId()
             ]);
@@ -108,9 +120,13 @@ class TennisMatchController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($tennisMatch);
             $entityManager->flush();
+            $this->addFlash(
+                'success',
+                'Votre match a bien été supprimé'
+            );
         }
-
         return $this->redirectToRoute('user_matches', ['slug' => $slug,]);
+       
     }
     /**
      * @Route("/{id}/participent", name="tennis_match_add")

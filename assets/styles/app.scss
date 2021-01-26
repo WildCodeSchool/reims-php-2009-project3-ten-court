@@ -536,6 +536,19 @@ body {
 .blankMyProfileShowMatchPage {
     height: 200px;
 }
+.successMessage {
+    background-color: hsl(126, 41%, 56%); 
+    border: solid 2px #0d961f;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: auto; /* Enable scroll if needed */
+}
 @media (min-width: 0px) and (max-width: 600px) {
     .myBlockListMatches {
         display: flex;
@@ -1663,6 +1676,32 @@ body {
 }
 .blankTennisMatchDetailPage {
     height: 100px;
+}
+.successModifiedMessage {
+    background-color: hsl(126, 41%, 56%); 
+    border: solid 2px #0d961f;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: auto; /* Enable scroll if needed */
+}
+.successAddMatchMessage {
+    background-color: hsl(126, 41%, 56%); 
+    border: solid 2px #0d961f;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: auto; /* Enable scroll if needed */
 }
 
 //MAIL//
