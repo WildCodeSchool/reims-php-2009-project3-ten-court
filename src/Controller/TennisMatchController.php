@@ -86,12 +86,12 @@ class TennisMatchController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('tennis_match_index');
+            return $this->redirectToRoute('search_matches');
         }
 
         return $this->render('tennis_match/edit.html.twig', [
             'tennis_match' => $tennisMatch,
-            'form' => $form->createView(),
+            'formEditMatch' => $form->createView(),
         ]);
     }
 
@@ -130,7 +130,7 @@ class TennisMatchController extends AbstractController
     /**
      * @Route("/{id}/remove", name="tennis_match_remove")
      */
-    public function removeIntoTheMatch(TennisMatch $match, EntityManagerInterface $em): Response
+    public function removeFromTheMatch(TennisMatch $match, EntityManagerInterface $em): Response
     {
         $match->removeParticipent($this->getUser());
 

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Profile • Tencourt{% endblock %}
+{% block title %}Mes Matchs • Tencourt{% endblock %}
 
 {% block body %}
     <div class="containerMyMatchesBackground">
@@ -10,10 +10,11 @@
                 <a  class="containerMatchlisting" href="{{ path('tennis_match_show', { 'id' : match.id }) }}">
                     <div class="matchListing">
                         <p class="matchListingTitleMatch">{{ match.name }}</p>
-                        <p class="matchListingDateMatch">Le {{match.eventDate|date("m/d/Y")}}  à {{match.startHour|date("h")}}H{{match.startHour|date("i")}}</p>
+                        <p class="matchListingDateMatch">Le {{match.eventDate|date("d/m/Y")}}  à {{match.startHour|date("h")}}H{{match.startHour|date("i")}}</p>
                     </div>
                 </a>
             {% endfor %}
+            <a class="backButtonShowMatchProfile" href="{{ path('user_profile', {'slug': user.slug}) }}">Retour</a>
         <div>
     </div>
     <div class="blankMyProfileShowMatchPage"></div>

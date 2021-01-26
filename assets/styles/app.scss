@@ -93,7 +93,6 @@ body {
     cursor: pointer;
     font-size: 0.8rem; 
     border: solid 2px rgb(13, 170, 26);      
-    font-weight : bold ;
 }
 .containerLoginForm .alert {
     text-align: center;
@@ -119,7 +118,6 @@ body {
     color: white;
     cursor: pointer;
     border: solid 2px hsl(125, 86%, 36%);
-    font-weight: bold;
 }
 .submitConnexion a {
     color: white;
@@ -269,17 +267,23 @@ body {
     background-size: cover;
 }
 .myProfileTitle {
-    color: black;
+    color: white;
     padding: 20px;
+    margin: 20px 0px 40px 0px;
+    position: fixed;
+    width: 100%;
     margin-top: 20px;
     text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
 }
 .MyProfile {
     display: flex;
     flex-direction: column;
 }
 .myProfilePicture {
-    margin-top: 40px;
+    margin-top: 100px;
     margin-bottom: 15px;
     align-self: center;
     height: 160px;
@@ -354,6 +358,7 @@ body {
     background-color: hsl(128, 56%, 52%);
     border: solid 2px hsl(128, 84%, 32%);
     border-radius: 10px;
+    width: 280px;
 }
 .editionButtonsFormAvatar {
     display: flex;
@@ -430,26 +435,33 @@ body {
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-  }
+}
 .myMatchesTitle {
-    color: black;
+    color: white;
     padding: 20px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    position: fixed;
+    width: 100%;
     margin-top: 20px;
     text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
 }
 .containerMatchlisting {
     text-decoration: none;
-    width: 300px;
+    width: 90%;
+    cursor: pointer;
 }
 .myBlockListMatches {
-    display: grid;
-    grid-template-areas:
-        'match match';
+    display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
 }
-.myProfileMatchButton {
+.myProfileMatchButton, .myProfileParticipationsButton {
     text-align: center;
     background-color: #40c952;
     border: solid 2px #0d961f;
@@ -458,25 +470,68 @@ body {
     padding: 10px 50px;
     margin: 10px;
 }
-.myProfileMatchButton a {
+.myProfileMatchButton a, .myProfileParticipationsButton a {
     color: white;
     text-decoration: none;
 }
 .matchListing {
-    grid-area: match;
     padding: 40px;
     margin: 10px;
     text-align: center;
     border-radius: 10px;
     background-color: #40c952;
     border: solid 2px hsl(128, 84%, 32%);
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.matchListingOwn {
+    padding: 40px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #d3721d;
+    border: solid 2px #aa5c18;
+    height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .matchListingTitleMatch {
     font-size: 1.8rem;
     color: hsl(128, 84%, 32%);
 }
+.matchListingTitleMatchOwn {
+    font-size: 1.8rem;
+    color: #aa5c18;
+}
 .matchListingDateMatch {
+    margin-top: 10px;
     color: white;
+}
+.matchListingMessageOwner {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color:#aa5c18;
+    color: white;
+}
+.backButtonParticipationMatchProfile, .backButtonShowMatchProfile {
+    text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin: 10px;
+    width: 85%;
+    color: white;
+    text-decoration: none;
 }
 .blankMyProfileShowMatchPage {
     height: 200px;
@@ -491,17 +546,14 @@ body {
     .blankMyProfileShowMatchPage {
         height: 120px;
     }
-    .containerMatchlisting {
-        width: 300px;
-    }
-
 }
 
 //EDIT USER
 #updateMessageSuccess {
-    background-color: HSL(127, 56%, 52%); 
+    background-color: hsl(126, 41%, 56%); 
+    border: solid 2px #0d961f;
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
     color: white;
     width: 100%;
     z-index: 1;
@@ -524,9 +576,30 @@ body {
     justify-content: center;
     flex-direction: column;
 }
+.containerEditionForm:nth-child(1) {
+    margin-top: 100px;
+}
 .editionTitleForm {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    position: fixed;
+    width: 100%;
+    margin-top: 20px;
     text-align: center;
-    margin: 20px;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.editionTitleFormAvatar {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+        margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
 }
 .editionItemForm div {
     display: flex;
@@ -650,11 +723,13 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+.backgroundAllUsers  {
+    padding-top:100px;
+}
 .containerSearch {
     display: flex;
     flex-direction: column;
 }
-
 .containerPlayers {
     text-decoration: none;
     cursor: pointer;
@@ -662,9 +737,15 @@ body {
 
 .searchTitleUsers {
     color: white;
-    text-align: center;
     padding: 20px;
-    margin-top: 50px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+    position: fixed;
+    width: 100%;
 }
 
 .players {
@@ -935,7 +1016,18 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
-
+.searchPlayersTitle {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+    position: fixed;
+    width: 100%;
+}
 .players .playerphoto {
     height: 120px;
     width: 120px;
@@ -960,7 +1052,7 @@ body {
     background-color: hsla(348, 2%, 93%, 0.8);
     border-radius: 5px;
     border: hsla(348, 2%, 93%, 0.92);
-    margin: 2rem 1rem 3rem 1rem;
+    margin: 100px 1rem 3rem 1rem;
     padding: 1rem;
     -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
@@ -1037,6 +1129,17 @@ body {
     justify-content: center;
     align-items: center;
 }
+.resultSearch {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 20px 0px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+    width: 90%;
+    border-radius: 10px;
+}
 .resultSearch, .resultSearchMessage {
     text-align: center;
 }
@@ -1062,6 +1165,18 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+.searchMatchesTitle {
+    color: white;
+    padding: 20px;
+/*     margin: 20px 0px 40px 0px; */
+    position: fixed;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
 .containerSearchMatchs {
     display: flex;
     flex-direction: column;
@@ -1070,15 +1185,16 @@ body {
     background-color: hsla(348, 2%, 93%, 0.8);
     border-radius: 5px;
     border: hsla(348, 2%, 93%, 0.92);
-    margin: 2rem 1rem 3rem 1rem;
+    margin: 100px 1rem 3rem 1rem;
     padding: 1rem;
     -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
 }
 .searchFormMatchRow #search_match_startHour, .searchFormMatchRow #search_match_endHour, 
-.searchFormMatchRow #search_match_adress,
-.searchFormMatchRow #search_match_min, .searchFormMatchRow #search_match_max{
+.searchFormMatchRow #search_match_adress, .searchFormMatchRow #search_match_level,
+.searchFormMatchRow #search_match_min, .searchFormMatchRow #search_match_max {
+    appearance: none;
     border: solid 1px hsl(128, 56%, 52%);
     background-color: white;
     display: flex;
@@ -1086,13 +1202,15 @@ body {
     align-items: center;
     
 }
-#search_match_adress, #search_match_startHour, #search_match_endHour, #search_match_min, #search_match_max { 
+#search_match_adress, #search_match_startHour, #search_match_endHour, 
+#search_match_min, #search_match_max, #search_match_level { 
     color: rgb(0, 0, 0);
 }
 #search_match_save { 
     color: rgb(255, 255, 255);
 }
-#search_match_save, #search_match_adress, #search_match_startHour, #search_match_endHour, #search_match_min, #search_match_max { 
+#search_match_save, #search_match_adress, #search_match_startHour, 
+#search_match_endHour, #search_match_min, #search_match_max, #search_match_level { 
     background-color: hsl(128, 56%, 52%);/*  */
     text-decoration: none;
     border: none;
@@ -1192,8 +1310,19 @@ body {
 }
 
 //MATCH CREATE
-
-.createMatchPage {
+.createMatchTitleForm {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 0px 0px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+    position: fixed;
+    width: 100%;
+}
+.backgroundMatchCreate {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1219,8 +1348,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-self: center;}
-
+    align-self: center;
+}
+.createMatchItemForm li {
+    list-style-type: none;
+    font-size: 0.8rem;
+    color: red;
+}
 .createMatchItemForm div {
     display: flex;
     flex-direction: column;
@@ -1228,12 +1362,13 @@ body {
     align-self: center;
 }
 #tennis_match_name, #tennis_match_adress, #tennis_match_description,
-#tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate {
+#tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate, #tennis_match_level {
     border-radius : 10px;
     border: solid 1px #40c952;
     width: 220px;
     padding: 10px;
     text-align: center;
+    appearance: none;
 }
 .createMatchSaveItemForm button {  
     border-radius : 10px ; 
@@ -1260,56 +1395,153 @@ body {
 .createMatchDateItemForm{
     margin-top: 10px ;
 }
-@media (min-width: 300px) {
+@media (min-width: 800px) {
     #tennis_match_name, #tennis_match_adress, #tennis_match_description,
-    #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate {
-        width: 280px;
+    #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate, #tennis_match_level {
+        width: 620px;
     }
     .createMatchSaveItemForm button {  
-        width: 280px;
+        width: 620px;
     }
 }
 @media (min-width: 500px) {
     #tennis_match_name, #tennis_match_adress, #tennis_match_description,
-    #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate {
+    #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate, #tennis_match_level {
         width: 500px;
     }
     .createMatchSaveItemForm button {  
         width: 500px;
     }
 }
-@media (min-width: 700px) {
-    .createMatchPage {
-        background-image: url("../../assets/images/backgroundImages/subscriptionIpad.jpg");
+@media (min-width: 300px) {
+    #tennis_match_name, #tennis_match_adress, #tennis_match_description,
+    #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate, #tennis_match_level {
+        width: 280px;
     }
+    .createMatchSaveItemForm button {  
+        width: 280px;
+    }
+}
+
+// MATCH UPDATE -> This is related to CREATE with his #
+.backgroundMatchEdit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url("../../assets/images/backgroundImages/withoutLogo.jpg");
+    background-repeat: no-repeat;
+    height: calc(100vh - 73.08px);
+    background-position: center;
+    background-size: cover;
+}
+.editMatchTitleForm {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 0px 0px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+.containerEditMatchForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.containerEditMatchForm div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.editMatchItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;}
+
+.editMatchItemForm div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+}
+.editMatchSaveItemForm button {  
+    border-radius : 10px ; 
+    border: solid 2px rgb(13, 170, 26);  
+    background-color : #40c952 ; 
+    height : 40px ; 
+    margin-top: 30px ;
+    color: white;
+    width: 220px;
+}
+
+.editMatchSaveItemForm{
+    margin-bottom: 50px ;
+}
+
+.editMatchItemForm {
+   margin: 10px 0px;
+}
+
+.backgroundMatchEdit {
+    text-align : center ;
+}
+
+.editMatchDateItemForm{
+    margin-top: 10px ;
 }
 @media (min-width: 800px) {
-    #tennis_match_name, #tennis_match_adress, #tennis_match_description,
-    #tennis_match_endHour, #tennis_match_startHour, #tennis_match_eventDate {
+    .editMatchSaveItemForm button {  
         width: 620px;
     }
-    .createMatchSaveItemForm button {  
-        width: 620px;
+}
+@media (min-width: 500px) {
+    .editMatchSaveItemForm button {  
+        width: 500px;
+    }
+}
+@media (min-width: 300px) {
+    .editMatchSaveItemForm button {  
+        width: 280px;
     }
 }
 
 // MATCH DESCRIPTION PAGE
 
+.matchShowTitle {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    width: 100%;
+    font-size: 1.5rem;
+    position: fixed;
+}
 .TennisMatchShowMessage {
     padding: 20px;
-    background-color: hsl(0, 70%, 43%);
-    border: solid 2px hsl(0, 69%, 34%);
+    background-color: hsl(28, 76%, 47%);
+    border: solid 2px  hsl(28, 75%, 38%);
     border-radius: 10px;
     margin: 20px 0px 10px 0px;
     color: white;
     align-self: center;
     text-align: center;
+    width: 100%;
 }
 .containerInteractionParticipeMatch {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 10px;
+/*     height: 100px; */
+    width: 100%;
 }
 .itemInteractionParticipeMatchComplete, .itemInteractionParticipeMatch {
     align-self: center;
@@ -1319,7 +1551,7 @@ body {
     cursor: pointer;
     text-decoration: none;
     border-radius: 10px;
-    padding: 10px 10px;
+    padding: 10px 60px;
     width: 100%;
     color: white;
     margin: 10px;
@@ -1332,6 +1564,22 @@ body {
     border: solid 2px rgb(13, 170, 26);  
     background-color : #40c952;
 }
+.updateOrganizerButtonTennisMatchShow {
+    align-self: center;
+    padding: 20px;
+    background-color: HSL(128, 56%, 52%);
+    border: solid 2px #0daa1a;
+    text-align: center;
+    justify-content:center;
+    align-self: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px 80px;
+    width: 100%;
+    color: white;
+    margin-bottom: 10px;
+}
 .deleteOrganizerButtonTennisMatchShow {
     align-self: center;
     padding: 20px;
@@ -1343,7 +1591,7 @@ body {
     cursor: pointer;
     text-decoration: none;
     border-radius: 10px;
-    padding: 10px 10px;
+    padding: 10px 80px;
     width: 100%;
 }
 .deleteOrganizerButtonTennisMatchShow button.btn{
@@ -1378,7 +1626,7 @@ body {
         text-align: center;
         background-color: hsla(348, 2%, 93%, 0.8);
         border-radius: 10px;
-        margin-top: 50px;
+        margin-top: 100px;
         padding: 20px;
         width: 80%;
         -webkit-box-shadow: 0px 18px 35px -29px rgba(0, 0, 0, 0.75);
@@ -1398,7 +1646,7 @@ body {
     flex-direction: row;
 }
 .containerDateTennisMatchShow, .containerDescriptionDateTennisMatchShow,
-.containerAddressTennisMatchShow, .containerDescriptionTennisMatchShow {
+.containerAddressTennisMatchShow, .containerDescriptionTennisMatchShow, .containerLevelTennisMatchShow {
     margin: 10px;
 }
 .containerDescriptionDateTennisMatchShow p {
