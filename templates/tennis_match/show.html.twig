@@ -2,12 +2,7 @@
 
 {% block title %}{{ tennis_match.name }} - TenCourt{% endblock %}
 
-{% block body %}
-    {% for message in app.flashes('success') %}
-        <div id="updateMessageSuccess">
-            {{ message }}
-        </div>
-    {% endfor %}
+{% block body %}   
 <div class="backgroundDescriptionContainer">
 <h1 class="matchShowTitle">Match de {{ tennis_match.organizer.pseudo }}</h1>
     <div class="matchDescriptionContainer"> 

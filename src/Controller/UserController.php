@@ -3,10 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Entity\Mail;
+use App\Entity\TennisMatch;
 use App\Form\UserType;
 use App\Form\AvatarType;
 use App\Service\Slugify;
-use App\Entity\TennisMatch;
+use App\Form\MailType;
 use App\Service\FileUploader;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -18,6 +20,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use Symfony\Component\Mailer\MailerInterface;
+use Symfony\Component\Mime\Email;
 
 /**
  * @Route("/users", name="user_")
@@ -44,13 +48,13 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-                $entityManager = $this->getDoctrine()->getManager();
-                $slug = $slugify->generate($user->getPseudo() ?? '');
-                $user->setSlug($slug);
-                $entityManager->persist($user);
-                $entityManager->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+            $slug = $slugify->generate($user->getPseudo() ?? '');
+            $user->setSlug($slug);
+            $entityManager->persist($user);
+            $entityManager->flush();
 
-                return $this->redirectToRoute('user_index');
+            return $this->redirectToRoute('user_index');
         }
 
         return $this->render('user/new.html.twig', [
@@ -174,8 +178,8 @@ class UserController extends AbstractController
             return $this->redirectToRoute('user_profile', ['slug' => $user->getSlug()]);
         }
         return $this->render('user/editAvatar.html.twig', [
-                'user' => $user,
-                'formAvatar' => $form->createView(),
+            'user' => $user,
+            'formAvatar' => $form->createView(),
         ]);
     }
 
@@ -215,5 +219,41 @@ class UserController extends AbstractController
         $em->flush();
 
         return $this->redirectToRoute('user_profile', ['slug' => $user->getSlug()]);
+    }
+
+    /**
+     * @Route("/mail/{slug}", name="mail")
+     * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
+     */
+    public function sendMail(Request $request, MailerInterface $mailer, User $user): Response
+    {
+            $form = $this->createForm(MailType::class);
+            $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+                $contact = [
+                    $form->get('from')->getData(),
+                    $form->get('to')->getData(),
+                    $form->get('subject')->getData(),
+                    $form->get('html')->getData()];
+
+                $email = (new Email())
+                    ->from($contact[0])
+                    ->to($contact[1])
+                    ->subject($contact[2])
+                    ->html($contact[3]);
+
+                $mailer->send($email);
+                $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+                return $this->render('user/show.html.twig', [
+                'user' => $user
+                ]);
+        }
+        return $this->render(
+            'emails/index.html.twig',
+            [
+            'form' => $form->createView(),
+            'user' => $user
+            ]
+        );
     }
 }
