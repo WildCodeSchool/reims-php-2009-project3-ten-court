@@ -754,11 +754,10 @@ body {
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     color: black;
-
     margin: 10px;
     border-radius: 10px;
     padding: 50px 20px;
-    color: black;
+    width: 280px;
 
     background-color: white;
     text-decoration: none;
@@ -805,6 +804,21 @@ body {
     padding: 10px 10px;
     width: 100%;
     font-size:0.9rem
+}
+@media (min-width: 350px) {
+    .players {
+        width: 300px;
+    }
+}
+@media (min-width: 500px) {
+    .players {
+        width: 450px;
+    }
+}
+@media (min-width: 600px) {
+    .players {
+        width: 550px;
+    }
 }
 
 
