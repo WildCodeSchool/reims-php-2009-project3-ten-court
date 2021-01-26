@@ -46,6 +46,9 @@
                 <a class="participateButtonTennisMatchShow" href="{{ path('tennis_match_add', {'id': tennis_match.id}) }}">Participer</a>
             {% endif %}
         {% endif %}
+        {% if app.user != tennis_match.organizer %}
+        <a class="seeUserTennisMatchShow" href="{{ path('user_show', {'slug': user.slug}) }}">Profil/Contact de l'Organisateur</a>
+        {% endif %}
         <a class="backButtonTennisMatchShow" href="{{ path('search_matches') }}">Retour</a>
     <div class="blankTennisMatchDetailPage"></div>
     </div>
