@@ -2,26 +2,29 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
 use App\Entity\Mail;
-use App\Entity\TennisMatch;
+use App\Entity\User;
+use App\Form\MailType;
 use App\Form\UserType;
 use App\Form\AvatarType;
 use App\Service\Slugify;
-use App\Form\MailType;
+use App\Entity\TennisMatch;
 use App\Service\FileUploader;
+use App\Form\UpdatePasswordType;
+use Symfony\Component\Mime\Email;
 use App\Repository\UserRepository;
+use Symfony\Component\Form\FormError;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\TennisMatchRepository;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 /**
  * @Route("/users", name="user_")
@@ -209,14 +212,14 @@ class UserController extends AbstractController
      * @Route("/{slug}/deleteAvatar", name="delete_avatar", methods={"GET","POST"})
      * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
-    public function deleteAvatar(EntityManagerInterface $em, User $user): Response
+    public function deleteAvatar(EntityManagerInterface $entityManager, User $user): Response
     {
         $fileToDelete = __DIR__ . '/../../public/uploads/' . $user->getAvatar();
         if (file_exists($fileToDelete)) {
             unlink($fileToDelete);
         }
         $user->setAvatar(null);
-        $em->flush();
+        $entityManager->flush();
 
         return $this->redirectToRoute('user_profile', ['slug' => $user->getSlug()]);
     }
@@ -255,5 +258,43 @@ class UserController extends AbstractController
             'user' => $user
             ]
         );
+    }
+
+    /**
+     * @Route("/update_password/{slug}", name="update_password")
+     * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
+     */
+
+    public function updatePassword(
+        Request $request,
+        EntityManagerInterface $entityManager,
+        UserPasswordEncoderInterface $passwordEncoder,
+        User $user
+    ): Response {
+
+        $form = $this->createForm(UpdatePasswordType::class, $user);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            if ($passwordEncoder->isPasswordValid($user, $form->get('oldPassword')->getData())) {
+                $user->setPassword(
+                    $passwordEncoder->encodePassword(
+                        $user,
+                        $form->get('plainPassword')->getData()
+                    )
+                );
+                $entityManager->persist($user);
+                $entityManager->flush();
+                $this->addFlash('notice', 'Votre mot de passe à bien été changé !');
+                return $this->redirectToRoute('user_profile', ['slug' => $user->getSlug()]);
+            } else {
+                $form->addError(new FormError('Ancien mot de passe incorrect'));
+            }
+        }
+
+        return $this->render('user/update_password.html.twig', [
+            'form' => $form->createView(),
+            'user' => $user,
+        ])
+        ;
     }
 }
