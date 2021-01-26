@@ -604,7 +604,7 @@ body {
     background-color:#aa5c18;
     color: white;
 }
-.backButtonParticipationMatchProfile, .backButtonShowMatchProfile {
+.backButtonParticipationMatchProfile, .backButtonShowMatchProfile  {
     text-align: center;
     background-color: #40c952;
     border: solid 2px #0d961f;
@@ -618,6 +618,19 @@ body {
 }
 .blankMyProfileShowMatchPage {
     height: 200px;
+}
+.successMessage {
+    background-color: hsl(126, 41%, 56%); 
+    border: solid 2px #0d961f;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: auto; /* Enable scroll if needed */
 }
 @media (min-width: 0px) and (max-width: 600px) {
     .myBlockListMatches {
@@ -1651,6 +1664,24 @@ body {
     border: solid 2px rgb(13, 170, 26);  
     background-color : #40c952;
 }
+.backButtonToUserList {
+    align-self: center;
+    background-color: HSL(128, 56%, 52%);
+    cursor: pointer;
+    font-size: 0.8rem;
+    text-decoration: none;
+    border: solid 2px #0daa1a;
+    border-radius: 10px;
+    padding: 10px 10px;
+    width: 80%;
+    margin-bottom: 10px;
+    margin-top: 20px;
+
+}
+.backButtonToUserList a {
+    text-decoration: none;
+    color: white;
+}
 .updateOrganizerButtonTennisMatchShow {
     align-self: center;
     padding: 20px;
@@ -1756,6 +1787,32 @@ body {
 }
 .blankTennisMatchDetailPage {
     height: 100px;
+}
+.successModifiedMessage {
+    background-color: hsl(126, 41%, 56%); 
+    border: solid 2px #0d961f;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: auto; /* Enable scroll if needed */
+}
+.successAddMatchMessage {
+    background-color: hsl(126, 41%, 56%); 
+    border: solid 2px #0d961f;
+    text-align: center;
+    padding: 40px 20px;
+    color: white;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: auto; /* Enable scroll if needed */
 }
 
 //MAIL//

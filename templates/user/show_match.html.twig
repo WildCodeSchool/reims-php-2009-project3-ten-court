@@ -4,6 +4,23 @@
 
 {% block body %}
     <div class="containerMyMatchesBackground">
+        {% for message in app.flashes('success') %}
+            <div id="flash-success">
+                <p class="successMessage">{{ message }}</p>
+            </div>
+            <script language='javascript'>
+                    temp=document.getElementById('flash-success');
+                    setTimeout('temp.style.display="none"',3000);
+            </script>
+        {% endfor %}
+        {% for message in app.flashes('success') %}
+            <div id="modifiedMatch" >
+                <p class="successAddedMatchMessage">{{ message }}</p>
+            </div>
+            <script language='javascript'>
+            temp=document.getElementById('modifiedMatch');
+            setTimeout('temp.style.display="none"',3000);</script>     
+    {% endfor %}
         <h1 class="myMatchesTitle">Mes matchs</h1>
         <div class='myBlockListMatches'>
             {% for match in matches %}
