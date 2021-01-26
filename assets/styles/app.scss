@@ -332,6 +332,16 @@ body {
     align-items: center;
     margin-top: 100px;
 }
+
+.containerEditAvatarBackground{
+    background-image: url("../../assets/images/backgroundImages/Default.jpg");
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 .editionItemForm {
     margin: 5px 0px 10px 0px;
 }
@@ -1657,7 +1667,7 @@ body {
     flex-direction: column;
     width: 80%;
 }
-.backButtonTennisMatchShow, .participateButtonTennisMatchShow, .backButtonTennisMatchBack {
+.backButtonTennisMatchShow, .participateButtonTennisMatchShow, .backButtonTennisMatchBack, .seeUserTennisMatchShow{
     text-align: center;
     align-self: center;
     background-color: HSL(128, 56%, 52%);
@@ -1670,6 +1680,7 @@ body {
     width: 100%;
     margin: 5px;
 }
+
 .backButtonTennisMatchShow {
     margin-top: 50px;
 }

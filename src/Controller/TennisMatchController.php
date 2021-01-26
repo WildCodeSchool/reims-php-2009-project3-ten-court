@@ -58,7 +58,7 @@ class TennisMatchController extends AbstractController
     /**
      * @Route("/{id}", name="tennis_match_show", methods={"GET"})
      */
-    public function show(TennisMatch $tennisMatch): Response
+    public function show(TennisMatch $tennisMatch , User $user): Response
     {
         $participents = $tennisMatch->getParticipent();
         $nbParticipents = count($participents);
@@ -72,6 +72,7 @@ class TennisMatchController extends AbstractController
             'tennis_match' => $tennisMatch,
             'nbParticipents' => $nbParticipents,
             'isParticipent' => $isParticipent,
+            'user' => $user
         ]);
     }
 
