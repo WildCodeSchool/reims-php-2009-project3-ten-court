@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Repository\TennisMatchRepository;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=TennisMatchRepository::class)
@@ -24,16 +25,34 @@ class TennisMatch
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(
+     *      min = 5,
+     *      max = 35,
+     *      minMessage = "Le nom du match doit faire au moins {{ limit }} caractères de long",
+     *      maxMessage = "Le nom du match doit faire maximum {{ limit }} caractères de long"
+     * )
      */
     private ?string $name;
 
     /**
      * @ORM\Column(type="text", length=255)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 80,
+     *      minMessage = "L'adresse doit faire au minimum {{ limit }} caractères de long",
+     *      maxMessage = "L'adresse doit faire au maximum {{ limit }} caractères de long"
+     * )
      */
     private ?string $adress;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Assert\Length(
+     *      min = 10,
+     *      max = 150,
+     *      minMessage = "La description doit faire au minimum {{ limit }} caractères de long",
+     *      maxMessage = "La description doit faire au maximum {{ limit }} caractères de long"
+     * )
      */
     private ?string $description;
 
@@ -62,6 +81,11 @@ class TennisMatch
      * @ORM\ManyToMany(targetEntity=User::class, mappedBy="participationMatch")
      */
     private Collection $participent;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private ?string $level;
 
     public function __construct()
     {
@@ -180,6 +204,18 @@ class TennisMatch
         if ($this->participent->removeElement($participent)) {
             $participent->removeParticipationMatch($this);
         }
+
+        return $this;
+    }
+
+    public function getLevel(): ?string
+    {
+        return $this->level;
+    }
+
+    public function setLevel(?string $level): self
+    {
+        $this->level = $level;
 
         return $this;
     }

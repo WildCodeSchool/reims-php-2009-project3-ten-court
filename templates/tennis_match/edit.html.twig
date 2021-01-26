@@ -1,13 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit TennisMatch{% endblock %}
+{% block title %}Modifier le match Match • TenCourt{% endblock %}
 
 {% block body %}
-    <h1>Edit TennisMatch</h1>
+
+<h1 class="editMatchTitleForm">Modfier mon match</h1>
+<div class='backgroundMatchEdit'>
+    <div class="editMatchPage">
+        <div class="editMatchForm">
+            {{ form_start(formEditMatch) }}
+            <div class="containerCreationMatchForm">
+                <div class="editMatchItemForm">
+                    {{ form_row(formEditMatch.name) }}
+                </div>
+                <div class="editMatchItemForm">
+                    {{ form_row(formEditMatch.level) }}
+                </div>
+                <div class="editMatchDateItemForm">
+                    {{ form_row(formEditMatch.eventDate) }}
+                </div>
+                <div class="editMatchDateItemForm">
+                    {{ form_row(formEditMatch.startHour) }}
+                </div>
+                <div class="editMatchDateItemForm">
+                    {{ form_row(formEditMatch.endHour) }}
+                </div>
+                <div class="editMatchItemForm">
+                    {{ form_row(formEditMatch.adress) }}
+                </div>
+                <div class="editMatchItemForm">
+                    {{ form_row(formEditMatch.description) }}
+                </div>
+                <div class="editMatchSaveItemForm">
+                    <button class="btn">{{ button_label|default('Mettre à jour') }}</button>
+                </div>
+            </div>
+            {{ form_end(formEditMatch) }}
+        </div>
+    </div>
+</div>
+{#     <h1>Edit TennisMatch</h1>
 
     {{ include('tennis_match/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('tennis_match_index') }}">back to list</a>
 
-    {{ include('tennis_match/_delete_form.html.twig') }}
+    {{ include('tennis_match/_delete_form.html.twig') }} #}
 {% endblock %}

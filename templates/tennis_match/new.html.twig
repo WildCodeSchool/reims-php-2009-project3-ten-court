@@ -1,19 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New TennisMatch{% endblock %}
+{% block title %}Nouveau Match • TenCourt{% endblock %}
 
 {% block body %}
+<h1 class="createMatchTitleForm">Créer un Match</h1>
 <div class='backgroundMatchCreate'>
 
    <div class="createMatchPage">
         <div class="createMatchForm">
-            <h1 class="createMatchTitleForm">Créer Match</h1>
             {{ form_start(tennismatchform) }}
             <div class="containerCreationMatchForm">
-                    <div class="createMatchItemForm">
+                <div class="createMatchItemForm">
                     {{ form_row(tennismatchform.name) }}
                 </div>
-                    <div class="createMatchDateItemForm">
+                <div class="createMatchItemForm">
+                    {{ form_row(tennismatchform.level) }}
+                </div>
+                <div class="createMatchDateItemForm">
                     {{ form_row(tennismatchform.eventDate) }}
                 </div>
                 <div class="createMatchDateItemForm">
@@ -29,10 +32,11 @@
                     {{ form_row(tennismatchform.description) }}
                 </div>
                 <div class="createMatchSaveItemForm">
-                    {{ form_row(tennismatchform.save) }}
+                    <button class="btn">{{ button_label|default('Créer le match') }}</button>
                 </div>
             </div>
             {{ form_end(tennismatchform) }}
         </div>
+    </div>
 </div>
 {% endblock %}

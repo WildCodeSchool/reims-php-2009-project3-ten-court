@@ -12,6 +12,7 @@ use App\Form\MailType;
 use App\Service\FileUploader;
 use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\TennisMatchRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\File\File;
@@ -95,6 +96,19 @@ class UserController extends AbstractController
         return $this->render('tennis_match/show.html.twig', [
             'tennis_match' => $tennisMatch,
             'user' => $user,
+            ]);
+    }
+
+    /**
+     * @Route("/{slug}/participations", name="participations_matches", methods={"GET"})
+     * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
+     */
+    public function showParticipationsMatches(User $user): Response
+    {
+        $participationsMatches = $user->getParticipationMatch();
+        return $this->render('user/participations_matches.html.twig', [
+            'user' => $user,
+            'participationsMatches' => $participationsMatches
         ]);
     }
 

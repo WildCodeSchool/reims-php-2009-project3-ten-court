@@ -28,4 +28,9 @@ class SearchMatchService
      * @var string|null
      */
     public $adress;
+
+    /**
+     * @var string|null
+     */
+    public $level;
 }

@@ -11,8 +11,8 @@
             </div>
         {% endfor %}
 
-        <h1 class="myProfileTitle">Mon compte</h1>
 
+        <h1 class="myProfileTitle">Mon compte</h1>
         <div class="MyProfile">
             {% if user.avatar == NULL  %}
                 <img class="myProfilePicture" src="{{ asset('build/images/profileDefault/anonymeAvatar.png') }}"/>
@@ -64,16 +64,15 @@
                 <a class="myProfileEditButton" href="{{ path('user_edit', {'slug': user.slug}) }}">Modifier mon profil</a>
             </div>
         </div>
-
-
         <div class="myProfileMatchButton">
             <a href="{{ path('user_matches', {'slug': user.slug}) }}">Mes matchs</a>
         </div>
-
-            <div class="myProfileDeconnexion">
-                <a class="myProfileDeconnexionButton" href = "{{ path('app_logout') }}">Déconnexion</a>
-            </div>
-        
+        <div class="myProfileParticipationsButton">
+            <a href="{{ path('user_participations_matches', {'slug': user.slug}) }}">Mes participations</a>
+        </div>
+        <div class="myProfileDeconnexion">
+            <a class="myProfileDeconnexionButton" href = "{{ path('app_logout') }}">Déconnexion</a>
+        </div>
         <div class="blankMyProfilePage"></div>
     </div>
 
