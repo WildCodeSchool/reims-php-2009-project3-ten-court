@@ -889,9 +889,15 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+t
 
 .backgroundAllUsers {
     padding-top: 100px;
+
+.containerSearch  {
+    padding-top:100px;
+    align-items: center;
+
 }
 
 .containerSearch {
@@ -923,11 +929,10 @@ body {
     grid-column-gap: 5px;
     grid-row-gap: 5px;
     color: black;
-
     margin: 10px;
     border-radius: 10px;
     padding: 50px 20px;
-    color: black;
+    width: 280px;
 
     background-color: white;
     text-decoration: none;
@@ -977,6 +982,21 @@ body {
     width: 100%;
     font-size: 0.9rem
 }
+@media (min-width: 350px) {
+    .players {
+        width: 300px;
+    }
+}
+@media (min-width: 500px) {
+    .players {
+        width: 450px;
+    }
+}
+@media (min-width: 600px) {
+    .players {
+        width: 550px;
+    }
+}
 
 
 //USER SHOW PART
@@ -989,7 +1009,6 @@ body {
     background-size: cover;
 
 }
-
 .containerUserProfileShow {
     padding: 20px;
     margin-top: 50px;
@@ -1001,18 +1020,14 @@ body {
         "description description description"
         "info info info"
     ;
-
-
-
+  
 }
-
 .userPictureProfileShow {
     height: 100px;
     width: 100px;
     grid-area: picture;
     border-radius: 50%;
 }
-
 .userPseudoShow {
     display: flex;
     justify-content: center;
@@ -1036,7 +1051,6 @@ body {
     grid-area: description;
     display: flex;
 }
-
 .userInformationShow {
     grid-area: info;
     display: flex;
@@ -1076,7 +1090,6 @@ body {
 .userContactItem {
     font-size: 0.9rem;
 }
-
 .userPhoneShow {
     padding: 15px 0;
     background-color: hsl(120, 100%, 97%);
@@ -1084,7 +1097,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .userEmailShow {
     padding: 15px 0;
     background-color: hsl(120, 100%, 97%);
@@ -1092,7 +1104,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .userAddressShow {
     padding: 15px 0;
     background-color: hsl(120, 100%, 97%);
@@ -1100,14 +1111,17 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 .userContactItem {
     font-weight: bold;
 }
 
+
 .userContactPhone,
 .userContactMail,
-.userContactAddress {
+.userContactAddress 
+.userContactPhone, 
+  .userContactMail, 
+  .userContactAddress {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1122,7 +1136,6 @@ body {
     bottom: 0;
     background-color: HSL(128, 56%, 52%);
 }
-
 .navbar {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1133,12 +1146,10 @@ body {
         "search add localisation user";
     padding: 0;
 }
-
 .logoNavBar {
     width: 18px;
     cursor: pointer;
 }
-
 .localisation {
     grid-area: localisation;
 }
@@ -1146,11 +1157,9 @@ body {
 .addAnnounce {
     grid-area: add;
 }
-
 .search {
     grid-area: search;
 }
-
 .userDirect {
     display: grid;
     grid-area: user;
@@ -1165,7 +1174,6 @@ body {
     padding-left: 0.5rem;
     padding-right: 1rem;
 }
-
 .blankShowUserPage {
     height: 80px;
 }
@@ -1177,16 +1185,13 @@ body {
     font-size: 30px;
     padding-top: 20px;
 }
-
 .widget label {
     padding-right: 20px;
 }
-
 .containerEdit button {
     margin-top: 50px;
     float: right;
 }
-
 .containerEdit h2 {
     text-align: center;
 }
@@ -1218,7 +1223,6 @@ body {
     height: 120px;
     width: 120px;
 }
-
 .searchFormRow select {
     padding: 5px 8px;
     border: none;
@@ -1271,8 +1275,12 @@ body {
     background-color: white;
 }
 
+
 #search_user_level,
-#search_user_sex {
+#search_user_sex ,
+#search_user_level,
+#search_user_sex { 
+
     border: none;
     appearance: none;
     padding: 10px 85px;
@@ -1299,14 +1307,12 @@ body {
     padding: 10px 85px;
     text-align: center;
     margin-bottom: 15px;
-
 }
 
 #search_user_sex {
     border-radius: 10px;
     text-align: center;
 }
-
 .searchFormUserButton {
     align-self: center;
     background-color: HSL(128, 56%, 52%);
@@ -1359,7 +1365,6 @@ body {
 }
 
 //SEARCH MATCH PAGE 
-
 .backgroundSearchMatchs {
     background-image: url("../../assets/images/backgroundImages/Default.jpg");
     background-repeat: no-repeat;
@@ -1372,7 +1377,6 @@ body {
 .searchMatchesTitle {
     color: white;
     padding: 20px;
-    /*     margin: 20px 0px 40px 0px; */
     position: fixed;
     width: 100%;
     margin-top: 20px;
@@ -1568,6 +1572,7 @@ body {
 }
 
 .containerCreationMatchForm {
+    padding-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2015,10 +2020,29 @@ body {
     background-size: cover;
 }
 
+
 .contact-block-title {
     margin-top: 5em;
     margin-bottom: 2em;
+=======
+.SendAMessageTitle {
+    color: white;
+    padding: 20px;
+    margin: 20px 0px 40px 0px;
+    margin-top: 20px;
+    position: fixed;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    background-color: HSL(127, 56%, 52%);
+    margin-top: 0;
+    font-size: 1.5rem;
 }
+  
+.containerMessage {
+    margin-top: 100px;
+    margin-bottom: 20px;
+    padding-top: 100px;
 
 .block-widgetmail div {
     margin-bottom: 1em;
@@ -2032,20 +2056,114 @@ body {
     margin-top: 3em;
     margin-right: 20%;
     margin-left: 20%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.emailFrom, .emailTo, .emailSubject, .emailText, .containerSendMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.emailFromTitle, .emailToTitle, .emailSubjectTitle, .emailTextTitle {
+    margin: 5px;
+}
+#mail_from, #mail_to, #mail_subject {
+    border: solid 1px #40c952;
+    background-color: white;
+    border-radius: 10px;
+
     text-align: center;
+    padding: 10px 85px;
+}
+#mail_html {
+    border: solid 1px #40c952;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 75px;
+}
+.userEmailShow{
     align-self: center;
     background-color: HSL(128, 56%, 52%);
-    color: white;
     cursor: pointer;
+    font-size: 0.8rem;
+    text-decoration: none;
     border: solid 2px #0daa1a;
     border-radius: 10px;
     padding: 10px 10px;
+
 }
 
 .userEmailShow a {
     text-decoration: none;
     color: black;
+
+    width: 80%;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
-
-//
+.userEmailShow a{
+    color: white;
+    text-decoration: none ;
+}
+.SendAMessageSubmitButton {
+    text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 10px;
+    width:310px;
+    margin: 10px;
+}
+.SendAMessageSubmitButton input {
+    background-color: #40c952;
+    color: white;
+    border: none;
+}
+.containerBottomSendMessage {
+    display: flex;
+    flex-direction: column;
+}
+.backButtonSendMessage {
+    text-align: center;
+    background-color: #40c952;
+    border: solid 2px #0d961f;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin: 10px;
+    width: 310px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+@media (min-width:400px) {
+    #mail_from, #mail_to, #mail_subject {
+        padding: 10px 115px;
+    }
+    #mail_html {
+        padding: 10px 105px;
+    }
+    .SendAMessageSubmitButton, .backButtonSendMessage {
+        width:370px;
+    }
+        
+}
+@media (min-width:600px) {
+    #mail_from, #mail_to, #mail_subject {
+        padding: 10px 145px;
+    }
+    #mail_html {
+        padding: 10px 135px;
+    }
+    .SendAMessageSubmitButton, .backButtonSendMessage {
+        width:430px;
+    }
+}
