@@ -31,9 +31,10 @@
                 <div class="editMatchItemForm">
                     {{ form_row(formEditMatch.description) }}
                 </div>
-                <div class="editMatchSaveItemForm">
-                    <button class="btn">{{ button_label|default('Mettre à jour') }}</button>
-                </div>
+              <div class="containerButtonEditMatch">
+                    <button class="UpdateButtonEditMatch">{{ button_label|default('Mettre à jour') }}</button>
+                    <a class="backButtonEditTennisMatch" href="{{ path('search_matches') }}">Retour</a>
+                </div>    
             </div>
             {{ form_end(formEditMatch) }}
         </div>

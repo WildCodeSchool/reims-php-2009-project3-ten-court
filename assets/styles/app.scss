@@ -1496,6 +1496,27 @@ body {
 .editMatchDateItemForm{
     margin-top: 10px ;
 }
+
+
+.UpdateButtonEditMatch , .backButtonEditTennisMatch {
+    border-radius: 10px;
+    margin: 15px 0;
+    background-color: hsl(128, 56%, 52%);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.8rem; 
+    border: solid 2px rgb(13, 170, 26); 
+    width : 280px ;
+}
+
+.containerButtonEditMatch a{
+    text-decoration: none ;
+}
+
+
+
 @media (min-width: 800px) {
     .editMatchSaveItemForm button {  
         width: 620px;
@@ -1681,6 +1702,29 @@ body {
 }
 
 //MAIL//
+.containerMessage{
+display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: hsla(348, 2%, 93%, 0.8);
+    border-radius: 5px;
+    border: hsla(348, 2%, 93%, 0.92);
+    margin: 100px 1rem 3rem 1rem;
+    padding: 1rem;
+    -webkit-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 21px -9px rgba(0,0,0,0.75);
+}
+
+.emailTo [type="email"] , .emailFrom [type="email"] {
+    font-weight: bold ;
+    color : grey  ;
+    background-color : #b6b4b4; 
+}
+
+.emailTo {
+    margin-bottom: 30 px ;
+}
 
 .contact-container{
     display: flex;
@@ -1716,30 +1760,40 @@ body {
     align-items: center;
     flex-direction: column;
 }
-.emailFrom, .emailTo, .emailSubject, .emailText, .containerSendMessage {
+.emailFrom, .emailTo, .emailSubject, .emailText {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 10px;
+    margin : 10px ;
 }
+
+
 .emailFromTitle, .emailToTitle, .emailSubjectTitle, .emailTextTitle {
     margin: 5px;
 }
-#mail_from, #mail_to, #mail_subject {
-    border: solid 1px #40c952;
-    background-color: white;
+
+#mail_from, #mail_to, #mail_subject, #mail_html {
+    border: solid 1px #40c952;    
     border-radius: 10px;
     text-align: center;
-    padding: 10px 85px;
+    padding: 10px 85px;}
+
+#mail_html { 
+    
+    margin-bottom: 50px ;
+    height : 150px ;
 }
-#mail_html {
-    border: solid 1px #40c952;
-    background-color: white;
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px 75px;
+
+#mail_from, #mail_to {
+    border: solid 1px #626362;
 }
+
+.emailTo {
+    margin-bottom: 50px ;
+}
+
+
 .userEmailShow{
     align-self: center;
     background-color: HSL(128, 56%, 52%);
@@ -1795,7 +1849,7 @@ body {
         padding: 10px 115px;
     }
     #mail_html {
-        padding: 10px 105px;
+        padding: 10px 125px;
     }
     .SendAMessageSubmitButton, .backButtonSendMessage {
         width:370px;
@@ -1806,7 +1860,7 @@ body {
         padding: 10px 145px;
     }
     #mail_html {
-        padding: 10px 135px;
+        padding: 10px 155px;
     }
     .SendAMessageSubmitButton, .backButtonSendMessage {
         width:430px;
