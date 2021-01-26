@@ -20,7 +20,7 @@ class SearchMatchType extends AbstractType
     {
         $builder
             ->add('adress', TextType::class, [
-                'label' => 'Ville',
+                'label' => 'Adresse / Ville',
                 'required' => false,
             ])
             ->add('level', ChoiceType::class, [

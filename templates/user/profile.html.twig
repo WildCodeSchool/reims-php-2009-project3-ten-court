@@ -64,6 +64,11 @@
                 <a class="myProfileEditButton" href="{{ path('user_edit', {'slug': user.slug}) }}">Modifier mon profil</a>
             </div>
         </div>
+         <div class="myProfileContainerButtons">
+            <div class="myProfileEdition">
+                <a class="myProfileEditButton" href="{{ path('user_update_password', {'slug': user.slug}) }}">Modifier mon mot de passe</a>
+            </div>
+        </div>
         <div class="myProfileMatchButton">
             <a href="{{ path('user_matches', {'slug': user.slug}) }}">Mes créations de matchs</a>
         </div>
