@@ -816,9 +816,14 @@ body {
     width: 100%;
     font-size:0.9rem
 }
-@media (min-width: 350px) {
+@media (max-width: 320px) {
     .players {
         width: 300px;
+    }
+}
+@media (min-width: 380px) {
+    .players {
+        width: 360px;
     }
 }
 @media (min-width: 500px) {
