@@ -1698,6 +1698,16 @@ body {
 
 //MAIL//
 
+.emailTo [type="email"] , .emailFrom [type="email"] {
+    font-weight: bold ;
+    color : grey  ;
+    background-color : #b6b4b4; 
+}
+
+.emailTo {
+    margin-bottom: 30 px ;
+}
+
 .contact-container{
     display: flex;
     flex-direction: column;
@@ -1732,30 +1742,40 @@ body {
     align-items: center;
     flex-direction: column;
 }
-.emailFrom, .emailTo, .emailSubject, .emailText, .containerSendMessage {
+.emailFrom, .emailTo, .emailSubject, .emailText {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 10px;
+    margin : 10px ;
 }
+
+
 .emailFromTitle, .emailToTitle, .emailSubjectTitle, .emailTextTitle {
     margin: 5px;
 }
-#mail_from, #mail_to, #mail_subject {
-    border: solid 1px #40c952;
-    background-color: white;
+
+#mail_from, #mail_to, #mail_subject, #mail_html {
+    border: solid 1px #40c952;    
     border-radius: 10px;
     text-align: center;
-    padding: 10px 85px;
+    padding: 10px 85px;}
+
+#mail_html { 
+    border: solid 1px #696969; 
+    margin-bottom: 50px ;
+    height : 150px ;
 }
-#mail_html {
-    border: solid 1px #40c952;
-    background-color: white;
-    border-radius: 10px;
-    text-align: center;
-    padding: 10px 75px;
+
+#mail_subject{
+    border: solid 1px #696969; 
 }
+
+.emailTo {
+    margin-bottom: 50px ;
+}
+
+
 .userEmailShow{
     align-self: center;
     background-color: HSL(128, 56%, 52%);
@@ -1811,7 +1831,7 @@ body {
         padding: 10px 115px;
     }
     #mail_html {
-        padding: 10px 105px;
+        padding: 10px 125px;
     }
     .SendAMessageSubmitButton, .backButtonSendMessage {
         width:370px;
@@ -1823,7 +1843,7 @@ body {
         padding: 10px 145px;
     }
     #mail_html {
-        padding: 10px 135px;
+        padding: 10px 155px;
     }
     .SendAMessageSubmitButton, .backButtonSendMessage {
         width:430px;
