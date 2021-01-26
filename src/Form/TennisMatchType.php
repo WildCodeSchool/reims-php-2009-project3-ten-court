@@ -44,7 +44,7 @@ class TennisMatchType extends AbstractType
                 'widget' => 'single_text',
             ])
             ->add('adress', TextType::class, [
-                'label' => 'Adresse'
+                'label' => 'Adresse / Ville'
             ])
             ->add('description', TextareaType::class, [
                 'required' => false,
