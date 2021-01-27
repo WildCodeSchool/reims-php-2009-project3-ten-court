@@ -7,7 +7,7 @@
     <div class="containerMyMatchesBackground">
         <div class='myBlockListMatches'>
             <p class="CountParticipationMatchMessage">Nombre de participation(s): <span class="CountPariticipationMatchMessageAdd">{{ participationsMatches|length }}</span></p>
-            {% for participation in participationsMatches %}
+            {% for participation in participationsMatches|sort|reverse %}
                 <a class="containerMatchlisting" href="{{ path('tennis_match_show', { 'id' : participation.id }) }}">
                     <div class="{{app.user.id != participation.organizer.id ? "matchListing" : "matchListingOwn"}}">
                         <p class="{{app.user.id != participation.organizer.id ? "matchListingTitleMatch" : "matchListingTitleMatchOwn"}}">{{ participation.name }}</p>

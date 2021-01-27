@@ -16,7 +16,7 @@
         <h1 class="myMatchesTitle">Mes matchs</h1>
         <div class='myBlockListMatches'>
         <p class="CountCreationMatchMessage">Nombre de match(es) créé(s): <span class="CountCreationMatchMessageAdd">{{ matches|length }}</span></p>
-            {% for match in matches %}
+            {% for match in matches|sort|reverse %}
                 <a  class="containerMatchlisting" href="{{ path('tennis_match_show', { 'id' : match.id }) }}">
                     <div class="matchListingOwn">
                         <p class="matchListingTitleMatchOwn">{{ match.name }}</p>
