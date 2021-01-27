@@ -33,7 +33,6 @@ class TennisMatchController extends AbstractController
 
     /**
      * @Route("/{slug}/new", name="tennis_match_new", methods={"GET","POST"})
-     * 
      */
     public function new(Request $request, string $slug): Response
     {
@@ -54,7 +53,6 @@ class TennisMatchController extends AbstractController
 
             return $this->redirectToRoute('user_matches', [
                 'slug' => $slug,
-                
             ]);
         }
 
@@ -68,8 +66,8 @@ class TennisMatchController extends AbstractController
      * @Route("/{id}", name="tennis_match_show", methods={"GET"})
      */
     public function show(TennisMatch $tennisMatch): Response
-    {   
-        $user = new User ;
+    {
+        $user = new User();
         $participents = $tennisMatch->getParticipent();
         $user = $tennisMatch->getOrganizer();
         $nbParticipents = count($participents);
@@ -83,7 +81,7 @@ class TennisMatchController extends AbstractController
             'tennis_match' => $tennisMatch,
             'nbParticipents' => $nbParticipents,
             'isParticipent' => $isParticipent,
-            'user' => $user         
+            'user' => $user,
         ]);
     }
 
@@ -129,8 +127,8 @@ class TennisMatchController extends AbstractController
             );
         }
         return $this->redirectToRoute('user_matches', ['slug' => $slug,]);
-       
     }
+
     /**
      * @Route("/{id}/participent", name="tennis_match_add")
      */
