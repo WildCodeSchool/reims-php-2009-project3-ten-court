@@ -106,9 +106,9 @@ class UserController extends AbstractController
      * @Route("/{slug}/participations", name="participations_matches", methods={"GET"})
      * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
-    public function showParticipationsMatches(User $user): Response
+    public function showParticipationsMatches(User $user, TennisMatchRepository $tennisMatchRepository): Response
     {
-        $participationsMatches = $user->getParticipationMatch();
+        $participationsMatches = $tennisMatchRepository->findParticipationMatch($user);
         return $this->render('user/participations_matches.html.twig', [
             'user' => $user,
             'participationsMatches' => $participationsMatches
@@ -196,11 +196,9 @@ class UserController extends AbstractController
             $entityManager->remove($user);
             $entityManager->flush();
 
-            if ($user->getAvatar() == true) {
-                $fileToDelete = __DIR__ . '/../../public/uploads/' . $user->getAvatar();
-                if (file_exists($fileToDelete)) {
-                    unlink($fileToDelete);
-                }
+            $fileToDelete = __DIR__ . '/../../public/uploads/' . $user->getAvatar();
+            if (file_exists($fileToDelete)) {
+                unlink($fileToDelete);
             }
         }
         $session = new Session();
