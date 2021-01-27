@@ -7,12 +7,13 @@
     
 <h1 class="matchShowTitle">Match de {{ tennis_match.organizer.pseudo }}</h1>
     {% for message in app.flashes('success') %}
-            <div id="modifiedMatch" >
+            <div id="updateMessageSuccess" >
                 <p class="successModifiedMessage">{{ message }}</p>
             </div>
             <script language='javascript'>
-            temp=document.getElementById('modifiedMatch');
-            setTimeout('temp.style.display="none"',3000);</script>     
+                temp=document.getElementById('updateMessageSuccess');
+                setTimeout('temp.style.display="none"',3000);
+            </script>     
     {% endfor %}
     <div class="matchDescriptionContainer"> 
         <h2 class="matchTitleTennisMatchShow">{{ tennis_match.name }}</h2>

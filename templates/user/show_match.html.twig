@@ -5,22 +5,14 @@
 {% block body %}
     <div class="containerMyMatchesBackground">
         {% for message in app.flashes('success') %}
-            <div id="flash-success">
-                <p class="successMessage">{{ message }}</p>
-            </div>
-            <script language='javascript'>
-                    temp=document.getElementById('flash-success');
+                <div id="updateMessageSuccess" >
+                    <p class="successModifiedMessage">{{ message }}</p>
+                </div>
+                <script language='javascript'>
+                    temp=document.getElementById('updateMessageSuccess');
                     setTimeout('temp.style.display="none"',3000);
-            </script>
+                </script>     
         {% endfor %}
-        {% for message in app.flashes('success') %}
-            <div id="modifiedMatch" >
-                <p class="successAddedMatchMessage">{{ message }}</p>
-            </div>
-            <script language='javascript'>
-            temp=document.getElementById('modifiedMatch');
-            setTimeout('temp.style.display="none"',3000);</script>     
-    {% endfor %}
         <h1 class="myMatchesTitle">Mes matchs</h1>
         <div class='myBlockListMatches'>
         <p class="CountCreationMatchMessage">Nombre de match(es) créé(s): <span class="CountCreationMatchMessageAdd">{{ matches|length }}</span></p>

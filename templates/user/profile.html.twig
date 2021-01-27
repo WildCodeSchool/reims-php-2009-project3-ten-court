@@ -6,9 +6,13 @@
     <div class="containerMyProfile">
 
         {% for message in app.flashes('success') %}
-            <div id="updateMessageSuccess">
-                {{ message }}
-            </div>
+                <div id="updateMessageSuccess" >
+                    <p class="successModifiedMessage">{{ message }}</p>
+                </div>
+                <script language='javascript'>
+                    temp=document.getElementById('updateMessageSuccess');
+                    setTimeout('temp.style.display="none"',3000);
+                </script>     
         {% endfor %}
 
 
