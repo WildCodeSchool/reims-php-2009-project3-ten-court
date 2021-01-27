@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\User;
 use App\Entity\TennisMatch;
 use App\Service\SearchMatchService;
 use Doctrine\Persistence\ManagerRegistry;
@@ -67,5 +68,15 @@ class TennisMatchRepository extends ServiceEntityRepository
         }
 
         return $query->getQuery()->getResult();
+    }
+
+    public function findParticipationMatch(User $user)
+    {
+        $query = $this->createQueryBuilder('t')
+            ->innerJoin('t.participent', 'u')
+            ->where('u = :user')
+            ->setParameter('user', $user);
+
+        return $query->getQuery()->getResult();  
     }
 }
