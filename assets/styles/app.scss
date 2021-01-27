@@ -519,6 +519,23 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+.CountCreationMatchMessage, .CountParticipationMatchMessage {
+    background-color: #40c952;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 2px hsl(128, 84%, 32%);
+    color: white;
+    width: 87%;
+    text-align: center;
+}
+.CountCreationMatchMessageAdd, .CountPariticipationMatchMessageAdd {
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 10px;
+    background-color: hsl(128, 84%, 32%);
+    color:  #40c952;
+}
 .myMatchesTitle {
     color: white;
     padding: 20px;
@@ -602,7 +619,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     background-color:#aa5c18;
-    color: white;
+    color:#d3721d;
 }
 .backButtonParticipationMatchProfile, .backButtonShowMatchProfile  {
     text-align: center;
@@ -638,6 +655,9 @@ body {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+    .CountCreationMatchMessage, .CountParticipationMatchMessage {
+        width: 85%;
     }
     .blankMyProfileShowMatchPage {
         height: 120px;
