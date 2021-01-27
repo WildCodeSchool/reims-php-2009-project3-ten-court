@@ -34,7 +34,7 @@
         {{ form_end(searchMatchForm) }}
         </div>
 
-        {% if matchs %}
+        {% if not matchs is same as null %}
             <div class="ContainerSearchMatchResult">
                 <h2 class='resultSearch'>Résultat de votre Recherche</h2>   
                 {% for match in matchs %}
@@ -64,7 +64,9 @@
                     <a href="{{ path('tennis_match_show', {'id':match.id}) }}" class="watch">Voir</a>
                 </div>
                 {% else %}
-                <p class="resultSearchMessage">Il n'y a pas de résultat pour votre recherche </p>
+                    <div class="containerResultSearchMessage">
+                        <p class="resultSearchMessage">Il n'y a pas de résultat pour votre recherche</p>
+                    </div>
                 {% endfor %}
             </div>
         {% endif %}
