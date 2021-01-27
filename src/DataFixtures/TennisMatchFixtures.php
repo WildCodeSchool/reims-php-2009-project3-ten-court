@@ -33,7 +33,7 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
         $faker = Factory::create('fr_FR');
 
         for ($userReferenceNumber = 0; $userReferenceNumber < 10; $userReferenceNumber++) {
-            for ($i = 0; $i < 20; $i++) {
+            for ($i = 0; $i < 1; $i++) {
                 $match = new TennisMatch();
                 $match->setLevel($faker->randomElement(array (
                     'Débutant', 'Intermediaire', 'Expert', 'Professionnel'
@@ -53,8 +53,7 @@ class TennisMatchFixtures extends Fixture implements DependentFixtureInterface
                 $match->addParticipent($this->getReference('admin'));
                 $manager->persist($match);
             }
-        } 
-        
+        }
         $manager->flush();
     }
 }
