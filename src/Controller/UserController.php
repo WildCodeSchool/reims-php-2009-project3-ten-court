@@ -134,7 +134,6 @@ class UserController extends AbstractController
      */
     public function edit(Request $request, User $user): Response
     {
-        /* $user->setAvatar(new File($this->getParameter('image_directory').'/'.$user->getAvatar())); */
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
