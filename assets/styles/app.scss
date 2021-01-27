@@ -1250,7 +1250,12 @@ body {
     width: 90%;
     border-radius: 10px;
 }
+.containerResultSearchMessage {
+    display: flex;
+    justify-content: center;
+}
 .resultSearch, .resultSearchMessage {
+    align-self: center;
     text-align: center;
 }
 .resultSearchMessage {
