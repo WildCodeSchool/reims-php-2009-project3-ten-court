@@ -264,7 +264,6 @@ class UserController extends AbstractController
      * @Route("/update_password/{slug}", name="update_password")
      * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
-
     public function updatePassword(
         Request $request,
         EntityManagerInterface $entityManager,
