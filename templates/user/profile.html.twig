@@ -4,7 +4,6 @@
 
 {% block body %}
     <div class="containerMyProfile">
-
         {% for message in app.flashes('success') %}
                 <div id="updateMessageSuccess" >
                     <p class="successModifiedMessage">{{ message }}</p>
@@ -12,10 +11,8 @@
                 <script language='javascript'>
                     temp=document.getElementById('updateMessageSuccess');
                     setTimeout('temp.style.display="none"',3000);
-                </script>     
+                </script>
         {% endfor %}
-
-
         <h1 class="myProfileTitle">Mon compte</h1>
         <div class="MyProfile">
             {% if user.avatar == NULL  %}
