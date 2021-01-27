@@ -134,7 +134,6 @@ class UserController extends AbstractController
      */
     public function edit(Request $request, User $user): Response
     {
-        /* $user->setAvatar(new File($this->getParameter('image_directory').'/'.$user->getAvatar())); */
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -264,7 +263,6 @@ class UserController extends AbstractController
      * @Route("/update_password/{slug}", name="update_password")
      * @ParamConverter ("user", class="App\Entity\User", options={"mapping": {"slug": "slug"}})
      */
-
     public function updatePassword(
         Request $request,
         EntityManagerInterface $entityManager,

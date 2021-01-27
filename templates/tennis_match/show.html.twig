@@ -55,16 +55,11 @@
                 <a class="participateButtonTennisMatchShow" href="{{ path('tennis_match_add', {'id': tennis_match.id}) }}">Participer</a>
             {% endif %}
         {% endif %}
-<<<<<<< HEAD
-        <a class="backButtonTennisMatchShow" href="{{ path('user_matches', {'id': tennis_match.id, 'slug': tennis_match.organizer.slug}) }}">Retour</a>
-    <div class="blankTennisMatchDetailPage"></div>
-=======
         {% if app.user != tennis_match.organizer %}
             <a class="backButtonTennisMatchShow" href="{{ path('user_show', {'slug': user.slug}) }}">Profil de l'Organisateur</a>
         {% endif %}
         <a class="backButtonTennisMatchShow" href="{{ path('search_matches') }}">Retour</a>
         <div class="blankTennisMatchDetailPage"></div>
->>>>>>> 5aa6cf7ef3b1a5e8e122837e60a5277442ab0716
     </div>
 </div>
 {% endblock %}
