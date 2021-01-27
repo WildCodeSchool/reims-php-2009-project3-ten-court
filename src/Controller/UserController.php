@@ -196,9 +196,11 @@ class UserController extends AbstractController
             $entityManager->remove($user);
             $entityManager->flush();
 
-            $fileToDelete = __DIR__ . '/../../public/uploads/' . $user->getAvatar();
-            if (file_exists($fileToDelete)) {
-                unlink($fileToDelete);
+            if ($user->getAvatar() == true) {
+                $fileToDelete = __DIR__ . '/../../public/uploads/' . $user->getAvatar();
+                if (file_exists($fileToDelete)) {
+                    unlink($fileToDelete);
+                }
             }
         }
         $session = new Session();
