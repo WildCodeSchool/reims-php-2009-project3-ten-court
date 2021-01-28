@@ -143,7 +143,7 @@ class UserController extends AbstractController
 
             $this->addFlash(
                 'success',
-                'Profile mis à jour avec succès !'
+                'Profil mis à jour avec succès !'
             );
 
             return $this->redirectToRoute('user_profile', ['slug' => $user->getSlug()]);
@@ -248,7 +248,7 @@ class UserController extends AbstractController
 
                 $mailer->send($email);
 
-                $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+                $this->addFlash('success', 'Votre e-mail a bien été envoyé');
 
                 return $this->render('user/show.html.twig', [
                 'user' => $user

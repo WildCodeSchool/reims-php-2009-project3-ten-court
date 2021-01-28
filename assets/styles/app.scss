@@ -98,7 +98,6 @@ body {
     text-align: center;
     color: red;
 }
-
 .containerAuthButtons {
     display: flex;
     flex-direction: column;
@@ -237,9 +236,6 @@ body {
     padding: 10px 100px;
     border: none;
     border: solid 2px hsl(125, 86%, 36%);
-}
-#registration_form_save:hover {
-    background-color: hsl(129, 87%, 26%);
 }
 .registrationBackButton, .subscriptionBackButton {
     text-align: center;
@@ -1618,6 +1614,9 @@ body {
 
 .containerButtonEditMatch a{
     text-decoration: none ;
+}
+.blankEditionMatchPage {
+    height: 30px;
 }
 @media (min-width: 800px) {
     .editMatchSaveItemForm button {  
