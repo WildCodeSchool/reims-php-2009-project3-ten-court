@@ -38,12 +38,12 @@
             {% if user.phone %}
                 <div class="userContactPhone">Numéro de telephone:</div>
                 <div class="userPhoneShow">{{user.phone}}</div>
-            {% endif %}          
-
+            {% endif %} 
             <div class="userContactAddress">Adresse:</div>
             <div class="userAddressShow">{{user.address ~ ' ' ~ user.postalcode ~ ' ' ~ user.city}}</div>
-            
+            {% if user.slug != app.user.slug %}
             <div class="userEmailShow"><a href="{{ path('user_mail', {'slug': user.slug}) }}">Contacter</a></div>
+            {% endif %}
             <div class="backButtonToUserList"><a href="{{ path('search_users')}}">Retour à la recherche</a></div>
         </div>
         <div class="blankEditionPage"></div>
