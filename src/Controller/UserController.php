@@ -143,7 +143,7 @@ class UserController extends AbstractController
 
             $this->addFlash(
                 'success',
-                'Profile mis à jour avec succès !'
+                'Profil mis à jour avec succès !'
             );
 
             return $this->redirectToRoute('user_profile', ['slug' => $user->getSlug()]);
