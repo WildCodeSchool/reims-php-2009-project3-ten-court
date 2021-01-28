@@ -50,6 +50,14 @@
             </div>
         {% endif %}
 
+        {% if app.user == tennis_match.organizer %}
+            {% for participent in tennis_match.participent %}
+                {% if participent != tennis_match.organizer %}
+                    <a class="backButtonTennisMatchShow" href="{{ path('user_show', {'slug': participent.slug}) }}">Profil de l'adversaire</a>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
         {% if app.user != tennis_match.organizer and nbParticipents < 2 %}
             <div class="containerInteractionParticipeMatch">
                 <a class="participateButtonTennisMatchShow" href="{{ path('tennis_match_add', {'id': tennis_match.id}) }}">Participer</a>

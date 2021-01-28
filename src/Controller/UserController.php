@@ -247,7 +247,9 @@ class UserController extends AbstractController
                     ->html($contact[3]);
 
                 $mailer->send($email);
+
                 $this->addFlash('message', 'Votre e-mail a bien été envoyé');
+
                 return $this->render('user/show.html.twig', [
                 'user' => $user
                 ]);
