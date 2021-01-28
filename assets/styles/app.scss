@@ -1615,6 +1615,9 @@ body {
 .containerButtonEditMatch a{
     text-decoration: none ;
 }
+.blankEditionMatchPage {
+    height: 30px;
+}
 @media (min-width: 800px) {
     .editMatchSaveItemForm button {  
         width: 620px;
