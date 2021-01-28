@@ -84,9 +84,9 @@ class RegistrationFormType extends AbstractType
             ->add('sex', ChoiceType::class, [
                 'label' => 'Sexe',
                 'choices'  => [
-                    'Homme' => 'homme',
-                    'Femme' => 'femme',
-                    'Autre' => 'autre',
+                    'Homme' => 'Homme',
+                    'Femme' => 'Femme',
+                    'Autre' => 'Autre',
                 ]
             ])
             ->add('level', ChoiceType::class, [
@@ -112,7 +112,7 @@ class RegistrationFormType extends AbstractType
             ->add('birthdate', BirthdayType::class, [
                 'label' => 'Date de naissance',
                 'format' => 'dd-MM-yyyy',
-                'years' => range(2003,1940) , 
+                'years' => range(2003,1940),
             ])
             ->add('save', SubmitType::class, [
                 'label' => 'S\'inscrire',

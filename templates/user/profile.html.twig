@@ -43,7 +43,7 @@
             {% endif %}
             <div class="myProfileBirthday">
                 <p class="myProfileBirthdateTitle">Date de naissance</p>
-                <p class="myProfileBirthdayValue">{{ user.birthdate|date('d-m-Y') }}</p>
+                <p class="myProfileBirthdayValue">{{ user.birthdate|date('d/m/Y') }}</p>
             </div>
             {% if user.phone %}
             <div class="myProfilePhone">
