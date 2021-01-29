@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mes Matchs • Tencourt{% endblock %}
+{% block title %}Mes Matches • Tencourt{% endblock %}
 
 {% block body %}
     <div class="containerMyMatchesBackground">
@@ -13,7 +13,7 @@
                     setTimeout('temp.style.display="none"',3000);
                 </script>
         {% endfor %}
-        <h1 class="myMatchesTitle">Mes matchs</h1>
+        <h1 class="myMatchesTitle">Mes matches</h1>
         <div class='myBlockListMatches'>
         <p class="CountCreationMatchMessage">Nombre de match(es) créé(s): <span class="CountCreationMatchMessageAdd">{{ matches|length }}</span></p>
             {% for match in matches|sort|reverse %}
