@@ -28,9 +28,23 @@ class SearchController extends AbstractController
         $search = new SearchService();
         $searchUserForm = $this->createForm(SearchUserType::class, $search);
         $searchUserForm->handleRequest($request);
+//Old version that display the app.user (The code must be kept for now)
+/*         if ($searchUserForm->isSubmitted() && $searchUserForm->isValid()) {
+            $users = $userRepository->search($search);
+        } else {
+            $users = null;
+        }
+        return $this->render('search/index.html.twig', [
+            'searchForm' => $searchUserForm->createView(),
+            'users' => $users,
+        ]); */
 
         if ($searchUserForm->isSubmitted() && $searchUserForm->isValid()) {
             $users = $userRepository->search($search);
+            if (in_array($this->getUser(), $users)) {
+                $keyToDestroy = array_search($this->getUser(), $users);
+                unset($users[$keyToDestroy]);
+            }
         } else {
             $users = null;
         }
